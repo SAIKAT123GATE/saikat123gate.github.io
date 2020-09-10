@@ -1,0 +1,15 @@
+{
+  "name": "css",
+  "version": "1.0.0",
+  "description": "## This is the wiki file to read about the tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@workspace.konfinity.com:html-css-demo/tvastra.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
