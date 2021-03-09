@@ -1,0 +1,25 @@
+.logo{
+    width: 10rem;
+    float: left !important;
+}
+.bar{
+    position:absolute;
+    left:92%;
+    top:4.4%;
+}
+.icon
+{
+    width: 0.95rem;
+    height: 0.15rem;
+    background-color: #525659;
+    margin-bottom: 3.6px ;    
+}
+.sec2{
+    background-color: #8fcaf1;
+}
+.loc{
+    height:3rem;
+    width: 22rem;
+}
+
+
