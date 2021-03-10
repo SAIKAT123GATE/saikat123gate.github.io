@@ -27,16 +27,12 @@
 section
 {
     padding: 1.5rem 0.8rem;
-    text-align: center;
     display: flex;
     flex-direction: column;
 
 }
 button{
     background-color: var(--dark_blue);
-    margin-left: 7rem;
-    margin-right: 7rem;
-    margin-top: .2rem;
     padding: 0.5rem;
     color: var(--white);
 }
@@ -90,7 +86,7 @@ textarea{
 input::placeholder{
     font-size: 0.9rem;
     font-family: nexa-light;
-    background-color: var(--white);
+    color: var(--light_gray)
 }
 input,select{
     font-family: nexa-light;
@@ -99,20 +95,41 @@ input,select{
     width: 100%;
     margin-bottom: 0.5rem;
 }
+ul li {
+    font-size: 1.25rem;
+    font-family: nexa-light;
+    color: var(--dark_blue);
+}
+ol li{
+    font-size: 1.25rem;
+    font-family: nexa-light;
+    color: var(--dark_blue);
+}
+input:focus,select:focus{
+    outline:none;
+}
+figcaption{
+    font-family: nexa-bold;
+    color: var(--dark_blue);
+    font-size: 2rem;
+}
+figure{
+    margin:1.25rem 1.25rem;
+}
+nav
+    {
+    background-color: var(--white);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    
+    }
 @media only screen and (min-width:768px) and (max-width:1024px)
 {
     section{
         padding: 1.8rem 2.2rem;
-        float: left;
     }
-    button{
-        background-color: var(--dark_blue);
-        margin-left: 16rem;
-        margin-right: 16rem;
-        margin-top: .2rem;
-        padding: 0.5rem;
-        color: var(--white);
-    }
+    
     h1,h2
     {
         font-size: 2.2rem;
@@ -134,11 +151,7 @@ input,select{
         font-size: 1.4rem;
         line-height: 1.8rem;
     }
-    input::placeholder{
-        font-size: 1rem;
-        font-family: nexa-light;
-        background-color: var(--white);
-    }
+   
     input,select{
         font-family: nexa-light;
         color:var(--gray);
@@ -153,20 +166,8 @@ input,select{
         margin-bottom: 0.625rem;
         line-height: 1.6;
     }
-    img
-    {
-    height: 50%;
-    width: 50%;
-    object-fit: cover;
-    }
-    textarea{
-        font-family: nexa-light;
-        padding: 0.8rem 0.75rem;
-        font-size: 1rem;
-        color: var(--gray);
-        margin-bottom: 0.625rem;
+   
     
-    }
     
 
 
@@ -175,7 +176,7 @@ input,select{
 {
     section{
         padding: 1.8rem 3.0rem;
-        float: left;
+        
     }
     h1,h2
     {
@@ -198,28 +199,9 @@ input,select{
         font-size: 1.6rem;
         line-height: 2.0rem;
     }
-    img
-    {
-    height: 100%;
-    width: 25%;
-    object-fit: cover;
-    }
-    nav
-    {
-    background-color: var(--white);
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem;
     
-    }
-    textarea{
-        font-family: nexa-light;
-        padding: 1.0rem 0.75rem;
-        font-size: 1rem;
-        color: var(--gray);
-        margin-bottom: 0.625rem;
     
-    }
+    
     p{
         font-family: nexa-light;
         color: var(--dark_blue);
@@ -227,14 +209,7 @@ input,select{
         margin-bottom: 0.625rem;
         line-height: 1.6;
     }
-    button{
-        background-color: var(--dark_blue);
-        margin-left: 100rem;
-        margin-right: 100rem;
-        margin-top: .2rem;
-        padding: 0.5rem;
-        color: var(--white);
-    }
+    
     input,select{
         font-family: nexa-light;
         color:var(--gray);
