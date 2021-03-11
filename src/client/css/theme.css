@@ -32,9 +32,25 @@ section
 
 }
 button{
-    background-color: var(--dark_blue);
+    font-family: nexa-light;
     padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+}
+.btn_darkblue{
+    background-color: var(--dark_blue);
     color: var(--white);
+    border-color: var(--dark_blue);
+}
+.btn_blue{
+    background-color: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+}
+.btn_white{
+    background-color: var(--white);
+    color:var(--dark_blue);
+    border-color: var(--dark_blue);
 }
 img
 {
