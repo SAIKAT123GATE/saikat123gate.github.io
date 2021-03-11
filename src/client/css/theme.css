@@ -111,16 +111,17 @@ input,select{
     width: 100%;
     margin-bottom: 0.5rem;
 }
-ul li {
+option{
+    font-family: nexa-light;
+    color: var(--gray);
+    font-size: 1rem;
+}
+li {
     font-size: 1.25rem;
     font-family: nexa-light;
     color: var(--dark_blue);
 }
-ol li{
-    font-size: 1.25rem;
-    font-family: nexa-light;
-    color: var(--dark_blue);
-}
+
 input:focus,select:focus{
     outline:none;
 }
