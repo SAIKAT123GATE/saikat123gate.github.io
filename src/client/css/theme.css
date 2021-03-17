@@ -46,11 +46,16 @@ button{
     background-color: var(--blue);
     color: var(--white);
     border-color: var(--blue);
+    border-style: none;
+    padding:1rem 1rem;
+    font-size: 1.3rem;
+    margin:.5rem 0rem;
 }
 .btn_white{
     background-color: var(--white);
-    color:var(--dark_blue);
-    border-color: var(--dark_blue);
+    color:var(--blue);
+    border-color: var(--blue);
+    
 }
 img
 {
@@ -67,29 +72,34 @@ h1,h2,h3,h4,h5,h6
 p{
     font-family: nexa-light;
     color: var(--dark_blue);
-    font-size: 1.15rem;
-    margin-bottom: 0.625rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+    line-break: auto;
 }
 h1,h2{
-    font-size: 1.8rem;
+    font-size: 2.0rem;
     margin-bottom: 0.625rem;
+    margin-top: 0.625rem;
+
 }
 h3{
     margin-bottom: 0.625rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 h4{
     font-size: 1.4rem;
     margin-bottom: 0.625rem;
+    
 }
 h5{
    margin-bottom: 0.3125rem;
-   font-size: 1.2rem; 
+   font-size: 1.1rem; 
 }
 h6{
-    font-size: 1rem;
-    margin-bottom: 0.3125rem;
+    font-size: 1.35rem;
+    margin: 0.3125rem 0rem;
 }
 textarea{
     font-family: nexa-light;
@@ -102,7 +112,7 @@ textarea{
 input::placeholder{
     font-size: 0.9rem;
     font-family: nexa-light;
-    color: var(--light_gray)
+    color: var(--gray)
 }
 input,select{
     font-family: nexa-light;
@@ -117,9 +127,10 @@ option{
     font-size: 1rem;
 }
 li {
-    font-size: 1.25rem;
+    font-size: 1.0rem;
     font-family: nexa-light;
-    color: var(--dark_blue);
+    color: var(--white);
+    margin-bottom: .5rem;
 }
 
 input:focus,select:focus{
@@ -128,19 +139,22 @@ input:focus,select:focus{
 figcaption{
     font-family: nexa-bold;
     color: var(--dark_blue);
-    font-size: 2rem;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    
 }
 figure{
-    margin:1.25rem 1.25rem;
+    margin-top:1rem;
 }
 nav
     {
     background-color: var(--white);
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem;
+    
     
     }
+    
 @media only screen and (min-width:768px) and (max-width:1024px)
 {
     section{
@@ -149,7 +163,7 @@ nav
     
     h1,h2
     {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         line-height: 2.6rem;
     }
     h3{
@@ -157,7 +171,7 @@ nav
         line-height: 2.4rem;
     }
     h4{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         line-height: 2.2rem;
     }
     h5{
@@ -165,8 +179,9 @@ nav
         line-height: 2.0rem;
     }
     h6{
-        font-size: 1.4rem;
+        font-size: 1.9rem;
         line-height: 1.8rem;
+        margin:0.3125rem 0rem;
     }
    
     input,select{
@@ -179,9 +194,12 @@ nav
     p{
         font-family: nexa-light;
         color: var(--dark_blue);
-        font-size: 1.18rem;
+        font-size: 1.5rem;
         margin-bottom: 0.625rem;
-        line-height: 1.6;
+        line-height: 1.4;
+    }
+    li{
+        font-size: 1.0rem;
     }
    
     
@@ -189,7 +207,7 @@ nav
 
 
 }
-@media only screen and(min-width:1024px)
+@media only screen and (min-width:1024px)
 {
     section{
         padding: 1.8rem 3.0rem;
@@ -197,24 +215,27 @@ nav
     }
     h1,h2
     {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
         line-height: 2.8rem;
+        margin-left: 3rem;
+        text-align: left;
     }
     h3{
         font-size: 2.2rem;
         line-height: 2.6rem;
     }
     h4{
-        font-size: 2.0rem;
-        line-height: 2.4rem;
+        font-size: 1.2rem;
+        
     }
     h5{
-        font-size: 1.8rem;
+        font-size: 1.1rem;
         line-height: 2.2rem;
     }
     h6{
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         line-height: 2.0rem;
+        margin-top: 1.5rem;
     }
     
     
@@ -222,9 +243,10 @@ nav
     p{
         font-family: nexa-light;
         color: var(--dark_blue);
-        font-size: 2rem;
-        margin-bottom: 0.625rem;
+        font-size: 1.0rem;
+        margin-bottom: 2rem;
         line-height: 1.6;
+        
     }
     
     input,select{
@@ -232,6 +254,9 @@ nav
         color:var(--gray);
         padding: 1.2rem 1.0rem; 
         width: 100%;
+    }
+    i{
+        font-size: 1.3rem !important;
     }
 
 
