@@ -13,7 +13,7 @@
 }
 /*header*/
 header{
-    padding: 0.8rem 0.8rem;    
+    padding: 1.5rem 0.8rem;    
 }
 .head1{
     display: flex;
@@ -24,7 +24,7 @@ header{
 }
 .head1 figure{
     width: 9rem;
-    margin: 0.2rem 0rem;
+    
 }
 .head1 i{
     justify-self: end;
@@ -45,11 +45,29 @@ header{
 }
 /*form and input field*/
  form i{
-    position: absolute;
-    padding: 0.75rem 0.6rem;
+   font-size: 1.2rem !important;
+   padding-left:0.5rem
+}
+
+#cross{
+    padding-left: auto;
+    padding-right: 0.5rem;
+}
+form .input1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 0.5rem;
+}
+form .input1 .input_field{
+    margin-bottom: 0rem;
+    
 }
  form .input1 input::placeholder{
-   padding-left: 0.9rem;
+   padding-left: 0.0rem;
+   margin-left: 0rem;
 }
 .input_field{
     border:none;
@@ -57,11 +75,8 @@ header{
     padding-bottom: 1.0rem;
 }
 /*button*/
-#cross{
-    display: inline-block;
-    left:auto;
-    right: 1rem;
-}
+
+
 .btn_darkblue{
     border-radius: 0rem;
     margin: auto;
@@ -73,6 +88,9 @@ header{
     text-align: center;
 }
 /*how it works*/
+.how_it_works .hide{
+    display: none;
+}
 .how_it_works{
     text-align: center;
     
@@ -84,31 +102,51 @@ header{
     font-size: 1.5rem;
     font-weight: 700;
 }
-.how_it_works button{
-    border: 0.1rem solid #021433;
+.how_it_works li{
+    border: 1px solid #313a49;
     padding: 1.0rem 1rem;
     border-radius: 0.5rem;
     text-align: left;
-    margin:0.3rem 0rem;
+    margin:1rem 0rem 0rem 0rem;
     width: 100%;
     background-color: white;
+    font-family: nexa-bold;
     
     
+}
+.how_it_works .steps li span{
+    margin-right: 1.0rem;
 }
 .how_it_works figure{
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1.2rem;
 }
-.how_it_works .steps button h4{
+.how_it_works figure h6{
+    margin-top: 1.2rem;
+    margin-bottom:0rem ;
+}
+.how_it_works figure p{
+    margin-bottom: 0.0rem;
+}
+.how_it_works .steps .activeli{
     margin-bottom: 0rem;
+    margin-top: 1rem;
     font-size: 1.5rem;
+    color:#021433;
+    border-color:#021433;
 }
-.how_it_works .steps .step1 span{
+.how_it_works .steps .activeli  span{
     color: #0381d4;
 }
-.how_it_works .l_gray h4{
+.how_it_works .l_gray {
     color: #cccccc;
-    margin-bottom: 0rem;
+    font-size: 1.5rem;
+    
 }
 
 /*world class doctor*/
@@ -117,6 +155,21 @@ header{
     text-align: center;
     
 }
+.wrld_cls_doc .card .contain::before{
+    content: "";
+    background: #0381d4;
+    width:1.2rem;
+    height:0.15rem;
+    display: inline-block;
+    position: relative;
+    
+    right:1.5rem;
+    top:1rem;
+}
+.radiobtn{
+    display: none;
+}
+
 .wrld_cls_doc h2{
     color: #fff;  
 }
@@ -125,9 +178,12 @@ header{
 }
 .card{
     border-bottom: 5px solid #8fcaf1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
 }
-.card figure{
-    height: 23rem;
+#card4{
+    margin-bottom: 0rem;
 }
 .contain{
     background-color: white;
@@ -139,20 +195,11 @@ header{
     color: #0381d4;
     
 }
-.contain h4::before{
-    content: "";
-    background: #0381d4;
-    width:1.2rem;
-    height:0.2rem;
-    display: block;
-    position: absolute;
-    left:.8rem;
-    margin-top: 0.5rem;
-    z-index: 10;
-}
-.contain p{
+
+.contain li{
     color: #021433;
-    line-height: 1rem;
+    line-height: 1.2rem;
+    font-size: 1.1rem;
     
 }
 .contain h5{
@@ -160,53 +207,61 @@ header{
 }
 
 /*feat_med_tret*/
+.inactive{
+    display: none;
+}
+
 .feat_med_tret{
     text-align: center;
 }
  .fig1,.fig2,.fig3,.fig4,.fig5,.fig6{
     height: 23rem;
     width:100%;
-    background-image:linear-gradient(to top,rgba(7, 1, 26, 1) 2%,rgba(255, 255, 255, 0) 98%),  url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg);
-    background-size: 115% 100%;
+    background-image:linear-gradient(to top,rgb(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%),  url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg);
+    background-size: cover;
+    background-position: center;
     object-fit: cover;
     margin:0rem 0rem 0.5rem 0rem;
     border-style: none;
-    
+    position: relative;
 }
+
 .fig2{
-    background-image:linear-gradient(to top,rgba(7, 1, 26, 1) 2%,rgba(255, 255, 255, 0) 98%),  url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg);
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%),  url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg);
 }
 .fig3{
-    background-image:linear-gradient(to top,rgba(7, 1, 26, 1) 2%,rgba(255, 255, 255, 0) 98%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg);
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg);
 }
 .fig4{
-    background-image:linear-gradient(to top,rgba(7, 1, 26, 1) 2%,rgba(255, 255, 255, 0) 98%), 
+    background-image:linear-gradient(to top,rgb(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
      url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg); 
 }
 .fig5{
-    background-image:linear-gradient(to top,rgba(7, 1, 26, 1) 2%,rgba(255, 255, 255, 0) 98%), 
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
      url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg); 
 }
 .fig6{
-    background-image:linear-gradient(to top,rgba(7, 1, 26, 1) 2%,rgba(255, 255, 255, 0) 98%), 
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
      url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg);  
 }
 .fig1 ul , .fig2 ul, .fig3 ul,.fig4 ul,.fig5 ul, .fig6 ul{
-    position: relative;
-    float: left;
-    top:85%;
-    left:0%;
-
+    text-align: left;
+    top:auto;
+    bottom: 0.0;
+    position: absolute;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 }
+
 .span{
-    font-weight: bold;
+    font-weight: 800;
     padding:0rem 0rem;
     position: relative;
     margin-bottom: 0.8rem;
 }
 .span2{
-    margin-left: 1.0rem;
-    font-size: 0.8rem;
+    margin-left: 0rem;
+    font-size: 0.9rem;
 
 }
 
@@ -214,13 +269,10 @@ header{
     background-color: #cccccc;
     text-align: center;
 }
-/*world class expert doctor*/
-.row{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.fig6{
+    margin-bottom: 0rem;
 }
+
 /*exclusive services*/
 .row3{
     display: grid;
@@ -231,6 +283,10 @@ header{
     "right5 right6";
     grid-gap: 0.5rem;
 }
+.row3 div{
+    font-size: 20vw;
+    padding:1rem 1rem;
+}
 .right1{
     grid-area: right1;
     background-color: white;
@@ -239,6 +295,7 @@ header{
     align-items: center;
     justify-content: center;
     border-radius: .5rem;
+    
 }
 .row3 img{
     height: auto;
@@ -302,6 +359,9 @@ header{
 .nd_help h1{
     color:white
 }
+ .nd_help2 .btn_blue{
+    margin-bottom: 0rem;
+}
 /*footer*/
 footer{
     padding:1.5rem 0.8rem;
@@ -331,6 +391,7 @@ footer .social_icon i{
 footer p{
     color:#ffffff;
     margin-top: 1rem;
+    margin-bottom: 0rem;
 }
 footer p span{
     font-size: 1.2rem;
@@ -351,6 +412,9 @@ footer p span{
         display: flex;
         flex-direction: row;
     }
+    input{
+        margin-bottom: 0rem;
+    }
     .input2{
         width: 100%;
         height: 20%;
@@ -369,29 +433,62 @@ footer p span{
         padding:1.0rem 0.6rem;
     }
     .input1{
-        width:55%
+        width:50vw;
+        border-right:1px solid #0381d4;
     }
     /*button*/
     .btn_darkblue{
         
         margin: auto;
         display: block;
-        padding:1.0rem 2.4rem;
+        padding:1.05rem 2.4rem;
         font-size: 1.1rem;
         text-align: center;
     }
+
+    /*how it works*/
+    .how_it_works .steps .activeli{
+        align-self: center;
+    }
+    .how_it_works .l_gray{
+        align-self: center;
+    }
+    .how_it_works li{
+        padding-top: 1.3rem;
+        padding-bottom: 1.3rem;
+    }
+
     /*world class expert doctor*/
-    .row1{
-        justify-content: space-between;
+    
+    .row{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "card1 card2"
+        " card3 card4"; 
+        grid-gap:0.8rem;
+        margin:0rem 0rem; 
     }
     .card{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 49%;
-        
-        
-        
+        margin-bottom: 0rem;
+    }
+    .card img{
+        height: 40vh;
+    }
+    .wrld_cls_doc .card .contain::before{
+        top:1.3rem
+    }
+    #card1{
+        grid-area: card1;
+    }
+    #card2{
+        grid-area: card2;
+    }
+    #card3{
+        grid-area: card3;
+    }
+    #card4{
+        grid-area: card4;
     }
     .tab1{
         width:200%;
@@ -400,57 +497,74 @@ footer p span{
         line-height: 1.6rem !important;
         margin-bottom: 0.8rem;
     }
-    .contain h4::before{
-        content: "";
-        background: #0381d4;
-        width:1.3rem;
-        height:0.1rem;
-        display: block;
-        position: absolute;
-        left:2.2rem;
-        margin-top: 1.1rem;
-        
-    }
-    .contain2 h4::before{
-        content: "";
-        background: #0381d4;
-        width:1.3rem;
-        height:0.1rem;
-        display: blick;
-        position: absolute;
-        left:2.2rem;
-        margin-top: 1.1rem;
-        z-index: 100;
-        
-    }
+    
     /* Featured medical treatment*/
-     .fig1,.fig2,.fig3,.fig4,.fig5,.fig6{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width:49%;
-        margin:0rem 0rem 0.9rem 0rem;
+    .row_modified{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "fig1 fig2"
+        "fig3 fig4"
+        "fig5 fig6"
+        ;
+        
+    }
+    .fig1{
+        grid-area: fig1;
+        margin-bottom: 0rem;
+        
+        
+    }
+    .fig2{
+        grid-area: fig2;
+        margin-bottom: 0rem;
+       
+    }
+    .fig3{
+        grid-area: fig3;
+        margin-bottom: 0rem;
+        
+        
+    }
+    .fig4{
+        grid-area: fig4;
+        margin-bottom: 0rem;
+        
+    }
+    .fig5{
+        grid-area: fig5;
+        margin-bottom: 0rem;
+        
+    }
+    .fig6{
+        grid-area: fig6;
+        margin-bottom: 0rem;
+        
     }
     .span2{
-        margin-left: 0.9rem;
-        font-size: 0.8rem;
+        font-size: 1.2rem;
     
     }
-    /*exclusive services*/
-    .row3 .right1{
-        width:32%;
-        margin-bottom: 1.0rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: white;
-
+    .row_modified .span{
+        font-size: 1.2rem;
     }
-    .row .right figure{
-        padding-left:4rem;
-        padding-right: 4rem;
+    /*exclusive services*/
+    .row3{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "right1 right2 right3"
+        "right4 right5 right6";
+        grid-gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    .row3 h5{
+        font-size: 1rem;
     }
     /*How it works*/
+    .how_it_works .steps button h4 span{
+        margin-right: 1.0rem;
+    }
     .how_it_works .steps{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -462,29 +576,29 @@ footer p span{
         "step5 figure"
         "step6 figure"
         "step7 figure";
-        grid-column-gap: 1rem;
+        grid-column-gap: 0.3rem;
         
         
     }
-    .steps .step1{
+    .steps #step1{
         grid-area: step1;
     }
-    .steps .step2{
+    .steps #step2{
         grid-area: step2;
     }
-    .steps .step3{
+    .steps #step3{
         grid-area: step3;
     }
-    .steps .step4{
+    .steps #step4{
         grid-area: step4;
     }
-    .steps .step5{
+    .steps #step5{
         grid-area: step5;
     }
-    .steps .step6{
+    .steps #step6{
         grid-area: step6;
     }
-    .steps .step7{
+    .steps #step7{
         grid-area: step7;
     }
     .steps figure{
@@ -505,17 +619,19 @@ footer p span{
     
     /*footer*/
     footer{
+        padding:1.8rem 2.2rem;
         display:grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 2fr 1fr;
         grid-template-areas: 
         "about figure"
         "rights social_icon";
+        background-color: #ffffff;
 
     }
 
     footer figure{
         grid-area: figure;
-        width:11rem;
+        width:22vw;
         padding:0rem 0rem;
         display: block;
         margin:auto 0rem 1.2rem auto;
@@ -534,22 +650,25 @@ footer p span{
     }
     footer .about li{
         color:white;
-        margin-right: 0.9rem;
-        font-size: 1.4rem;
+        font-size: 1.1rem;
+        color:rgb(0, 0, 7);
     }
     footer .rights{
         grid-area: rights;
+        color: black;
     }
     footer .social_icon{
         grid-area:social_icon;
-        justify-content: space-between;
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: flex-end;
     }
     footer .social_icon i{
-        padding:0rem 0rem 0rem 0.8rem;
+        padding:0rem 0rem 0rem 0rem;
         font-size: 1.2rem;
+        margin-left: auto;
+        color: black;
     }
     footer p{
         display:block;
@@ -567,7 +686,7 @@ footer p span{
 {
     /*header*/
     header{
-        padding: 2rem 0.8rem;    
+        padding: 2rem 4rem;    
     }
     .head1{
         display: none;
@@ -575,9 +694,11 @@ footer p span{
     .head2{
         display: grid;
         grid-template-columns: 1fr 2fr 1.5fr;
+        align-self: center;
+        justify-content: center;
     }
     .head2 img{
-        margin-left:6rem;
+        
         width:10rem;
         height: 100%;
         margin-top: 0rem;
@@ -587,57 +708,60 @@ footer p span{
     .head2 ul{
         display: flex;
         flex-direction: row;
-        align-items: center;
-        margin-top: 0.9rem;
-        margin-right: 0.5rem;
-        margin-left: auto;
-        
+        justify-content: flex-end;
+        margin-top: 1rem;
     }
     .head2 ul li{
         color: black;
+        margin-left:2rem;
+        font-weight: 800;
         
-        margin-left: 1rem;
-        font-size: 1.1rem;
+        margin-bottom: 0rem;
         
     }
     .head2 div{
         display: flex;
-        margin-left: 2rem;
+        justify-content: flex-end;
+        
+        
     }
     .head2 div button{
         font-size: 1rem;
     }
     .head2 .btn_darkblue{
         margin-top:0rem;
-        margin-right: 2.0rem;
         border-radius: 0.5rem;
         padding:0.9rem 2rem;
-        margin-left: 0.5rem;
+        margin:0rem 0rem !important;
     }
     .head2 .btn_white{
         padding:0.9rem 2rem;
         border-color: black;
         color: black;
+        margin-right: 0.5rem;
     }
 
     /* Find affordable healthcare*/
     .find_affordable_healthcare{
         background-image: url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.jpg");
         background-repeat: no-repeat;
-        height: 26rem;
         background-size: cover;
+        background-position: top right;
+        
          
     }
     form{
         position: relative;
         display: flex;
         flex-direction: row;
-        width: 60%;
-        margin-left: 4rem;
+        width: 60vw;
+        margin-bottom: 6rem;
         
     }
     .input1{
         padding: 0rem;
+        border-right:.5px solid #8fcaf1;
+        
     }
     .input2{
         width: 100%;
@@ -647,6 +771,7 @@ footer p span{
         border:none;
         padding-top:1.3rem;
         padding-bottom: 1.3rem;
+        margin-bottom: 0rem;
     }
     #cross{
         display: inline-block;
@@ -662,19 +787,19 @@ footer p span{
     .find_affordable_healthcare  h1 
     {
         text-align: left;
-        margin-top: 6%;
-        margin-left: 4rem;
+        margin-top: 6rem;
+        margin-left: 0rem;
         
     }
     .find_affordable_healthcare  p{
         text-align: left;
-        margin-left: 4rem;
-        width: 50%;
+        width: 50vw;
         margin-bottom: 2rem;
         font-size: 1.2rem;
     }
     .btn_darkblue{
         padding:1rem 2rem;
+        padding-bottom: 1.15rem;
         margin-top: 0rem;
     }
 
@@ -682,7 +807,7 @@ footer p span{
 
     .how_it_works .steps{
         display: grid;
-        grid-template-columns: 1fr 1.0fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: 
         "step1 figure"
         "step2 figure"
@@ -691,30 +816,34 @@ footer p span{
         "step5 figure"
         "step6 figure"
         "step7 figure";
-        grid-column-gap: 1rem;
-        margin-right: 1rem;
+        grid-column-gap: 5rem;
         
         
     }
-    .steps .step1{
+    .how_it_works .steps .activeli{
+        border-color: #0381d4;
+    }
+    .steps #step1{
         grid-area: step1;
+        
+
     }
-    .steps .step2{
+    .steps #step2{
         grid-area: step2;
     }
-    .steps .step3{
+    .steps #step3{
         grid-area: step3;
     }
-    .steps .step4{
+    .steps #step4{
         grid-area: step4;
     }
-    .steps .step5{
+    .steps #step5{
         grid-area: step5;
     }
-    .steps .step6{
+    .steps #step6{
         grid-area: step6;
     }
-    .steps .step7{
+    .steps #step7{
         grid-area: step7;
     }
     .steps figure{
@@ -724,47 +853,68 @@ footer p span{
     .steps figure img{
         height: auto;
     }
-    .how_it_works .steps button h4{
-        margin-bottom: 0rem;
-        font-size: 1.3rem;
-    }
-    .how_it_works .steps button h4 span{
-        margin-right: 1.5rem;
-    }
-    .how_it_works button{
-        padding:0rem 1rem;
-        background-color: white;
-    }
-    .how_it_works h2{
-        text-align: left;
-        margin-left: 4rem;
-    }
     .how_it_works p{
         text-align: left;
-        margin-left: 4rem;
-        font-size: 1rem;
-        
     }
-    .how_it_works .steps button{
-        margin-left: 4rem;
-        width:auto;
-        margin-right: 4rem;
+    .how_it_works li {
+        padding:3rem 1rem;
+        font-size: 2rem;
+        border: 1px solid #0099ff;
     }
+    .how_it_works .l_gray{
+        border-color:#cccccc ;
+    }
+    .how_it_works figure{
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+   
+    
+    
 
     /* world class expert doctor*/
+    
+    .radiobtn{
+        display: flex;
+        margin-left: 2rem;
+        margin-top: 2rem;
+    }
+    input[
+        type=radio
+    ]
+    {
+        width: auto;
+        margin-left:1.1rem;
+    }
     .row{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
         "card1 card2 card3 card4"; 
         grid-column-gap:0.5rem;
-        margin:0rem 3rem ;  
+        margin:0rem 0rem ; 
+        
+    }
+    .row .card{
+        margin-bottom: 0rem;   
+    }
+    .row .card img{
+        height: 35vh;
+    }
+    #three{
+        font-size: 10rem;
+        color: red;
+        position: relative;
+        right:6rem;
+        padding-top: 2rem;
     }
     #card1{
         grid-area: card1;
+        
     }
     #card2{
         grid-area: card2;
+        
     }
     #card3{
         grid-area: card3;
@@ -774,20 +924,33 @@ footer p span{
     }
     .wrld_cls_doc h2{
         text-align: left;
-        margin-left: 4rem;
     }
     .wrld_cls_doc p{
         text-align: left;
-        margin-left: 4rem;
     }
-    .contain p{
+    .contain li{
         margin-left: 0rem;
         margin-bottom: 0.5rem;
         line-height: 1.2;
         
     }
+    .wrld_cls_doc .card .contain::before{
+        content: "";
+        background: #0381d4;
+        width:1.2rem;
+        height:0.1rem;
+        display: inline-block;
+        position: relative;
+        
+        right:1.5rem;
+        top:0.8rem;
+        margin-top: 0.5rem;
+    }
     /*featured medical treatment*/
-    #row1{
+    
+    
+
+    .row_modified{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-auto-rows: 20rem 6rem 2rem;
@@ -798,7 +961,11 @@ footer p span{
         "fig4 fig5 fig6"
         "fig4 fig5 fig6"
         "fig4 fig5 fig6" ;
+        grid-gap: 0.5rem 0.5rem;
         
+    }
+    .fig1,.fig2,.fig3,.fig4,.fig5,.fig6{
+        margin-bottom: 0rem;
     }
     .fig1{
         grid-area: fig1;
@@ -807,12 +974,12 @@ footer p span{
     }
     .fig2{
         grid-area: fig2;
-        height: auto;
+        height:auto;
        
     }
     .fig3{
         grid-area: fig3;
-        height: auto;
+        height:auto;
         
         
     }
@@ -836,39 +1003,41 @@ footer p span{
     }
     .feat_med_tret p{
         text-align: left;
-        margin-left: 3rem;
     }
+    
+     
     /*exclusive services*/
     .row3{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas: 
         "right1 right2 right3 right4 right5 right6";
-        margin-left: 3rem;
-        margin-right: 3rem;
         margin-bottom: 2rem;
     }
+    .row3 div{
+        border-radius: 0rem;
+    }
+    
     .exc_ser h2,.exc_ser p{
-        margin-left: 3rem;
+        
         text-align: left;
     }
-    .row3 div{
-        padding:2rem 2rem;
+    .row3 {
         border-radius: 0rem;
+        margin-bottom: 0rem;
     }
 
     /*need help*/
     .nd_help{
         display: grid;
         grid-template-columns: 2fr 1fr;
-        padding:2rem 0rem;
     }
     .nd_help p{
         text-align: left;
-        margin-left: 3rem;
     }
     .nd_help2{
-        margin-left: 7rem;
+        text-align: right;
+        
         margin-top: auto;
         margin-bottom: auto;
     }
@@ -881,20 +1050,22 @@ footer p span{
     footer{
         display:grid;
         grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: 
         "about figure"
         "rights social_icon";
         background-color: white;
-    
+        padding:2rem 4rem;
+        border-bottom: 3px solid #0099ff;
 
     }
     footer figure{
         grid-area: figure;
         width:11rem;
-        padding:0rem 0rem;
+        padding:1rem 0rem;
         display: block;
-        margin:auto 0rem 1.2rem auto;
-        margin-right: 3rem;
+        margin-left: auto;
+        margin-right: 0rem;
         
     }
     footer figure image{
@@ -905,7 +1076,6 @@ footer p span{
         position: relative;
         display: flex;
         flex-direction: row;
-        margin-left:3rem ;
         align-items: center;
     }
     footer .about li{
@@ -916,7 +1086,9 @@ footer p span{
     footer .rights{
         grid-area: rights;
         color: black;
-        margin-left: 1rem;
+        display:block;
+        margin:auto auto auto 0;
+        font-size: 1.2rem;
     }
     footer .social_icon{
         grid-area:social_icon;
@@ -924,8 +1096,8 @@ footer p span{
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-left: 2rem;
-        margin-right: 3rem;
+        margin-left: auto;
+        margin-right: 0rem;
     }
     footer .social_icon i{
         padding:0rem 0rem 0rem 0.8rem;
@@ -934,12 +1106,7 @@ footer p span{
         margin-left: 1rem;
         
     }
-    footer .rights{
-        display:block;
-        margin:auto auto auto 0;
-        font-size: 1.2rem;
-        margin-left: 3rem;
-    }
+    
     
     
     

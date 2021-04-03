@@ -1,13 +1,16 @@
-:root{
-    --white:#ffffff;
-    --dark_gray:#525659;
-    --light_gray:#cccccc;
-    --light_blue:#8fcaf1;
-    --dark_blue:#021433;
-    --blue:rgb(22, 125, 221);
-    --gray:#636668;
+$white:#ffffff;
+$dark_gray:#525659;
+$light_gray:#cccccc;
+$light_blue:#8fcaf1;
+$dark_blue:#021433;
+$blue:rgb(22, 125, 221);
+$gray:#636668;
+$background:#94bedd;
 
-}
+
+
+
+
 @font-face
 {
     font-family: nexa-bold;
@@ -38,23 +41,23 @@ button{
     border-radius: 0.5rem;
 }
 .btn_darkblue{
-    background-color: var(--dark_blue);
-    color: var(--white);
-    border-color: var(--dark_blue);
+    background-color: $dark_blue;
+    color: $white;
+    border-color: $dark_blue;
 }
 .btn_blue{
-    background-color: var(--blue);
-    color: var(--white);
-    border-color: var(--blue);
+    background-color: $blue;
+    color: $white;
+    border-color: $blue;
     border-style: none;
     padding:1rem 1rem;
     font-size: 1.3rem;
     margin:.5rem 0rem;
 }
 .btn_white{
-    background-color: var(--white);
-    color:var(--blue);
-    border-color: var(--blue);
+    background-color: $white;
+    color:$blue;
+    border-color: $blue;
     
 }
 img
@@ -67,22 +70,22 @@ img
 h1,h2,h3,h4,h5,h6
 {
     font-family: nexa-bold;
-    color: var(--dark_blue);
+    color: $dark_blue;
 }
 p{
     font-family: nexa-light;
-    color: var(--dark_blue);
+    color: $dark_blue;
     font-size: 1.1rem;
-    margin:1.1rem 0rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     line-height: 1.4;
     line-break: auto;
 }
-h1{
+h1,h2{
     font-size: 2.0rem;
+    margin-bottom: 0.625rem;
+    margin-top: 0.625rem;
 
-}
-h2{
-    font-size: 2.0rem;
 }
 h3{
     margin-bottom: 0.625rem;
@@ -94,9 +97,8 @@ h4{
     
 }
 h5{
-   margin-bottom: 0rem;
-   font-size: 1.1rem;
-   color: var(--gray); 
+   margin-bottom: 0.3125rem;
+   font-size: 1.1rem; 
 }
 h6{
     font-size: 1.35rem;
@@ -106,31 +108,34 @@ textarea{
     font-family: nexa-light;
     padding: 0.8rem 0.75rem;
     font-size: 1rem;
-    color: var(--gray);
+    color: $gray;
     margin-bottom: 0.625rem;
 
 }
 input::placeholder{
+    
     font-size: 0.9rem;
     font-family: nexa-light;
-    color: var(--gray)
+    color: $gray;
+    
+    
 }
 input,select{
     font-family: nexa-light;
-    color:var(--gray);
-    padding: 0.8rem 0.6rem; 
+    color:$gray;
+    padding: 0.8rem 0.75rem; 
     width: 100%;
     margin-bottom: 0.5rem;
 }
 option{
     font-family: nexa-light;
-    color: var(--gray);
+    color: $gray;
     font-size: 1rem;
 }
 li {
     font-size: 1.0rem;
     font-family: nexa-light;
-    color: var(--white);
+    color: $white;
     margin-bottom: .5rem;
 }
 
@@ -139,25 +144,30 @@ input:focus,select:focus{
 }
 figcaption{
     font-family: nexa-bold;
-    color: var(--dark_blue);
+    color: $dark_blue;
     font-size: 1.3rem;
     margin-top: 1.5rem;
     
 }
-
+figure{
+    margin-top:1rem;
+}
 nav
     {
-    background-color: var(--white);
+    background-color: $white;
     justify-content: space-between;
     align-items: center;
     
     
     }
+a{
+    text-decoration: none;
+}
     
 @media only screen and (min-width:768px) and (max-width:1024px)
 {
     section{
-        padding: 2.2rem 2.0rem;
+        padding: 1.8rem 2.2rem;
     }
     
     h1,h2
@@ -185,14 +195,14 @@ nav
    
     input,select{
         font-family: nexa-light;
-        color:var(--gray);
+        color:$gray;
         padding: 1.0rem 0.85rem; 
         width: 100%;
-        
+        margin-bottom: 0.5rem;
     }
     p{
         font-family: nexa-light;
-        color: var(--dark_blue);
+        color: $dark_blue;
         font-size: 1.5rem;
         margin-bottom: 0.625rem;
         line-height: 1.4;
@@ -209,13 +219,14 @@ nav
 @media only screen and (min-width:1024px)
 {
     section{
-        padding: 3rem 4rem;
+        padding: 1.8rem 3.0rem;
         
     }
     h1,h2
     {
         font-size: 2.5rem;
         line-height: 2.8rem;
+        margin-left: 3rem;
         text-align: left;
     }
     h3{
@@ -231,7 +242,7 @@ nav
         line-height: 2.2rem;
     }
     h6{
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         line-height: 2.0rem;
         margin-top: 1.5rem;
     }
@@ -240,8 +251,8 @@ nav
     
     p{
         font-family: nexa-light;
-        color: var(--dark_blue);
-        font-size: 1.2rem;
+        color: $dark_blue;
+        font-size: 1.0rem;
         margin-bottom: 2rem;
         line-height: 1.6;
         
@@ -249,7 +260,7 @@ nav
     
     input,select{
         font-family: nexa-light;
-        color:var(--gray);
+        color:$gray;
         padding: 1.2rem 1.0rem; 
         width: 100%;
     }

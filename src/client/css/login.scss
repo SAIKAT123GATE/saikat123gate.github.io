@@ -1,0 +1,259 @@
+@import "./theme1.scss";
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color:$background;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  
+
+    
+}
+/*header*/
+header{
+    padding: 0.8rem 0.8rem; 
+    background-color: white;   
+}
+.head1{
+    display: flex;
+    flex-direction: row;
+}
+.head2{
+    display:none;
+}
+.head1 {
+    figure{
+    width: 9rem;
+    margin: 0.2rem 0rem;
+    }
+}
+.head1 {
+    i{
+    justify-self: end;
+    align-self: center;
+    margin-right: 0.6rem;
+    }
+
+}
+/*section*/
+.firstsec{
+    background-color: $background;
+    text-align: center;
+    padding: 2rem 0.8rem;
+    flex-grow: 1;
+    
+    .login{
+        background-color: $white;
+        text-align: center;
+        
+        .h2{
+            padding: 1rem 0rem;
+            border-bottom:1px solid gray;
+        h2{
+            margin:0rem 0rem;
+            font-size: 1.8rem;
+            color: $blue;
+        }
+    }
+        form{
+            margin:0rem 0.8rem;
+            margin-top: 1.5rem;
+            margin-bottom:1.5rem;
+
+            i{
+                    
+                    padding: 0.75rem 0.6rem;
+                    left:auto;
+                    
+                    bottom: auto;
+                    margin-top: 0.5rem;
+                    font-size: 2rem;
+                    color: $light_gray;
+                    
+            }
+            .row{
+                display: flex;
+                flex-direction: row;
+                border:1px solid $gray;
+                
+                
+                input{
+                    border:none;
+                    margin:0rem 0rem;
+                }
+            }
+            input{
+                padding:1.5rem 0.8rem;
+                margin-bottom: 0.4rem;
+                margin-top: .4rem;
+                border:1px solid $gray;
+                
+
+                
+            }
+            input[type="text"]::placeholder{
+                padding-left: 0.0rem;
+            }
+
+            .btn_darkblue{
+                display: block;
+                padding: 1.5rem;
+                width:100%;
+                margin:auto;
+                position: relative;
+                border-radius: 0rem;
+                
+
+                i{
+                    margin-top: 0rem;
+                    right:0;
+                    transform: translateY(-15px);
+                    position: absolute;
+                }
+                
+            }
+            
+            
+        }
+        p{
+            font-size: 1rem;
+            font-weight: 600;
+            
+            span{
+                color: $blue;
+            }
+            margin:0rem 0rem 1rem 0rem;
+        }
+    }
+    
+    
+}
+
+footer{
+    p{
+        font-weight:bold ;
+    }
+    padding-bottom: 1rem;
+    
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px)
+{
+    /*header*/
+    header{
+        padding: 1.0rem 1rem;    
+    }
+    /*section*/ 
+    .firstsec{
+        padding:13rem 8.5rem;
+        flex-grow: 1;
+        
+        .login{
+            padding:0rem 0rem;
+            form{
+                i{
+                    right:10rem;
+                }
+            }
+        }
+        p{
+            margin: 15rem 3rem 2rem 3rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    }
+    
+
+}
+
+@media only screen and (min-width:1024px)
+{
+    
+    /*header*/
+    
+    header{
+        padding: 1.0rem 0.8rem;    
+    }
+    .head1{
+        display: none;
+    }
+    .head2{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1.5fr;
+    }
+    .head2 img{
+        margin-left:6rem;
+        width:10rem;
+        height: 100%;
+        margin-top: 0rem;
+        padding:1.0rem 0rem;
+        
+    }
+    .head2 ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 0.9rem;
+        margin-right: 0.5rem;
+        margin-left: auto;
+        
+    }
+    .head2 ul li{
+        color: black;
+        
+        margin-left: 1rem;
+        font-size: 1.1rem;
+        
+    }
+    .head2 div{
+        display: flex;
+        margin-left: 2rem;
+    }
+    .head2 div button{
+        font-size: 1rem;
+    }
+    .head2 .btn_darkblue{
+        margin-top:0rem;
+        margin-right: 2.0rem;
+        border-radius: 0.5rem;
+        padding:0.9rem 2rem;
+        margin-left: 0.5rem;
+    }
+    .head2 .btn_white{
+        padding:0.9rem 2rem;
+        border-color: black;
+        color: black;
+    }
+    /*section*/
+    .firstsec{
+        padding:3rem 0.8rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        .login{
+            width: 20rem;
+            height:auto;
+            h2{
+                text-align: center;
+            }
+            form{
+                i{
+                    position: relative;
+                }
+            }
+        }
+        
+        
+        
+}
+footer{
+    p{
+        margin-bottom: 0rem;
+        margin-top: 0rem;
+    }
+}
+
+}

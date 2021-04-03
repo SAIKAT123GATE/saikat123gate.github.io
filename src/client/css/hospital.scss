@@ -1,0 +1,573 @@
+@import "./theme1.scss";
+//Header section****************************************************************************//
+
+/*header*/
+header {
+  padding: 0.8rem 0.8rem;
+}
+.head1 {
+  display: flex;
+  flex-direction: row;
+}
+.head2 {
+  display: none;
+}
+.head1 {
+  figure {
+    width: 9rem;
+    margin: 0.2rem 0rem;
+  }
+}
+.head1 {
+  i {
+    justify-self: end;
+    align-self: center;
+  }
+}
+
+//Header Section Complete*************************************************
+
+//Hiding the linear gradient part
+.hide {
+  display: none;
+}
+//checkbox display none for tablet
+.filter{
+  display: none;
+}
+
+//Home and sort by in flex display
+.home_and_sortby_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  select {
+    width: 30%;
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0rem;
+    background-color: $light_gray;
+    color: $dark_blue;
+    font-weight: bold;
+  }
+  h3 {
+    margin-bottom: 0;
+  }
+}
+//Card section
+
+.card {
+  margin-top: 1.5rem;
+  border: 1px solid $light_gray;
+
+  text-align: center;
+  .hospital_name_info {
+    padding: 1rem 0;
+  }
+  li {
+    color: $dark_blue;
+  }
+  figure {
+    height: 14rem;
+    margin-top: 0;
+  }
+  h3 {
+    margin-bottom: 1rem;
+    text-align: left;
+    color: $blue;
+    &::before {
+      content: "";
+      background-color: $blue;
+      width: 1.8rem;
+      height: 0.2rem;
+      display: inline-block;
+      position: relative;
+      margin-bottom: 0.3rem;
+      margin-right: 0.2rem;
+    }
+  }
+  .grid_for_tab_and_desktop {
+    margin-left: 1rem;
+  }
+  .grid_for_icon {
+    display: grid;
+    grid-template-columns: 1.2rem 1fr;
+    grid-column-gap: 1rem;
+    align-items: center;
+
+    margin-bottom: 1rem;
+
+    i {
+      color: $blue;
+      font-size: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: left;
+      line-height: 1.5rem;
+    }
+  }
+  .btn_darkblue {
+    border-radius: 0;
+    margin-top: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-weight: 600;
+  }
+  .multi-organ-transplant-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+    li {
+      border: 1px solid $dark_blue;
+      padding: 0.5rem;
+      margin-right: 0.4rem;
+      border-radius: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}
+
+//Need Help Section
+
+.nd_help {
+  background-color: #94bedd;
+  text-align: center;
+  h2 {
+    color: white;
+  }
+}
+
+.nd_help2 .btn_blue {
+  margin-bottom: 0rem;
+}
+
+//Footer Section
+.tabshow {
+  display: none;
+}
+footer {
+  padding: 1.5rem 0.8rem;
+  background-color: #021433;
+  text-align: center;
+  figure {
+    padding: 0rem 5rem 0rem 5rem;
+  }
+  .about {
+    li {
+      margin-bottom: 1.3rem;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 1.4rem;
+      letter-spacing: 0.2rem;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+      color: $white;
+    }
+  }
+
+  p {
+    color: #ffffff;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+  }
+  p span {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and(min-width:768px) and (max-width: 1024px) {
+  header {
+    padding: 1.8rem 1.5rem;
+    i {
+      margin-right: 0;
+    }
+  }
+
+
+
+  //Home and Sort By flex display
+  .home_and_sortby_flex {
+    select {
+      width: 15%;
+    }
+  }
+  //Grid for hospital info and image
+  .grid-for-hospitalinfo-and-image {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    figure {
+      height: 28rem;
+    }
+  }
+
+  //Inside card information in grid view for tab and desktop
+  .card {
+    .hospital_name_info {
+      button {
+        float: left;
+        margin-left: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+    .grid_for_tab_and_desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-left: 1.8rem;
+      grid-column-gap: 0.5rem;
+      grid-row-gap: 0.5rem;
+      margin-left: 0;
+    }
+  }
+
+  //Footer Section
+
+  .mobileshow {
+    display: none;
+  }
+  .tabshow {
+    display: block;
+  }
+
+  .tabshow {
+    padding: 1.8rem 2.2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "about figure"
+      "rights social_icon";
+  }
+
+  footer {
+    background-color: $white;
+    figure {
+      grid-area: figure;
+      width: 22vw;
+      padding: 0rem 0rem;
+      display: block;
+      margin: auto 0rem 1.2rem auto;
+    }
+    .about {
+      grid-area: about;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        color: white;
+        font-size: 1.1rem;
+        font-weight: normal;
+        color: $dark_blue;
+      }
+    }
+    .rights {
+      grid-area: rights;
+      color: $dark_blue;
+    }
+    .social_icon {
+      grid-area: social_icon;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      i {
+        padding: 0rem 0rem 0rem 0rem;
+        font-size: 1.2rem;
+        margin-left: auto;
+        color: $dark_blue;
+      }
+    }
+    p {
+      display: block;
+      margin: auto auto auto 0;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+
+//Desktop View
+@media only screen and(min-width:1024px){
+   /*header*/
+   header {
+    padding: 2rem 3rem;
+  }
+  .head1 {
+    display: none;
+  }
+  .head2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.5fr;
+    align-self: center;
+    justify-content: center;
+    img {
+      width: 10rem;
+      height: 100%;
+      margin-top: 0rem;
+      padding: 1rem 0rem;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-top: 1rem;
+      li {
+        color: black;
+        margin-left: 2rem;
+        font-weight: 800;
+        font-size: 1rem;
+        margin-bottom: 0rem;
+      }
+    }
+    div {
+      display: flex;
+      justify-content: flex-end;
+      button {
+        font-size: 1rem;
+      }
+    }
+    .btn_darkblue {
+      margin-top: 0rem;
+      border-radius: 0.5rem;
+      padding: 0.9rem 2rem;
+      margin: 0rem 0rem !important;
+    }
+    .btn_white {
+      padding: 0.9rem 2rem;
+      border-color: black;
+      color: black;
+      margin-right: 0.5rem;
+    }
+  } 
+
+
+  //Hospitals in Delhi gradient section
+
+  .hide {
+    display: block;
+    height: 20rem;
+    padding: 0;
+    background-image: linear-gradient(rgba(170, 198, 222, 0.8)),
+      url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    h2 {
+      position: absolute;
+      top: 40vh;
+      margin-left: 3rem;
+      span{
+        border-bottom: 1px solid $dark_blue;
+      }
+    }
+  }
+
+
+   //home and sortby select tag alignment and width manipulation
+   .home_and_sortby_flex{
+     select{
+       width: 10%;
+     }
+   }
+
+
+  //checkbox and card divided into grid
+
+  .checkbox_and_card_grid {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr;
+    grid-column-gap: 1rem;
+    .filter {
+      display: block;
+      margin-top: 1.4rem;
+      background-color: #cccccc;
+      height: 4rem;
+      h4 {
+        margin-top: 1.5rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+  //Location and searchbox alignment
+  .location {
+    margin-top: 2rem;
+    .flex_for_icon {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 0.7rem;
+      margin-top: 1rem;
+      
+      i::after {
+        content: "";
+        background: $light_gray;
+        width: 1.2rem;
+        height: 0.15rem;
+        display: inline-block;
+        position: relative;
+        margin-left: 1rem;
+        bottom: 0.5rem;
+      }
+    }
+  }
+  //Checkbox and level alignment
+  .checkbox {
+    border-bottom: 1px solid $light_gray;
+    margin-left: 0.7rem;
+    input {
+      width: auto;
+      margin:0;
+      margin-bottom: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+   //Grid for hospital info and image
+   .grid-for-hospitalinfo-and-image {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    figure {
+      height: 28rem;
+    }
+  }
+
+
+  //Inside card information in grid view for tab and desktop
+  .card {
+    .hospital_name_info {
+      button {
+        float: left;
+        margin-left: 2rem;
+        padding:0.5rem 2rem;
+      }
+    }
+    .grid_for_tab_and_desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-left: 1.8rem;
+      grid-column-gap: 1.5rem;
+      grid-row-gap: 0.5rem;
+      margin-left: 0;
+    }
+    .multi-organ-transplant-section{
+      margin-left: 3.5rem;
+    }
+    
+  }
+
+  //Grid for hospital info and image
+  .grid-for-hospitalinfo-and-image {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    figure {
+      height: 26rem;
+    }
+  }
+
+
+   //Need help
+
+  /*need help*/
+  .nd_help {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    h2 {
+      margin-left: 0;
+    }
+    p {
+      text-align: left;
+    }
+  }
+  
+  .nd_help2 {
+    text-align: right;
+
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .nd_help1 {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+
+
+  //footer
+  footer {
+    padding: 0;
+    color: #ffffff;
+  }
+
+  .mobileshow {
+    display: none;
+  }
+  .tabshow {
+    display: block;
+  }
+
+  .tabshow {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "about figure"
+      "rights social_icon";
+    background-color: white;
+    padding: 2rem 3rem;
+    border-bottom: 3px solid #0099ff;
+  }
+  .tabshow figure {
+    grid-area: figure;
+    width: 11rem;
+    padding: 0rem 0rem 1.3rem;
+    display: block;
+    margin-left: auto;
+    margin-right: 0rem;
+    margin-top: 0;
+  }
+  .tabshow figure image {
+    width: 100%;
+  }
+  .tabshow .about {
+    grid-area: about;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .tabshow .about li {
+    color: rgb(0, 0, 7);
+    margin-right: 0.9rem;
+    font-size: 1.4rem;
+  }
+  .tabshow .rights {
+    grid-area: rights;
+    color: black;
+    display: block;
+    margin: auto auto auto 0;
+    font-size: 1.2rem;
+  }
+  .tabshow .social_icon {
+    grid-area: social_icon;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0rem;
+  }
+  .tabshow .social_icon i {
+    padding: 0rem 0rem 0rem 0.8rem;
+    font-size: 1.8rem;
+    color: black;
+    margin-left: 1rem;
+  }
+
+
+  
+  
+}

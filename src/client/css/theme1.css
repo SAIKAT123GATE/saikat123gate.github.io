@@ -1,0 +1,274 @@
+@font-face {
+  font-family: nexa-bold;
+  src: url(../fonts/Nexa-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(../fonts/Nexa-Light.otf) format("opentype");
+}
+
+/*global tags*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section {
+  padding: 1.5rem 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+button {
+  font-family: nexa-light;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.btn_darkblue {
+  background-color: #021433;
+  color: #ffffff;
+  border-color: #021433;
+}
+
+.btn_blue {
+  background-color: #167ddd;
+  color: #ffffff;
+  border-color: #167ddd;
+  border-style: none;
+  padding: 1rem 1rem;
+  font-size: 1.3rem;
+  margin: .5rem 0rem;
+}
+
+.btn_white {
+  background-color: #ffffff;
+  color: #167ddd;
+  border-color: #167ddd;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: nexa-bold;
+  color: #021433;
+}
+
+p {
+  font-family: nexa-light;
+  color: #021433;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  line-break: auto;
+}
+
+h1, h2 {
+  font-size: 2.0rem;
+  margin-bottom: 0.625rem;
+  margin-top: 0.625rem;
+}
+
+h3 {
+  margin-bottom: 0.625rem;
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.625rem;
+}
+
+h5 {
+  margin-bottom: 0.3125rem;
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1.35rem;
+  margin: 0.3125rem 0rem;
+}
+
+textarea {
+  font-family: nexa-light;
+  padding: 0.8rem 0.75rem;
+  font-size: 1rem;
+  color: #636668;
+  margin-bottom: 0.625rem;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 0.9rem;
+  font-family: nexa-light;
+  color: #636668;
+}
+
+input:-ms-input-placeholder {
+  font-size: 0.9rem;
+  font-family: nexa-light;
+  color: #636668;
+}
+
+input::-ms-input-placeholder {
+  font-size: 0.9rem;
+  font-family: nexa-light;
+  color: #636668;
+}
+
+input::placeholder {
+  font-size: 0.9rem;
+  font-family: nexa-light;
+  color: #636668;
+}
+
+input, select {
+  font-family: nexa-light;
+  color: #636668;
+  padding: 0.8rem 0.75rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+option {
+  font-family: nexa-light;
+  color: #636668;
+  font-size: 1rem;
+}
+
+li {
+  font-size: 1.0rem;
+  font-family: nexa-light;
+  color: #ffffff;
+  margin-bottom: .5rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+}
+
+figcaption {
+  font-family: nexa-bold;
+  color: #021433;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+}
+
+figure {
+  margin-top: 1rem;
+}
+
+nav {
+  background-color: #ffffff;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  section {
+    padding: 1.8rem 2.2rem;
+  }
+  h1, h2 {
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+  }
+  h3 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+  h5 {
+    font-size: 1.6rem;
+    line-height: 2.0rem;
+  }
+  h6 {
+    font-size: 1.9rem;
+    line-height: 1.8rem;
+    margin: 0.3125rem 0rem;
+  }
+  input, select {
+    font-family: nexa-light;
+    color: #636668;
+    padding: 1.0rem 0.85rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    font-family: nexa-light;
+    color: #021433;
+    font-size: 1.5rem;
+    margin-bottom: 0.625rem;
+    line-height: 1.4;
+  }
+  li {
+    font-size: 1.0rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  section {
+    padding: 1.8rem 3.0rem;
+  }
+  h1, h2 {
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+    margin-left: 3rem;
+    text-align: left;
+  }
+  h3 {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  h5 {
+    font-size: 1.1rem;
+    line-height: 2.2rem;
+  }
+  h6 {
+    font-size: 1.4rem;
+    line-height: 2.0rem;
+    margin-top: 1.5rem;
+  }
+  p {
+    font-family: nexa-light;
+    color: #021433;
+    font-size: 1.0rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  input, select {
+    font-family: nexa-light;
+    color: #636668;
+    padding: 1.2rem 1.0rem;
+    width: 100%;
+  }
+  i {
+    font-size: 1.3rem !important;
+  }
+}
+/*# sourceMappingURL=theme1.css.map */
