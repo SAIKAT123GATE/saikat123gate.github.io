@@ -153,6 +153,7 @@ li {
   font-family: nexa-light;
   color: #ffffff;
   margin-bottom: .5rem;
+  line-height: 2rem;
 }
 
 input:focus, select:focus {

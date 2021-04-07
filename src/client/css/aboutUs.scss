@@ -1,0 +1,502 @@
+@import "./theme1.scss";
+//Header section****************************************************************************//
+
+/*header*/
+header {
+  padding: 0.8rem 0.8rem;
+}
+.head1 {
+  display: flex;
+  flex-direction: row;
+}
+.head2 {
+  display: none;
+}
+.head1 {
+  figure {
+    width: 9rem;
+    margin: 0.2rem 0rem;
+  }
+}
+.head1 {
+  i {
+    justify-self: end;
+    align-self: center;
+  }
+}
+
+//Header Section Complete*************************************************
+
+//Inside Section division living healthy matters
+.background_image_with_gradient {
+    height: 50vh;
+    padding: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6)),
+      url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/aboutUs_hero.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top ;
+    .living_and_paragraph_wrapper {
+        position: relative;
+        text-align: center;
+        top:9rem;
+        h2,p{
+          color:$white;
+        }
+      }
+    
+    
+  }
+
+  //Heading and description part
+
+  .description_of_heading{
+      text-align: center;
+      h2{
+          line-height: 2.5rem;
+          margin-top: 0;
+      }
+      p{
+          margin:1rem 0;
+      }
+      figure{
+          padding: 0 3rem;
+          
+      }
+  }
+//Free Checkup
+.checkup_and_video{
+  background-color: black;
+  video{
+    display: none;
+  }
+}
+.free_checkup{
+    text-align: center;
+   
+    h2{
+        color: $white;
+        margin-top: 0;
+    }
+    p{
+        color: $white;
+        margin-bottom: 1.5rem;
+        margin-top: 1.3rem;
+    }
+    .btn_blue{
+        font-weight: 700;
+        letter-spacing: 2px;
+        
+    }
+    .list_itemsof_free_checkup{
+        ul{
+            border:1px solid $light_gray;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-top: 1.5rem;
+            .span{
+                font-family: nexa-bold;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+//Join OUr team
+
+/*need help*/
+.join_team{
+    background-color: #94bedd;
+    text-align: center;
+}
+.join_team h2{
+    color:white
+}
+ .join_team2 .btn_blue{
+    margin-bottom: 0rem;
+    font-weight: 700;
+}
+
+//Footer
+
+/*footer*/
+footer{
+    padding:1.5rem 0.8rem;
+    background-color: #021433;
+    text-align: center;
+    
+  }
+  footer .about li{
+    margin-bottom: 1rem;
+  }
+  footer figure{
+    padding:0rem 5.0rem 2rem 5.0rem;
+    
+  }
+  footer h4{
+    color:#ffffff;
+    font-family: nexa-light;
+    margin:0rem 0rem;
+    padding-bottom: 1.3rem;
+    letter-spacing: 0.2rem;   
+  }
+  footer .social_icon i{
+    color: #ffffff;
+    padding:0rem 1.2rem 0rem 1.2rem;
+    size:0.5rem;
+  }
+  footer p{
+    color:#ffffff;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+  }
+  footer p span{
+    font-size: 1.2rem;
+  }
+
+
+  //Tablet Version
+
+  @media only screen and(min-width:768px) and (max-width: 1024px) {
+      //Header Section
+    header {
+      padding: 1.5rem 1.5rem;
+      i {
+        margin-right: 0;
+      }
+    }
+
+    //Inside Section division living healthy matters
+.background_image_with_gradient {
+    .living_and_paragraph_wrapper{
+        top:12rem;
+    }
+}
+
+//Heading and description part
+
+.description_of_heading{
+    text-align: left;
+    display: grid;
+    grid-template-areas: 
+  'left_section  right_part';
+    grid-column-gap: 1rem;
+    .left_section_of_grid{
+      grid-area: left_section;
+    }
+    .right_part{
+      grid-area: right_part;
+      padding:0;
+      margin-top: 0;
+    }
+    .sign{
+      padding: 0;
+    }
+         
+       
+    
+    
+}
+
+//Free Checkup
+
+.free_checkup{
+    .text_and_button{
+    text-align: left;
+    }
+    .list_itemsof_free_checkup{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1rem;
+        ul{
+            margin:0;
+        }
+        
+    }
+    .btn_blue{
+        margin-bottom: 2rem;
+    }
+}
+
+//footer
+/*footer*/ //Footer Section    ++++++++++++++++++++++++++++++++++++++++++
+footer{
+    border-bottom: 0.5rem solid $light_blue;
+    padding:1.8rem 2.2rem;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "about figure"
+    "rights social_icon";
+    background-color: #ffffff;
+    figure{
+      grid-area: figure;
+      width:22vw;
+      padding:0rem 0rem;
+      display: block;
+      margin:auto 0rem 1.2rem auto;
+      
+    }
+    .about{
+      grid-area: about;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      li{
+        color:white;
+        font-size: 1.1rem;
+        color:rgb(0, 0, 7);
+      }
+    }
+    .rights{
+      grid-area: rights;
+      color: black;
+    }
+    .social_icon{
+      grid-area:social_icon;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      i{
+        padding:0rem 0rem 0rem 0rem;
+        font-size: 1.2rem;
+        margin-left: auto;
+        color: black;
+      }
+    }
+    p{
+      display:block;
+      margin:auto auto auto 0;
+      font-size: 1.2rem;
+    }
+  
+  }
+
+}
+
+//Desktop View
+@media only screen and(min-width:1024px){
+  /*header*/
+  header {
+   padding: 2rem 3rem;
+ }
+ .head1 {
+   display: none;
+ }
+ .head2 {
+   display: grid;
+   grid-template-columns: 1fr 2fr 1.5fr;
+   align-self: center;
+   justify-content: center;
+   img {
+     width: 10rem;
+     height: 100%;
+     margin-top: 0rem;
+     padding: 1rem 0rem;
+   }
+   ul {
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-end;
+     margin-top: 1rem;
+     li {
+       color: black;
+       margin-left: 2rem;
+       font-weight: 800;
+       font-size: 1rem;
+       margin-bottom: 0rem;
+     }
+   }
+   div {
+     display: flex;
+     justify-content: flex-end;
+     button {
+       font-size: 1rem;
+     }
+   }
+   .btn_darkblue {
+     margin-top: 0rem;
+     border-radius: 0.5rem;
+     padding: 0.9rem 2rem;
+     margin: 0rem 0rem !important;
+   }
+   .btn_white {
+     padding: 0.9rem 2rem;
+     border-color: black;
+     color: black;
+     margin-right: 0.5rem;
+   }
+ }
+ 
+ 
+    //Inside Section division living healthy matters
+.background_image_with_gradient {
+  .living_and_paragraph_wrapper{
+      top:8rem;
+      h2{
+        text-align: center;
+      }
+  }
+}
+
+//Heading and description part
+
+.description_of_heading{
+  text-align: left;
+  display: grid;
+  grid-template-areas: 
+  'left_section  right_part';
+  
+  grid-column-gap: 1rem;
+  padding-left:4rem ;
+  padding-right: 4rem;
+  h2{
+    margin-left: 0;
+  }
+  .left_section_of_grid{
+    grid-area: left_section;
+  }
+  .sign{
+    width:20vw;
+    padding:0;
+  }
+  .right_part{
+    grid-area: right_part;
+    height: 90vh;
+
+      
+    
+  }
+
+    
+}
+
+//Free checkup
+.checkup_and_video{
+  padding:0;
+  position: relative;
+  video{
+    display: block;
+  }
+}
+.free_checkup{
+  position:absolute;
+  top:35%;
+  padding-left:4rem;
+  padding-right: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .text_and_button{
+    text-align: left;
+    h2{
+      margin-left: 0;
+    }
+    }
+    .list_itemsof_free_checkup{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1rem;
+        
+        ul{
+            margin:0;
+        }
+        
+    }
+    .btn_blue{
+        margin-bottom: 2rem;
+    }
+
+}
+
+//Join our team
+ /*need help*/
+ .join_team{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.join_team p{
+  text-align: left;
+}
+.join_team2{
+  text-align: right;
+  
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.join_team1{
+  margin-top:auto;
+  margin-bottom: auto;
+  h2{
+    margin-left: 0;
+  }
+}
+
+//Footer Section
+//Footer Section
+
+ /*footer*/
+ footer{
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "about figure"
+  "rights social_icon";
+  background-color: white;
+  padding:2rem 4rem;
+  border-bottom: 3px solid #0099ff;
+
+}
+footer figure{
+  grid-area: figure;
+  width:11rem;
+  padding:1rem 0rem;
+  display: block;
+  margin-left: auto;
+  margin-right: 0rem;
+  
+}
+footer figure image{
+  width:100%;
+}
+footer .about{
+  grid-area: about;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+footer .about li{
+  color:rgb(0, 0, 7);
+  margin-right: 0.9rem;
+  font-size: 1.4rem;
+}
+footer .rights{
+  grid-area: rights;
+  color: black;
+  display:block;
+  margin:auto auto auto 0;
+  font-size: 1.2rem;
+}
+footer .social_icon{
+  grid-area:social_icon;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 0rem;
+}
+footer .social_icon i{
+  padding:0rem 0rem 0rem 0.8rem;
+  font-size: 1.8rem;
+  color: black;
+  margin-left: 1rem;
+  
+}
+
+
+}
