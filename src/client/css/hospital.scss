@@ -91,7 +91,7 @@
   .multi-organ-transplant-section {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 1rem;
+    margin-left: 1.8rem;
     li {
       border: 1px solid $dark_blue;
       padding: 0.2rem 1rem;
@@ -172,7 +172,7 @@
       text-align: left;
       button {
         
-        margin-left: 1rem;
+        margin-left: 1.9rem;
       }
     }
     .grid_for_tab_and_desktop {
@@ -431,35 +431,33 @@
 footer {
   padding: 0;
   color: #ffffff;
-  
+  display: block;
 }
 
 .mobileshow {
   display: none;
 }
-.tabshow {
-  display: block;
-}
+
 
 .tabshow {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "about figure"
-    "rights social_icon";
-  background-color: white;
-  padding: 2rem 4rem;
-  border-bottom: 3px solid #0099ff;
+  display:grid;
+grid-template-columns: 3fr 1fr;
+grid-template-rows: auto auto;
+grid-template-areas: 
+"about figure"
+"rights social_icon";
+background-color: white;
+padding:2rem 4rem;
+border-bottom: 3px solid #0099ff;
+
 }
 .tabshow figure {
   grid-area: figure;
-  width: 11rem;
-  padding: 0rem 0rem 1.0rem;
-  display: block;
-  margin-left: auto;
-  margin-right: 0rem;
-  margin-top: 0;
+width:11rem;
+padding:1rem 0rem;
+display: block;
+margin-left: auto;
+margin-right: 0rem;
 }
 .tabshow figure image {
   width: 100%;
@@ -472,32 +470,31 @@ footer {
   align-items: center;
 }
 .tabshow .about li {
-  color: $dark_blue;
-  margin-right: 0.9rem;
-  font-size: 1.2rem;
-  font-weight: normal;
+  color:rgb(0, 0, 7);
+margin-right: 0.9rem;
+font-size: 1.2rem;
 }
 .tabshow .rights {
   grid-area: rights;
-  color: $dark_blue;
-  display: block;
-  margin: auto auto auto 0;
-  font-size: 1.2rem;
+color: black;
+display:block;
+margin:auto auto auto 0;
+font-size: 1.2rem;
 }
 .tabshow .social_icon {
-  grid-area: social_icon;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: auto;
-  margin-right: 0rem;
+  grid-area:social_icon;
+margin-top: 0;
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-left: auto;
+margin-right: 0rem;
 }
 .tabshow .social_icon i {
-  padding: 0rem 0rem 0rem 0.8rem;
-  font-size: 1.3rem;
-  color:$dark_blue;
-  margin-left: 0.5rem;
+  padding:0rem 0rem 0rem 0.8rem;
+font-size: 1.3rem;
+color: $dark_blue;
+margin-left: 0.5rem;
 }
 
   

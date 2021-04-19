@@ -283,7 +283,7 @@ input:focus, select:focus {
 figcaption {
   font-family: nexa-bold;
   color: #021433;
-  padding: 1.5rem 0rem;
+  padding: 1rem 0rem;
   margin: 0;
 }
 
@@ -758,7 +758,7 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-left: 1rem;
+  margin-left: 1.8rem;
 }
 
 .card .multi-organ-transplant-section li {
@@ -828,7 +828,7 @@ footer p span {
     text-align: left;
   }
   .card .hospital_name_info button {
-    margin-left: 1rem;
+    margin-left: 1.9rem;
   }
   .card .grid_for_tab_and_desktop {
     display: -ms-grid;
@@ -1072,20 +1072,18 @@ footer p span {
   footer {
     padding: 0;
     color: #ffffff;
+    display: block;
   }
   .mobileshow {
     display: none;
-  }
-  .tabshow {
-    display: block;
   }
   .tabshow {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 3fr 1fr;
         grid-template-columns: 3fr 1fr;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
         grid-template-areas: "about figure" "rights social_icon";
     background-color: white;
     padding: 2rem 4rem;
@@ -1096,11 +1094,10 @@ footer p span {
     -ms-grid-column: 2;
     grid-area: figure;
     width: 11rem;
-    padding: 0rem 0rem 1.0rem;
+    padding: 1rem 0rem;
     display: block;
     margin-left: auto;
     margin-right: 0rem;
-    margin-top: 0;
   }
   .tabshow figure image {
     width: 100%;
@@ -1122,16 +1119,15 @@ footer p span {
             align-items: center;
   }
   .tabshow .about li {
-    color: #021433;
+    color: #000007;
     margin-right: 0.9rem;
     font-size: 1.2rem;
-    font-weight: normal;
   }
   .tabshow .rights {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: rights;
-    color: #021433;
+    color: black;
     display: block;
     margin: auto auto auto 0;
     font-size: 1.2rem;
@@ -1140,6 +1136,7 @@ footer p span {
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     grid-area: social_icon;
+    margin-top: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

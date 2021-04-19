@@ -2,7 +2,7 @@
 *{
     box-sizing: border-box;
 }
-body{
+main{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -112,10 +112,13 @@ body{
 }
 
 footer{
+    display: block;
+    padding: 0;
     p{
         font-weight:bold ;
         margin-bottom: 2rem;
         margin-top: 0.5rem;
+        color: $dark_blue;
     }
     background-color: $background;
     
