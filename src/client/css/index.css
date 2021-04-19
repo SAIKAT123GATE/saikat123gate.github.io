@@ -152,7 +152,7 @@ form .input1 .input_field{
     position: relative;
     
     right:1.5rem;
-    top:1rem;
+    top:2.3rem;
 }
 .radiobtn{
     display: none;
@@ -460,7 +460,7 @@ form .input1 .input_field{
         height: 40vh;
     }
     .wrld_cls_doc .card .contain::before{
-        top:1.3rem
+        top:2.3rem
     }
     #card1{
         grid-area: card1;
@@ -834,7 +834,7 @@ form .input1 .input_field{
         position: relative;
         
         right:1.5rem;
-        top:0.8rem;
+        top:2rem;
         margin-top: 0.5rem;
     }
     /*featured medical treatment*/
