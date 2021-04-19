@@ -745,13 +745,25 @@ body {
   color: #167ddd;
 }
 
+select {
+  width: 100%;
+  background-color: #ffffff;
+  background-size: 5%;
+  border: 1px solid #cccccc;
+  color: #636668;
+  background-position-x: 99%;
+}
+
 footer {
+  display: block;
+  padding: 0;
   background-color: #94bedd;
 }
 
 footer p {
   font-weight: bold;
   margin-bottom: 2rem;
+  color: #021433;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
