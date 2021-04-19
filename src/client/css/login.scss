@@ -4,7 +4,6 @@
 }
 body{
     height: 100vh;
-    background-color:$background;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -12,42 +11,21 @@ body{
 
     
 }
-/*header*/
-header{
-    padding: 0.8rem 0.8rem; 
-    background-color: white;   
-}
-.head1{
-    display: flex;
-    flex-direction: row;
-}
-.head2{
-    display:none;
-}
-.head1 {
-    figure{
-    width: 9rem;
-    margin: 0.2rem 0rem;
-    }
-}
-.head1 {
-    i{
-    justify-self: end;
-    align-self: center;
-    margin-right: 0.6rem;
-    }
 
-}
 /*section*/
 .firstsec{
     background-color: $background;
     text-align: center;
-    padding: 2rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex-grow: 1;
     
     .login{
         background-color: $white;
         text-align: center;
+        width:100%;
         
         .h2{
             padding: 1rem 0rem;
@@ -110,8 +88,9 @@ header{
                 i{
                     margin-top: 0rem;
                     right:0;
-                    transform: translateY(-15px);
+                    transform: translateY(-16px);
                     position: absolute;
+                    font-size: 1.3rem;
                 }
                 
             }
@@ -135,20 +114,19 @@ header{
 footer{
     p{
         font-weight:bold ;
+        margin-bottom: 2rem;
+        margin-top: 0.5rem;
     }
-    padding-bottom: 1rem;
+    background-color: $background;
     
 }
 
 @media only screen and (min-width:768px) and (max-width:1024px)
 {
-    /*header*/
-    header{
-        padding: 1.0rem 1rem;    
-    }
+   
     /*section*/ 
     .firstsec{
-        padding:13rem 8.5rem;
+        
         flex-grow: 1;
         
         .login{
@@ -159,10 +137,13 @@ footer{
                 }
             }
         }
+       
+    }
+
+    //footer
+    footer{
         p{
-            margin: 15rem 3rem 2rem 3rem;
-            font-weight: 600;
-            font-size: 1rem;
+            margin-top: 0.5rem;
         }
     }
     
@@ -172,61 +153,7 @@ footer{
 @media only screen and (min-width:1024px)
 {
     
-    /*header*/
-    
-    header{
-        padding: 1.0rem 0.8rem;    
-    }
-    .head1{
-        display: none;
-    }
-    .head2{
-        display: grid;
-        grid-template-columns: 1fr 2fr 1.5fr;
-    }
-    .head2 img{
-        margin-left:6rem;
-        width:10rem;
-        height: 100%;
-        margin-top: 0rem;
-        padding:1.0rem 0rem;
-        
-    }
-    .head2 ul{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 0.9rem;
-        margin-right: 0.5rem;
-        margin-left: auto;
-        
-    }
-    .head2 ul li{
-        color: black;
-        
-        margin-left: 1rem;
-        font-size: 1.1rem;
-        
-    }
-    .head2 div{
-        display: flex;
-        margin-left: 2rem;
-    }
-    .head2 div button{
-        font-size: 1rem;
-    }
-    .head2 .btn_darkblue{
-        margin-top:0rem;
-        margin-right: 2.0rem;
-        border-radius: 0.5rem;
-        padding:0.9rem 2rem;
-        margin-left: 0.5rem;
-    }
-    .head2 .btn_white{
-        padding:0.9rem 2rem;
-        border-color: black;
-        color: black;
-    }
+   
     /*section*/
     .firstsec{
         padding:3rem 0.8rem;
@@ -234,7 +161,7 @@ footer{
         display: flex;
         align-items: center;
         .login{
-            width: 20rem;
+            width: 40%;
             height:auto;
             h2{
                 text-align: center;
@@ -242,6 +169,7 @@ footer{
             form{
                 i{
                     position: relative;
+                    font-size: 1.3rem;
                 }
             }
         }
@@ -251,7 +179,6 @@ footer{
 }
 footer{
     p{
-        margin-bottom: 0rem;
         margin-top: 0rem;
     }
 }

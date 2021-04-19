@@ -11,26 +11,7 @@
 *{
     box-sizing: border-box;
 }
-/*header*/
-header{
-    padding: 1.5rem 0.8rem;    
-}
-.head1{
-    display: flex;
-    flex-direction: row;
-}
-.head2{
-    display:none;
-}
-.head1 figure{
-    width: 9rem;
-    
-}
-.head1 i{
-    justify-self: end;
-    align-self: center;
-    margin-right: 0.6rem;
-}
+
 /*find affordable healthcare*/
 .find_affordable_healthcare{
     background-color: #94bedd;
@@ -38,6 +19,7 @@ header{
 }
 .find_affordable_healthcare h1{
     text-align: center;
+    margin-top: 0;
 }
 .find_affordable_healthcare p{
     
@@ -77,13 +59,11 @@ form .input1 .input_field{
 /*button*/
 
 
-.btn_darkblue{
+.find_affordable_healthcare .btn_darkblue{
     border-radius: 0rem;
     margin: auto;
     margin-top: 0.4rem;
     display: block;
-    padding:.5rem 2.4rem;
-    padding-top: 0.7rem;
     font-size: 1.0rem;
     text-align: center;
 }
@@ -125,6 +105,7 @@ form .input1 .input_field{
     margin-left: 1rem;
     margin-right: 1rem;
     padding-top: 1.2rem;
+    height:auto;
 }
 .how_it_works figure h6{
     margin-top: 1.2rem;
@@ -148,12 +129,19 @@ form .input1 .input_field{
     font-size: 1.5rem;
     
 }
+#step1{
+    margin-top: 0;
+}
 
 /*world class doctor*/
+
 .wrld_cls_doc{
     background-color: #021433;
     text-align: center;
     
+}
+.wrld_cls_doc h2{
+    margin-top: 0;
 }
 .wrld_cls_doc .card .contain::before{
     content: "";
@@ -182,6 +170,10 @@ form .input1 .input_field{
     flex-direction: column;
     margin-bottom: 1rem;
 }
+.card figure{
+    margin: 0;
+    height:25rem;
+}
 #card4{
     margin-bottom: 0rem;
 }
@@ -198,7 +190,7 @@ form .input1 .input_field{
 
 .contain li{
     color: #021433;
-    line-height: 1.2rem;
+    line-height: 1.4rem;
     font-size: 1.1rem;
     
 }
@@ -213,6 +205,12 @@ form .input1 .input_field{
 
 .feat_med_tret{
     text-align: center;
+}
+.feat_med_tret ul li{
+    margin-bottom: 0;
+}
+.feat_med_tret h2{
+    margin-top: 0;
 }
  .fig1,.fig2,.fig3,.fig4,.fig5,.fig6{
     height: 23rem;
@@ -254,19 +252,20 @@ form .input1 .input_field{
 }
 
 .span{
-    font-weight: 800;
+    font-family: nexa-bold;
     padding:0rem 0rem;
     position: relative;
     margin-bottom: 0.8rem;
+    font-size:1.2rem;
 }
 .span2{
     margin-left: 0rem;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 
 }
 
 .exc_ser{
-    background-color: #cccccc;
+    background-color: #efefef;
     text-align: center;
 }
 .fig6{
@@ -361,47 +360,15 @@ form .input1 .input_field{
 }
  .nd_help2 .btn_blue{
     margin-bottom: 0rem;
+    margin-top:0;
 }
-/*footer*/
-footer{
-    padding:1.5rem 0.8rem;
-    background-color: #021433;
-    text-align: center;
-    
-}
-footer .about li{
-    margin-bottom: 1rem;
-}
-footer figure{
-    padding:0rem 5.0rem 2rem 5.0rem;
-    
-}
-footer h4{
-    color:#ffffff;
-    font-family: nexa-light;
-    margin:0rem 0rem;
-    padding-bottom: 1.3rem;
-    letter-spacing: 0.2rem;   
-}
-footer .social_icon i{
-    color: #ffffff;
-    padding:0rem 1.2rem 0rem 1.2rem;
-    size:0.5rem;
-}
-footer p{
-    color:#ffffff;
-    margin-top: 1rem;
-    margin-bottom: 0rem;
-}
-footer p span{
-    font-size: 1.2rem;
-}
+
 
 /*tablet view*/
 @media only screen and (min-width:768px) and (max-width:1024px)
 {
     header{
-        padding: 1.8rem 2.2rem;    
+        padding: 1.2rem 2.2rem;    
     }
     .head2{
         display:none;
@@ -411,6 +378,9 @@ footer p span{
         position: relative;
         display: flex;
         flex-direction: row;
+    }
+    form .input1{
+        margin-bottom: 0;
     }
     input{
         margin-bottom: 0rem;
@@ -437,18 +407,20 @@ footer p span{
         border-right:1px solid #0381d4;
     }
     /*button*/
-    .btn_darkblue{
+    .find_affordable_healthcare .btn_darkblue{
         
         margin: auto;
         display: block;
-        padding:1.05rem 2.4rem;
-        font-size: 1.1rem;
+        
+        font-size: 1.2rem;
         text-align: center;
     }
 
     /*how it works*/
+    
     .how_it_works .steps .activeli{
         align-self: center;
+        font-size: 1.5rem;
     }
     .how_it_works .l_gray{
         align-self: center;
@@ -456,9 +428,21 @@ footer p span{
     .how_it_works li{
         padding-top: 1.3rem;
         padding-bottom: 1.3rem;
+        
+    }
+    .how_it_works h6{
+        font-size: 1.3rem;
+    }
+    .how_it_works p{
+        margin-bottom: 1.1rem;
+        font-size: 1.3rem;
+    }
+    .how_it_works figure p{
+        margin-top: 1.0rem;
     }
 
     /*world class expert doctor*/
+    
     
     .row{
         display: grid;
@@ -556,7 +540,7 @@ footer p span{
         "right1 right2 right3"
         "right4 right5 right6";
         grid-gap: 1rem;
-        margin-bottom: 2rem;
+        
     }
     .row3 h5{
         font-size: 1rem;
@@ -616,130 +600,24 @@ footer p span{
         padding:0rem 1rem;
         background-color: white;
     }
+    /*Execlusive services*/
+
+    .exc_ser p{
+        margin-bottom: 1.1rem;
+    }
+
+    /*Need help*/
+    .nd_help1 p{
+        margin-bottom: 1.1rem;
+    }
     
-    /*footer*/
-    footer{
-        padding:1.8rem 2.2rem;
-        display:grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: 
-        "about figure"
-        "rights social_icon";
-        background-color: #ffffff;
-
-    }
-
-    footer figure{
-        grid-area: figure;
-        width:22vw;
-        padding:0rem 0rem;
-        display: block;
-        margin:auto 0rem 1.2rem auto;
-        
-    }
-    footer figure image{
-        width:100%;
-    }
-    footer .about{
-        grid-area: about;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    footer .about li{
-        color:white;
-        font-size: 1.1rem;
-        color:rgb(0, 0, 7);
-    }
-    footer .rights{
-        grid-area: rights;
-        color: black;
-    }
-    footer .social_icon{
-        grid-area:social_icon;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-    }
-    footer .social_icon i{
-        padding:0rem 0rem 0rem 0rem;
-        font-size: 1.2rem;
-        margin-left: auto;
-        color: black;
-    }
-    footer p{
-        display:block;
-        margin:auto auto auto 0;
-        font-size: 1.2rem;
-    }
-
-        
-
 }
 
 /*desktop view*/
 
 @media only screen and (min-width:1024px)
 {
-    /*header*/
-    header{
-        padding: 2rem 4rem;    
-    }
-    .head1{
-        display: none;
-    }
-    .head2{
-        display: grid;
-        grid-template-columns: 1fr 2fr 1.5fr;
-        align-self: center;
-        justify-content: center;
-    }
-    .head2 img{
-        
-        width:10rem;
-        height: 100%;
-        margin-top: 0rem;
-        padding:1.0rem 0rem;
-        
-    }
-    .head2 ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        margin-top: 1rem;
-    }
-    .head2 ul li{
-        color: black;
-        margin-left:2rem;
-        font-weight: 800;
-        
-        margin-bottom: 0rem;
-        
-    }
-    .head2 div{
-        display: flex;
-        justify-content: flex-end;
-        
-        
-    }
-    .head2 div button{
-        font-size: 1rem;
-    }
-    .head2 .btn_darkblue{
-        margin-top:0rem;
-        border-radius: 0.5rem;
-        padding:0.9rem 2rem;
-        margin:0rem 0rem !important;
-    }
-    .head2 .btn_white{
-        padding:0.9rem 2rem;
-        border-color: black;
-        color: black;
-        margin-right: 0.5rem;
-    }
+    
 
     /* Find affordable healthcare*/
     .find_affordable_healthcare{
@@ -749,6 +627,10 @@ footer p span{
         background-position: top right;
         
          
+    }
+    .find_affordable_healthcare .btn_darkblue{
+        padding:1.08rem 2rem;
+        margin-top:0;
     }
     form{
         position: relative;
@@ -797,14 +679,14 @@ footer p span{
         margin-bottom: 2rem;
         font-size: 1.2rem;
     }
-    .btn_darkblue{
-        padding:1rem 2rem;
-        padding-bottom: 1.15rem;
-        margin-top: 0rem;
-    }
+    
 
     /*how it works*/
-
+    .how_it_works p{
+        text-align: left;
+        margin-top: 0.5rem;
+        margin-bottom: 2.2rem;
+    }
     .how_it_works .steps{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -853,13 +735,12 @@ footer p span{
     .steps figure img{
         height: auto;
     }
-    .how_it_works p{
-        text-align: left;
-    }
+    
     .how_it_works li {
         padding:3rem 1rem;
         font-size: 2rem;
         border: 1px solid #0099ff;
+        cursor: pointer;
     }
     .how_it_works .l_gray{
         border-color:#cccccc ;
@@ -868,11 +749,15 @@ footer p span{
         margin-left: 0rem;
         margin-right: 0rem;
     }
+    .how_it_works figure p{
+        text-align: center;
+    }
    
     
     
 
     /* world class expert doctor*/
+    
     
     .radiobtn{
         display: flex;
@@ -884,7 +769,7 @@ footer p span{
     ]
     {
         width: auto;
-        margin-left:1.1rem;
+        margin-left:0.7rem;
     }
     .row{
         display: grid;
@@ -894,12 +779,18 @@ footer p span{
         grid-column-gap:0.5rem;
         margin:0rem 0rem ; 
         
+        
+        
     }
+    #active1,#active2,#active3,#active4{
+        animation: 1s ease;
+    }
+    
     .row .card{
         margin-bottom: 0rem;   
     }
-    .row .card img{
-        height: 35vh;
+    .row .card figure{
+        height: 18rem;
     }
     #three{
         font-size: 10rem;
@@ -1027,85 +918,12 @@ footer p span{
         margin-bottom: 0rem;
     }
 
-    /*need help*/
-    .nd_help{
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-    }
-    .nd_help p{
-        text-align: left;
-    }
-    .nd_help2{
-        text-align: right;
-        
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-    .nd_help1{
-        margin-top:auto;
-        margin-bottom: auto;
-    }
+    
 
-    /*footer*/
-    footer{
-        display:grid;
-        grid-template-columns: 3fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: 
-        "about figure"
-        "rights social_icon";
-        background-color: white;
-        padding:2rem 4rem;
-        border-bottom: 3px solid #0099ff;
+    
 
-    }
-    footer figure{
-        grid-area: figure;
-        width:11rem;
-        padding:1rem 0rem;
-        display: block;
-        margin-left: auto;
-        margin-right: 0rem;
-        
-    }
-    footer figure image{
-        width:100%;
-    }
-    footer .about{
-        grid-area: about;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    footer .about li{
-        color:rgb(0, 0, 7);
-        margin-right: 0.9rem;
-        font-size: 1.4rem;
-    }
-    footer .rights{
-        grid-area: rights;
-        color: black;
-        display:block;
-        margin:auto auto auto 0;
-        font-size: 1.2rem;
-    }
-    footer .social_icon{
-        grid-area:social_icon;
-        
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-left: auto;
-        margin-right: 0rem;
-    }
-    footer .social_icon i{
-        padding:0rem 0rem 0rem 0.8rem;
-        font-size: 1.8rem;
-        color: black;
-        margin-left: 1rem;
-        
-    }
+
+    
     
     
     

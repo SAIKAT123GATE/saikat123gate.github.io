@@ -648,113 +648,158 @@ a {
   }
 }
 
-.about_faq_section {
-  padding: 0;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.about {
-  position: relative;
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  height: 100vh;
+}
+
+/*section*/
+.firstsec {
+  background-color: #94bedd;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.firstsec .signup {
+  background-color: #ffffff;
   text-align: center;
 }
 
-.about figure {
-  height: 15rem;
+.firstsec .signup h2 {
+  margin: 1.5rem 0rem;
+  font-size: 1.8rem;
+  color: #167ddd;
 }
 
-.about .about_and_li_wrapper {
+.firstsec .signup hr {
+  margin-bottom: 1.0rem;
+}
+
+.firstsec .signup form {
+  margin: 0rem 0.8rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.firstsec .signup form i {
   position: absolute;
-  top: 35%;
-  left: 35%;
+  padding: 0.75rem 0.6rem;
+  display: inline-block;
+  left: auto;
+  right: 2rem;
+  bottom: auto;
+  margin-top: 0.15rem;
+  font-size: 2rem;
+  color: #cccccc;
 }
 
-.about .about_and_li_wrapper h2 {
-  color: #ffffff;
-}
-
-.list-items {
-  text-align: left;
-}
-
-.list-items .icons-and-list {
+.firstsec .signup form .gridrow {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
-  color: #167ddd;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0.3rem;
 }
 
-.list-items .icons-and-list li {
-  color: #167ddd;
-  margin-bottom: 0;
+.firstsec .signup form input {
+  margin-bottom: 0.4rem;
+  margin-top: .4rem;
+  border: 1px solid #cccccc;
+}
+
+.firstsec .signup form textarea {
+  width: 100%;
+  outline: none;
+  border: 1px solid #cccccc;
+}
+
+.firstsec .signup form .btn {
+  margin-top: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.firstsec .signup form .btn .btn_darkblue {
+  width: 100%;
+  border-radius: 0rem;
+  font-weight: 600;
+  letter-spacing: .3rem;
+}
+
+.firstsec .signup form .btn i {
+  color: #ffffff;
   font-size: 1.2rem;
+  margin-top: 0.15rem;
+}
+
+.firstsec .signup p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0rem 0rem 1rem 0rem;
+}
+
+.firstsec .signup p span {
+  color: #167ddd;
+}
+
+footer {
+  background-color: #94bedd;
+}
+
+footer p {
   font-weight: bold;
-  margin-top: 4px;
-  letter-spacing: 1px;
-  margin-top: 0;
-}
-
-.list-items .icons-and-list .round-border {
-  background-color: #8fcaf1;
-  border-radius: 100%;
-  padding: 0.1rem 0.3rem;
-}
-
-.list-items p {
-  margin-top: 0;
-  background-color: #e5f1f7;
-  margin-bottom: 0;
-  padding: 0.8rem;
-}
-
-.list-items .inactive {
-  display: none;
+  margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .about .about_and_li_wrapper {
-    left: 42%;
+  /*section*/
+  .firstsec {
+    padding-top: 9rem;
+    padding-left: 8.5rem;
+    padding-right: 8.5rem;
+  }
+  .firstsec .signup {
+    padding: 0rem 0rem;
+  }
+  .firstsec .signup form i {
+    right: 10rem;
+  }
+  .firstsec .signup .btn i {
+    margin-top: 0.2rem;
+  }
+  .firstsec p {
+    margin: 15rem 3rem 2rem 3rem;
+    font-weight: 600;
+    font-size: 1rem;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .about .about_and_li_wrapper {
-    left: 0;
-    text-align: left;
-    margin-left: 4.2rem;
+  /*section*/
+  .firstsec {
+    padding-top: 2rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
   }
-  .about .about_and_li_wrapper h2 {
-    margin-left: 0;
+  .firstsec .signup h2 {
+    text-align: center;
   }
-  section {
-    padding-right: 4rem;
-    padding-left: 4rem;
-  }
-  /*need help*/
-  .nd_help {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 2fr 1fr;
-        grid-template-columns: 2fr 1fr;
-  }
-  .nd_help h2 {
-    margin-left: 0;
-  }
-  .nd_help p {
-    text-align: left;
-  }
-  .nd_help2 {
-    text-align: right;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .nd_help1 {
-    margin-top: auto;
-    margin-bottom: auto;
+  .firstsec .signup form i {
+    right: 22rem;
+    margin-top: 0.8rem;
   }
 }
-/*# sourceMappingURL=faqs.css.map */
+/*# sourceMappingURL=queryform.css.map */

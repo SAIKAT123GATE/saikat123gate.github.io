@@ -1,31 +1,5 @@
 @import "./theme1.scss";
-//Header section****************************************************************************//
 
-/*header*/
-header {
-  padding: 0.8rem 0.8rem;
-}
-.head1 {
-  display: flex;
-  flex-direction: row;
-}
-.head2 {
-  display: none;
-}
-.head1 {
-  figure {
-    width: 9rem;
-    margin: 0.2rem 0rem;
-  }
-}
-.head1 {
-  i {
-    justify-self: end;
-    align-self: center;
-  }
-}
-
-//Header Section Complete*************************************************
 
 //Hiding the linear gradient part
 .hide {
@@ -112,8 +86,6 @@ header {
   .btn_darkblue {
     border-radius: 0;
     margin-top: 0.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
     font-weight: 600;
   }
   .multi-organ-transplant-section {
@@ -122,7 +94,7 @@ header {
     margin-left: 1rem;
     li {
       border: 1px solid $dark_blue;
-      padding: 0.5rem;
+      padding: 0.2rem 1rem;
       margin-right: 0.4rem;
       border-radius: 1.5rem;
       font-weight: 600;
@@ -130,62 +102,46 @@ header {
   }
 }
 
-//Need Help Section
-
-.nd_help {
-  background-color: #94bedd;
-  text-align: center;
-  h2 {
-    color: white;
+  //footer section
+  //Footer Section
+  .tabshow {
+    display: none;
   }
-}
-
-.nd_help2 .btn_blue {
-  margin-bottom: 0rem;
-}
-
-//Footer Section
-.tabshow {
-  display: none;
-}
-footer {
-  padding: 1.5rem 0.8rem;
-  background-color: #021433;
-  text-align: center;
-  figure {
-    padding: 0rem 5rem 0rem 5rem;
-  }
-  .about {
-    li {
-      margin-bottom: 1.3rem;
-      font-weight: bold;
+  footer {
+    padding: 1.5rem 0.8rem;
+    background-color: #021433;
+    text-align: center;
+    figure {
+      padding: 0rem 5rem 0rem 5rem;
     }
-    h2 {
-      font-size: 1.4rem;
-      letter-spacing: 0.2rem;
-      margin-bottom: 2rem;
-      margin-top: 2rem;
-      color: $white;
+    .about {
+      li {
+        
+        font-weight: bold;
+      }
+      h2 {
+        font-size: 1.4rem;
+        letter-spacing: 0.2rem;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+        color: $white;
+      }
+    }
+  
+    p {
+      color: #ffffff;
+      margin-top: 1rem;
+      margin-bottom: 0rem;
+    }
+    p span {
+      font-size: 1.2rem;
     }
   }
 
-  p {
-    color: #ffffff;
-    margin-top: 1rem;
-    margin-bottom: 0rem;
-  }
-  p span {
-    font-size: 1.2rem;
-  }
-}
+
 
 @media only screen and(min-width:768px) and (max-width: 1024px) {
-  header {
-    padding: 1.8rem 1.5rem;
-    i {
-      margin-right: 0;
-    }
-  }
+  
 
 
 
@@ -194,24 +150,29 @@ footer {
     select {
       width: 15%;
     }
+    h3{
+      font-size: 1.7rem;
+    }
   }
   //Grid for hospital info and image
   .grid-for-hospitalinfo-and-image {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     figure {
-      height: 28rem;
+      height: 33rem;
     }
   }
 
   //Inside card information in grid view for tab and desktop
   .card {
+    h3{
+      font-size: 1.7rem;
+    }
     .hospital_name_info {
+      text-align: left;
       button {
-        float: left;
+        
         margin-left: 1rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
       }
     }
     .grid_for_tab_and_desktop {
@@ -224,17 +185,17 @@ footer {
     }
   }
 
-  //Footer Section
+
+  //footer section
 
   .mobileshow {
     display: none;
   }
-  .tabshow {
-    display: block;
-  }
+ 
 
   .tabshow {
     padding: 1.8rem 2.2rem;
+    
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
@@ -242,110 +203,72 @@ footer {
       "rights social_icon";
   }
 
+  //footer
+
   footer {
     background-color: $white;
-    figure {
-      grid-area: figure;
-      width: 22vw;
-      padding: 0rem 0rem;
-      display: block;
-      margin: auto 0rem 1.2rem auto;
-    }
-    .about {
-      grid-area: about;
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      li {
-        color: white;
-        font-size: 1.1rem;
-        font-weight: normal;
-        color: $dark_blue;
-      }
-    }
-    .rights {
-      grid-area: rights;
-      color: $dark_blue;
-    }
-    .social_icon {
-      grid-area: social_icon;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-end;
-      i {
-        padding: 0rem 0rem 0rem 0rem;
-        font-size: 1.2rem;
-        margin-left: auto;
-        color: $dark_blue;
-      }
-    }
-    p {
-      display: block;
-      margin: auto auto auto 0;
-      font-size: 1.2rem;
-    }
+    border-bottom: 3px solid $light_blue;
   }
+  footer figure {
+    grid-area: figure;
+    width: 22vw;
+    padding: 0rem 0rem;
+    display: block;
+    margin: auto 0rem 1.2rem auto;
+  }
+  footer figure image {
+    width: 100%;
+  }
+  footer .about {
+    grid-area: about;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .about li {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: $dark_blue;
+    font-weight: normal;
+  }
+  footer .rights {
+    grid-area: rights;
+    color: $dark_blue;
+  }
+  footer .social_icon {
+    grid-area: social_icon;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .social_icon i {
+    padding: 0rem 0rem 0rem 0rem;
+    font-size: 1.2rem;
+    margin-left: auto;
+    color: $dark_blue;
+  }
+  footer p {
+    display: block;
+    margin: auto auto auto 0;
+    font-size: 1.2rem;
+  }
+
+  
 }
 
 
 //Desktop View
 @media only screen and(min-width:1024px){
-   /*header*/
-   header {
-    padding: 2rem 3rem;
-  }
-  .head1 {
-    display: none;
-  }
-  .head2 {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1.5fr;
-    align-self: center;
-    justify-content: center;
-    img {
-      width: 10rem;
-      height: 100%;
-      margin-top: 0rem;
-      padding: 1rem 0rem;
-    }
-    ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      margin-top: 1rem;
-      li {
-        color: black;
-        margin-left: 2rem;
-        font-weight: 800;
-        font-size: 1rem;
-        margin-bottom: 0rem;
-      }
-    }
-    div {
-      display: flex;
-      justify-content: flex-end;
-      button {
-        font-size: 1rem;
-      }
-    }
-    .btn_darkblue {
-      margin-top: 0rem;
-      border-radius: 0.5rem;
-      padding: 0.9rem 2rem;
-      margin: 0rem 0rem !important;
-    }
-    .btn_white {
-      padding: 0.9rem 2rem;
-      border-color: black;
-      color: black;
-      margin-right: 0.5rem;
-    }
-  } 
+   
 
-
+  section{
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
   //Hospitals in Delhi gradient section
 
   .hide {
@@ -358,10 +281,12 @@ footer {
     background-size: cover;
     h2 {
       position: absolute;
-      top: 40vh;
-      margin-left: 3rem;
+      top: 35vh;
+      margin-left: 4rem;
+      font-family: nexa-light;
       span{
         border-bottom: 1px solid $dark_blue;
+        font-family: nexa-bold;
       }
     }
   }
@@ -371,6 +296,11 @@ footer {
    .home_and_sortby_flex{
      select{
        width: 10%;
+     }
+     h3{
+       font-family: nexa-light;
+       font-size: 1.5rem;
+       color: $gray;
      }
    }
 
@@ -384,23 +314,30 @@ footer {
     .filter {
       display: block;
       margin-top: 1.4rem;
-      background-color: #cccccc;
-      height: 4rem;
+    
+      .bg_gray{
+        background-color: $light_gray;
       h4 {
-        margin-top: 1.5rem;
+        margin:0;
         margin-left: 1rem;
+        padding: 0.8rem 0rem;
       }
+    }
     }
   }
   //Location and searchbox alignment
   .location {
-    margin-top: 2rem;
+    
     .flex_for_icon {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-left: 0.7rem;
       margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      i{
+        color: $blue;
+      }
       
       i::after {
         content: "";
@@ -412,6 +349,9 @@ footer {
         margin-left: 1rem;
         bottom: 0.5rem;
       }
+      h5{
+        margin-bottom:0 ;
+      }
     }
   }
   //Checkbox and level alignment
@@ -421,8 +361,15 @@ footer {
     input {
       width: auto;
       margin:0;
-      margin-bottom: 1rem;
       margin-right: 0.5rem;
+    }
+    h6{
+      font-size: 1rem;
+      margin-top: 0.4rem;
+      color: $blue;
+    }
+    label{
+      line-height: 1.5rem;
     }
   }
 
@@ -439,11 +386,14 @@ footer {
   //Inside card information in grid view for tab and desktop
   .card {
     .hospital_name_info {
+      text-align: left;
+      padding-bottom: 1.5rem;
       button {
-        float: left;
+        
         margin-left: 2rem;
-        padding:0.5rem 2rem;
+        
       }
+      
     }
     .grid_for_tab_and_desktop {
       display: grid;
@@ -464,109 +414,91 @@ footer {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     figure {
-      height: 26rem;
+      height: 27rem;
+    }
+    
+  }
+  .card{
+    h3{
+      font-size: 1.7rem;
     }
   }
 
 
-   //Need help
-
-  /*need help*/
-  .nd_help {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    h2 {
-      margin-left: 0;
-    }
-    p {
-      text-align: left;
-    }
-  }
   
-  .nd_help2 {
-    text-align: right;
 
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .nd_help1 {
-    margin-top: auto;
-    margin-bottom: auto;
-  }
+//footer
+footer {
+  padding: 0;
+  color: #ffffff;
+  
+}
 
+.mobileshow {
+  display: none;
+}
+.tabshow {
+  display: block;
+}
 
+.tabshow {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "about figure"
+    "rights social_icon";
+  background-color: white;
+  padding: 2rem 4rem;
+  border-bottom: 3px solid #0099ff;
+}
+.tabshow figure {
+  grid-area: figure;
+  width: 11rem;
+  padding: 0rem 0rem 1.0rem;
+  display: block;
+  margin-left: auto;
+  margin-right: 0rem;
+  margin-top: 0;
+}
+.tabshow figure image {
+  width: 100%;
+}
+.tabshow .about {
+  grid-area: about;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tabshow .about li {
+  color: $dark_blue;
+  margin-right: 0.9rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.tabshow .rights {
+  grid-area: rights;
+  color: $dark_blue;
+  display: block;
+  margin: auto auto auto 0;
+  font-size: 1.2rem;
+}
+.tabshow .social_icon {
+  grid-area: social_icon;
 
-  //footer
-  footer {
-    padding: 0;
-    color: #ffffff;
-  }
-
-  .mobileshow {
-    display: none;
-  }
-  .tabshow {
-    display: block;
-  }
-
-  .tabshow {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "about figure"
-      "rights social_icon";
-    background-color: white;
-    padding: 2rem 3rem;
-    border-bottom: 3px solid #0099ff;
-  }
-  .tabshow figure {
-    grid-area: figure;
-    width: 11rem;
-    padding: 0rem 0rem 1.3rem;
-    display: block;
-    margin-left: auto;
-    margin-right: 0rem;
-    margin-top: 0;
-  }
-  .tabshow figure image {
-    width: 100%;
-  }
-  .tabshow .about {
-    grid-area: about;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .tabshow .about li {
-    color: rgb(0, 0, 7);
-    margin-right: 0.9rem;
-    font-size: 1.4rem;
-  }
-  .tabshow .rights {
-    grid-area: rights;
-    color: black;
-    display: block;
-    margin: auto auto auto 0;
-    font-size: 1.2rem;
-  }
-  .tabshow .social_icon {
-    grid-area: social_icon;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 0rem;
-  }
-  .tabshow .social_icon i {
-    padding: 0rem 0rem 0rem 0.8rem;
-    font-size: 1.8rem;
-    color: black;
-    margin-left: 1rem;
-  }
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 0rem;
+}
+.tabshow .social_icon i {
+  padding: 0rem 0rem 0rem 0.8rem;
+  font-size: 1.3rem;
+  color:$dark_blue;
+  margin-left: 0.5rem;
+}
 
   
   

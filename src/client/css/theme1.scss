@@ -6,8 +6,21 @@ $dark_blue:#021433;
 $blue:rgb(22, 125, 221);
 $gray:#636668;
 $background:#94bedd;
+$background-for-faq:#e5f1f7;
+$black:#000000;
 
 
+
+.rotate {
+  -moz-transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+}
+.rotate.down {
+  -moz-transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
 
 
 
@@ -26,6 +39,117 @@ $background:#94bedd;
 *{
     box-sizing: border-box;
 }
+//Header part and navigation for  all
+/*header*/
+header {
+    padding: 0.8rem 0.8rem;
+  }
+  .head1 {
+    display: flex;
+    flex-direction: row;
+  }
+  .head2 {
+    display: none;
+  }
+  .head1 {
+    figure {
+      width: 9rem;
+      margin: 0.2rem 0rem;
+    }
+  }
+  .head1 {
+    i {
+      justify-self: end;
+      align-self: center;
+    }
+  }
+  
+  //Header Section Complete*************************************************
+  
+//Need help section
+
+.nd_help {
+    background-color: #94bedd;
+    text-align: center;
+    h2 {
+      color: white;
+      
+    }
+  }
+  
+  .nd_help2 .btn_blue {
+    margin-bottom: 0rem;
+    margin-top:0;
+  }
+
+  //Need help section complete
+
+
+//Footer-section for mobile
+//Footer
+
+/*footer*/
+footer{
+  padding:1.5rem 0.8rem;
+  background-color: #021433;
+  text-align: center;
+  
+}
+footer .about li{
+  margin-bottom: 0rem;
+}
+footer figure{
+  padding:0rem 5.0rem 2rem 5.0rem;
+  
+}
+footer h4{
+  color:#ffffff;
+  font-family: nexa-light;
+  margin:0rem 0rem;
+  padding-bottom: 1.3rem;
+  letter-spacing: 0.2rem;   
+}
+footer {
+  .social_icon{
+    margin-top:1.5rem;
+  }
+}
+footer .social_icon i{
+  color: #ffffff;
+  padding:0rem 1.2rem 0rem 1.2rem;
+  size:0.5rem;
+}
+footer p{
+  color:#ffffff;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+footer p span{
+  font-size: 1.2rem;
+}
+//Footer Section Complete
+
+
+//Select tag
+select{
+  align-self: center;
+  -ms-grid-column-align: right;
+  justify-self: right;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 0.7rem;
+  background: url(https://cdn1.iconfinder.com/data/icons/flat-and-simple-part-1/128/arrow_down-512.png) no-repeat, #d3d3d3;
+  background-size: 20%;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  font-family: nexa-light;
+  font-size: 0.9rem;
+  color: $black;
+  border: 0;
+}
+
 
 section
 {
@@ -36,9 +160,10 @@ section
 }
 button{
     font-family: nexa-light;
-    padding: 0.5rem;
+    padding: 1rem 2rem;
     font-size: 1.2rem;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 .btn_darkblue{
     background-color: $dark_blue;
@@ -50,14 +175,14 @@ button{
     color: $white;
     border-color: $blue;
     border-style: none;
-    padding:1rem 1rem;
+    padding:1rem;
     font-size: 1.3rem;
     margin:.5rem 0rem;
 }
 .btn_white{
     background-color: $white;
-    color:$blue;
-    border-color: $blue;
+    color:$dark_blue;
+    border-color: $dark_blue;
     
 }
 img
@@ -84,7 +209,7 @@ p{
 h1,h2{
     font-size: 2.0rem;
     margin-bottom: 0.625rem;
-    margin-top: 0.625rem;
+    
 
 }
 h3{
@@ -120,10 +245,10 @@ input::placeholder{
     
     
 }
-input,select{
+input{
     font-family: nexa-light;
     color:$gray;
-    padding: 0.8rem 0.75rem; 
+    padding: 1rem 1rem; 
     width: 100%;
     margin-bottom: 0.5rem;
 }
@@ -147,12 +272,13 @@ input:focus,select:focus{
 figcaption{
     font-family: nexa-bold;
     color: $dark_blue;
-    font-size: 1.3rem;
-    margin-top: 1.5rem;
+    padding: 1rem 0rem;
+    margin:0;
+    
     
 }
 figure{
-    margin-top:1rem;
+    height: auto;
 }
 nav
     {
@@ -165,9 +291,20 @@ nav
 a{
     text-decoration: none;
 }
+
+
     
 @media only screen and (min-width:768px) and (max-width:1024px)
 {
+  //Header part
+  header {
+    padding: 1.2rem 2.2rem;
+    i {
+      margin-right: 0;
+    }
+  }
+
+  //Header part complete
     section{
         padding: 1.8rem 2.2rem;
     }
@@ -195,10 +332,10 @@ a{
         margin:0.3125rem 0rem;
     }
    
-    input,select{
+    input{
         font-family: nexa-light;
         color:$gray;
-        padding: 1.0rem 0.85rem; 
+        padding: 1rem 1rem; 
         width: 100%;
         margin-bottom: 0.5rem;
     }
@@ -211,7 +348,67 @@ a{
     }
     li{
         font-size: 1.0rem;
+    
+
+}
+
+//Footer part
+
+ /*footer*/ //Footer Section    ++++++++++++++++++++++++++++++++++++++++++
+ footer{
+  padding:1.8rem 2.2rem;
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 
+  "about figure"
+  "rights social_icon";
+  background-color: #ffffff;
+  figure{
+    grid-area: figure;
+    width:22vw;
+    padding:0rem 0rem;
+    display: block;
+    margin:auto 0rem 1.2rem auto;
+    
+  }
+  .about{
+    grid-area: about;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    li{
+      color:white;
+      font-size: 1.1rem;
+      color:rgb(0, 0, 7);
     }
+  }
+  .rights{
+    grid-area: rights;
+    color: black;
+  }
+  .social_icon{
+    grid-area:social_icon;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 0;
+    i{
+      padding:0rem 0rem 0rem 0rem;
+      font-size: 1.2rem;
+      margin-left: 1.3rem;
+      color: black;
+    }
+  }
+  p{
+    display:block;
+    margin:auto auto auto 0;
+    font-size: 1.2rem;
+  }
+}
+//Footer part complete
    
     
     
@@ -220,15 +417,96 @@ a{
 }
 @media only screen and (min-width:1024px)
 {
+
+    /*header*/
+    header {
+        padding: 0.5rem 4rem;
+      }
+      .head1 {
+        display: none;
+      }
+      .head2 {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1.5fr;
+        align-self: center;
+        justify-content: center;
+        img {
+          width: 10rem;
+          height: 100%;
+          margin-top: 0rem;
+          padding: 1rem 0rem;
+        }
+        ul {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          li {
+            color: $dark_blue;
+            margin-left: 2rem;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 0rem;
+          }
+        }
+        div {
+          display: flex;
+          justify-content: flex-end;
+          button {
+            font-size: 1rem;
+          }
+        }
+        .btn_darkblue {
+          margin-top: 0rem;
+          border-radius: 0.5rem;
+          padding: 0.9rem 2rem;
+          margin: 0rem 0rem !important;
+        }
+        .btn_white {
+          padding: 0.9rem 2rem;
+          border:1px solid $dark_blue;
+          color: $dark_blue;
+          margin-right: 0.5rem;
+        }
+      }
+      //Header section complete
+
+
+      //Need help
+
+  /*need help*/
+  .nd_help {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    h2 {
+      margin:0;
+      margin-bottom:0.3rem;
+      
+    }
+  }
+  .nd_help  {
+      p{
+    text-align: left;
+    margin: 0;
+      }
+  }
+  .nd_help2 {
+    text-align: right;
+  }
+  .nd_help1 {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  //Need help section complete
     section{
-        padding: 1.8rem 3.0rem;
+        padding: 1.8rem 4.0rem;
         
     }
     h1,h2
     {
         font-size: 2.5rem;
         line-height: 2.8rem;
-        margin-left: 3rem;
+        
         text-align: left;
     }
     h3{
@@ -260,15 +538,84 @@ a{
         
     }
     
-    input,select{
+    input{
         font-family: nexa-light;
         color:$gray;
-        padding: 1.2rem 1.0rem; 
+        padding: 1rem 1.0rem; 
         width: 100%;
     }
     i{
-        font-size: 1.3rem !important;
+        font-size: 1.3rem ;
     }
+
+    //Footer part
+
+        //Footer Section
+
+ /*footer*/
+ footer{
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+  "about figure"
+  "rights social_icon";
+  background-color: white;
+  padding:2rem 4rem;
+  border-bottom: 3px solid #0099ff;
+
+}
+footer figure{
+  grid-area: figure;
+  width:11rem;
+  padding:1rem 0rem;
+  display: block;
+  margin-left: auto;
+  margin-right: 0rem;
+  
+}
+footer figure image{
+  width:100%;
+}
+footer .about{
+  grid-area: about;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+footer .about li{
+  color:$dark_blue;
+  margin-right: 0.9rem;
+  font-size: 1.2rem;
+}
+footer .rights{
+  grid-area: rights;
+  color: $dark_blue;
+  display:block;
+  margin:auto auto auto 0;
+  font-size: 1.2rem;
+}
+footer .social_icon{
+  grid-area:social_icon;
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 0rem;
+}
+footer .social_icon i{
+  padding:0rem 0rem 0rem 0.8rem;
+  font-size: 1.3rem;
+  color: $dark_blue;
+  margin-left: 0.5rem;
+  
+}
+//footer part complete
+
+
+
 
 
 }

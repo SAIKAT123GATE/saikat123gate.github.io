@@ -648,54 +648,118 @@ a {
   }
 }
 
-.about_faq_section {
-  padding: 0;
-}
-
-.about {
-  position: relative;
+.about_hospital_section {
+  background-color: #8fcaf1;
   text-align: center;
 }
 
-.about figure {
-  height: 15rem;
+.about_and_li_wrapper {
+  padding: 4rem 0;
+  left: 2rem;
 }
 
-.about .about_and_li_wrapper {
-  position: absolute;
-  top: 35%;
-  left: 35%;
-}
-
-.about .about_and_li_wrapper h2 {
+.about_and_li_wrapper h2 {
   color: #ffffff;
 }
 
+.card {
+  border: 1px solid #cccccc;
+  text-align: center;
+}
+
+.fig-and-btn {
+  padding: 1rem;
+}
+
+.fig-and-btn .btn_darkblue {
+  border-radius: 0;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.name-and-description {
+  margin-top: 1rem;
+  border-bottom: 2px dotted #cccccc;
+}
+
+.name-and-description h2 {
+  text-align: left;
+  color: #167ddd;
+}
+
+.name-and-description h2::before {
+  content: "";
+  background-color: #167ddd;
+  width: 2.5rem;
+  height: 0.2rem;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0.3rem;
+  margin-right: 0.2rem;
+}
+
+.name-and-description p {
+  padding: 1rem 1rem 0rem 1rem;
+  margin: 0;
+  text-align: left;
+}
+
+.name-and-description .icon-and-li {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: left;
+}
+
+.name-and-description .icon-and-li ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1rem auto;
+      grid-template-columns: 1rem auto;
+  grid-column-gap: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.name-and-description .icon-and-li ul li {
+  color: #021433;
+  margin-bottom: 0;
+}
+
+.name-and-description .icon-and-li ul i {
+  color: #167ddd;
+  font-size: 1.5rem;
+}
+
 .list-items {
+  padding: 0 1rem 1rem;
   text-align: left;
 }
 
 .list-items .icons-and-list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
+  -ms-grid-columns: 2.5rem 5fr auto;
+      grid-template-columns: 2.5rem 5fr auto;
   color: #167ddd;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 2px dotted #cccccc;
   padding-bottom: 1rem;
   padding-top: 1rem;
+}
+
+.list-items .icons-and-list i {
+  font-size: 1.5rem;
 }
 
 .list-items .icons-and-list li {
   color: #167ddd;
   margin-bottom: 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-top: 4px;
-  letter-spacing: 1px;
-  margin-top: 0;
 }
 
 .list-items .icons-and-list .round-border {
@@ -716,45 +780,96 @@ a {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .about .about_and_li_wrapper {
-    left: 42%;
+  .card {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1.5fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-areas: "left right";
+  }
+  .card .left-part {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: left;
+  }
+  .card .right-part {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: right;
+  }
+  .card .name-and-description .icon-and-li {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.5rem;
+  }
+  .card .name-and-description p {
+    text-align: left;
+  }
+  .fig-and-btn {
+    padding-top: 1.5rem;
+  }
+  .fig-and-btn figure {
+    height: 20rem;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .about .about_and_li_wrapper {
-    left: 0;
-    text-align: left;
-    margin-left: 4.2rem;
+  section {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
-  .about .about_and_li_wrapper h2 {
+  .about_hospital_section {
+    background-image: url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/contactUs.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+  .about_and_li_wrapper {
+    text-align: left;
+  }
+  .about_and_li_wrapper h2 {
     margin-left: 0;
   }
-  section {
-    padding-right: 4rem;
-    padding-left: 4rem;
+  .about_and_li_wrapper li {
+    margin-left: 0rem;
   }
-  /*need help*/
-  .nd_help {
+  .card {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 2fr 1fr;
-        grid-template-columns: 2fr 1fr;
+    -ms-grid-columns: 2.5fr 1fr;
+        grid-template-columns: 2.5fr 1fr;
+        grid-template-areas: "left right";
   }
-  .nd_help h2 {
-    margin-left: 0;
+  .card .left-part {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: left;
   }
-  .nd_help p {
+  .card .right-part {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: right;
+  }
+  .card .name-and-description .icon-and-li {
+    padding-left: 2.8rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.5rem;
+  }
+  .card .name-and-description h2 {
+    margin-left: 0rem;
+  }
+  .card .name-and-description p {
     text-align: left;
   }
-  .nd_help2 {
-    text-align: right;
-    margin-top: auto;
-    margin-bottom: auto;
+  .name-and-description p {
+    padding-left: 2.8rem;
   }
-  .nd_help1 {
-    margin-top: auto;
-    margin-bottom: auto;
+  .list-items {
+    padding-left: 2.8rem;
   }
 }
-/*# sourceMappingURL=faqs.css.map */
+/*# sourceMappingURL=about-hospital.css.map */

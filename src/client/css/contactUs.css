@@ -1,3 +1,13 @@
+.rotate {
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+}
+
+.rotate.down {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
 @font-face {
   font-family: nexa-bold;
   src: url(../fonts/Nexa-Bold.otf) format("opentype");
@@ -14,6 +24,116 @@
           box-sizing: border-box;
 }
 
+/*header*/
+header {
+  padding: 0.8rem 0.8rem;
+}
+
+.head1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.head2 {
+  display: none;
+}
+
+.head1 figure {
+  width: 9rem;
+  margin: 0.2rem 0rem;
+}
+
+.head1 i {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.nd_help {
+  background-color: #94bedd;
+  text-align: center;
+}
+
+.nd_help h2 {
+  color: white;
+}
+
+.nd_help2 .btn_blue {
+  margin-bottom: 0rem;
+  margin-top: 0;
+}
+
+/*footer*/
+footer {
+  padding: 1.5rem 0.8rem;
+  background-color: #021433;
+  text-align: center;
+}
+
+footer .about li {
+  margin-bottom: 0rem;
+}
+
+footer figure {
+  padding: 0rem 5.0rem 2rem 5.0rem;
+}
+
+footer h4 {
+  color: #ffffff;
+  font-family: nexa-light;
+  margin: 0rem 0rem;
+  padding-bottom: 1.3rem;
+  letter-spacing: 0.2rem;
+}
+
+footer .social_icon {
+  margin-top: 1.5rem;
+}
+
+footer .social_icon i {
+  color: #ffffff;
+  padding: 0rem 1.2rem 0rem 1.2rem;
+  size: 0.5rem;
+}
+
+footer p {
+  color: #ffffff;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+
+footer p span {
+  font-size: 1.2rem;
+}
+
+select {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: right;
+  justify-self: right;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 0.7rem;
+  background: url(https://cdn1.iconfinder.com/data/icons/flat-and-simple-part-1/128/arrow_down-512.png) no-repeat, #d3d3d3;
+  background-size: 20%;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  font-family: nexa-light;
+  font-size: 0.9rem;
+  color: #000000;
+  border: 0;
+}
+
 section {
   padding: 1.5rem 0.8rem;
   display: -webkit-box;
@@ -27,9 +147,10 @@ section {
 
 button {
   font-family: nexa-light;
-  padding: 0.5rem;
+  padding: 1rem 2rem;
   font-size: 1.2rem;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .btn_darkblue {
@@ -43,15 +164,15 @@ button {
   color: #ffffff;
   border-color: #167ddd;
   border-style: none;
-  padding: 1rem 1rem;
+  padding: 1rem;
   font-size: 1.3rem;
   margin: .5rem 0rem;
 }
 
 .btn_white {
   background-color: #ffffff;
-  color: #167ddd;
-  border-color: #167ddd;
+  color: #021433;
+  border-color: #021433;
 }
 
 img {
@@ -79,7 +200,6 @@ p {
 h1, h2 {
   font-size: 2.0rem;
   margin-bottom: 0.625rem;
-  margin-top: 0.625rem;
 }
 
 h3 {
@@ -134,10 +254,10 @@ input::placeholder {
   color: #636668;
 }
 
-input, select {
+input {
   font-family: nexa-light;
   color: #636668;
-  padding: 0.8rem 0.75rem;
+  padding: 1rem 1rem;
   width: 100%;
   margin-bottom: 0.5rem;
 }
@@ -153,6 +273,7 @@ li {
   font-family: nexa-light;
   color: #ffffff;
   margin-bottom: .5rem;
+  line-height: 2rem;
 }
 
 input:focus, select:focus {
@@ -162,12 +283,12 @@ input:focus, select:focus {
 figcaption {
   font-family: nexa-bold;
   color: #021433;
-  font-size: 1.3rem;
-  margin-top: 1.5rem;
+  padding: 1.5rem 0rem;
+  margin: 0;
 }
 
 figure {
-  margin-top: 1rem;
+  height: auto;
 }
 
 nav {
@@ -185,6 +306,12 @@ a {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+  header {
+    padding: 1.2rem 2.2rem;
+  }
+  header i {
+    margin-right: 0;
+  }
   section {
     padding: 1.8rem 2.2rem;
   }
@@ -209,10 +336,10 @@ a {
     line-height: 1.8rem;
     margin: 0.3125rem 0rem;
   }
-  input, select {
+  input {
     font-family: nexa-light;
     color: #636668;
-    padding: 1.0rem 0.85rem;
+    padding: 1rem 1rem;
     width: 100%;
     margin-bottom: 0.5rem;
   }
@@ -225,219 +352,6 @@ a {
   }
   li {
     font-size: 1.0rem;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  section {
-    padding: 1.8rem 3.0rem;
-  }
-  h1, h2 {
-    font-size: 2.5rem;
-    line-height: 2.8rem;
-    margin-left: 3rem;
-    text-align: left;
-  }
-  h3 {
-    font-size: 2.2rem;
-    line-height: 2.6rem;
-  }
-  h4 {
-    font-size: 1.2rem;
-  }
-  h5 {
-    font-size: 1.1rem;
-    line-height: 2.2rem;
-  }
-  h6 {
-    font-size: 1.4rem;
-    line-height: 2.0rem;
-    margin-top: 1.5rem;
-  }
-  p {
-    font-family: nexa-light;
-    color: #021433;
-    font-size: 1.0rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-  }
-  input, select {
-    font-family: nexa-light;
-    color: #636668;
-    padding: 1.2rem 1.0rem;
-    width: 100%;
-  }
-  i {
-    font-size: 1.3rem !important;
-  }
-}
-
-/*header*/
-header {
-  padding: 1rem 1rem;
-}
-
-.head1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.head2 {
-  display: none;
-}
-
-.head1 figure {
-  width: 9rem;
-  margin: 0.2rem 0rem;
-}
-
-.head1 i {
-  -ms-grid-column-align: end;
-      justify-self: end;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-section {
-  padding: 0;
-}
-
-.contactus {
-  position: relative;
-  text-align: center;
-}
-
-.contactus figure {
-  height: 15rem;
-}
-
-.contactus .contactus_and_li_wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.contactus .contactus_and_li_wrapper h2 {
-  color: #ffffff;
-}
-
-.map {
-  padding: 1.5rem 1rem;
-}
-
-.map iframe {
-  width: 100%;
-  height: 20rem;
-}
-
-.addressbook {
-  padding: 1.5rem 2rem;
-}
-
-.addressbook .grid_for_icon {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1.2rem 1fr;
-      grid-template-columns: 1.2rem 1fr;
-  grid-column-gap: 1.5rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 1rem;
-}
-
-.addressbook .grid_for_icon i {
-  color: #167ddd;
-  font-size: 2rem;
-}
-
-.addressbook .grid_for_icon li {
-  margin-bottom: 0;
-  font-size: 1.2rem;
-  text-align: left;
-  line-height: 1.5rem;
-  color: #021433;
-  line-height: 2rem;
-}
-
-.addressbook .grid_for_icon .span {
-  font-weight: 900;
-}
-
-.queryform {
-  background-color: #8fcaf1;
-  padding: 2rem 1rem;
-  text-align: right;
-}
-
-.queryform .btn_blue {
-  border-radius: 0;
-}
-
-/*footer*/
-footer {
-  padding: 1.5rem 0.8rem;
-  background-color: #021433;
-  text-align: center;
-}
-
-footer .about li {
-  margin-bottom: 1rem;
-}
-
-footer figure {
-  padding: 0rem 5.0rem 2rem 5.0rem;
-}
-
-footer h4 {
-  color: #ffffff;
-  font-family: nexa-light;
-  margin: 0rem 0rem;
-  padding-bottom: 1.3rem;
-  letter-spacing: 0.2rem;
-}
-
-footer .social_icon i {
-  color: #ffffff;
-  padding: 0rem 1.2rem 0rem 1.2rem;
-  size: 0.5rem;
-}
-
-footer p {
-  color: #ffffff;
-  margin-top: 1rem;
-  margin-bottom: 0rem;
-}
-
-footer p span {
-  font-size: 1.2rem;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .map {
-    padding: 1.5rem 2rem;
-  }
-  .addressbook {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: auto auto auto;
-        grid-template-columns: auto auto auto;
-    grid-column-gap: 1.5rem;
-  }
-  .input_in_grid {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1rem;
   }
   /*footer*/
   footer {
@@ -505,11 +419,12 @@ footer p span {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    margin-top: 0;
   }
   footer .social_icon i {
     padding: 0rem 0rem 0rem 0rem;
     font-size: 1.2rem;
-    margin-left: auto;
+    margin-left: 1.3rem;
     color: black;
   }
   footer p {
@@ -522,7 +437,7 @@ footer p span {
 @media only screen and (min-width: 1024px) {
   /*header*/
   header {
-    padding: 1rem 3rem;
+    padding: 0.5rem 4rem;
   }
   .head1 {
     display: none;
@@ -555,10 +470,9 @@ footer p span {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    margin-top: 1rem;
   }
   .head2 ul li {
-    color: black;
+    color: #021433;
     margin-left: 2rem;
     font-weight: 800;
     font-size: 1rem;
@@ -583,40 +497,74 @@ footer p span {
   }
   .head2 .btn_white {
     padding: 0.9rem 2rem;
-    border-color: black;
-    color: black;
+    border: 1px solid #021433;
+    color: #021433;
     margin-right: 0.5rem;
   }
-  .contactus {
+  /*need help*/
+  .nd_help {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nd_help h2 {
+    margin: 0;
+    margin-bottom: 0.3rem;
+  }
+  .nd_help p {
+    text-align: left;
+    margin: 0;
+  }
+  .nd_help2 {
+    text-align: right;
+  }
+  .nd_help1 {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  section {
+    padding: 1.8rem 4.0rem;
+  }
+  h1, h2 {
+    font-size: 2.5rem;
+    line-height: 2.8rem;
     text-align: left;
   }
-  .contactus .contactus_and_li_wrapper {
-    top: 50%;
-    left: 12%;
+  h3 {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
   }
-  .contactus .contactus_and_li_wrapper h2 {
-    margin-left: 0;
+  h4 {
+    font-size: 1.2rem;
   }
-  .map {
-    padding: 1.5rem 3rem;
+  h5 {
+    font-size: 1.1rem;
+    line-height: 2.2rem;
   }
-  .grid_for_addressbook_and_form {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 0.5fr 1fr;
-        grid-template-columns: 0.5fr 1fr;
-    padding: 1rem 3rem 3rem;
-    border-bottom: 1px solid #cccccc;
+  h6 {
+    font-size: 1.4rem;
+    line-height: 2.0rem;
+    margin-top: 1.5rem;
   }
-  .grid_for_addressbook_and_form .addressbook {
-    padding: 0;
+  p {
+    font-family: nexa-light;
+    color: #021433;
+    font-size: 1.0rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
   }
-  .grid_for_addressbook_and_form .queryform .input_in_grid {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1rem;
+  input {
+    font-family: nexa-light;
+    color: #636668;
+    padding: 1rem 1.0rem;
+    width: 100%;
+  }
+  i {
+    font-size: 1.3rem;
   }
   /*footer*/
   footer {
@@ -624,8 +572,8 @@ footer p span {
     display: grid;
     -ms-grid-columns: 3fr 1fr;
         grid-template-columns: 3fr 1fr;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
         grid-template-areas: "about figure" "rights social_icon";
     background-color: white;
     padding: 2rem 4rem;
@@ -661,15 +609,15 @@ footer p span {
             align-items: center;
   }
   footer .about li {
-    color: #000007;
+    color: #021433;
     margin-right: 0.9rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   footer .rights {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: rights;
-    color: black;
+    color: #021433;
     display: block;
     margin: auto auto auto 0;
     font-size: 1.2rem;
@@ -678,6 +626,7 @@ footer p span {
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     grid-area: social_icon;
+    margin-top: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -693,9 +642,153 @@ footer p span {
   }
   footer .social_icon i {
     padding: 0rem 0rem 0rem 0.8rem;
-    font-size: 1.8rem;
-    color: black;
-    margin-left: 1rem;
+    font-size: 1.3rem;
+    color: #021433;
+    margin-left: 0.5rem;
+  }
+}
+
+section {
+  padding: 0;
+}
+
+.contactus {
+  position: relative;
+  text-align: center;
+}
+
+.contactus figure {
+  height: 15rem;
+}
+
+.contactus .contactus_and_li_wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.contactus .contactus_and_li_wrapper h2 {
+  color: #ffffff;
+}
+
+.map {
+  padding: 1.5rem 1rem;
+}
+
+.map iframe {
+  width: 100%;
+  height: 20rem;
+}
+
+.addressbook {
+  padding: 0rem 2rem;
+}
+
+.addressbook .grid_for_icon {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.2rem 1fr;
+      grid-template-columns: 1.2rem 1fr;
+  grid-column-gap: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.addressbook .grid_for_icon i {
+  color: #167ddd;
+  font-size: 2rem;
+}
+
+.addressbook .grid_for_icon li {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  text-align: left;
+  line-height: 1.5rem;
+  color: #021433;
+  line-height: 2rem;
+}
+
+.addressbook .grid_for_icon .span {
+  font-family: nexa-bold;
+}
+
+.queryform {
+  background-color: #8fcaf1;
+  padding: 2rem 1rem;
+  text-align: right;
+}
+
+.queryform .btn_blue {
+  border-radius: 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .map {
+    padding: 1.5rem 2rem;
+  }
+  .addressbook {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    grid-column-gap: 1.5rem;
+  }
+  .addressbook .grid_for_icon .span {
+    font-size: 1.2rem;
+  }
+  .addressbook .grid_for_icon li {
+    font-size: 1rem;
+  }
+  .input_in_grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+  .queryform .btn_blue {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .contactus {
+    text-align: left;
+  }
+  .contactus .contactus_and_li_wrapper {
+    top: 50%;
+    left: 13%;
+  }
+  .contactus .contactus_and_li_wrapper h2 {
+    margin-left: 0;
+  }
+  .map {
+    padding: 1.5rem 4rem;
+  }
+  .grid_for_addressbook_and_form {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 0.5fr 1fr;
+        grid-template-columns: 0.5fr 1fr;
+    padding: 1rem 4rem 3rem 4rem;
+    border-bottom: 1px solid #cccccc;
+  }
+  .grid_for_addressbook_and_form .addressbook {
+    padding: 0;
+  }
+  .grid_for_addressbook_and_form .queryform .input_in_grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+  .grid_for_addressbook_and_form .queryform .btn_blue {
+    margin-bottom: 0;
   }
 }
 /*# sourceMappingURL=contactUs.css.map */

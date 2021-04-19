@@ -33,7 +33,7 @@ section
 }
 button{
     font-family: nexa-light;
-    padding: 0.5rem;
+    padding: 1rem 2rem;
     font-size: 1.2rem;
     border-radius: 0.5rem;
 }
@@ -47,7 +47,7 @@ button{
     color: var(--white);
     border-color: var(--blue);
     border-style: none;
-    padding:1rem 1rem;
+    padding:1rem;
     font-size: 1.3rem;
     margin:.5rem 0rem;
 }
@@ -136,6 +136,10 @@ li {
 
 input:focus,select:focus{
     outline:none;
+}
+figure{
+    
+    height:auto;
 }
 figcaption{
     font-family: nexa-bold;
