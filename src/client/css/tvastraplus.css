@@ -660,7 +660,7 @@ a {
 }
 
 .hero-section .container span {
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 0.5rem;
   color: #ffffff;
   font-size: 1.2rem;
@@ -688,6 +688,7 @@ a {
   text-align: center;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0.5rem;
 }
 
 .plan .info {
@@ -898,6 +899,7 @@ a {
 .benefit {
   text-align: center;
   font-size: 1.2rem;
+  margin-top: 1.5rem;
 }
 
 .benefit::after {
@@ -918,7 +920,7 @@ a {
 
 .zero-fees .details h2 {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.8rem;
   font-size: 1.5rem;
 }
 
