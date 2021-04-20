@@ -113,15 +113,383 @@
     background: linear-gradient($light_blue,rgba(0,0,0,0) 45%);
     padding-top: 90rem;
 }
+.rating-container{
+    .details{
+        h2{
+            margin-bottom: 1.4rem;
+        }
+        p{
+            margin-top: 0;
+            margin-bottom: 1.4rem;
+            font-size: 1.2rem;
+        }
+    }
+    
+}
+.rating{
+    color: $blue;
+    h6{
+        font-size: 2.4rem;
+        color: $blue;
+        margin-bottom: 0.4rem;
+        margin-top:0;
+    }
+    .star{
+        margin-bottom: 0.8rem;
+    }
+    span{
+        font-size: 1.1rem;
+    }
+}
 //Bar container
-.bar-container {
-    width: 100%;
-    background-color: $light_gray;
+#bar{
+    margin-top: 1.3rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    span{
+        color: $blue;
+        font-family: nexa-bold;
+        font-size: 1.3rem;
+    }
+    li{
+        
+        display: grid;
+        grid-template-columns: 5px auto;
+        grid-column-gap: 1.5rem;
+        justify-content: start;
+        align-items: center;
+        .rating-bar{
+            background-color: $light_gray;
+            width:12rem;
+            height: 1rem;
+            border-radius: 1rem;
+            div{
+                background: $blue;
+                height: 100%;
+                border-radius: 1rem;
+            }
+
+        }
+    }
+    
+}
+.bar5{
+    width:70%;
+}
+.bar4{
+    width: 50%;
+}
+.bar3{
+    width:40%;
+}
+.bar2{
+    width:30%;
+}
+.bar1{
+    width: 15%;
+}
+
+//Extra info Division
+
+.extra-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1.2rem;
+    .info{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-row-gap: 0.4rem;
+        color: $blue;
+        h4{
+            margin-bottom: 0;
+            align-self: center;
+            color: $blue;
+            font-size: 1.2rem;
+        }
+        i{
+            font-size: 2.3rem;
+        }
+        
+    }
+}
+
+//Benefit division
+.benefit{
     text-align: center;
-    color: $light_gray;
-  }
-  .bar-5 {width: 60%; height: 18px; background-color: #4CAF50;}
-.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
-.bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
-.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
-.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+    font-size: 1.2rem;
+    &::after{
+        content: "";
+    position: absolute;
+    /* top: 2rem; */
+    transform: translate(-15.5rem, 2rem);
+    width: 17rem;
+    height: 0.2rem;
+    background-color: #167ddd;
+    border-radius:0.5rem ;
+    }
+}
+
+//Inside zero fees
+.zero-fees{
+    .details{
+        text-align: center;
+        h2{
+            margin-top:1rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        ul{
+            
+            li{
+                color: $dark_blue;
+                text-align: left;
+                display: flex;
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+                &::before{
+                    content: "\f058";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: $light_blue;
+                font-size: 1.3rem;
+                margin-right: 0.9rem;
+                }
+            }
+        }
+    }
+
+    .top-hospital{
+        text-align: center;
+        padding-top: 1rem;
+        background: $white;
+        
+       .grid-sec{
+           
+           figure{
+               padding:1.5rem;
+               height: 6rem;
+               background: $white;
+           }
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           background: $light_blue;
+           grid-gap: 1px;
+           align-items: center;
+       }
+       h4{
+           margin-bottom: 1rem;
+       }
+
+    }
+    span{
+        margin-top: 1rem;
+        display: block;
+        color: $gray;
+    }
+
+}
+
+//benefits section
+.benefits{
+    padding-top: 0;
+    .container{
+        padding-top: 3rem;
+        .details{
+            text-align: center;
+            h2{
+                font-size: 1.5rem;
+                margin-bottom: 1.3rem;
+            }
+            ul{
+            
+                li{
+                    color: $dark_blue;
+                    text-align: left;
+                    display: flex;
+                    font-size: 1.1rem;
+                    margin-bottom: 1.0rem;
+                    
+                    line-height: 1.5rem;
+                    &::before{
+                        content: "\f058";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    color: $light_blue;
+                    font-size: 1.3rem;
+                    margin-right: 0.9rem;
+                    }
+                }
+        
+    }
+}
+    }
+    figure{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    
+    }
+}
+
+//Test Section
+.test{
+    text-align: center;
+    span{
+        font-family: nexa-bold;
+    }
+    .grid{
+        margin-top:1rem;
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        .card{
+            height:13rem;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 0.5rem;
+            figure{
+                img{
+                    width:4rem;
+                    height: auto;
+                }
+            }
+            span{
+                font-size: 1.3rem;
+                color: $light_gray;
+            }
+        }
+    }
+}
+.radiobtn{
+    display: flex;
+    justify-content: center;
+    input{
+        width: auto;
+    }
+}
+
+//Testimonials
+.testimonial{
+    .container{
+        h2{
+            font-size: 1.4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            span{
+                background-color: $blue;
+                color: white;
+                padding: 0.5rem 0.8rem;
+                border-radius: 0.5rem;
+                margin-left: 0.7rem;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+.testimonial-card-group{
+    
+    .card{
+        display: flex;
+        flex-direction: column;
+        padding: 0.7rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        figure{
+            display: flex;
+            align-items: center;
+            img{
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                margin-right: 1rem;
+            }
+
+        }
+        
+        q{
+            font-weight: bold;
+        }
+        figcaption{
+            span{
+                color: $blue;
+                background: $light_blue;
+                font-size: 0.7rem;
+                padding:0.5rem 0.8rem;
+                border-radius: 0.5rem;
+            }
+            h6{
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+                margin-top: 0;
+            }
+        }
+    
+    }
+}
+
+//Accordian
+
+#accordian{
+    .container{
+        h3{
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .list-items-and-paragraph{
+            padding: 0.7rem;
+            p{
+                background: $background-for-faq;
+                padding: 1rem;
+                font-size: 1rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.icons-and-list {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    color: $blue;
+    align-items: center;
+    margin-top: 0.5rem;
+
+    
+
+    li {
+      color: $blue;
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 4px;
+      letter-spacing: 1px;
+      margin-top: 0;
+      line-height: 1.4rem;
+    }
+    i {
+      background-color: $light_blue;
+      border-radius: 100%;
+      padding: 0.1rem 0.3rem;
+    }
+
+
+}
+
+
+.inactive{
+    display: none;
+}

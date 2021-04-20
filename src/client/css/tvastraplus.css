@@ -773,10 +773,433 @@ a {
   padding-top: 90rem;
 }
 
-.bar-container {
-  width: 100%;
+.rating-container .details h2 {
+  margin-bottom: 1.4rem;
+}
+
+.rating-container .details p {
+  margin-top: 0;
+  margin-bottom: 1.4rem;
+  font-size: 1.2rem;
+}
+
+.rating {
+  color: #167ddd;
+}
+
+.rating h6 {
+  font-size: 2.4rem;
+  color: #167ddd;
+  margin-bottom: 0.4rem;
+  margin-top: 0;
+}
+
+.rating .star {
+  margin-bottom: 0.8rem;
+}
+
+.rating span {
+  font-size: 1.1rem;
+}
+
+#bar {
+  margin-top: 1.3rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+#bar span {
+  color: #167ddd;
+  font-family: nexa-bold;
+  font-size: 1.3rem;
+}
+
+#bar li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5px auto;
+      grid-template-columns: 5px auto;
+  grid-column-gap: 1.5rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#bar li .rating-bar {
   background-color: #cccccc;
+  width: 12rem;
+  height: 1rem;
+  border-radius: 1rem;
+}
+
+#bar li .rating-bar div {
+  background: #167ddd;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.bar5 {
+  width: 70%;
+}
+
+.bar4 {
+  width: 50%;
+}
+
+.bar3 {
+  width: 40%;
+}
+
+.bar2 {
+  width: 30%;
+}
+
+.bar1 {
+  width: 15%;
+}
+
+.extra-info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 1.2rem;
+}
+
+.extra-info .info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  grid-row-gap: 0.4rem;
+  color: #167ddd;
+}
+
+.extra-info .info h4 {
+  margin-bottom: 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #167ddd;
+  font-size: 1.2rem;
+}
+
+.extra-info .info i {
+  font-size: 2.3rem;
+}
+
+.benefit {
   text-align: center;
+  font-size: 1.2rem;
+}
+
+.benefit::after {
+  content: "";
+  position: absolute;
+  /* top: 2rem; */
+  -webkit-transform: translate(-15.5rem, 2rem);
+          transform: translate(-15.5rem, 2rem);
+  width: 17rem;
+  height: 0.2rem;
+  background-color: #167ddd;
+  border-radius: 0.5rem;
+}
+
+.zero-fees .details {
+  text-align: center;
+}
+
+.zero-fees .details h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.zero-fees .details ul li {
+  color: #021433;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.zero-fees .details ul li::before {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #8fcaf1;
+  font-size: 1.3rem;
+  margin-right: 0.9rem;
+}
+
+.zero-fees .top-hospital {
+  text-align: center;
+  padding-top: 1rem;
+  background: #ffffff;
+}
+
+.zero-fees .top-hospital .grid-sec {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  background: #8fcaf1;
+  grid-gap: 1px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.zero-fees .top-hospital .grid-sec figure {
+  padding: 1.5rem;
+  height: 6rem;
+  background: #ffffff;
+}
+
+.zero-fees .top-hospital h4 {
+  margin-bottom: 1rem;
+}
+
+.zero-fees span {
+  margin-top: 1rem;
+  display: block;
+  color: #636668;
+}
+
+.benefits {
+  padding-top: 0;
+}
+
+.benefits .container {
+  padding-top: 3rem;
+}
+
+.benefits .container .details {
+  text-align: center;
+}
+
+.benefits .container .details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.3rem;
+}
+
+.benefits .container .details ul li {
+  color: #021433;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.1rem;
+  margin-bottom: 1.0rem;
+  line-height: 1.5rem;
+}
+
+.benefits .container .details ul li::before {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #8fcaf1;
+  font-size: 1.3rem;
+  margin-right: 0.9rem;
+}
+
+.benefits figure {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.test {
+  text-align: center;
+}
+
+.test span {
+  font-family: nexa-bold;
+}
+
+.test .grid {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.test .grid .card {
+  height: 13rem;
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0.5rem;
+}
+
+.test .grid .card figure img {
+  width: 4rem;
+  height: auto;
+}
+
+.test .grid .card span {
+  font-size: 1.3rem;
   color: #cccccc;
+}
+
+.radiobtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.radiobtn input {
+  width: auto;
+}
+
+.testimonial .container h2 {
+  font-size: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+.testimonial .container h2 span {
+  background-color: #167ddd;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  margin-left: 0.7rem;
+  font-size: 1.4rem;
+}
+
+.testimonial-card-group .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.7rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.testimonial-card-group .card figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.testimonial-card-group .card figure img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.testimonial-card-group .card q {
+  font-weight: bold;
+}
+
+.testimonial-card-group .card figcaption span {
+  color: #167ddd;
+  background: #8fcaf1;
+  font-size: 0.7rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.testimonial-card-group .card figcaption h6 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+#accordian .container h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#accordian .container .list-items-and-paragraph {
+  padding: 0.7rem;
+}
+
+#accordian .container .list-items-and-paragraph p {
+  background: #e5f1f7;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.icons-and-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  color: #167ddd;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0.5rem;
+}
+
+.icons-and-list li {
+  color: #167ddd;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 4px;
+  letter-spacing: 1px;
+  margin-top: 0;
+  line-height: 1.4rem;
+}
+
+.icons-and-list i {
+  background-color: #8fcaf1;
+  border-radius: 100%;
+  padding: 0.1rem 0.3rem;
+}
+
+.inactive {
+  display: none;
 }
 /*# sourceMappingURL=tvastraplus.css.map */
