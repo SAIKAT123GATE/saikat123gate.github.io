@@ -242,6 +242,22 @@ form .input1 .input_field{
     background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
      url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg);  
 }
+
+/* Inside inactive1*/
+#row1 .fig2{
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
+     url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg);
+}
+#row1 .fig6{
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
+     url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg); 
+}
+#row1 .fig1{
+    background-image:linear-gradient(to top,rgb(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
+     url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg); 
+
+}
+
 .fig1 ul , .fig2 ul, .fig3 ul,.fig4 ul,.fig5 ul, .fig6 ul{
     text-align: left;
     top:auto;
@@ -763,6 +779,7 @@ form .input1 .input_field{
         display: flex;
         margin-left: 2rem;
         margin-top: 2rem;
+        
     }
     input[
         type=radio
@@ -770,6 +787,7 @@ form .input1 .input_field{
     {
         width: auto;
         margin-left:0.7rem;
+        cursor: pointer;
     }
     .row{
         display: grid;
@@ -787,7 +805,8 @@ form .input1 .input_field{
     }
     
     .row .card{
-        margin-bottom: 0rem;   
+        margin-bottom: 0rem;  
+        cursor: pointer; 
     }
     .row .card figure{
         height: 18rem;
@@ -857,6 +876,7 @@ form .input1 .input_field{
     }
     .fig1,.fig2,.fig3,.fig4,.fig5,.fig6{
         margin-bottom: 0rem;
+        cursor: pointer;
     }
     .fig1{
         grid-area: fig1;
