@@ -27,8 +27,8 @@ function activateimg(id){
     document.getElementById('active2').style.display="none";
     document.getElementById('active3').style.display="none";
     document.getElementById('active4').style.display="none";
-    document.getElementById('carousel1').style.display="none";
-    document.getElementById('carousel2').style.display="none";
+    //document.getElementById('carousel1').style.display="none";
+    //document.getElementById('carousel2').style.display="none";
 
 
     document.getElementById(id).style.display="grid";
@@ -37,6 +37,13 @@ function activateimg(id){
     
     
 
+}
+function activecar(id){
+  document.getElementById('carousel1').style.display="none";
+    document.getElementById('carousel2').style.display="none";
+
+
+    document.getElementById(id).style.display="grid";
 }
 
 

@@ -1354,6 +1354,7 @@ a {
   width: auto;
   margin-left: 6px;
   margin-right: 6px;
+  cursor: pointer;
 }
 
 .testimonial .container h2 {
