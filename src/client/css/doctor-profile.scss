@@ -45,6 +45,7 @@
 
   h2 {
     text-align: left;
+    color: $blue;
     &::before {
       content: "";
       background-color: #167ddd;
@@ -67,6 +68,7 @@
   padding: 0 1rem 1.3rem;
   text-align: left;
   .icons-and-list {
+    cursor: pointer;
     display: grid;
     grid-template-columns: 2.5rem 5fr auto;
     color: $blue;
@@ -132,10 +134,13 @@
   }
   .card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.3fr 1fr;
     grid-template-areas: "left right";
     .left-part {
       grid-area: left;
+      .list-items{
+        padding-left: 1.5rem;
+      }
     }
     .right-part {
       grid-area: right;
@@ -144,6 +149,12 @@
     .name-and-description {
       p {
         text-align: left;
+        padding-left:1.5rem;
+      }
+      h2{
+        &::before{
+          width: 1.8rem;
+        }
       }
     }
   }
@@ -190,6 +201,7 @@
       }
       h2{
         margin-left: 0;
+        font-size: 2rem;
       }
     }
   }
@@ -203,6 +215,11 @@
 
   .list-items{
     padding-left: 2.8rem;
+    .icons-and-list{
+      li{
+        font-size: 1.2rem;
+      }
+    }
   }
 
   //Need help section

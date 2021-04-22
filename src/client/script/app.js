@@ -27,6 +27,9 @@ function activateimg(id){
     document.getElementById('active2').style.display="none";
     document.getElementById('active3').style.display="none";
     document.getElementById('active4').style.display="none";
+    document.getElementById('carousel1').style.display="none";
+    document.getElementById('carousel2').style.display="none";
+
 
     document.getElementById(id).style.display="grid";
     
@@ -97,3 +100,20 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "grid";  
   
 }
+
+
+//Frequently asked questions
+
+function showFaq(id) {
+    var element = document.getElementById(id);
+    var icon = document.getElementById("icon" + id);
+    if (element.style.display != "block") {
+      element.style.display = "block";
+      icon.classList.replace("fa-angle-down", "fa-angle-up");
+    } else {
+      element.style.display = "none";
+      icon.classList.replace("fa-angle-up", "fa-angle-down");
+    }
+  }
+
+  //Carousel for tvastra plus

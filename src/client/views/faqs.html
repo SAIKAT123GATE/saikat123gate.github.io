@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="../css/faqs.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../../../../app.js"></script>
+    <script src="../script/app.js"></script>
 
 </head>
 
@@ -27,19 +27,19 @@
         <nav class="head2">
 
 
-            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+        <a href="./index.html">    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" /> </a>
 
 
-            <ul>
-                <li>Doctor</li>
-                <li>Hospital</li>
-                <li>Treatment</li>
-                <li>Other Serivices</li>
-                <li>About</li>
-            </ul>
+        <ul>
+            <a href="./doctor.html"> <li>Doctor</li></a>
+            <a href="./hospital.html">  <li>Hospital</li></a>
+            <a href="./treatment.html"> <li>Treatment</li></a>
+             <a href="#"><li>Other Serivices</li></a>
+             <a href="./aboutUs.html"> <li>About</li></a>
+         </ul>
             <div>
-                <button class="btn_white">Login/Sign Up</button>
-                <button class="btn_darkblue">Get a Quote</button>
+            <a href="./login.html">    <button class="btn_white">Login/Sign Up</button> </a>
+            <a href="./queryform.html">    <button class="btn_darkblue">Get a Quote</button> </a>
             </div>
 
         </nav>
@@ -64,12 +64,12 @@
         <div class="list-items">
             <!--1st list-->
             <div class="list-items-and-paragraph">
-                <div class="icons-and-list">
+                <div class="icons-and-list" onclick="showFaq('active1')">
 
                     <ul>
                         <li>How do I make Payments?</li>
                     </ul>
-                    <i class="fa fa-angle-up round-border" onclick="toggle_visibility('active1')"></i>
+                    <i class="fa fa-angle-up round-border" id="iconactive1"></i>
                 </div>
                 <div id="active1">
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, omnis ea laborum
@@ -79,13 +79,13 @@
             </div>
             <!--2nd list-->
             <div class="list-items-and-paragraph">
-                <div class="icons-and-list">
+                <div class="icons-and-list" onclick="showFaq('inactive1')">
 
                     <ul>
                         <li>There is not enough money in my Portea Wallet for making a payment.What do I do?</li>
                     </ul>
-                    <i class="fa fa-angle-down round-border"
-                        onclick="toggle_visibility('inactive1')"></i>
+                    <i class="fa fa-angle-down round-border" id="iconinactive1"
+                        ></i>
                 </div>
                 <div class="inactive" id="inactive1">
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, omnis ea
@@ -96,13 +96,13 @@
             </div>
             <!--3rd list-->
             <div class="list-items-and-paragraph">
-                <div class="icons-and-list">
+                <div class="icons-and-list" onclick="showFaq('inactive2')">
 
                     <ul>
                         <li>Can I transfer balance?</li>
                     </ul>
                     <i class="fa fa-angle-down round-border"
-                        onclick="toggle_visibility('inactive2')"></i>
+                        id="iconinactive2"></i>
                 </div>
 
                 <p class="inactive" id="inactive2">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -113,13 +113,13 @@
             </div>
             <!--4th list-->
             <div class="list-items-and-paragraph">
-                <div class="icons-and-list">
+                <div class="icons-and-list" onclick="showFaq('inactive4')">
 
                     <ul>
                         <li>Qualification</li>
                     </ul>
-                    <i class="fa fa-angle-down round-border"
-                        onclick="toggle_visibility('inactive4')"></i>
+                    <i class="fa fa-angle-down round-border" id="iconinactive4"
+                        ></i>
                 </div>
                 <p class="inactive" id="inactive4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Nihil, omnis ea
@@ -128,13 +128,13 @@
             </div>
             <!--5th list-->
             <div class="list-items-and-paragraph">
-                <div class="icons-and-list">
+                <div class="icons-and-list" onclick="showFaq('inactive5')">
 
                     <ul>
                         <li>Refund</li>
                     </ul>
-                    <i class="fa fa-angle-down round-border"
-                        onclick="toggle_visibility('inactive5')"></i>
+                    <i class="fa fa-angle-down round-border" id="iconinactive5"
+                        ></i>
                 </div>
                 <p class="inactive" id="inactive5">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Nihil, omnis ea
@@ -143,13 +143,13 @@
             </div>
             <!--6th List-->
             <div class="list-items-and-paragraph">
-                <div class="icons-and-list">
+                <div class="icons-and-list" onclick="showFaq('inactive6')">
 
                     <ul>
                         <li>What is a family ID?</li>
                     </ul>
-                    <i class="fa fa-angle-down round-border"
-                        onclick="toggle_visibility('inactive6')"></i>
+                    <i class="fa fa-angle-down round-border" id="iconinactive6"
+                        ></i>
                 </div>
                 <p class="inactive" id="inactive6">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Nihil, omnis ea
@@ -158,12 +158,12 @@
             </div>
             <!--7th List-->
             <div class="list-items-and-paragraph">
-                <div class="icons-and-list">
+                <div class="icons-and-list" onclick="showFaq('inactive7')">
 
                     <ul>
                         <li>Who can be aided as family?</li>
                     </ul>
-                    <i class="fa fa-angle-down round-border" onclick="toggle_visibility('inactive7')"></i>
+                    <i class="fa fa-angle-down round-border"  id="iconinactive7"></i>
                 </div>
                 <p class="inactive" id="inactive7">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Nihil, omnis ea

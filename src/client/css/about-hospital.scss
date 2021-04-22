@@ -58,6 +58,7 @@
       text-align: left;
     }
     .icon-and-li{
+      
         padding-left: 1rem;
         padding-right: 1rem;
         text-align: left;
@@ -83,6 +84,7 @@
     padding: 0 1rem 1rem;
     text-align: left;
     .icons-and-list {
+      cursor: pointer;
       display: grid;
       grid-template-columns: 2.5rem 5fr auto;
       color: $blue;
@@ -99,6 +101,9 @@
         font-size: 1.5rem;
         font-weight: bold;
         margin-top: 4px;
+        @media only screen and (min-width:1024px) {
+          font-size: 1.2rem;
+        }
       }
       .round-border {
         background-color: $light_blue;
@@ -211,6 +216,7 @@
         }
           h2{
               margin-left: 0rem;
+              font-size: 1.8rem;
           }
         p {
           text-align: left;

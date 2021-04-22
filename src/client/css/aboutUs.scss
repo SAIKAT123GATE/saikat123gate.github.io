@@ -31,8 +31,9 @@
   .description_of_heading{
       text-align: center;
       h2{
-          line-height: 2.5rem;
+          line-height: 2rem;
           margin-top: 0;
+          font-size: 1.7rem;
       }
       p{
           margin:1rem 0;
@@ -55,6 +56,7 @@
     h2{
         color: $white;
         margin-top: 0;
+        font-size: 1.7rem;
     }
     p{
         color: $white;
@@ -119,27 +121,22 @@
 
 //Heading and description part
 
-.description_of_heading{
+.flex-align{
     text-align: left;
-    display: grid;
-    grid-template-areas: 
-  'left_section  right_part';
-    grid-column-gap: 1rem;
-    .left_section_of_grid{
-      grid-area: left_section;
-    }
-    .right_part{
-      grid-area: right_part;
-      padding:0;
-      margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    img{
+      height: auto;
+    }  
+    figure{
+      padding: 0;
     }
     .sign{
-      padding: 0;
-      width:20rem;
+      width: 15rem;
     }
-         
-       
-    
+    .right_part{
+      min-width: 18rem;
+    }  
     
 }
 
@@ -184,32 +181,30 @@
 
 //Heading and description part
 
-.description_of_heading{
-  text-align: left;
-  display: grid;
-  grid-template-areas: 
-  'left_section  right_part';
-  
-  grid-column-gap: 1rem;
-  
-  h2{
-    margin-left: 0;
-  }
-  .left_section_of_grid{
-    grid-area: left_section;
-  }
-  .sign{
-    width:20vw;
-    padding:0;
-  }
-  .right_part{
-    grid-area: right_part;
-    padding: 0;
 
-      
-    
-  }
 
+.flex-align{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    img{
+      height: auto;
+    }  
+    figure{
+      padding: 0;
+    }
+    .sign{
+      width: 15rem;
+    }
+    .right_part{
+      min-width: 18rem;
+      width: 18rem;
+      margin: 0 auto;
+    }
+    .left_section_of_grid{
+      max-width: 37rem;
+
+    }  
     
 }
 

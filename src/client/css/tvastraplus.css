@@ -289,6 +289,7 @@ figcaption {
 
 figure {
   height: auto;
+  cursor: pointer;
 }
 
 nav {
@@ -814,6 +815,20 @@ a {
   margin-top: 1rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#8fcaf1), to(transparent));
   background: linear-gradient(#8fcaf1, transparent);
+  position: relative;
+}
+
+.advance-card::before {
+  content: "Popular";
+  padding: 0.3rem 0.8rem;
+  background: green;
+  color: #ffffff;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -0.6rem;
+  -webkit-transform: translateX(-2.2rem);
+          transform: translateX(-2.2rem);
 }
 
 @media only screen and (min-width: 768px) {
@@ -1274,6 +1289,10 @@ a {
   color: #cccccc;
 }
 
+.test #carousel2 {
+  display: none;
+}
+
 .test .grid {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -1333,6 +1352,8 @@ a {
 
 .radiobtn input {
   width: auto;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 .testimonial .container h2 {
@@ -1482,6 +1503,7 @@ a {
 }
 
 .icons-and-list {
+  cursor: pointer;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr auto;

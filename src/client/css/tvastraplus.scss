@@ -136,6 +136,18 @@
 .advance-card{
     margin-top: 1rem;
     background: linear-gradient($light_blue,transparent);
+    position: relative;
+    &::before{
+        content: "Popular";
+        padding: 0.3rem 0.8rem;
+    background: green;
+    color: $white;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -0.6rem;
+    transform: translateX(-2.2rem);
+    }
     
         @media only screen and(min-width:768px){
            margin-top: 0; 
@@ -492,6 +504,9 @@
         font-family: nexa-bold;
         color: $light_gray;
     }
+    #carousel2{
+        display: none;
+    }
     .grid{
         margin-top:1rem;
         margin-bottom: 1rem;
@@ -528,6 +543,8 @@
     justify-content: center;
     input{
         width: auto;
+        margin-left: 6px;
+        margin-right: 6px;
     }
 }
 
@@ -645,6 +662,7 @@
 }
 
 .icons-and-list {
+    cursor: pointer;
     display: grid;
     grid-template-columns: 1fr auto;
     color: $blue;

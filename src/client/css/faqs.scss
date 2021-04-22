@@ -27,6 +27,7 @@
 .list-items {
   text-align: left;
   .icons-and-list {
+    cursor: pointer;
     display: grid;
     grid-template-columns: 1fr auto;
     color: $blue;

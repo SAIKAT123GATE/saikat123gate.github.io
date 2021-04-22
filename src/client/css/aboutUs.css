@@ -289,6 +289,7 @@ figcaption {
 
 figure {
   height: auto;
+  cursor: pointer;
 }
 
 nav {
@@ -673,8 +674,9 @@ a {
 }
 
 .description_of_heading h2 {
-  line-height: 2.5rem;
+  line-height: 2rem;
   margin-top: 0;
+  font-size: 1.7rem;
 }
 
 .description_of_heading p {
@@ -700,6 +702,7 @@ a {
 .free_checkup h2 {
   color: #ffffff;
   margin-top: 0;
+  font-size: 1.7rem;
 }
 
 .free_checkup p {
@@ -750,28 +753,27 @@ a {
   .background_image_with_gradient .living_and_paragraph_wrapper {
     top: 12rem;
   }
-  .description_of_heading {
+  .flex-align {
     text-align: left;
-    display: -ms-grid;
-    display: grid;
-        grid-template-areas: 'left_section  right_part';
-    grid-column-gap: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-  .description_of_heading .left_section_of_grid {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: left_section;
+  .flex-align img {
+    height: auto;
   }
-  .description_of_heading .right_part {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: right_part;
+  .flex-align figure {
     padding: 0;
-    margin-top: 0;
   }
-  .description_of_heading .sign {
-    padding: 0;
-    width: 20rem;
+  .flex-align .sign {
+    width: 15rem;
+  }
+  .flex-align .right_part {
+    min-width: 18rem;
   }
   .free_checkup .text_and_button {
     text-align: left;
@@ -799,30 +801,32 @@ a {
   .background_image_with_gradient .living_and_paragraph_wrapper h2 {
     text-align: center;
   }
-  .description_of_heading {
+  .flex-align {
     text-align: left;
-    display: -ms-grid;
-    display: grid;
-        grid-template-areas: 'left_section  right_part';
-    grid-column-gap: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-  .description_of_heading h2 {
-    margin-left: 0;
+  .flex-align img {
+    height: auto;
   }
-  .description_of_heading .left_section_of_grid {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: left_section;
-  }
-  .description_of_heading .sign {
-    width: 20vw;
+  .flex-align figure {
     padding: 0;
   }
-  .description_of_heading .right_part {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: right_part;
-    padding: 0;
+  .flex-align .sign {
+    width: 15rem;
+  }
+  .flex-align .right_part {
+    min-width: 18rem;
+    width: 18rem;
+    margin: 0 auto;
+  }
+  .flex-align .left_section_of_grid {
+    max-width: 37rem;
   }
   .checkup_and_video {
     padding: 0;

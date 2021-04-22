@@ -289,6 +289,7 @@ figcaption {
 
 figure {
   height: auto;
+  cursor: pointer;
 }
 
 nav {
@@ -695,6 +696,7 @@ a {
 
 .name-and-description h2 {
   text-align: left;
+  color: #167ddd;
 }
 
 .name-and-description h2::before {
@@ -719,6 +721,7 @@ a {
 }
 
 .list-items .icons-and-list {
+  cursor: pointer;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2.5rem 5fr auto;
@@ -787,14 +790,17 @@ a {
   .card {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1.3fr 1fr;
+        grid-template-columns: 1.3fr 1fr;
         grid-template-areas: "left right";
   }
   .card .left-part {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: left;
+  }
+  .card .left-part .list-items {
+    padding-left: 1.5rem;
   }
   .card .right-part {
     -ms-grid-row: 1;
@@ -804,6 +810,10 @@ a {
   }
   .card .name-and-description p {
     text-align: left;
+    padding-left: 1.5rem;
+  }
+  .card .name-and-description h2::before {
+    width: 1.8rem;
   }
 }
 
@@ -843,12 +853,16 @@ a {
   }
   .card .name-and-description h2 {
     margin-left: 0;
+    font-size: 2rem;
   }
   .name-and-description p {
     padding-left: 2.8rem;
   }
   .list-items {
     padding-left: 2.8rem;
+  }
+  .list-items .icons-and-list li {
+    font-size: 1.2rem;
   }
   /*need help*/
   .nd_help {
