@@ -159,7 +159,7 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     figure {
-      height: 33rem;
+      height: 32rem;
     }
   }
 
@@ -362,6 +362,7 @@
       width: auto;
       margin:0;
       margin-right: 0.5rem;
+      cursor: pointer;
     }
     h6{
       font-size: 1rem;
@@ -370,6 +371,7 @@
     }
     label{
       line-height: 1.5rem;
+      cursor: pointer;
     }
   }
 

@@ -819,7 +819,7 @@ footer p span {
         grid-template-columns: 1.5fr 1fr;
   }
   .grid-for-hospitalinfo-and-image figure {
-    height: 33rem;
+    height: 32rem;
   }
   .card h3 {
     font-size: 1.7rem;
@@ -1019,6 +1019,7 @@ footer p span {
     width: auto;
     margin: 0;
     margin-right: 0.5rem;
+    cursor: pointer;
   }
   .checkbox h6 {
     font-size: 1rem;
@@ -1027,6 +1028,7 @@ footer p span {
   }
   .checkbox label {
     line-height: 1.5rem;
+    cursor: pointer;
   }
   .grid-for-hospitalinfo-and-image {
     display: -ms-grid;
