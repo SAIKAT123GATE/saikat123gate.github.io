@@ -648,6 +648,31 @@ a {
   }
 }
 
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .hero-section {
   background-image: -webkit-gradient(linear, left top, right top, from(#0a7abb), to(transparent)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist_hero_image.jpg);
   background-image: linear-gradient(to right, #0a7abb, transparent), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist_hero_image.jpg);
@@ -696,6 +721,7 @@ a {
   .about h2 {
     text-align: left;
     margin-top: 0;
+    font-size: 1.9rem;
   }
 }
 
@@ -845,8 +871,8 @@ a {
 
 @media only screen and (min-width: 1024px) {
   .card-collection2 .card h5::before {
-    -webkit-transform: translate(-26px, 14px);
-            transform: translate(-26px, 14px);
+    -webkit-transform: translate(-25px, 14px);
+            transform: translate(-25px, 14px);
     left: auto;
   }
 }
@@ -895,6 +921,7 @@ a {
   background: #ffffff;
   padding: 0.5rem 0.73rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
@@ -974,8 +1001,8 @@ a {
 @media only screen and (min-width: 1024px) {
   .card-group .card figure figcaption h3::before {
     left: auto;
-    -webkit-transform: translate(-23px, 15px);
-            transform: translate(-23px, 15px);
+    -webkit-transform: translate(-25px, 18px);
+            transform: translate(-25px, 18px);
   }
 }
 
