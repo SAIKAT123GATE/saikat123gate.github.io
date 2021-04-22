@@ -58,6 +58,9 @@ body{
 
                 
             }
+            select{
+                margin: 0.4rem auto;
+            }
 
             //Signup button
             
@@ -71,11 +74,12 @@ body{
                     
                     font-weight: 600;
                     letter-spacing: .3rem;
+                    margin-top: 0.4rem;
                 }
                 i{
                     color: $white;
                     font-size:1.2rem;
-                    margin-top: 0.2rem;
+                    
                 }
             }
             
@@ -109,8 +113,9 @@ footer{
     background-color: $background;
     p{
         font-weight:bold ;
-        margin-bottom: 2rem;
+        padding-bottom: 1rem;
         color: $dark_blue;
+        margin-top: 0;
     }
     
 }
@@ -160,7 +165,7 @@ footer{
                 }
                 .btn{
                     i{
-                        margin-top: 0.1rem;
+                        margin-top: 0.48rem;
                     }
                 }
             }
