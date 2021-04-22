@@ -192,6 +192,7 @@ footer {
   .location {
     h5{
       margin:0;
+      font-size: 1.2rem;
     }
     
     .flex_for_icon {
@@ -220,17 +221,19 @@ footer {
   //filter and card grid
   .filter_and_card_grid1 {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.3fr 2fr;
     grid-column-gap: 1rem;
     .filter {
       display: block;
       margin-top: 1.4rem;
       .bg_gray {
         background-color: #cccccc;
-        padding: 0.5rem;
+        padding: 0.2rem;
+        padding-left: 0.5rem;
         h4 {
           margin-bottom: 0;
           font-size: 1.3rem;
+          margin-top: 3px;
         }
       }
     }
@@ -238,7 +241,8 @@ footer {
 
   .grid2 {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.8fr 1fr;
+    grid-column-gap: 1rem;
   }
   .bg_white {
     .bordergray {
@@ -396,7 +400,7 @@ footer {
     background-size: cover;
     h2 {
       position: absolute;
-      top: 35vh;
+      top: 14rem;
       margin-left: 4rem;
       font-family: nexa-light;
       span {
@@ -452,12 +456,14 @@ footer {
       }
       h5{
         margin-bottom: 0;
+        font-size: 1.3rem;
       }
     }
   }
   .grid2 {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 1rem;
   }
 
   //inside card
@@ -522,9 +528,11 @@ footer {
       width: auto;
       margin: 0;
       margin-right: 0.5rem;
+      cursor: pointer;
     }
     label{
       line-height: 1.5rem;
+      cursor: pointer;
     }
   }
 
