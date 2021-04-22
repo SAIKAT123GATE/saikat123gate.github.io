@@ -653,7 +653,7 @@ a {
           box-sizing: border-box;
 }
 
-main {
+.main-body {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -776,14 +776,9 @@ main {
   font-size: 1.3rem;
 }
 
-.firstsec .login p {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0rem 0rem 1rem 0rem;
-}
-
 .firstsec .login p span {
   color: #167ddd;
+  font-weight: 600;
 }
 
 footer {
@@ -794,8 +789,8 @@ footer {
 
 footer p {
   font-weight: bold;
-  margin-bottom: 2rem;
-  margin-top: 0.5rem;
+  padding-bottom: 1rem;
+  margin-top: 0rem;
   color: #021433;
 }
 
@@ -811,9 +806,6 @@ footer p {
   }
   .firstsec .login form i {
     right: 10rem;
-  }
-  footer p {
-    margin-top: 0.5rem;
   }
 }
 

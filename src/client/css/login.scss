@@ -2,7 +2,7 @@
 *{
     box-sizing: border-box;
 }
-main{
+.main-body{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -98,14 +98,12 @@ main{
             
         }
         p{
-            font-size: 1rem;
-            font-weight: 600;
-            
             span{
                 color: $blue;
+                font-weight: 600;
             }
-            margin:0rem 0rem 1rem 0rem;
         }
+        
     }
     
     
@@ -116,8 +114,8 @@ footer{
     padding: 0;
     p{
         font-weight:bold ;
-        margin-bottom: 2rem;
-        margin-top: 0.5rem;
+        padding-bottom: 1rem;
+        margin-top: 0rem;
         color: $dark_blue;
     }
     background-color: $background;
@@ -143,12 +141,7 @@ footer{
        
     }
 
-    //footer
-    footer{
-        p{
-            margin-top: 0.5rem;
-        }
-    }
+    
     
 
 }
