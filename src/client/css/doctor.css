@@ -164,7 +164,7 @@ button {
   color: #ffffff;
   border-color: #167ddd;
   border-style: none;
-  padding: 1rem 1.3rem;
+  padding: 1rem;
   font-size: 1.3rem;
   margin: .5rem 0rem;
   cursor: pointer;
@@ -487,6 +487,7 @@ a {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    margin-left: 2rem;
   }
   .head2 div button {
     font-size: 1rem;

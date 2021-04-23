@@ -487,6 +487,7 @@ a {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    margin-left: 2rem;
   }
   .head2 div button {
     font-size: 1rem;

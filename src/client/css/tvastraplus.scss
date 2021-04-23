@@ -25,7 +25,10 @@ figure{
             text-align: left;
         }
         @media only screen and (min-width:1024px){
-            padding-left: 3.5rem;
+            padding:0.5rem;
+            max-width: 1200px;
+            margin:auto;
+            transform: translateX(-190px);
         }
         
         span{
@@ -58,7 +61,7 @@ figure{
 //inside Main Section
 .plan-container{
     position: absolute;
-    top:25rem;
+    top:26rem;
     @media only screen and(min-width:1024px){
         width:100%;
     }
@@ -70,6 +73,11 @@ figure{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 0.5rem;
     overflow: hidden;
+    max-width: 1200px;
+    @media only screen and (min-width:1024px){
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
     
 }
@@ -186,7 +194,7 @@ figure{
 .rating-class{
     text-align: center;
     background: linear-gradient($light_blue,rgba(0,0,0,0) 45%);
-    padding-top: 90rem;
+    padding-top: 92rem;
     @media only screen and(min-width:768px) and (max-width:1024px){
         padding-top: 45rem;
     }
@@ -305,8 +313,10 @@ figure{
         padding-top: 2rem;
     }
     @media only screen and (min-width:1024px){
-        margin-left: 5rem;
-        margin-right: 5rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1000px;
+        width:1000px;
     }
     .info{
         display: grid;
@@ -359,6 +369,9 @@ figure{
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-column-gap: 3rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .details{
         text-align: center;
@@ -426,6 +439,12 @@ figure{
         padding-bottom: 2rem;
         @media only screen and(min-width:768px){
             display: flex;
+
+        }
+        @media only screen and(min-width:1024px){
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .details{
             text-align: center;
@@ -517,7 +536,14 @@ figure{
 }
 
 //Test Section
+.max-width-section{
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .test{
+    
     text-align: center;
     @media only screen and(min-width:768px){
         text-align: left;
@@ -664,6 +690,10 @@ figure{
 
 #accordian{
     .container{
+        max-width: 1200px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
         h3{
             text-align: center;
             font-size: 1.5rem;
@@ -719,4 +749,80 @@ figure{
 
 .inactive{
     display: none;
+}
+
+
+@media only screen and (min-width:1024px){
+    .head2{
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    footer{
+        display: block;
+        
+        border: none;
+        border-bottom: 3px solid #0099ff;
+    }
+    /*footer*/
+ footer .max-width-section{
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "about figure"
+    "rights social_icon";
+    background-color: white;
+    
+    
+  
+  }
+  footer .max-width-section figure{
+    grid-area: figure;
+    width:11rem;
+    padding:1rem 0rem;
+    display: block;
+    margin-left: auto;
+    margin-right: 0rem;
+    
+  }
+  footer .max-width-section figure image{
+    width:100%;
+  }
+  footer .max-width-section .about{
+    grid-area: about;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  footer .max-width-section .about li{
+    color:$dark_blue;
+    margin-right: 0.9rem;
+    font-size: 1.2rem;
+  }
+  footer .max-width-section .rights{
+    grid-area: rights;
+    color: $dark_blue;
+    display:block;
+    margin:auto auto auto 0;
+    font-size: 1.2rem;
+  }
+  footer .max-width-section .social_icon{
+    grid-area:social_icon;
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0rem;
+  }
+  footer .max-width-section .social_icon i{
+    padding:0rem 0rem 0rem 0.8rem;
+    font-size: 1.3rem;
+    color: $dark_blue;
+    margin-left: 0.5rem;
+    
+  }
 }

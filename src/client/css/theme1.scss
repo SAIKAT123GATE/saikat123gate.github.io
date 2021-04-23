@@ -428,6 +428,7 @@ a{
       .head1 {
         display: none;
       }
+      
       .head2 {
         display: grid;
         grid-template-columns: 1fr 2fr 1.5fr;
@@ -454,6 +455,7 @@ a{
         div {
           display: flex;
           justify-content: flex-end;
+          margin-left: 2rem;
           button {
             font-size: 1rem;
           }

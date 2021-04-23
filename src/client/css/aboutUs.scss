@@ -46,8 +46,16 @@
 //Free Checkup
 .checkup_and_video{
   background-color: black;
+  .videodiv{
+    @media only screen and(min-width:1024px){
+      height:25rem;
+    }
+  }
   video{
     display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 .free_checkup{
@@ -218,7 +226,7 @@
 }
 .free_checkup{
   position:absolute;
-  top:35%;
+  top:3rem;
   padding-left:4rem;
   padding-right: 4rem;
   display: grid;
