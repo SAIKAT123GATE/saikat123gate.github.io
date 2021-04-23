@@ -1,5 +1,8 @@
 @import "./theme1.scss";
 //Hero section
+figure{
+    margin: 0;
+}
 .hero-section{
     background-image:linear-gradient(rgba(0,0,0,0) 70%,rgba(0,0,0,0.5)),url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/tvastraPlus_heroSection.webp);
     
@@ -41,6 +44,9 @@
             @media only screen and(min-width:768px) and (max-width:1024px){
                 font-size: 2rem;
             }
+            @media only screen and(min-width:1024px){
+                font-size: 2.3rem;
+            }
         }
         p{
             font-size: 1.2rem;
@@ -53,6 +59,9 @@
 .plan-container{
     position: absolute;
     top:25rem;
+    @media only screen and(min-width:1024px){
+        width:100%;
+    }
     
 .plan{
     background-color: $white;
@@ -71,11 +80,16 @@
     border-bottom: 1px solid $light_gray;
     p{
         font-size: 1.2rem;
+        text-align: center;
     }
     h2{
         margin-bottom: 0.8rem;
         @media only screen and(min-width:768px) and (max-width:1024px){
             font-size: 1.8rem;
+        }
+        @media only screen and(min-width:1024px){
+            font-size: 2.3rem;
+            text-align: center;
         }
         
     }
@@ -84,11 +98,15 @@
 .card-collection{
     @media only screen and(min-width:768px){
        display: flex; 
+       justify-content: space-around;
     }
 }
 }
 //  basic card
 .plan-card{
+    @media only screen and(min-width:1024px){
+        max-width:33%;
+    }
     
     h3{
         padding:1rem;
@@ -322,7 +340,11 @@
     height: 0.2rem;
     background-color: #167ddd;
     border-radius:0.5rem ;
+    @media only screen and(min-width:1024px){
+        transform: translate(-16.6rem, 2rem);
     }
+    }
+
 }
 
 //Inside zero fees

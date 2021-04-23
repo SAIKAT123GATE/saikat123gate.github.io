@@ -167,6 +167,7 @@ button {
   padding: 1rem;
   font-size: 1.3rem;
   margin: .5rem 0rem;
+  cursor: pointer;
 }
 
 .btn_white {
@@ -567,6 +568,9 @@ a {
   i {
     font-size: 1.3rem;
   }
+  .btn_blue {
+    padding: 1rem 1.3rem;
+  }
   /*footer*/
   footer {
     display: -ms-grid;
@@ -649,6 +653,10 @@ a {
   }
 }
 
+figure {
+  margin: 0;
+}
+
 .hero-section {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(70%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5))), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/tvastraPlus_heroSection.webp);
   background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.5)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/tvastraPlus_heroSection.webp);
@@ -706,6 +714,12 @@ a {
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  .hero-section .container h2 {
+    font-size: 2.3rem;
+  }
+}
+
 .hero-section .container p {
   font-size: 1.2rem;
 }
@@ -713,6 +727,12 @@ a {
 .plan-container {
   position: absolute;
   top: 25rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .plan-container {
+    width: 100%;
+  }
 }
 
 .plan-container .plan {
@@ -733,6 +753,7 @@ a {
 
 .plan .info p {
   font-size: 1.2rem;
+  text-align: center;
 }
 
 .plan .info h2 {
@@ -745,11 +766,26 @@ a {
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  .plan .info h2 {
+    font-size: 2.3rem;
+    text-align: center;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .plan .card-collection {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .plan-card {
+    max-width: 33%;
   }
 }
 
@@ -1055,6 +1091,13 @@ a {
   height: 0.2rem;
   background-color: #167ddd;
   border-radius: 0.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .benefit::after {
+    -webkit-transform: translate(-16.6rem, 2rem);
+            transform: translate(-16.6rem, 2rem);
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
