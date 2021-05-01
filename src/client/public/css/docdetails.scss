@@ -1,0 +1,47 @@
+@import "../css/theme1.scss";
+
+form{
+    text-align: left;
+    div{
+        input{
+            padding-top:0.8rem ;
+            padding-bottom: 0.8rem;
+        }
+    }
+    
+}
+.firstsec{
+    .signup{
+        h2{
+            margin-bottom: 0;
+        }
+    }
+}
+label{
+    color: $blue;
+}
+textarea{
+    width: 100%;
+    outline: none;
+    margin-top:0.5rem;
+}
+
+.tagify{    
+    width: 100%;
+    max-width: 700px;
+    padding:0.3rem;
+  }
+
+  footer{
+    display: block;
+        padding: 0;
+    background-color: $background;
+    p{
+        font-weight:bold ;
+        padding-bottom: 1rem;
+        color: $dark_blue;
+        margin-top: 0;
+    }
+    
+}
+
