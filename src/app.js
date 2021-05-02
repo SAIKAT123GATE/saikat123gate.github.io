@@ -17,6 +17,9 @@ require("./database/schema");
 const dotenv=require("dotenv");
 dotenv.config({path:'./backend/config.env'});
 
+const flash= require('connect-flash');
+app.use(flash());
+
 
 
 

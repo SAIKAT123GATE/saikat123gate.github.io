@@ -6,7 +6,11 @@ const cookie=require("cookies");
 
 
 const loginuser=(req,res)=>{
-    return res.render("login");
+   return res.render("login", {
+    
+        
+            msg1: req.flash("fail")
+        })   
 }
 
 const loginauth= async(req,res)=>{
@@ -24,18 +28,25 @@ const loginauth= async(req,res)=>{
                 res.cookie("jwtoken",token,{
                     expires: new Date(Date.now()+25892000000),
                 });
+
                 return res.redirect("/index");
                 
             }
             else{
+                req.flash("fail", "Failure");
+                req.flash("fail", "Invalid email or password");
+
                 return res.redirect("/");
             }
             
         }
         else{
             console.log("signup first");
+            req.flash("fail", "Failure");
+            req.flash("fail", "Invalid email or password");
+
             
-            return res.redirect("/signup");
+            return res.redirect("/");
         }
     }
     catch(err){

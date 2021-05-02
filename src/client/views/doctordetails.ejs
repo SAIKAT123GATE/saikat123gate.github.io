@@ -7,13 +7,13 @@
     <link href="../css/theme1.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="../css/signup.css" rel="stylesheet" type="text/css">
-    <link href="../css/docdetails.css" rel="stylesheet" type="text/css">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.css" />
-
+    <link href="../css/docdetails.css" rel="stylesheet" type="text/css">
   <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  
 
     
     
@@ -65,40 +65,60 @@
             <h2>W E L C O M E</h2>
             <p>Complete Your profile to access the site</p>
             <hr>
-            <form action="/signup" method="POST">
+            <form action="/docdetails" method="POST" enctype="multipart/form-data">
+
+                <div class="label_input">
                 
-                    <label for="description">Review of W3Schools:</label>
-                    <textarea id="description" name="description" rows="2">
+                    <label for="description">Describe Yourself</label>
+                    <textarea id="description" name="description" rows="2" required>I am a . . .
                 </textarea>
                 
+                </div>
 
+                <div class="label_input">
                 
                     <label for "filename">Upload Your Profile Picture</label>
-                    <input type="file" id="filename" name="filename">
+                    <input type="file" id="filename" name="image" required>
+                </div>
 
+                <div class="label_input">
                 
                 <label for "hospitals">Your Hospital</label>
-                <input name='tags' id="hospitals" class='some_class_name' placeholder='write some tags' data-blacklist='.NET,PHP'>
+                <input name='hospitals' id="hospitals" class='some_class_name' placeholder='write some tags'  required>
+                    </div>
 
+                    <div class="label_input">    
                 <label for "achievements">Achievements</label>
-                <input name='tags1' class='some_class_name' placeholder='write some tags' data-blacklist='.NET,PHP'>
+                <input name='achievements' class='some_class_name' placeholder='write some tags' required>
+                        </div>
 
+                        <div class="label_input">
                 <label for "exp">Experience</label>
-                <input type="number" id="exp" name="quantity" >
+                <input type="number" id="exp" name="exp" >
+                </div>
                 
                 
+                <div class="label_input">
                 <label for "qualification">Qualification</label>
-                <input name='tags2' id="qualification" class='some_class_name' placeholder='write some tags' data-blacklist='.NET,PHP'>
+                <input name='qualification' id="qualification" class='some_class_name' placeholder='write some tags' required>
+                    </div>
 
+                    <div class="label_input">
                 <label for "awards">Awards</label>
-                <input name='tags3' id="awards" class='some_class_name' placeholder='write some tags'>
+                <input name='awards' id="awards" class='some_class_name' placeholder='write some tags' required>
+                        </div>
+
+                         <div class="label_input">
 
                 <label for "specialization">Specialization</label>
-                <input name='tags4' id="specialization" class='some_class_name' placeholder='write some tags'>
-                  
-                <label for "fees">Your average Fees</label>
-                <input type="number" id="fees" name="quantity" >
+                <input name='specialization' id="specialization" class='some_class_name' placeholder='write some tags' required>
+                            </div>
 
+                            <div class="label_input">
+
+                <label for "fees">Your average Fees</label>
+                <input type="number" id="fees" name="quantity" required>
+                                </div>
 
                 <div class="btn">
                     <button type="submit" class="btn_darkblue">S U B M I T</button>
@@ -117,12 +137,12 @@
 <script>
     
     
-    var input = document.querySelector('input[name=tags]');
+    var input = document.querySelector('input[name=hospitals]');
 
-    var input2 = document.querySelector('input[name=tags1]');
-    var input3 = document.querySelector('input[name=tags2]');
-    var input4 = document.querySelector('input[name=tags3]');
-    var input5 = document.querySelector('input[name=tags4]');
+    var input2 = document.querySelector('input[name=achievements]');
+    var input3 = document.querySelector('input[name=qualification]');
+    var input4 = document.querySelector('input[name=awards]');
+    var input5 = document.querySelector('input[name=specialization]');
     
 
 // initialize Tagify on the above input node reference

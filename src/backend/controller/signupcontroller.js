@@ -22,7 +22,8 @@ const signupregister= async (req,res)=>{
         const register= await user.save();
         if(register){
             console.log("saved successfully");
-            return res.redirect("/");
+            req.session.user={email,password};
+            return res.redirect("/index");
         }
        
     }

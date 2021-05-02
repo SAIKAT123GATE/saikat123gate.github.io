@@ -26,9 +26,7 @@ const otpnumberpageget=(req,res)=>{
 const otpenterpageget=(req,res)=>{
     return res.render("otpenter");
 }
-const docdetails=(req,res)=>{
-    return res.render("doctordetails");
-}
+
 
 module.exports={
     indexget:indexget,
@@ -37,7 +35,7 @@ module.exports={
     treatmentpageget:treatmentpageget,
     aboutpageget:aboutpageget,
     otpnumberpageget:otpnumberpageget,
-    otpenterpageget:otpenterpageget.apply,
-    docdetails:docdetails
+    otpenterpageget:otpenterpageget,
+    
 
 }

@@ -5,6 +5,26 @@ const loginc=require("../controller/logincontroller");
 const signupc=require("../controller/signupcontroller");
 const middle=require("../controller/middle");
 const sessionauth=require("../controller/sessionauth");
+const docdetailsc=require("../controller/docdetailscontroller");
+const multer=require('multer');
+
+
+const fileStorageEngine=multer.diskStorage({
+    destination:(req,res,cb)=>{
+        cb(null,'images')
+    },
+    
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + file.originalname);
+      },
+    
+    
+});
+
+const upload=multer({ storage:fileStorageEngine });
+
+
+
 
 router.route("/").get(loginc.loginuser);
 router.route("/").post(loginc.loginauth);
@@ -19,7 +39,9 @@ router.route("/otpnumber").get(middle.otpnumberpageget);
 //post request for otp number page is handling from app.js via otp service manager
 router.route("/otpenter").get(middle.otpenterpageget);
 
-router.route("/docdetails").get(middle.docdetails);
+router.route("/docdetails").get(docdetailsc.docdetailsget);
+router.route("/docdetails").post(upload.single('image'),docdetailsc.docdetailsregister);
+
 
 module.exports=router;
 
