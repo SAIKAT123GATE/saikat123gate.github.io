@@ -124,3 +124,16 @@ function showFaq(id) {
   }
 
   //Carousel for tvastra plus
+
+
+
+  //for toaster
+
+  function tgl(id) {
+    var k = document.getElementById(id);
+    if (k.style.display == "block")
+        k.style.display = "none";
+    else {
+        k.style.display = "block";
+    }
+}

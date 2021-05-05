@@ -10,10 +10,10 @@ const session=require("express-session");
 const OtpManager = require("./OtpManager");
 const otpRepository = require("./otpRepository");
 const otpSender = require("./otpSender");
-const user=require("./database/schema");
+const user=require("./backend/database/schema");
 
-require("./database/conn");
-require("./database/schema");
+require("./backend/database/conn");
+require("./backend/database/schema");
 const dotenv=require("dotenv");
 dotenv.config({path:'./backend/config.env'});
 
@@ -28,8 +28,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 var finalPath=path.join(__dirname,"/client/views");
 console.log(finalPath);
 const staticpath=path.join(__dirname,"/client/public");
+const staticimages=path.join(__dirname,"/images");
 console.log(staticpath);
 app.use(express.static(staticpath));
+app.use(express.static(staticimages));
 app.engine("html", ejs.renderFile);
 app.set("view engine","ejs");
 app.set("views",finalPath);
@@ -54,9 +56,10 @@ const otpManager = new OtpManager(otpRepository, {
   });
 
 
-  app.post("/otp/:token", (req, res) => {
+  app.post("/otp/:token", async(req, res) => {
 
     const number = req.body.mobileno;
+    var k= await user.findOne({mobileno: number });
   
     user.findOne({mobileno: number }).then((user) => {
       if (user) {
@@ -65,6 +68,7 @@ const otpManager = new OtpManager(otpRepository, {
         console.log("Otp wala");
         console.log(req.body);
         req.session.user={number};
+        req.session.name=k.name;
         otpSender.send(otp, req.body);
         console.log(`Your token code is ${otp.token} and otp is ${otp.code}`);
         res.redirect('/otpenter');
@@ -99,6 +103,9 @@ const otpManager = new OtpManager(otpRepository, {
   
     switch (verificationResult) {
       case verificationResults.valid:
+
+        req.flash("success", "Welcome");
+                req.flash("success", "Login Successfull");
         
         return res.redirect("/index");
         break;

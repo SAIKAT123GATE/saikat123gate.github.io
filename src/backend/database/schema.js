@@ -33,20 +33,16 @@ const userSchema=new mongoose.Schema(
         },
         city:{
             type:String,
-            
+            required:true
         },
         country:{
             type:String,
-            
+            required:true
         },
-        tokens:[
-            {
-                token:{
-                    type:String,
-                    required:true
-                }
-            }
-        ]
+        isDoctor:{
+            type:Boolean,
+        },
+        
 
 
     

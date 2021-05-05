@@ -9,13 +9,13 @@
 
     <link href="../css/doctor.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/app.js"></script>
 
 </head>
 
 <!--Body section-->
 
 <body>
-    <!--Header-->
     <header>
         <!--Mobile and tablet-->
         <nav class="head1">
@@ -26,26 +26,77 @@
         </nav>
 
         <!--Desktop-->
-        <nav class="head2">
+        <div class="head2-container">
+            <nav class="head2">
 
 
-           <a href="/index"> <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" /></a>
+                <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                        alt="logo" /></a>
 
 
-            <ul>
-                <a href="/doctor"> <li>Doctor</li></a>
-              <a href="/hospital" > <li>Hospital</li></a>
-              <a href="/treatment">  <li>Treatment</li></a>
-             
-             <a href="/aboutUs">  <li>About</li></a>
-            </ul>
-            <div>
-              <a href="./login.html">  <button class="btn_white">Login/Sign Up</button> </a>
-                <button class="btn_darkblue">Get a Quote</button>
-            </div>
+                <ul>
+                    <a href="/doctor">
+                        <li>Doctor</li>
+                    </a>
+                    <a href="/hospital">
+                        <li>Hospital</li>
+                    </a>
+                    <a href="/treatment">
+                        <li>Treatment</li>
+                    </a>
 
-        </nav>
+                    <a href="/aboutUs">
+                        <li>About</li>
+                    </a>
+                </ul>
+                <div>
+                    <a href="/tvastraplus"> <button class="btn_blue">TVASTRA PLUS</button> </a>
+                    <a href="/queryform"> <button class="btn_darkblue">Get a Quote</button></a>
+                    <div id="user">
+                        <button class="btn_white" onclick="tgl('toaster')">
+                            <%=username%>
+                        </button>
+                        <i class="fa fa-angle-down"></i>
+
+                    </div>
+
+            </nav>
+        </div>
     </header>
+    <div class="toaster" id="toaster">
+        <div>
+            
+            <a href="/profile">
+            <figure id="toaster-img">
+                
+                <img id="headerpic"
+                    src="<%=image%>">
+                
+                </figure>
+                </a>
+                
+            <h5>
+                <%=username%>
+            </h5>
+        </div>
+        <ul>
+            <a href="/myappointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/medicalrecords">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="#">
+                <li>My payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
 
     <!--For desktop and tablet picture with linear gradient-->
     <section class="hide">
@@ -203,42 +254,42 @@
             </div>
 
 
-
-
             <div id="docinfo">
+                <% for(var i=0;i< findall.length;i++){%>
+                    
                 <div class="bordergray grid2">
                     <div class="docname">
-                        <h3>Deep Verma</h3>
+                        <h3><%= findall[i].name %></h3>
                         <div class="grid_for_tab_and_desktop">
                             <div class="grid_for_icon">
                                 <i class="fa fa-certificate"></i>
                                 <ul>
-                                    <li>k</li>
+                                    <li><%= JSON.parse(findall[i].qualification)[0].value %></li>
                                 </ul>
                             </div>
                             <div class="grid_for_icon">
                                 <i class="fas fa-award"></i>
                                 <ul>
-                                    <li>k</li>
+                                    <li><%= JSON.parse(findall[i].awards)[0].value %></li>
                                 </ul>
                             </div>
                             <div class="grid_for_icon">
                                 <i class="fa fa-clock-o "></i>
                                 <ul>
-                                    <li>k year of exp</li>
+                                    <li><%= findall[i].exp %></li>
                                 </ul>
                             </div>
                             <div class="grid_for_icon">
                                 <i class="fa fa-hospital-o"></i>
                                 <ul>
-                                    <li>k</li>
+                                    <li><%= JSON.parse(findall[i].hospitals)[0].value %></li>
                                 </ul>
                             </div>
 
                             <div class="grid_for_icon">
                                 <i class="fa fa-map-marker "></i>
                                 <ul>
-                                    <li>k</li>
+                                    <li><%= findall[i].location %></li>
                                 </ul>
                             </div>
                         </div>
@@ -246,241 +297,24 @@
                         <button type="submit" class="btn_darkblue">Book an appointment</button>
                     </div>
                     <figure>
-                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg" />
+                    <img src="<%= findall[i].image %>" />
                         </figure>
                 </div>
+                <% } %>
 
 
 
                 <!--Second div-->
 
-                <div class="bordergray grid2">
-                    <div class="docname">
-                        <h3>Subham Sinde</h3>
-                        <div class="grid_for_tab_and_desktop">
-                            <div class="grid_for_icon">
-                                <i class="fa fa-certificate"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fas fa-award"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fa fa-clock-o "></i>
-                                <ul>
-                                    <li>k year of exp</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fa fa-hospital-o"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
+                
 
-                            <div class="grid_for_icon">
-                                <i class="fa fa-map-marker"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                        </div>
+                
 
+                
 
-                        <button type="submit" class="btn_darkblue">Book an appointment</button>
-                    </div>
-                    <figure>
-                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--003.jpg" />
-                        </figure>
-                </div>
-
-                <!--3rd div-->
-
-                <div class="bordergray grid2">
-                    <div class="docname">
-                        <h3>Deep Verma</h3>
-                        <div class="grid_for_tab_and_desktop">
-                            <div class="grid_for_icon">
-                                <i class="fa fa-certificate"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fas fa-award"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fa fa-clock-o "></i>
-                                <ul>
-                                    <li>k year of exp</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fa fa-hospital-o"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-
-                            <div class="grid_for_icon">
-                                <i class="fa fa-map-marker"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn_darkblue">Book an appointment</button>
-                    </div>
-                    <figure>
-                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg" />
-                        </figure>
-                </div>
-
-                <!--4th div-->
-
-                <div class="bordergray grid2">
-                    <div class="docname">
-                        <h3>Deep Verma</h3>
-                        <div class="grid_for_tab_and_desktop">
-                            <div class="grid_for_icon">
-                                <i class="fa fa-certificate"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fas fa-award"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fa fa-clock-o "></i>
-                                <ul>
-                                    <li>k year of exp</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fa fa-hospital-o"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-
-                            <div class="grid_for_icon">
-                                <i class="fa fa-map-marker"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn_darkblue">Book an appointment</button>
-                    </div>
-                    <figure>
-                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg" />
-                        </figure>
-                </div>
-
-                <!--5th div-->
-
-                <div class="bordergray grid2">
-                    <div class="docname">
-                        <h3>Parkar</h3>
-                        <div class="grid_for_tab_and_desktop">
-                            <div class="grid_for_icon">
-                                <i class="fa fa-certificate"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fas fa-award"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fa fa-clock-o "></i>
-                                <ul>
-                                    <li>k year of exp</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fa fa-hospital-o"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-
-                            <div class="grid_for_icon">
-                                <i class="fa fa-map-marker"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-                        <button type="submit" class="btn_darkblue">Book an appointment</button>
-                    </div>
-                    <figure>
-                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg" />
-                        </figure>
-                </div>
+                
                 <!--6th Div-->
-                <div class="bordergray last grid2">
-                    <div class="docname">
-                        <h3>Deep Verma</h3>
-                        <div class="grid_for_tab_and_desktop">
-                            <div class="grid_for_icon">
-                                <i class="fa fa-certificate"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fas fa-award"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fa fa-clock-o "></i>
-                                <ul>
-                                    <li>k year of exp</li>
-                                </ul>
-                            </div>
-                            <div class="grid_for_icon">
-                                <i class="fa fa-hospital-o"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-
-                            <div class="grid_for_icon">
-                                <i class="fa fa-map-marker"></i>
-                                <ul>
-                                    <li>k</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn_darkblue">Book an appointment</button>
-                    </div>
-                    <figure>
-                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg" />
-                        </figure>
-                </div>
+                
             </div>
         </div>
     </section>

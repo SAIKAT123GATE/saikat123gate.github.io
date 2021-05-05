@@ -755,27 +755,327 @@ a {
   }
 }
 
-.digit-group input {
-  width: 50px;
-  height: 50px;
-  border: none;
-  line-height: 50px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 200;
+.main-section {
+  border-top: 1px solid #cccccc;
+  background-color: #eeebeb;
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 5fr;
+        grid-template-columns: 2fr 5fr;
+    grid-column-gap: 2rem;
+  }
+}
+
+.desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .desktop {
+    display: block;
+  }
+}
+
+.tagify {
+  width: 100%;
+  max-width: 700px;
+  padding: 0.3rem;
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+  --tags-border-color: #DDD;
+  --tag-bg: #8fcaf1;
+  --tag-hover: #D3E2E2;
+  --tag-text-color: #021433;
+  --tag-text-color--edit:#021433;
+  --tag-pad: 0.3em 0.5em;
+  --tag-inset-shadow-size: 1.1em;
+  --tag-invalid-color: #D39494;
+  --tag-invalid-bg: rgba(211, 148, 148, 0.5);
+  --tag-remove-bg: rgba(211, 148, 148, 0.3);
+  --tag-remove-btn-bg: none;
+  --tag-remove-btn-bg--hover: #c77777;
+  --tag--min-width: 1ch;
+  --tag--max-width: auto;
+  --loader-size: .8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border: 1px solid #ddd;
+  border: 1px solid var(--tags-border-color);
+  padding: 0;
+  line-height: 1.1;
+  cursor: text;
+  position: relative;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.grid-for-dashboard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-column-gap: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .grid-for-dashboard {
+    padding-left: 1rem;
+  }
+}
+
+.grid-for-dashboard h3 {
+  margin: 0;
+  margin-top: 6px;
+  font-size: 1.7rem;
+}
+
+.grid-for-dashboard i {
+  font-size: 2rem;
+}
+
+.form-div {
+  background: #ffffff;
+}
+
+.medical-record {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .medical-record {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.medical-record h2 {
+  margin: 0;
+}
+
+.medical-record .btn_blue {
+  margin: 0;
+  padding: 0.7rem;
+}
+
+.profile-photo-name h4 {
+  margin: 0;
+}
+
+.photo-and-text {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.1fr auto;
+      grid-template-columns: 0.1fr auto;
+  grid-column-gap: 1rem;
+}
+
+.photo-and-text figure {
+  width: 5rem;
+  margin: 0;
+}
+
+.photo-and-text input {
+  padding: 0;
+  display: none;
+}
+
+.photo-and-text .text p {
+  margin: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .photo-and-text {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 0.1fr 14rem;
+        grid-template-columns: 0.1fr 14rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.wrap {
+  padding: 1rem;
+  border-top: 1px solid #cccccc;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrap {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1.5fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    grid-column-gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrap .label_input {
+    margin-left: 5rem;
+  }
+}
+
+.details {
+  padding: 1rem;
+  border-top: 1px solid #cccccc;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .details {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .details {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+}
+
+.addr-details {
+  padding: 1rem;
+  border-top: 1px solid #cccccc;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .addr-details {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .addr-details {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+}
+
+form .label_input input {
+  padding: 0.3rem;
+  margin-top: 7.5px;
+}
+
+.doc-details {
+  padding: 1rem;
+  border-top: 1px solid #cccccc;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .doc-details {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .doc-details {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .mobile-tab {
+    display: none;
+  }
+}
+
+.active {
+  background-color: #167ddd;
+  color: white;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+
+.active h3 {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.blue {
   color: #167ddd;
-  margin: 0 2px;
+  cursor: pointer;
+  padding-left: 1rem;
 }
 
-.digit-group .splitter {
-  padding: 0 5px;
-  color: white;
-  font-size: 24px;
+.blue h3 {
+  color: #167ddd;
+  cursor: pointer;
 }
 
-.prompt {
-  margin-bottom: 20px;
-  font-size: 20px;
+.blue:hover {
+  background-color: #167ddd;
   color: white;
 }
-/*# sourceMappingURL=otpenter.css.map */
+
+.blue:hover h3 {
+  color: #ffffff;
+}
+
+.textarea-div {
+  padding: 1rem;
+}
+/*# sourceMappingURL=profile.css.map */

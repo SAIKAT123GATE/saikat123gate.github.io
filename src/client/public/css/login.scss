@@ -12,6 +12,7 @@
     
 }
 
+
 /*section*/
 .firstsec{
     background-color: $background;
@@ -183,7 +184,7 @@ footer{
       
       .animated {
         animation-duration: 15s;
-        animation-delay: 100ms;
+        
         animation-fill-mode: both;
         
          
@@ -221,7 +222,7 @@ footer{
    
     /*section*/
     .firstsec{
-        padding:3rem 0.8rem;
+        padding:0rem 0.8rem;
         text-align: center;
         display: flex;
         align-items: center;

@@ -2,37 +2,52 @@ const mongoose=require("mongoose");
 
 const userSchema=new mongoose.Schema(
     {
-        description:{
+        name:{
+            type:String
+        },
+        email:{
             type:String,
             required:true
         },
+        description:{
+            type:String,
+            required:true
+            
+        },
         hospitals:{
             type:String,
-            
+            required:true
         },
         achievements:{
             type:String,
-            
+            required:true
         },
         exp:{
             type: Number,
-            
+            required:true
         },
         qualification:{
             type:String,
-            
+            required:true
         },
         
         awards:{
             type:String,
-        
+            required:true
         },
         specialization:{
             type:String,
-            
+            required:true
         },
         fees:{
-          type:Number  
+          type:Number, 
+          required:true 
+        },
+        image:{
+            type:String
+        },
+        city:{
+            type:String
         }
     
     })
