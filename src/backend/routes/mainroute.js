@@ -8,6 +8,7 @@ const sessionauth=require("../controller/sessionauth");
 const docdetailsc=require("../controller/docdetailscontroller");
 const multer=require('multer');
 const docdetails = require("../database/docdetails");
+const schedule=require("../controller/schedule");
 
 
 const fileStorageEngine=multer.diskStorage({
@@ -46,5 +47,10 @@ router.route("/tvastraplus").get(middle.tvastraplus);
 router.route("/logout").get(middle.logout);
 router.route("/profile").get(sessionauth.redirectlogin,middle.profilepageget);
 router.route("/updateprofile").post(upload.single('image'),docdetailsc.updateprofile);
+router.route("/booking").get(middle.bookingpageget);
+router.route("/addschedule").get(sessionauth.redirectlogin,schedule.getschedule);
+router.route("/addschedule").post(schedule.addschedule);
+router.route("/settings").get(sessionauth.redirectlogin,middle.settingspageget);
+router.route("/changepassword").post(middle.changepassword);
 module.exports=router;
 

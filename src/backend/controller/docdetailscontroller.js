@@ -110,6 +110,7 @@ const updateprofile = async (req, res) => {
   if(req.session.isDoctor){
   const doc = await docdetails.findOne({ email: req.session.email });
   const id2 = doc._id;
+  
   var updated2 = await docdetails.findByIdAndUpdate(
     { _id: id2 },
     {
@@ -122,9 +123,11 @@ const updateprofile = async (req, res) => {
       awards: awards,
       specialization: specialization,
       fees: fees,
-      image:req.file.filename
+
+      image:req.file?req.file.filename:req.session.image
     }
   );
+  
   if (updated && updated2) {
     req.session.name = name;
     req.session.email = email;
@@ -143,7 +146,7 @@ const updateprofile = async (req, res) => {
     req.session.awards = awards;
     req.session.specialization = specialization;
     req.session.fees = fees;
-    req.session.image=req.file.filename;
+    req.session.image=req.file?req.file.filename:req.session.image;
     console.log("updation successfull");
     return res.redirect("/profile");
   } else {

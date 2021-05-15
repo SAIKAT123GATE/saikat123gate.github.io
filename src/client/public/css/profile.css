@@ -174,7 +174,7 @@ section {
 
 button {
   font-family: nexa-light;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.3rem;
   font-size: 1.2rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -191,7 +191,7 @@ button {
   color: #ffffff;
   border-color: #167ddd;
   border-style: none;
-  padding: 1rem;
+  padding: 0.8rem 1.3rem;
   font-size: 1.3rem;
   margin: .5rem 0rem;
   cursor: pointer;
@@ -474,7 +474,7 @@ a {
     padding: 1rem 0rem;
     z-index: 2;
   }
-  .toaster > div {
+  .toaster div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -482,6 +482,9 @@ a {
     border-bottom: 1px solid lightgrey;
     padding-left: 1rem;
     padding-right: 1rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .toaster > div > h5 {
     margin: 0;
@@ -490,7 +493,7 @@ a {
         align-self: center;
     font-size: 1.5rem;
   }
-  .toaster > div > figure {
+  .toaster div figure {
     width: 4rem;
     height: auto;
     margin: 0;
@@ -541,6 +544,9 @@ a {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .head2 #zero-width {
+    width: 0;
+  }
   .head2 img {
     width: 10rem;
     height: 100%;
@@ -589,7 +595,7 @@ a {
     margin-right: 0.5rem;
     margin: 0;
     margin-right: 0.5rem;
-    padding: 0.9rem 1.3rem;
+    padding: 0.8rem 1.3rem;
   }
   .head2 .btn_blue:hover {
     background-color: #ffffff;
@@ -671,7 +677,7 @@ a {
     font-size: 1.3rem;
   }
   .btn_blue {
-    padding: 1rem 1.3rem;
+    padding: 0.8rem 1.3rem;
   }
   /*footer*/
   footer {
@@ -767,6 +773,7 @@ a {
     -ms-grid-columns: 2fr 5fr;
         grid-template-columns: 2fr 5fr;
     grid-column-gap: 2rem;
+    padding: 1rem;
   }
 }
 
@@ -881,7 +888,6 @@ a {
 
 .medical-record .btn_blue {
   margin: 0;
-  padding: 0.7rem;
 }
 
 .profile-photo-name h4 {
@@ -1043,39 +1049,345 @@ form .label_input input {
   }
 }
 
-.active {
+.active-btn {
   background-color: #167ddd;
   color: white;
   padding-left: 1rem;
   cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-column-gap: 1rem;
 }
 
-.active h3 {
+.active-btn h3 {
   color: #ffffff;
   cursor: pointer;
 }
 
-.blue {
+@media only screen and (min-width: 1024px) {
+  .active-btn {
+    padding-left: 1rem;
+  }
+}
+
+.active-btn h3 {
+  margin: 0;
+  margin-top: 6px;
+  font-size: 1.5rem;
+}
+
+.active-btn i {
+  font-size: 1.3rem;
+}
+
+.inactive-btn {
   color: #167ddd;
   cursor: pointer;
   padding-left: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-column-gap: 1rem;
 }
 
-.blue h3 {
+.inactive-btn h3 {
   color: #167ddd;
   cursor: pointer;
 }
 
-.blue:hover {
+.inactive-btn:hover {
   background-color: #167ddd;
   color: white;
 }
 
-.blue:hover h3 {
+.inactive-btn:hover h3 {
   color: #ffffff;
+}
+
+@media only screen and (min-width: 1024px) {
+  .inactive-btn {
+    padding-left: 1rem;
+  }
+}
+
+.inactive-btn h3 {
+  margin: 0;
+  margin-top: 6px;
+  font-size: 1.5rem;
+}
+
+.inactive-btn i {
+  font-size: 1.3rem;
 }
 
 .textarea-div {
   padding: 1rem;
+}
+
+.schedule {
+  padding: 1rem;
+}
+
+.text-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.text-button h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.text-button .btn_blue {
+  margin: 0;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid #167ddd;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.card .hospital-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0.2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .card .hospital-time {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+.card .hospital-time h3 {
+  margin: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .card .hospital-time h3 {
+    font-size: 1.8rem;
+  }
+}
+
+.card .hospital-time span {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #021433;
+}
+
+.buttons {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 1fr 1fr 1rem;
+      grid-template-columns: 1fr 1fr 1rem;
+  grid-column-gap: 1rem;
+}
+
+.buttons .btn_blue {
+  margin: 0;
+  font-size: 0.8rem;
+  font-family: nexa-bold;
+}
+
+@media only screen and (min-width: 1024px) {
+  .buttons .btn_blue {
+    font-size: 1.3rem;
+  }
+}
+
+.buttons .btn_darkblue {
+  font-size: 0.8rem;
+  font-family: nexa-bold;
+}
+
+@media only screen and (min-width: 1024px) {
+  .buttons .btn_darkblue {
+    font-size: 1.3rem;
+  }
+}
+
+.buttons input {
+  margin-bottom: 0;
+}
+
+.timings {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 10px;
+      grid-template-columns: 1fr 10px;
+  grid-column-gap: 0.4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #167ddd;
+}
+
+.timings span {
+  color: #167ddd;
+  font-size: 1.2rem;
+}
+
+.timings input {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .timings {
+    margin-right: 0.5rem;
+  }
+}
+
+.timings-and-slots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.hide {
+  display: none;
+}
+
+.right-margin {
+  margin-right: 0.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .row-for-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.create-schedule {
+  background-color: white;
+  padding: 1rem;
+  top: 5rem;
+  max-width: 23rem;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border: 4px solid #167ddd;
+}
+
+@media only screen and (min-width: 1024px) {
+  .create-schedule {
+    height: auto;
+    width: 50rem;
+    top: 2rem;
+    max-width: 50rem;
+  }
+}
+
+.heading h3 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.scroll {
+  width: 100%;
+  overflow-y: scroll;
+  border: 1px solid #525659;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  -webkit-appearance: none;
+  background: white;
+}
+
+.scroll option {
+  color: black;
+  font-weight: 600;
+  padding: 0.3rem;
+  margin-top: 0.2rem;
+}
+
+.schedule-details {
+  text-align: left;
+}
+
+.schedule-details label {
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.action-buttons .btn_blue {
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+.time {
+  z-index: 3;
 }
 /*# sourceMappingURL=profile.css.map */

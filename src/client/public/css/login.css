@@ -174,7 +174,7 @@ section {
 
 button {
   font-family: nexa-light;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.3rem;
   font-size: 1.2rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -191,7 +191,7 @@ button {
   color: #ffffff;
   border-color: #167ddd;
   border-style: none;
-  padding: 1rem;
+  padding: 0.8rem 1.3rem;
   font-size: 1.3rem;
   margin: .5rem 0rem;
   cursor: pointer;
@@ -259,27 +259,27 @@ textarea {
 }
 
 input::-webkit-input-placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input:-ms-input-placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input::-ms-input-placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input::placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input {
@@ -288,6 +288,7 @@ input {
   padding: 1rem 1rem;
   width: 100%;
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
 option {
@@ -474,7 +475,7 @@ a {
     padding: 1rem 0rem;
     z-index: 2;
   }
-  .toaster > div {
+  .toaster div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -482,6 +483,9 @@ a {
     border-bottom: 1px solid lightgrey;
     padding-left: 1rem;
     padding-right: 1rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .toaster > div > h5 {
     margin: 0;
@@ -490,7 +494,7 @@ a {
         align-self: center;
     font-size: 1.5rem;
   }
-  .toaster > div > figure {
+  .toaster div figure {
     width: 4rem;
     height: auto;
     margin: 0;
@@ -541,6 +545,9 @@ a {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .head2 #zero-width {
+    width: 0;
+  }
   .head2 img {
     width: 10rem;
     height: 100%;
@@ -589,7 +596,7 @@ a {
     margin-right: 0.5rem;
     margin: 0;
     margin-right: 0.5rem;
-    padding: 0.9rem 1.3rem;
+    padding: 0.8rem 1.3rem;
   }
   .head2 .btn_blue:hover {
     background-color: #ffffff;
@@ -671,7 +678,7 @@ a {
     font-size: 1.3rem;
   }
   .btn_blue {
-    padding: 1rem 1.3rem;
+    padding: 0.8rem 1.3rem;
   }
   /*footer*/
   footer {
@@ -826,6 +833,12 @@ a {
   color: #cccccc;
 }
 
+@media only screen and (min-width: 1024px) {
+  .firstsec .login form i {
+    margin-top: 0;
+  }
+}
+
 .firstsec .login form .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -837,15 +850,14 @@ a {
   border: 1px solid #636668;
 }
 
-.firstsec .login form input {
-  padding: 1.5rem 0.8rem;
+.firstsec .login form .input_field {
   margin-bottom: 0.4rem;
   margin-top: .4rem;
   border: 2px solid #636668;
   color: #000000;
 }
 
-.firstsec .login form input:focus {
+.firstsec .login form .input_field:focus {
   border: 2px solid #167ddd;
 }
 
@@ -888,6 +900,36 @@ a {
   font-weight: 600;
 }
 
+.password-with-eye {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #636668;
+}
+
+.password-with-eye .password-field {
+  border: none;
+  margin-bottom: 0;
+}
+
+.password-with-eye #togglePassword {
+  color: #167ddd;
+}
+
+.password-with-eye:focus {
+  border: 2px solid #167ddd;
+}
+
 .otpsec {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -901,6 +943,7 @@ a {
 .otpsec a {
   color: #167ddd;
   font-size: 1.2rem;
+  font-family: nexa-bold;
 }
 
 footer {

@@ -185,7 +185,7 @@ section
 }
 button{
     font-family: nexa-light;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.3rem;
     font-size: 1.2rem;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -200,7 +200,7 @@ button{
     color: $white;
     border-color: $blue;
     border-style: none;
-    padding:1rem ;
+    padding:0.8rem 1.3rem ;
     font-size: 1.3rem;
     margin:.5rem 0rem;
     cursor: pointer;
@@ -266,9 +266,9 @@ textarea{
 }
 input::placeholder{
     
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-family: nexa-light;
-    color: $gray;
+    color: black;
     
     
 }
@@ -278,6 +278,7 @@ input{
     padding: 1rem 1rem; 
     width: 100%;
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
     
 }
 option{
@@ -467,6 +468,7 @@ a{
     border-bottom: 1px solid lightgrey;
     padding-left: 1rem;
     padding-right: 1rem;
+    align-items: center;
 }
 }
 .toaster>div>h5{
@@ -564,7 +566,7 @@ a{
           margin-right: 0.5rem;
           margin:0;
           margin-right: 0.5rem;
-          padding: 0.9rem 1.3rem;
+          padding: 0.8rem 1.3rem;
           &:hover{
             background-color: $white;
             color: $blue;
@@ -663,7 +665,7 @@ a{
         font-size: 1.3rem ;
     }
     .btn_blue{
-      padding: 1rem 1.3rem;
+      padding: 0.8rem 1.3rem;
     }
 
     //Footer part

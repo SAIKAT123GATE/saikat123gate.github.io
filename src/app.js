@@ -26,10 +26,10 @@ app.use(flash());
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }))
 var finalPath=path.join(__dirname,"/client/views");
-console.log(finalPath);
+//console.log(finalPath);
 const staticpath=path.join(__dirname,"/client/public");
 const staticimages=path.join(__dirname,"/images");
-console.log(staticpath);
+//console.log(staticpath);
 app.use(express.static(staticpath));
 app.use(express.static(staticimages));
 app.engine("html", ejs.renderFile);

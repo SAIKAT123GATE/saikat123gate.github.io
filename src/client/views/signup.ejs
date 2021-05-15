@@ -25,24 +25,31 @@
         <nav class="head2">
 
 
-        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+        <a href="/index" id="zero-width">    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" /> </a>
 
 
-        <ul>
-            <a href="/doctor"> <li>Doctor</li></a>
-            <a href="/hospital">  <li>Hospital</li></a>
-            <a href="/treatment"> <li>Treatment</li></a>
-             
-             <a href="/aboutUs"> <li>About</li></a>
-         </ul>
+            <ul>
+                <a href="/doctor">
+                    <li>Doctor</li>
+                </a>
+                <a href="/hospital">
+                    <li>Hospital</li>
+                </a>
+                <a href="/treatment">
+                    <li>Treatment</li>
+                </a>
+
+                <a href="/aboutUs">
+                    <li>About</li>
+                </a>
+            </ul>
             <div>
-            
+
                 <button class="btn_darkblue">Get a Quote</button>
             </div>
 
         </nav>
     </header>
-
     <!--Section-->
     <section class="firstsec">
         <div class="signup">
@@ -50,11 +57,11 @@
             <hr>
             <form action="/signup" method="POST">
 
-                <input class="input_field" placeholder="Enter Name" type="text" name="name" required>
+                <input class="input_field" placeholder="Enter Name" type="text" name="name" required autofocus>
 
 
                 <input class="input_field" placeholder="Enter Email" type="email" name="email" required>
-                <input class="input_field" placeholder="Enter Password" type="password" name="password" required>
+                <input class="input_field" placeholder="Enter Password" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,8}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 and at most 8 characters" required>
                 <select name="gender" required>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -62,12 +69,16 @@
                     
                   </select>
                 <input class="input_field" placeholder="dd/mm/yyyy" type="date" name="dateofbirth" required>
-                <input class="input_field" placeholder="Enter Phone Number" type="tel" name="mobileno" required>
+                <input class="input_field" placeholder="Enter Phone Number" type="tel" name="mobileno" required pattern="[789][0-9]{9}">
                 <div class="gridrow">
                     <input class="input_field" placeholder="Enter City" type="text" name="city" required>
                     <input class="input_field" placeholder="Enter State" type="text" name="state" required>
                 </div>
-                <input class="input_field" placeholder="Enter Country" type="text" name="country" required>
+                <select name="country" required>
+                    <option value="male">India</option>
+                    <option value="female">Australia</option>
+                    
+                  </select>
                 <div class="isDoctor">
                 <input type="checkbox" id="isDoctor" name="isDoctor">
                 <label for="isDoctor">Is Doctor</label>

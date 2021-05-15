@@ -137,3 +137,29 @@ function showFaq(id) {
         k.style.display = "block";
     }
 }
+
+
+
+function openwrapper(id){
+  var k=document.getElementById(id);
+  if(k.style.display="none"){
+    k.style.display="block";
+  }
+  else
+  k.style.display="none"
+}
+
+function closepop(id){
+  document.getElementById(id).style.display="none";
+
+}
+
+function togg(id){
+  console.log("triggering it");
+  if(document.getElementById(id).style.display!='flex'){
+    document.getElementById(id).style.display='flex';
+  }
+  else{
+    document.getElementById(id).style.display="none";
+  }
+}

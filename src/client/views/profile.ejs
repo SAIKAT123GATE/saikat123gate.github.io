@@ -4,6 +4,7 @@
 <head>
     <title>Index</title>
     <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet@0.3.0/css/clocklet.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="../css/theme1.css" type="text/css" rel="stylesheet">
     <link href="../css/docdetails.css" rel="stylesheet" type="text/css">
@@ -14,7 +15,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../script/app.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/clocklet@0.3.0"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
@@ -95,16 +97,15 @@
     </header>
     <div class="toaster" id="toaster">
         <div>
-            
+
             <a href="/profile">
-            <figure id="toaster-img">
-                
-                <img id="headerpic"
-                    src="<%=image%>">
-                
+                <figure id="toaster-img">
+
+                    <img id="headerpic" src="<%=image%>">
+
                 </figure>
-                </a>
-                
+            </a>
+
             <h5>
                 <%=username%>
             </h5>
@@ -141,33 +142,41 @@
                 <h3>Dashboard</h3>
             </div>
             <div class="dashboard">
-                <div class="grid-for-dashboard  active" >
+                <div class="  active-btn" id="profile-btn">
                     <i class='fa fa-address-book'></i>
                     <h3>Profile</h3>
                 </div>
 
-                <div class="grid-for-dashboard blue">
+                <div class=" inactive-btn" id="appointments-btn">
                     <i class='fa fa-address-book'></i>
                     <h3>Appointments</h3>
                 </div>
-                <div class="grid-for-dashboard blue">
+                <div class=" inactive-btn" id="reports-btn">
                     <i class='fa fa-address-book'></i>
                     <h3>Medical Reports</h3>
                 </div>
-                <div class="grid-for-dashboard blue">
-                    <i class='fa fa-address-book'></i>
-                    <h3>Add Schedule</h3>
-                </div>
+                <a href="/addschedule">
+                    <div class=" inactive-btn" id="schedule-btn">
 
-                <div class="grid-for-dashboard blue">
+                        <i class='fa fa-address-book'></i>
+                        <h3>Add Schedule</h3>
+
+                    </div>
+                </a>
+
+                <a href="/settings">
+                <div class="inactive-btn" id="settings-btn">
+
                     <i class='fa fa-address-book'></i>
                     <h3>Settings</h3>
                 </div>
+                </a>
             </div>
         </div>
         <div class="form-div">
 
-            <form class="medical-record-form" action="/updateprofile" enctype="multipart/form-data" method="POST">
+            <form class="medical-record-form" action="/updateprofile" enctype="multipart/form-data" method="POST"
+                id="profile">
                 <div class="medical-record">
                     <h2>My Profile</h2>
                     <button type="submit" class="btn_blue">Save Changes</button>
@@ -178,43 +187,43 @@
                         <h4>Profile Photo</h4>
                         <div class="photo-and-text">
                             <figure>
-                                <img id="output"
-                                    src="<%=image%>">
+                                <img id="output" src="<%=image%>">
                             </figure>
                             <div class="text">
                                 <p>Pic a photo from your system</p>
                                 <label for="upload-pic" class="inputLabel picInputLabel">Select Photo</label>
-                                <input type="file" name="image" id="upload-pic" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+                                <input type="file" name="image" id="upload-pic" accept="image/*"
+                                    onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
                             </div>
 
                         </div>
                     </div>
                     <div class="label_input">
                         <label for="name">Name</label>
-                        <input name="name" id="name" value="<%=username%>">
+                        <input name="name" id="name" value="<%=username%>" required>
                     </div>
                 </div>
 
                 <div class="details">
                     <div class="label_input">
                         <label for="mobileno">Phone Number</label>
-                        <input name="mobileno" id="mobileno" value="<%=mobileno%>">
+                        <input name="mobileno" id="mobileno" value="<%=mobileno%>" readonly required>
                     </div>
 
                     <div class="label_input">
                         <label for="email">Email</label>
-                        <input name="email" id="email" value="<%=email%>">
+                        <input name="email" id="email" value="<%=email%>" required>
                     </div>
 
                     <div class="label_input">
                         <label for="gender">Gender</label>
-                        <input name="gender" id="gender" value="<%=gender%>">
+                        <input name="gender" id="gender" value="<%=gender%>" required>
                     </div>
 
                     <div class="label_input">
 
                         <label for="dob">Date of Birth</label>
-                        <input name="dateofbirth" id="dob" value="<%=dateofbirth%>" >
+                        <input name="dateofbirth" id="dob" value="<%=dateofbirth%>" required>
                     </div>
 
 
@@ -238,17 +247,17 @@
 
                     <div class="label_input">
                         <label for="city">City</label>
-                        <input name="city" id="city" value="<%=city%>">
+                        <input name="city" id="city" value="<%=city%>" required >
                     </div>
 
                     <div class="label_input">
                         <label for="state">State</label>
-                        <input name="state" id="state" value="<%=state%>">
+                        <input name="state" id="state" value="<%=state%>" required>
                     </div>
 
                     <div class="label_input">
                         <label for="country">Country</label>
-                        <input name="country" id="country" value= "<%=country%>" >
+                        <input name="country" id="country" value="<%=country%>" required>
                     </div>
                 </div>
 
@@ -257,23 +266,23 @@
                         <div class="label_input">
 
                             <label for="hospitals">Your Hospital</label>
-                            <input name='hospitals' id="hospitals" class='some_class_name' value=<%=hospitals%>>
+                            <input name='hospitals' id="hospitals" class='some_class_name' value=<%=hospitals%> required>
                         </div>
                         <div class="label_input">
                             <label for="achievements">Achievements</label>
                             <input name='achievements' class='some_class_name' placeholder='write some tags'
-                                value=<%=achievements%>>
+                                value=<%=achievements%> required>
                         </div>
 
                         <div class="label_input">
                             <label for="exp">Experience</label>
-                            <input type="number" id="exp" name="exp" value=<%=exp%>>
+                            <input type="number" id="exp" name="exp" value=<%=exp%> required>
                         </div>
 
                         <div class="label_input">
                             <label for="qualification">Qualification</label>
                             <input name='qualification' id="qualification" class='some_class_name'
-                                placeholder='write some tags' value=<%=qualification%>>
+                                placeholder='write some tags' value=<%=qualification%> required>
                         </div>
 
                         <div class="label_input">
@@ -295,7 +304,7 @@
                             <input type="number" id="fees" name="fees" value=<%=fees%>>
                         </div>
 
-                        
+
 
 
 
@@ -310,13 +319,39 @@
                             </textarea>
 
                     </div>
-                <%}%>
+                    <%}%>
             </form>
 
-        </div>
-    </section>
 
-    <!--Need Help-->
+
+
+
+        </div>
+
+
+
+
+        <script>
+
+
+            var input = document.querySelector('input[name=hospitals]');
+
+            var input2 = document.querySelector('input[name=achievements]');
+            var input3 = document.querySelector('input[name=qualification]');
+            var input4 = document.querySelector('input[name=awards]');
+            var input5 = document.querySelector('input[name=specialization]');
+
+
+            // initialize Tagify on the above input node reference
+            new Tagify(input)
+            new Tagify(input2)
+            new Tagify(input3)
+            new Tagify(input4)
+            new Tagify(input5)
+
+        </script>
+        </section>
+        <!--Need Help-->
     <section class="nd_help">
         <div class="nd_help1">
             <h2>Need Help?</h2>
@@ -327,47 +362,7 @@
         </div>
     </section>
 
-    <!--footer-->
-    <footer>
-        <figure>
-            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
-        </figure>
-        <ul class="about">
-            <li>Doctor</li>
-            <li>Hospital</li>
-            <li>Treatment</li>
-            <li>Other services</li>
-            <li>FAQs</li>
-        </ul>
-        <div class="social_icon">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-pinterest-p"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-google-plus"></i>
-            <i class="fab fa-instagram"></i>
-        </div>
-        <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
-    </footer>
-
-    <script>
-
-
-        var input = document.querySelector('input[name=hospitals]');
-
-        var input2 = document.querySelector('input[name=achievements]');
-        var input3 = document.querySelector('input[name=qualification]');
-        var input4 = document.querySelector('input[name=awards]');
-        var input5 = document.querySelector('input[name=specialization]');
-
-
-        // initialize Tagify on the above input node reference
-        new Tagify(input)
-        new Tagify(input2)
-        new Tagify(input3)
-        new Tagify(input4)
-        new Tagify(input5)
-
-    </script>
+    <%-include('footer.ejs')%>
 
 </body>
 

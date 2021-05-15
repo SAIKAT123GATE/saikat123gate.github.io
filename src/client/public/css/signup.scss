@@ -54,6 +54,9 @@ body{
                 margin-bottom: 0.4rem;
                 margin-top: .4rem;
                 border:1px solid $light_gray;
+                &:focus{
+                    border:1px solid $blue;
+                }
                 
 
                 
@@ -114,6 +117,11 @@ select{
     border:1px solid $light_gray;
     color: $gray;
     background-position-x: 99%;
+    font-size: 1.2rem;
+    color: black;
+    &:focus{
+        border:1px solid $blue;
+    }
 }
 
 footer{

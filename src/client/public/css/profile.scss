@@ -7,6 +7,7 @@
         display: grid;
         grid-template-columns: 2fr 5fr;
         grid-column-gap: 2rem;
+        padding:1rem;
     }
 }
 .desktop{
@@ -87,7 +88,7 @@ margin-top: 0.5rem;
     }
     .btn_blue{
         margin: 0;
-        padding: 0.7rem;
+        
     }
 }
 .profile-photo-name{
@@ -201,7 +202,7 @@ form{
     }
 }
 
-.active{
+.active-btn{
         background-color: $blue;
         color: white;
         padding-left: 1rem;
@@ -210,8 +211,25 @@ form{
             cursor: pointer;
         }
         cursor: pointer;
+
+        display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-column-gap: 1rem;
+    @media only screen and (min-width:1024px){
+        padding-left: 1rem;
+    }
+    
+    h3{
+        margin: 0;
+        margin-top: 6px;
+        font-size: 1.5rem;
+    }
+    i{
+        font-size: 1.3rem;
+    }
 }
-.blue{
+.inactive-btn{
     color: $blue;
     cursor: pointer;
     padding-left: 1rem;
@@ -226,7 +244,225 @@ form{
             color: $white;
         }
     }
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-column-gap: 1rem;
+    @media only screen and (min-width:1024px){
+        padding-left: 1rem;
+    }
+    
+    h3{
+        margin: 0;
+        margin-top: 6px;
+        font-size: 1.5rem;
+    }
+    i{
+        font-size: 1.3rem;
+    }
 }
 .textarea-div{
     padding:1rem;
 }
+
+.schedule{
+    padding:1rem;
+}
+.text-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3{
+        margin:0;
+        font-size: 1.5rem;
+    }
+    .btn_blue{
+        margin:0;
+        
+    }
+}
+
+.card{
+    padding:1rem;
+    border:1px solid $blue;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    h3{
+        margin:0; 
+    }
+    .hospital-time{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.2rem;
+        @media only screen and (min-width:1024px){
+            display: block;
+            margin-top: 0;
+        }
+        h3{
+            margin:0;
+            @media only screen and (min-width:1024px){
+                font-size: 1.8rem;
+            }
+        }
+        span{
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: $dark_blue;
+        }
+    }
+    
+}
+
+.buttons{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1rem;
+    grid-column-gap: 1rem;
+    .btn_blue{
+        margin: 0;
+        font-size: 0.8rem;
+        font-family: nexa-bold;
+        @media only screen and (min-width:1024px){
+            font-size: 1.3rem;
+        }
+    }
+    .btn_darkblue{
+        font-size: 0.8rem;
+        font-family: nexa-bold;
+        @media only screen and (min-width:1024px){
+            font-size: 1.3rem;
+        }
+    }
+    input{
+        margin-bottom: 0;
+    }
+}
+
+.timings{
+    display: grid;
+    grid-template-columns: 1fr 10px;
+    grid-column-gap: 0.4rem;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border: 1px solid $blue;
+    span{
+        color: $blue;
+        font-size: 1.2rem;
+    }
+    input{
+        margin-bottom: 0;
+    }
+
+    @media only screen and (min-width:1024px){
+        margin-right: 0.5rem;
+    }
+}
+.timings-and-slots{
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+.hide{
+    display: none;
+}
+.right-margin{
+    margin-right: 0.5rem;
+}
+
+.row-for-desktop{
+    @media only screen and(min-width:1024px){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+
+//popup
+.popup{
+    display: none;
+    position: fixed;
+
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.create-schedule{
+    background-color: white;
+    
+    
+    padding: 1rem;
+    top:5rem;
+    max-width: 23rem;
+    @media only screen and (min-width:1024px){
+    height: auto;
+    width: 50rem;
+    top:2rem;
+    max-width: 50rem;
+    }
+    text-align: center;
+    align-self: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border:4px solid $blue;
+
+}
+.heading{
+    
+    h3{
+        margin:0;
+        font-size: 1.8rem;
+    }
+}
+
+.scroll{
+    width: 100%;
+    overflow-y: scroll;
+    border: 1px solid $dark_gray;
+    padding-left:1rem;
+    margin-bottom: 0.5rem;
+    -webkit-appearance: none;
+    background: white;
+    option{
+        color: black;
+        font-weight: 600;
+        padding:0.3rem;
+        margin-top: 0.2rem;
+    }
+}
+
+.schedule-details{
+    text-align: left;
+    label{
+        font-weight: 600;
+        
+    }
+}
+
+.action-buttons{
+    display: flex;
+    .btn_blue{
+        margin: 0;
+        margin-right: 0.5rem;
+    }
+}
+.time{
+    z-index: 3;
+}
+
+//for add schedule page

@@ -27,7 +27,7 @@ const loginauth = async (req, res) => {
         
         //creating sessions
         req.session.user = { email, password };
-
+        req.session.password=checkpass.password;
         req.session.name = checkpass.name;
         req.session.email = checkpass.email;
         req.session.mobileno = checkpass.mobileno;
@@ -38,10 +38,11 @@ const loginauth = async (req, res) => {
         req.session.country = checkpass.country;
         req.session.city=checkpass.city;
         req.session.findall=findall;
+        req.session.id=checkpass._id;
         
          
           var doctor = await docdetails.findOne({ email:email });
-          console.log("hi",doctor);
+          
 
             if(doctor){
             req.session.description = doctor.description;
@@ -56,12 +57,12 @@ const loginauth = async (req, res) => {
             
             }
         
-        const token = await exist.generateAuthToken();
-        res.cookie("jwtoken", token, {
-          expires: new Date(Date.now() + 25892000000),
-        });
+        //const token = await exist.generateAuthToken();
+       // res.cookie("jwtoken", token, {
+        //  expires: new Date(Date.now() + 25892000000),
+       // });
 
-        console.log(req.session.user.email);
+        //console.log(req.session.password);
         req.flash("success", "Welcome");
         req.flash("success", "Login Successfull");
         return res.redirect("/index");

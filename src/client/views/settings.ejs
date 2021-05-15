@@ -1,0 +1,176 @@
+<!--Schedule Form-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Settings</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet@0.3.0/css/clocklet.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link href="../css/docdetails.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.css" />
+    <link href="../css/login.css" rel="stylesheet" type="text/css">
+    <link href="../css/profile.css" type="text/css" rel="stylesheet">
+
+    <link href="../css/settings.css" type="text/css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clocklet@0.3.0"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.min.js"></script>
+
+
+</head>
+<body>
+
+    <%-include('header.ejs')%>
+    <% if (msg2.length>0) {%>
+        <div id="loginmsg" class="fade-out animated ">
+        <ul>
+
+            <li><%= msg2[0]%></li>
+        </ul>
+        
+        
+        </div>
+    
+        <%}%>
+
+        <div class="toaster" id="toaster">
+            <div>
+
+                <a href="/profile">
+                    <figure id="toaster-img">
+
+                        <img id="headerpic" src="<%=image%>">
+
+                    </figure>
+                </a>
+
+                <h5>
+                    <%=username%>
+                </h5>
+            </div>
+            <ul>
+                <a href="/myappointments">
+                    <li>My Appointments</li>
+                </a>
+                <a href="/medicalrecords">
+                    <li>Medical Records</li>
+                </a>
+                <a href="/settings">
+                    <li>Settings</li>
+                </a>
+                <a href="#">
+                    <li>My payments</li>
+                </a>
+                <a href="/logout">
+                    <li>Logout</li>
+                </a>
+            </ul>
+        </div>
+
+        <section >
+            <div class="main-section">
+            <div class="mobile-tab">
+                <div class="grid-for-dashboard">
+                    <i class='fas fa-angle-double-right'></i>
+                    <h3>Click To View Dashboard</h3>
+                </div>
+            </div>
+            <div class="desktop">
+                <div class="grid-for-dashboard">
+                    <i class='fas fa-angle-double-right'></i>
+                    <h3>Dashboard</h3>
+                </div>
+                <div class="dashboard">
+                    <a href="/profile">
+                        <div class="  inactive-btn" id="profile-btn">
+                            <i class='fa fa-address-book'></i>
+                            <h3>Profile</h3>
+                        </div>
+                    </a>
+
+                    <a href="/appointment">
+                        <div class=" inactive-btn" id="appointments-btn">
+                            <i class='fa fa-address-book'></i>
+                            <h3>Appointments</h3>
+                        </div>
+                    </a>
+
+                    <a href="/medicalreport">
+                        <div class=" inactive-btn" id="reports-btn">
+                            <i class='fa fa-address-book'></i>
+                            <h3>Medical Reports</h3>
+                        </div>
+                    </a>
+
+                    <a href="/addschedule">
+                        <div class=" inactive-btn" id="schedule-btn">
+
+                            <i class='fa fa-address-book'></i>
+                            <h3>Add Schedule</h3>
+
+                        </div>
+                    </a>
+
+                    <a href="/settings">
+                        <div class="active-btn" id="settings-btn">
+
+                            <i class='fa fa-address-book'></i>
+                            <h3>Settings</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <form class="settings"  id="settings" method="POST" action="/changepassword">
+                <div class="text-button">
+                    <h2>Schedules</h2>
+                    <button type="submit" class="btn_blue">Save Changes</button>
+                    
+                </div>
+
+                <div class="inputs">
+                    <div>
+                        <label>Current Password</label>
+                        <input class="input_field" placeholder="Enter Password" type="text" name="currntpassword" required>
+                    </div>
+                    <div>
+                        <label>New Password</label>
+                        <input class="input_field" placeholder="Enter Password" type="password" name="newpassword" required>
+                    </div>
+                    <div>
+                        <label>Confirm Password</label>
+                        <input class="input_field" placeholder="Enter Password" type="text" name="confirmpassword" required>
+                    </div>
+                </div>
+            </form>
+
+            </div>
+        </section>
+
+        <!--Need Help-->
+        <section class="nd_help">
+            <div class="nd_help1">
+                <h2>Need Help?</h2>
+                <p>Just let us know we will happy to assist you</p>
+            </div>
+            <div class="btn2 nd_help2">
+                <button type="submit" class="btn_blue">Submit your enquiry</button>
+            </div>
+        </section>
+
+        <%-include('footer.ejs')%>
+
+
+</body>
+</html>

@@ -768,7 +768,7 @@ form .input1 .input_field{
          
     }
     .find_affordable_healthcare .btn_darkblue{
-        padding:1.08rem 2rem;
+        
         margin-top:0;
     }
     form{
@@ -790,8 +790,7 @@ form .input1 .input_field{
     }
     .input_field{
         border:none;
-        padding-top:1.3rem;
-        padding-bottom: 1.3rem;
+        
         margin-bottom: 0rem;
     }
     #cross{

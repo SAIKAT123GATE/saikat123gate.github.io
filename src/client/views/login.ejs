@@ -84,9 +84,11 @@
 
                     <input class="input_field" placeholder="Enter Email" type="email" name="email" required autofocus>
 
-
-                    <input class="input_field" placeholder="Enter Your Password" type="password" name="password"
+                    <div class="password-with-eye">
+                    <input class="password-field" placeholder="Enter Your Password" type="password" name="password" id="password"
                         required>
+                        <i class="fa fa-eye" aria-hidden="true" id="togglePassword"></i>
+                        </div>
                     <div class="otpsec">
                         <a href="/otpnumber">Login With OTP</a>
                         <a href="#">Forgot Password</a>
@@ -106,6 +108,18 @@
             <p>All Rights Reserved. &#169 tvastra <span>2020</span></p>
         </footer>
     </div>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+        togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+    </script>
 </body>
 
 </html>

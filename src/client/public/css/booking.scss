@@ -1,0 +1,105 @@
+@import "./theme1.scss";
+
+.main-section{
+    background-color: #eeebeb;
+}
+.profile{
+    background-color: $white;
+    padding: 1.5rem 1rem;
+}
+.heading{
+    text-align: center;
+    h2{
+        color: $dark_blue;
+    }
+}
+.date{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-row-gap: 0.5rem;
+    div{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-column-gap: 1rem;
+        align-items: center;
+        color: $blue;
+        i{
+            font-size: 1.5rem;
+        }
+        span{
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+    }
+}
+
+.fig-and-details{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 1.5rem;
+    align-items: center;
+    padding-top: 1rem;
+    margin-top: 1rem;
+        border-top: 1px solid $light_gray;
+    figure{
+        width:5rem;
+        height: 90%;
+    }
+    .details{
+        
+        span{
+            color: $blue;
+            font-family: nexa-bold;
+        }
+        h3{
+            font-family: nexa-light;
+            margin: 0;
+            line-height: 2rem;
+            @media only screen and (min-width:768px){
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+//patient detials
+
+.patient-details{
+    margin-top: 1rem;
+    padding: 1.5rem 1rem;
+    background: $white;
+    .btn_blue{
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+    form{
+        label{
+            font-size: 1.4rem;
+            font-family: nexa-bold;
+            color: $blue;
+        }
+        input{
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+.heading{
+    margin-bottom: 1.5rem;
+    h2{
+        margin:0;
+    }
+}
+.desktop{
+    @media only screen and(min-width:1024px){
+display: grid;
+    max-width: 900px;
+    /* width: 1200px; */
+    grid-template-columns: auto auto;
+    grid-column-gap: 5rem;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}

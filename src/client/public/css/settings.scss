@@ -1,0 +1,42 @@
+@import "./theme1.scss";
+
+.settings{
+    background-color: $white;
+    padding: 1rem;
+}
+
+.text-button{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $gray;
+    h2{
+        margin:0;
+    }
+    .btn_blue{
+        border-radius: 0;
+    }
+}
+
+.inputs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+    padding-top: 1rem;
+    label{
+        font-size: 1.3rem;
+    }
+}
+
+#loginmsg{
+@media only screen and (min-width:1024px){
+    top:5rem;
+    z-index: 4;
+
+}
+#tick{
+    @media only screen and (min-width:1024px){
+        background-color: green;
+    
+    }
+
+}
+}
