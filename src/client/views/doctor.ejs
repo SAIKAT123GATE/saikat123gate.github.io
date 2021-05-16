@@ -10,6 +10,9 @@
     <link href="../css/doctor.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../script/app.js"></script>
+    <link rel = "icon" href = 
+"https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
+        type = "image/x-icon">
 
 </head>
 
@@ -261,7 +264,9 @@
                 
                 <div class="bordergray grid2">
                     <div class="docname">
+                        <a href="/docprofile">
                         <h3><%= findall[i].name %></h3>
+                        </a>
                         <div class="grid_for_tab_and_desktop">
                             <div class="grid_for_icon">
                                 <i class="fa fa-certificate"></i>
@@ -307,18 +312,13 @@
                         <div class="dates">
                             <i class="fas fa-angle-left"></i>
                             <div class="dates-and-slots">
+                                <% for(var k=0;k<3;k++){%>
                                 <div>
-                                    <h6><%= date.getMonth()+" "+date.getDate() %></h6>
+                                    <h6><%= date[k] %></h6>
                                     <span>0 Slots Available</span>
                                 </div>
-                                <div>
-                                    <h6>TUE Apr 07 2021</h6>
-                                    <span>0 Slots Available</span>
-                                </div>
-                                <div>
-                                    <h6>TUE Apr 08 2021</h6>
-                                    <span>0 Slots Available</span>
-                                </div>
+                                <%}%>
+                                
                             </div>
                             <i class="fas fa-angle-right"></i>
                         </div>

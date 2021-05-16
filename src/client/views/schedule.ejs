@@ -22,6 +22,9 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.min.js"></script>
+    <link rel = "icon" href = 
+"https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
+        type = "image/x-icon">
 
 
 </head>
@@ -116,7 +119,7 @@
                 </div>
             </div>
 
-            <div class="schedule"  id="schedule">
+            <div class="schedule" id="schedule">
                 <div class="text-button">
                     <h2>Schedules</h2>
                     <span class="btn_blue" onclick="openwrapper('popup')">Add Schedule</span>
@@ -126,21 +129,26 @@
                     <div class="card">
                         <div class="row-for-desktop">
                             <div class="heading">
-                                <h3><%= exists[j].days %></h3>
+                                <h3>
+                                    <%= exists[j].days %>
+                                </h3>
                             </div>
                             <div class="hospital-time">
-                                <h3><%= exists[j].hospital %></h3>
-                                <span> <%= exists[j].fromtime %>- <%= exists[j].totime %></span>
+                                <h3>
+                                    <%= exists[j].hospital %>
+                                </h3>
+                                <span>
+                                    <%= exists[j].fromtime %>- <%= exists[j].totime %>
+                                </span>
                             </div>
 
                             <div class="buttons">
-                                <button class="btn_blue"
-                                    onclick="togg('slot<%= exists[j]._id %>')">View Slots</button>
+                                <button class="btn_blue" onclick="togg('slot<%= exists[j]._id %>')">View Slots</button>
                                 <form action="/removeschedule" method="POST">
-                                <button type="submit" class="btn_darkblue">Remove Slots</button>
+                                    <button type="submit" class="btn_darkblue">Remove Slots</button>
                                 </form>
                                 <input type="checkbox" name="checkbox" id="chevkbox">
-                                
+
                             </div>
                         </div>
 
@@ -148,16 +156,18 @@
                             <% for(var k=0;k< exists[j].slots.length-1;k++){%>
                                 <div class="timings right-margin">
 
-                                    <span><%=exists[j].slots[k].time %>  - <%=exists[j].slots[k+1].time %></span>
+                                    <span>
+                                        <%=exists[j].slots[k].time %> - <%=exists[j].slots[k+1].time %>
+                                    </span>
 
                                     <input type="checkbox">
                                 </div>
-                                
+
                                 <%}%>
                         </div>
                     </div>
-                <%}%>
-                </div>
+                    <%}%>
+            </div>
 
             </div>
 
@@ -206,9 +216,10 @@
                                 <button class="btn_darkblue"
                                     onclick="closepop('popup'),window.location.href('/addschedule')">Cancel</button>
                             </div>
-                        </div>
+                    </form>
                 </div>
-                </form>
+            </div>
+
             </div>
             </div>
 

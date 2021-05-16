@@ -52,5 +52,9 @@ router.route("/addschedule").get(sessionauth.redirectlogin,schedule.getschedule)
 router.route("/addschedule").post(schedule.addschedule);
 router.route("/settings").get(sessionauth.redirectlogin,middle.settingspageget);
 router.route("/changepassword").post(middle.changepassword);
+router.route("/medicalreport").get(sessionauth.redirectlogin,middle.medicalreportget);
+router.route("/addmedicalreport").post(middle.medicalreportpost);
+router.route("/deletemedicalrecords/:id").post(middle.deletemedicalrecords);
+router.route("/docprofile").get(sessionauth.redirectlogin,middle.docprofile);
 module.exports=router;
 

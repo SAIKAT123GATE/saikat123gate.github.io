@@ -52,9 +52,10 @@ const getschedule= async (req,res)=>{
 
 
 const addschedule = async (req, res) => {
+  var doctor=await docdetails.findOne({email:req.session.email});
   const email = req.session.email;
   const days = req.body.days;
-  const createdby = req.session.id;
+  const createdby = doctor._id;
   const fromtime = req.body.fromtime;
   const totime = req.body.totime;
   const interval = req.body.interval;

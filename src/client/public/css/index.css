@@ -770,6 +770,8 @@ form .input1 .input_field{
     .find_affordable_healthcare .btn_darkblue{
         
         margin-top:0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
     form{
         position: relative;

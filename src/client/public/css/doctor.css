@@ -259,27 +259,27 @@ textarea {
 }
 
 input::-webkit-input-placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input:-ms-input-placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input::-ms-input-placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input::placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input {
@@ -288,6 +288,7 @@ input {
   padding: 1rem 1rem;
   width: 100%;
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
 option {
@@ -561,9 +562,9 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .head2 ul li {
     color: #021433;
@@ -1376,6 +1377,7 @@ footer p span {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 1.8rem;
+    cursor: pointer;
   }
   .bg_white .bordergray .flex_for_icon i {
     margin-left: 0;

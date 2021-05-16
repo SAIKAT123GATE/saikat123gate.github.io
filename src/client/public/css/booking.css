@@ -259,27 +259,27 @@ textarea {
 }
 
 input::-webkit-input-placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input:-ms-input-placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input::-ms-input-placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input::placeholder {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: nexa-light;
-  color: #636668;
+  color: black;
 }
 
 input {
@@ -288,6 +288,7 @@ input {
   padding: 1rem 1rem;
   width: 100%;
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
 option {
