@@ -872,8 +872,7 @@ a {
 }
 
 .dates {
-  display: -ms-grid;
-  display: grid;
+  display: none;
   -ms-grid-columns: auto 1fr auto;
       grid-template-columns: auto 1fr auto;
   -webkit-box-align: center;
@@ -892,7 +891,6 @@ a {
 .slots {
   grid-area: slots;
   padding: 1rem;
-  display: none;
 }
 
 .dates-and-slots {
@@ -923,6 +921,7 @@ a {
 .timings-and-slots {
   padding-top: 1rem;
   text-align: center;
+  display: none;
 }
 
 .slot-timings {
@@ -984,6 +983,7 @@ a {
   border: 1px solid #167ddd;
   color: #ffffff;
   background-color: #167ddd;
+  margin-right: 1rem;
 }
 
 .pagination a:hover {
@@ -1493,6 +1493,12 @@ footer p span {
     font-size: 1.3rem;
     color: #021433;
     margin-left: 0.5rem;
+  }
+  .notdisplay {
+    display: none;
+  }
+  .activeslotnum {
+    cursor: pointer;
   }
 }
 /*# sourceMappingURL=doctor.css.map */

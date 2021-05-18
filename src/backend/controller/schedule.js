@@ -69,7 +69,7 @@ const addschedule = async (req, res) => {
 
   var endhr = parseInt(ar[0]);
   var endmin = parseInt(ar[1]);
-  var slotsarr = [{ time: st, days: req.body.days }];
+  var slotsarr = [{ time: st, days: req.body.days,isBooked:false,isDisabled:false }];
   while (st != et) {
     var a = st.split(":");
     var sthr = parseInt(a[0]);
@@ -89,7 +89,7 @@ const addschedule = async (req, res) => {
     }
     var result = sthr + ":" + (stmin + intervaltime);
     
-    slotsarr.push({ time: result, days: days });
+    slotsarr.push({ time: result, days: days,isBooked:false,isDisabled:false });
     st = result.toString();
     //console.log(st);
   }

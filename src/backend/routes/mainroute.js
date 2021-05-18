@@ -9,6 +9,8 @@ const docdetailsc=require("../controller/docdetailscontroller");
 const multer=require('multer');
 const docdetails = require("../database/docdetails");
 const schedule=require("../controller/schedule");
+const getslot=require("../controller/getscheduleslots");
+const getscheduleslots = require("../controller/getscheduleslots");
 
 
 const fileStorageEngine=multer.diskStorage({
@@ -56,5 +58,6 @@ router.route("/medicalreport").get(sessionauth.redirectlogin,middle.medicalrepor
 router.route("/addmedicalreport").post(middle.medicalreportpost);
 router.route("/deletemedicalrecords/:id").post(middle.deletemedicalrecords);
 router.route("/docprofile").get(sessionauth.redirectlogin,middle.docprofile);
+router.route("/getschedule/:id").get(getscheduleslots.getslots);
 module.exports=router;
 

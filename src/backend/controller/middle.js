@@ -30,19 +30,15 @@ const doctorpageget = async (req, res) => {
   req.session.findall = findall;
 
   //For getting day
-  var finalarray=[];
-  finalarray.push("Today","Tomorrow");
-  var mydate=new Date();
-  var darr=new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
-  var marr=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
-  for(var k=2;k<=6;k++){
-    var date=mydate.getDate()+k;
-    var day=mydate.getDay()+k;
-    var month=mydate.getMonth();
-    var year=mydate.getFullYear();
-    var str=darr[day]+" "+marr[month]+" "+date+" "+year;
-    finalarray.push(str);
-  }
+  
+
+  var finddoc=await docdetails.find();
+  
+  //console.log("printing day for checking schedule",comparearray);
+ 
+  //console.log("printing docarr",docarr);
+
+
   return res.render("doctor", {
     username: req.session.name,
     findall: findall,
@@ -53,7 +49,8 @@ const doctorpageget = async (req, res) => {
     nextpage: page + 1,
     previouspage: page - 1,
     lastpage: Math.ceil(count / items_per_page),
-    date: finalarray
+    
+    
   });
 };
 

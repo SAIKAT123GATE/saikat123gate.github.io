@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 const mainroute=require("./backend/routes/mainroute");
 var app=express();
 const session=require("express-session");
+const fetch=require("node-fetch");
 
 const OtpManager = require("./OtpManager");
 const otpRepository = require("./otpRepository");

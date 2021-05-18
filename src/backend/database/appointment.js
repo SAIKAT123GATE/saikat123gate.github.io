@@ -6,6 +6,12 @@ const slots=new mongoose.Schema({
     },
     days:{
         type:String
+    },
+    isBooked:{
+        type:Boolean
+    },
+    isDisabled:{
+        type:Boolean
     }
 })
 
