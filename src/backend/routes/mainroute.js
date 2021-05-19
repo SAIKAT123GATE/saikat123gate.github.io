@@ -11,6 +11,7 @@ const docdetails = require("../database/docdetails");
 const schedule=require("../controller/schedule");
 const getslot=require("../controller/getscheduleslots");
 const getscheduleslots = require("../controller/getscheduleslots");
+const schedules = require("../database/appointment");
 
 
 const fileStorageEngine=multer.diskStorage({
@@ -49,7 +50,7 @@ router.route("/tvastraplus").get(middle.tvastraplus);
 router.route("/logout").get(middle.logout);
 router.route("/profile").get(sessionauth.redirectlogin,middle.profilepageget);
 router.route("/updateprofile").post(upload.single('image'),docdetailsc.updateprofile);
-router.route("/booking").get(middle.bookingpageget);
+router.route("/booking/:scheduleid").get(sessionauth.redirectlogin,middle.bookingpageget);
 router.route("/addschedule").get(sessionauth.redirectlogin,schedule.getschedule);
 router.route("/addschedule").post(schedule.addschedule);
 router.route("/settings").get(sessionauth.redirectlogin,middle.settingspageget);
@@ -59,5 +60,11 @@ router.route("/addmedicalreport").post(middle.medicalreportpost);
 router.route("/deletemedicalrecords/:id").post(middle.deletemedicalrecords);
 router.route("/docprofile").get(sessionauth.redirectlogin,middle.docprofile);
 router.route("/getschedule/:id").get(getscheduleslots.getslots);
+router.route("/getslots/:did/:index").get(getscheduleslots.getsubslots);
+router.route("/removeslots/:scheduleid").post(schedule.removeschedule);
+router.route("/disableslot/:scheduleid/:slotid").post(schedule.disableslot);
+router.route("/disableallschedule/:scheduleid").post(schedule.disableallslot);
+router.route("/bookslot/:scheduleid/:doctorid/:slotid/:slottime").post(getscheduleslots.onslotclick);
+
 module.exports=router;
 

@@ -143,11 +143,11 @@
 }
 .slot-timings{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   li{
   color: $blue;
-  
+  margin-right: 1rem;
   font-family: nexa-bold;
   font-size: 1.0rem;
   border:1px solid $blue;

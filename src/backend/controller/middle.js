@@ -155,7 +155,21 @@ const schedule = (req, res) => {
 };
 
 const booking = (req, res) => {
-  res.render("booking");
+  res.render("booking",{
+    username: req.session.name,
+    mobileno: req.session.mobileno,
+    email: req.session.email,
+    gender: req.session.gender,
+    dateofbirth: req.session.dateofbirth,
+    
+    doctorimg:req.session.docimg,
+    isDoctor: req.session.isDoctor,
+    image: req.session.image,
+    slottime:req.session.slotbookingtime,
+    docname:req.session.docnameforbook,
+    qualification:req.session.qualification,
+    hospital:req.session.hospital
+  });
 };
 
 const settingspageget = async (req, res) => {

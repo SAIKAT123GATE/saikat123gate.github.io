@@ -98,8 +98,8 @@ const addschedule = async (req, res) => {
     const appoint = await schedules.findOne({
       email: email,days:days,fromtime:fromtime
     });
-    console.log("checking slot already created or not");
-    console.log(appoint);
+    //console.log("checking slot already created or not");
+    //console.log(appoint);
 
     if (appoint) {
       console.log("can not create schedule");
@@ -128,7 +128,90 @@ const addschedule = async (req, res) => {
   }
 };
 
+const removeschedule=async(req,res)=>{
+  const id=req.params.scheduleid;
+  console.log(id);
+  const find= await schedules.findOneAndRemove({_id:id});
+  if(find){
+    console.log("deleted the schedule");
+    
+  }
+  else{
+    console.log("can't delete the schedule");
+  }
+  return res.redirect("/addschedule");
+}
+
+//disabling slots
+const disableslot=async(req,res)=>{
+  var scheduleid1=req.params.scheduleid;
+  //console.log("printing scheduleid",scheduleid1)
+  var slotid=req.params.slotid;
+  //console.log("printing slotid",slotid);
+  try{
+  const findsch=await schedules.findOne({_id:scheduleid1});
+  //console.log(findsch);
+  if(findsch){
+    for(var k=0;k<findsch.slots.length-1;k++){
+      //console.log("printing slots id from data base",findsch.slots[k]._id);
+      if(slotid==findsch.slots[k]._id){
+        
+        if(!(findsch.slots[k].isDisabled))
+        findsch.slots[k].isDisabled=true;
+        else{
+          findsch.slots[k].isDisabled=false;
+        }
+       await findsch.save();
+        break;
+      }
+      
+    }
+  }
+  else{
+    console.log("error occur in disabling");
+  }
+
+  return res.redirect("/addschedule");
+}
+catch(err){
+  console.log(err);
+  return res.redirect("/addschedule");
+}
+}
+
+//disabling all schedule
+const disableallslot=async(req,res)=>{
+  var scheduleid1=req.params.scheduleid;
+  try{
+  const findsch=await schedules.findOne({_id:scheduleid1});
+  //console.log(findsch);
+  if(findsch){
+    for(var k=0;k<findsch.slots.length-1;k++){
+      //console.log("printing slots id from data base",findsch.slots[k]._id);
+      
+        
+        
+        findsch.slots[k].isDisabled=true;
+       await findsch.save();
+      
+    }
+  }
+  else{
+    console.log("error occur in disabling");
+  }
+
+  return res.redirect("/addschedule");
+}
+catch(err){
+  console.log(err);
+  return res.redirect("/addschedule");
+}
+}
+
 module.exports = {
   addschedule: addschedule,
-  getschedule:getschedule
+  getschedule:getschedule,
+  removeschedule:removeschedule,
+  disableslot:disableslot,
+  disableallslot:disableallslot
 };

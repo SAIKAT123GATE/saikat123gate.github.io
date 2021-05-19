@@ -71,7 +71,7 @@
                     <option value="transgender">Transgender</option>
                     
                   </select>
-                <input class="input_field" placeholder="dd/mm/yyyy" type="date" name="dateofbirth" required>
+                <input class="input_field" placeholder="dd/mm/yyyy" type="date" name="dateofbirth" required id="dob">
                 <input class="input_field" placeholder="Enter Phone Number" type="tel" name="mobileno" required pattern="[789][0-9]{9}">
                 <div class="gridrow">
                     <input class="input_field" placeholder="Enter City" type="text" name="city" required>
@@ -99,6 +99,27 @@
     <footer>
         <p>All Rights Reserved. &#169 tvastra <span>2020</span></p>
     </footer>
+
+
+
+
+    <!--Script-->
+    <script>
+        var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+    var yyyy = today.getFullYear();
+    if(dd<10){
+      dd='0'+dd
+    } 
+    if(mm<10){
+      mm='0'+mm
+    } 
+    
+    today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById('dob').setAttribute("max", today);
+    </script>
+    
 </body>
 
 </html>

@@ -144,10 +144,12 @@
 
                             <div class="buttons">
                                 <button class="btn_blue" onclick="togg('slot<%= exists[j]._id %>')">View Slots</button>
-                                <form action="/removeschedule" method="POST">
+                                <form action="/removeslots/<%= exists[j]._id %>" method="POST">
                                     <button type="submit" class="btn_darkblue">Remove Slots</button>
                                 </form>
-                                <input type="checkbox" name="checkbox" id="chevkbox">
+                                <form method="POST" action="/disableallschedule/<%= exists[j]._id %>" onchange="this.submit()">
+                                <input type="checkbox" name="checkbox" id="checkbox">
+                                </form>
 
                             </div>
                         </div>
@@ -159,8 +161,14 @@
                                     <span>
                                         <%=exists[j].slots[k].time %> - <%=exists[j].slots[k+1].time %>
                                     </span>
-
-                                    <input type="checkbox">
+                                    <form method="POST" action="/disableslot/<%= exists[j]._id %>/<%= exists[j].slots[k]._id %>" onchange="this.submit()">
+                                        <% if(exists[j].slots[k].isDisabled){%>
+                                            <input type="checkbox" checked >
+                                            <%}
+                                         else {%>
+                                            <input type="checkbox" >
+                                        <%}%>
+                                    </form>
                                 </div>
 
                                 <%}%>

@@ -928,15 +928,16 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 .slot-timings li {
   color: #167ddd;
+  margin-right: 1rem;
   font-family: nexa-bold;
   font-size: 1.0rem;
   border: 1px solid #167ddd;

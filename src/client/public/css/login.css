@@ -1045,7 +1045,7 @@ footer p {
             align-items: center;
   }
   .firstsec .login {
-    width: 40%;
+    max-width: 500px;
     height: auto;
   }
   .firstsec .login h2 {

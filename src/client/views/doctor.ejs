@@ -369,25 +369,20 @@
                             <div class="timings-and-slots" id="subslots<%= findall[i]._id %>">
                                 <div class="morning">
                                     <h4>Morning</h4>
-                                    <ul class="slot-timings">
-                                        <li>03:00 AM</li>
-                                        <li>03.30 AM</li>
-                                        <li>04.00 AM</li>
-                                        <li>04.00 AM</li>
-                                        <li>04.00 AM</li>
-                                        <li>04.00 AM</li>
+                                    <ul class="slot-timings" id="morning<%= findall[i]._id %>">
+                                        
                                     </ul>
                                 </div>
-                                <div class="morning afternoon">
+                                <div class="morning afternoon" >
                                     <h4>Afternoon</h4>
-                                    <ul>
-                                        <li>No Slots to show</li>
+                                    <ul class="slot-timings"  id="afternoon<%= findall[i]._id %>">
+                                        
                                     </ul>
                                 </div>
-                                <div class="evening afternoon morning">
+                                <div class="evening afternoon morning" >
                                     <h4>Evening</h4>
-                                    <ul>
-                                        <li>No Slots to show</li>
+                                    <ul class="slot-timings"  id="evening<%= findall[i]._id %>">
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -491,6 +486,7 @@
         async function showslot(id, docid) {
             const abc = await fetch("/getschedule/" + docid, { method: "get", });
             const schedule= await abc.json();
+            console.log(schedule);
             console.log("running");
 
             var k = document.getElementById(id);
@@ -574,9 +570,68 @@
 
 //for showing slots
 
-async function showslots(id,did,no){
+async function showslots(id,did,index){
     if(document.getElementById(id).style.display!="block"){
     document.getElementById(id).style.display="block";
+    var cde=await fetch("/getslots/"+did+"/"+index,{method:'get'});
+    var slots=await cde.json();
+    console.log(slots);
+    var morningslot=slots[0];
+    var afternoonslot=slots[1];
+    var eveningslot=slots[2];
+    var scheduleid=slots[3];
+    if(morningslot.length==0){
+        document.getElementById('morning'+did).innerHTML="<li>No slots Available</li>";
+        document.getElementById('morning'+did).style.justifyContent="center";
+        document.getElementById('morning'+did).childNodes[0].style.border="none";
+        document.getElementById('morning'+did).childNodes[0].style.fontSize="1.5rem";
+    }
+    if(afternoonslot.length==0){
+        document.getElementById('afternoon'+did).innerHTML="<li>No slots Available</li>";
+        document.getElementById('afternoon'+did).style.justifyContent="center";
+        document.getElementById('afternoon'+did).childNodes[0].style.border="none";
+        document.getElementById('afternoon'+did).childNodes[0].style.fontSize="1.5rem";
+    }
+
+    if(eveningslot.length==0){
+        document.getElementById('evening'+did).innerHTML="<li>No slots Available</li>";
+        document.getElementById('evening'+did).style.justifyContent="center";
+        document.getElementById('evening'+did).childNodes[0].style.border="none";
+        document.getElementById('evening'+did).childNodes[0].style.fontSize="1.5rem";
+    }
+
+    if(morningslot.length>0){
+        var a='';
+        for(var k=0;k<morningslot.length;k++){
+            
+            a=a+'<form method="post" action="/bookslot/'+scheduleid+'/'+did+'/'+morningslot[k]._id+'/'+morningslot[k].time+'" onclick="this.submit()"><li style="width:5rem;">'+morningslot[k].time+'</li></form>';
+            
+        }
+        document.getElementById('morning'+did).innerHTML=a; 
+
+    }
+
+    if(afternoonslot.length>0){
+        var s='';
+        for(var k=0;k<afternoonslot.length;k++){
+            
+            s=s+'<form method="post" action="/bookslot/'+scheduleid+'/'+did+'/'+afternoonslot[k]._id+'/'+afternoonslot[k].time+'" onclick="this.submit()"><li style="width:5rem;">'+afternoonslot[k].time+'</li></form>';
+            
+        }
+        document.getElementById('afternoon'+did).innerHTML=s; 
+
+    }
+
+    if(eveningslot.length>0){
+        var b='';
+        for(var k=0;k<eveningslot.length;k++){
+            
+            b=b+'<form method="post" action="/bookslot/'+scheduleid+'/'+did+'/'+eveningslot[k]._id+'/'+eveningslot[k].time+'" onclick="this.submit()"><li style="width:5rem;">'+eveningslot[k].time+'</li></form>';
+            
+        }
+        document.getElementById('afternoon'+did).innerHTML=b; 
+
+    }
 
     }
     else

@@ -177,7 +177,7 @@
                         <div class="medical-details">
                             <input type="text" placeholder="Title" name="title" required>
                             <input type="text" readonly value="<%= username %>" name="user">
-                            <input type="date" id="date" name="dateofreport" required>
+                            <input type="date" id="date" name="dateofreport" class="maxdateset" required>
                         </div>
 
                         <div class="checkboxes">
@@ -265,6 +265,23 @@
         }
     });
 
+</script>
+
+
+<script>
+    var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+var yyyy = today.getFullYear();
+if(dd<10){
+  dd='0'+dd
+} 
+if(mm<10){
+  mm='0'+mm
+} 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById('date').setAttribute("max", today);
 </script>
 
 </html>
