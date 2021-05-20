@@ -10,13 +10,13 @@
         crossorigin="anonymous" />
 
     <link href="../css/booking.css" rel="stylesheet" type="text/css">
+    <link href="../css/appointment.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../script/app.js"></script>
     <link rel = "icon" href = 
 "https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
         type = "image/x-icon">
 </head>
-
 <body>
     <%- include('header.ejs')%>
 
@@ -57,7 +57,7 @@
             <div class="desktop">
                 <div class="profile">
                     <div class="heading">
-                        <h2> In Clinic Appointment</h2>
+                        <h3> In Clinic Appointment</h3>
                     </div>
                     <div class="date">
                         <div>
@@ -79,7 +79,7 @@
                             <h3><span>Name : </span> <%= docname %></h3>
                             <h3><span>Hospital : </span> <%= hospital %></h3>
                             <h3><span>Treatments : </span> asc</h3>
-                            <h3><span>Qualification : </span> <%= qualification %></h3>
+                            <h3><span>Qualification : </span> <%= hospital %></h3>
                         </div>
                     </div>
                 </div>
@@ -87,23 +87,21 @@
                 <!--patient details-->
 
                 <div class="patient-details">
-                    <div class="heading">
-                        <h2> Patient Details</h2>
+                    <div class="heading heading-tick">
+                        <i id="tick" class="fa fa-check"></i>
+                        <h4>Appointment Confirmed</h4>
                     </div>
-                    <form action="/booking/<%= scheduleid %>" method="POST">
+                    <form>
                         <label>Patients Full Name</label>
-                        <input type="text" value="<%= username %>" >
+                        <input type="text" value="<%= username %>" readonly>
 
                         <label>Mobile No</label>
-                        <input type="number" value="<%= mobileno %>">
+                        <input type="number" value="<%= mobileno %>" readonly>
 
-                        <label>Patient's Mobile No</label>
-                        <input type="number"value="<%= mobileno %>">
-
-                        <label>Patient's Email</label>
-                        <input type="email" value="<%= email %>">
-
-                        <button type="submit" class="btn_blue">Book an Appointment</button>
+                        <div class="buttons">
+                        <button type="submit" class="btn_blue">Cancle Appointment</button>
+                        <button type="submit" class="btn_darkblue">Reshedule</button>
+                        </div>
                     </form>
                 </div>
             </div>

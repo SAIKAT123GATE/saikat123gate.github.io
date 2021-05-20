@@ -12,6 +12,7 @@ const schedule=require("../controller/schedule");
 const getslot=require("../controller/getscheduleslots");
 const getscheduleslots = require("../controller/getscheduleslots");
 const schedules = require("../database/appointment");
+const myappointment=require("../controller/myappointment");
 
 
 const fileStorageEngine=multer.diskStorage({
@@ -65,6 +66,11 @@ router.route("/removeslots/:scheduleid").post(schedule.removeschedule);
 router.route("/disableslot/:scheduleid/:slotid").post(schedule.disableslot);
 router.route("/disableallschedule/:scheduleid").post(schedule.disableallslot);
 router.route("/bookslot/:scheduleid/:doctorid/:slotid/:slottime").post(getscheduleslots.onslotclick);
+router.route("/booking/:scheduleid").post(getscheduleslots.saveappointment);
+router.route("/confirmappointment").get(sessionauth.redirectlogin,getscheduleslots.appointment);
+router.route("/myappointments").get(sessionauth.redirectlogin,myappointment.myappointment);
+router.route("/deleteappointment/:scheduleid/:slotid").post(myappointment.deleteappointment);
+router.route("/rescheduleappointment/:scheduleid/:slotid").post(myappointment.reschedule);
 
 module.exports=router;
 

@@ -7,6 +7,8 @@ const medicalreport = require("../database/medicalreport");
 const multer=require('multer');
 const { findOneAndDelete } = require("../database/appointment");
 const indexget = (req, res) => {
+    req.session.prevslotid=false;
+    req.session.prevscheduleid=false;
   return res.render("index", {
     msg: req.flash("success"),
     username: req.session.name,
@@ -14,6 +16,7 @@ const indexget = (req, res) => {
   });
 };
 const doctorpageget = async (req, res) => {
+
   let { page, items_per_page } = req.query;
   if (!page) {
     page = 1;
@@ -38,7 +41,7 @@ const doctorpageget = async (req, res) => {
  
   //console.log("printing docarr",docarr);
 
-
+  console.log("Printing id for reschedule",req.session.prevslotid);
   return res.render("doctor", {
     username: req.session.name,
     findall: findall,
@@ -55,6 +58,8 @@ const doctorpageget = async (req, res) => {
 };
 
 const hospitalpageget = (req, res) => {
+    req.session.prevslotid=false;
+    req.session.prevscheduleid=false;
   return res.render("hospital", {
     msg: req.flash("success"),
     username: req.session.name,
@@ -63,6 +68,8 @@ const hospitalpageget = (req, res) => {
 };
 
 const treatmentpageget = (req, res) => {
+    req.session.prevslotid=false;
+    req.session.prevscheduleid=false;
   return res.render("treatment", {
     msg: req.flash("success"),
     username: req.session.name,
@@ -70,6 +77,8 @@ const treatmentpageget = (req, res) => {
   });
 };
 const aboutpageget = (req, res) => {
+    req.session.prevslotid=false;
+    req.session.prevscheduleid=false;
   return res.render(
     "aboutUs",
 
@@ -105,6 +114,8 @@ const logout = (req, res) => {
 };
 
 const profilepageget = (req, res) => {
+    req.session.prevslotid=false;
+    req.session.prevscheduleid=false;
   return res.render("profile", {
     username: req.session.name,
     mobileno: req.session.mobileno,
@@ -128,6 +139,7 @@ const profilepageget = (req, res) => {
 };
 
 const schedule = (req, res) => {
+
   return res.render("schedule", {
     username: req.session.name,
     mobileno: req.session.mobileno,
@@ -155,20 +167,23 @@ const schedule = (req, res) => {
 };
 
 const booking = (req, res) => {
+  
+  console.log("printing reshed from booking page",req.session.prevslotid);
   res.render("booking",{
     username: req.session.name,
     mobileno: req.session.mobileno,
     email: req.session.email,
     gender: req.session.gender,
     dateofbirth: req.session.dateofbirth,
-    
+    bookingdate:req.session.bookingdate,
     doctorimg:req.session.docimg,
     isDoctor: req.session.isDoctor,
     image: req.session.image,
     slottime:req.session.slotbookingtime,
     docname:req.session.docnameforbook,
     qualification:req.session.qualification,
-    hospital:req.session.hospital
+    hospital:req.session.hospital,
+    scheduleid:req.session.scheduleid
   });
 };
 

@@ -1,0 +1,45 @@
+@import "./theme1.scss";
+
+.heading-tick{
+    @media only screen and (min-width:1024px){
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 1rem;
+    align-items: center;
+    h4{
+        margin: 0;
+        text-align: left;
+        font-size: 1.6rem;
+    }
+    i{
+        font-size: 1.4rem;
+        padding: 0.2rem;
+        background-color: green;
+        border-radius: 50%;
+    }
+}
+}
+
+.buttons{
+    @media only screen and (min-width:1024px){
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-column-gap: 1rem;
+    }
+    .btn_blue{
+        @media only screen and (min-width:1024px){
+            font-size: 1.1rem;
+        }
+    }
+    .btn_darkblue{
+        @media only screen and (min-width:1024px){
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.heading{
+    h3{
+        font-size: 1.9rem;
+    }
+}

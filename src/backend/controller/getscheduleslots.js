@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const docdetails = require("../database/docdetails");
 const schedules = require("../database/appointment");
 const medicalreport = require("../database/medicalreport");
+const bookings=require("../database/booking");
 const multer=require('multer');
 
 
@@ -61,13 +62,17 @@ const getsubslots=async (req,res)=>{
   var afternoon=[];
   var evening=[];
   var date1=new Date();
+  
   var day=(date1.getDay()+index);
-  if(day>7){
+  //console.log("printing date1",date1.getDay());
+  //console.log("printing index",index);
+  //console.log("for clickday",day);
+  if(day>=7){
     day=day-7;
   }
   console.log(day);
   switch(day){
-    case 0:
+  case 0:
     var nameday = "sunday";
     break;
   case 1:
@@ -103,15 +108,16 @@ if(findsch1){
     if(time<12 && !(slotsarray[s].isBooked) && !(slotsarray[s].isDisabled)){
       morning.push(slotsarray[s]);
     }
-    else if(time>12 && time<18 && !(slotsarray[s].isBooked) && !(slotsarray[s].isDisabled)){
+    else if(time>=12 && time<18 && !(slotsarray[s].isBooked) && !(slotsarray[s].isDisabled)){
       afternoon.push(slotsarray[s]);
     }
-    else if(time>18  && !(slotsarray[s].isBooked) && !(slotsarray[s].isDisabled)){
+    else if(time>=18  && !(slotsarray[s].isBooked) && !(slotsarray[s].isDisabled)){
       evening.push(slotsarray[s]);
     }
   }
 }
-//console.log("printing afternoon",afternoon);
+//console.log("printing evening",afternoon);
+//console.log("printing evening",evening);
 
 res.status(200).send([morning,afternoon,evening,b]);
 
@@ -126,6 +132,9 @@ const onslotclick=async(req,res)=>{
   var slotid=req.params.slotid;
   var slottime=req.params.slottime;
   req.session.slotbookingtime=slottime;
+  req.session.docid=doctorid;
+  req.session.scheduleid=scheduleid;
+  req.session.slotid=slotid;
   var doc= await docdetails.findOne({_id:doctorid});
   req.session.docnameforbook=doc.name;
   /* this section is for qualification */
@@ -155,7 +164,7 @@ const onslotclick=async(req,res)=>{
   /*finding date */
   var findschedule= await schedules.findOne({_id:scheduleid});
   var day=findschedule.days;
-  console.log("printing day",day);
+  req.session.dayofbook=day;
   switch(day){
     case "sunday":
       var dayno=0;
@@ -166,7 +175,7 @@ const onslotclick=async(req,res)=>{
     case "tuesday":
         var dayno=2;
         break;
-    case "wednesady":
+    case "wednesday":
       var dayno=3;
       break;
     case "thursday":
@@ -175,10 +184,24 @@ const onslotclick=async(req,res)=>{
     case "friday":
         var dayno=5;
         break;
-        case "saturady":
+        case "saturday":
           var dayno=6;
           break;
   }
+  //console.log("printing day",dayno);
+
+  var today=new Date();
+  if(today.getDay()!=dayno){
+  today.setDate(today.getDate() + (dayno-1-today.getDay()+7)%7+1);
+  var k=today.toLocaleString();
+  }
+  
+  var marr = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+  var strday=day+","+marr[today.getMonth()]+" "+today.getDate()+" "+today.getFullYear();
+  req.session.bookingdate=strday;
+  
+
+  //Work will start from here
 
   if(req.session.isDoctor){
     console.log("doc can't book appointment as a doc");
@@ -189,8 +212,87 @@ const onslotclick=async(req,res)=>{
   }
 }
 
+
+const appointment=async (req,res)=>{
+
+  return res.render("confirmappointment",{
+    username: req.session.name,
+    mobileno: req.session.mobileno,
+    email: req.session.email,
+    gender: req.session.gender,
+    dateofbirth: req.session.dateofbirth,
+    bookingdate:req.session.bookingdate,
+    doctorimg:req.session.docimg,
+    isDoctor: req.session.isDoctor,
+    image: req.session.image,
+    slottime:req.session.slotbookingtime,
+    docname:req.session.docnameforbook,
+    qualification:req.session.qualification,
+    hospital:req.session.hospital,
+    scheduleid:req.session.scheduleid
+  });
+}
+
+
+//saving appointment data
+
+const saveappointment=async(req,res)=>{
+  console.log("printing reshed from first of booking post",req.session.prevslotid);
+  var scheduleid=req.params.scheduleid;
+  var slotid=req.session.slotid;
+  var doctorid=req.session.doctorid;
+  var status="Confirmed";
+  const appointment= new bookings({
+    docname:req.session.docnameforbook,
+    email:req.session.email,
+    mobileno:req.session.mobileno,
+    docid:req.session.docid,
+    hospital:req.session.hospital,
+    date:req.session.bookingdate,
+    scheduleid:scheduleid,
+    slotid:slotid,
+    status:status,
+    username:req.session.name,
+    day:req.session.dayofbook,
+    slottime:req.session.slotbookingtime,
+    mobileno:req.session.mobileno
+
+
+  })
+  var booking= await appointment.save();
+  try{
+  
+  if(booking){
+    var sched= await schedules.findOne({_id:scheduleid});
+    var slot=sched.slots.id(slotid);
+    slot.isBooked=true;
+    await sched.save();
+    if(req.session.prevslotid && req.session.prevscheduleid){
+      const prevschedule=await schedules.findOne({_id:req.session.prevscheduleid});
+      const prevslot=prevschedule.slots.id(req.session.prevslotid);
+      prevslot.isBooked=false;
+      await prevschedule.save();
+      const findbooking=await bookings.findOneAndRemove({slotid:req.session.prevslotid});
+
+    }
+
+    console.log("Booked successfully");
+    req.session.prevslotid=false;
+    req.session.prevscheduleid=false;
+    return res.redirect("/confirmappointment");
+  }
+}
+catch(err){
+  console.log("can't book appointment");
+  return res.redirect("/confirmappointment");
+}
+
+}
+
 module.exports={
     getslots:getslots,
     getsubslots:getsubslots,
-    onslotclick:onslotclick
+    onslotclick:onslotclick,
+    appointment:appointment,
+    saveappointment:saveappointment
 }

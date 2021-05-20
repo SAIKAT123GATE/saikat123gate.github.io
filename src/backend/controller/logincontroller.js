@@ -20,8 +20,9 @@ const loginauth = async (req, res) => {
     if (exist) {
       var checkpass = await User.findOne({ email: email, password: password });
       var findall= await docdetails.find();
-      console.log("finding length of doctor database");
-      console.log(findall.length);
+      //console.log("finding length of doctor database");
+      //console.log(findall.length);
+      //console.log("checking prev slot id exists or not",!(req.session.prevslotid));
       if (checkpass) {
         console.log("authentication successful");
         
@@ -53,7 +54,8 @@ const loginauth = async (req, res) => {
             req.session.awards = doctor.awards;
             req.session.specialization = doctor.specialization;
             req.session.fees = doctor.fees;
-            req.session.image=doctor.image
+            req.session.image=doctor.image;
+            req.session.docid=doctor.id;
             
             }
         
