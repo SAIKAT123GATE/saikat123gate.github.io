@@ -42,6 +42,9 @@ const userSchema=new mongoose.Schema(
         isDoctor:{
             type:Boolean,
         },
+        image:{
+            type:String
+        }
         
 
 

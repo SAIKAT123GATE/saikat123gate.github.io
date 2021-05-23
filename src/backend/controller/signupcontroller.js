@@ -20,10 +20,12 @@ const signupregister= async (req,res)=>{
             console.log("email already exists");
             return res.redirect("/signup")
         }
-        const user=new User({name,email,password,gender,dateofbirth,mobileno,state,city,country,isDoctor:isDoctor});
+        const user=new User({name,email,password,gender,dateofbirth,mobileno,state,city,country,isDoctor:isDoctor,
+            image:"https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg"
+        });
         const register= await user.save();
         if(register){
-            console.log("saved successfully");
+            console.log("user saved successfully");
             req.session.user={email,password};
             req.session.name=name;
             req.session.isDoctor=isDoctor;
@@ -34,6 +36,8 @@ const signupregister= async (req,res)=>{
             req.session.state=state;
             req.session.city=city;
             req.session.country=country;
+            req.session.isAdmin=false;
+            req.session.image="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg";
             if(isDoctor){
                 return res.redirect("/docdetails");
             }

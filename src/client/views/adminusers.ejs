@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Settings</title>
+    <title>USERS</title>
     <link href="../css/reset.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet@0.3.0/css/clocklet.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -161,45 +161,47 @@
                 </div>
 
                 <div class="allcards">
-                    <% for(var i=0;i<3;i++){%>
+                    <% for(var i=0;i<users.length;i++){%>
+                        <% if(users[i].email!="admin@gmail.com"){%>
                         <div class="cardsuser">
-                            <i class="fa fa-navicon hambarger"></i>
-                            <div class="but-div" id="">
-                                <h4><a href="#">edit profile</a></h4>
-                                <h4><a href="#">Appointments</a></h4>
-                                <h4><a href="#">medical record</a></h4>
+                            <i class="fa fa-navicon hambarger" onclick="toggk('<%= users[i].id %>')"></i>
+                            <div class="but-div" id="<%= users[i].id %>">
+                                <h4><a href="/<%= users[i].email %>">edit profile</a></h4>
+                                <h4><a href="/appointment/<%= users[i].id %>">Appointments</a></h4>
+                                <h4><a href="/medicalrecord/<%= users[i].email %>">medical record</a></h4>
                             </div>
                             <figure class="card-figure">
-                                <img src="../asset/default.jpg" />
+                                <img src="<%= users[i].image %>" />
                             </figure>
                             <div class="detailsuser">
-                                <h4>Admin</h4>
+                                <h4><%= users[i].name %></h4>
                                 <div class="icons-and-details">
                                     <i class="fa fa-phone"></i>
-                                    <label>81199546333</label>
+                                    <label><%= users[i].mobileno %></label>
                                 </div>
 
                                 <div class="icons-and-details">
                                     <i class="fas fa-envelope"></i>
-                                    <label>saikat@gmail.com</label>
+                                    <label><%= users[i].email %></label>
                                 </div>
 
                                 <div class="icons-and-details">
                                     <i class="fas fa-venus-mars"></i>
-                                    <label>saikat@gmail.com</label>
+                                    <label><%= users[i].gender %></label>
                                 </div>
 
                                 <div class="icons-and-details">
                                     <i class="fas fa-calendar-week"></i>
-                                    <label>saikat@gmail.com</label>
+                                    <label><%= users[i].dateofbirth %></label>
                                 </div>
 
                                 <div class="icons-and-details">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <label>saikat@gmail.com</label>
+                                    <label><%= users[i].city %>,<%= users[i].state %></label>
                                 </div>
                             </div>
                         </div>
+                        <%}%>
                         <%}%>
                 </div>
 
@@ -231,7 +233,15 @@
 
     <%-include('footer.ejs')%>
 
-
+    <script>
+        function toggk(id){
+            var x=document.getElementById(id);
+            if(x.style.display!="block")
+            x.style.display="block";
+            else
+            x.style.display="none";
+        }
+    </script>
 </body>
 
 </html>

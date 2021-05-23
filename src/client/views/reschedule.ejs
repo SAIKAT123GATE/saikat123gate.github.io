@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Doctor</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/982494c467.js" crossorigin="anonymous"></script>
+
+    <link href="../css/adminusers.css" rel="stylesheet" type="text/css">
+    <link href="../css/doctor.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/app.js"></script>
+    <link rel="icon"
+        href="https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp"
+        type="image/x-icon">
+
+
+</head>
+
+<body>
+    <header>
+        <!--Mobile and tablet-->
+        <nav class="head1">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+            </figure>
+            <i class="fa fa-bars"></i>
+        </nav>
+
+        <!--Desktop-->
+        <div class="head2-container">
+            <nav class="head2">
+
+
+                <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                        alt="logo" /></a>
+
+
+                <ul>
+                    <a href="/doctor">
+                        <li>Doctor</li>
+                    </a>
+                    <a href="/hospital">
+                        <li>Hospital</li>
+                    </a>
+                    <a href="/treatment">
+                        <li>Treatment</li>
+                    </a>
+
+                    <a href="/aboutUs">
+                        <li>About</li>
+                    </a>
+                </ul>
+                <div>
+                    <a href="/tvastraplus"> <button class="btn_blue">TVASTRA PLUS</button> </a>
+                    <a href="/queryform"> <button class="btn_darkblue">Get a Quote</button></a>
+                    <div id="user">
+                        <button class="btn_white" onclick="tgl('toaster')">
+                            Saikat
+                        </button>
+                        <i class="fa fa-angle-down"></i>
+
+                    </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <div class="toaster" id="toaster">
+        <div>
+
+            <a href="/profile">
+                <figure id="toaster-img">
+
+                    <img id="headerpic" src="../asset/default.jpg">
+
+                </figure>
+            </a>
+
+            <h5>
+                Saikat
+            </h5>
+        </div>
+        <ul>
+            <a href="/myappointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/medicalreport">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="#">
+                <li>My payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+
+    <section class="bg_white">
+        <div id="docinfo">
+            <div class="bordergray grid2 maxwidth">
+                <div class="docname">
+                    <a href="/docprofile">
+                        <h3>
+                            <%= prevdoc.name %>
+                        </h3>
+                    </a>
+                    <div class="grid_for_tab_and_desktop">
+                        <div class="grid_for_icon">
+                            <i class="fa fa-certificate"></i>
+                            <ul>
+                                <li>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid_for_icon">
+                            <i class="fas fa-award"></i>
+                            <ul>
+                                <li>
+                                    Awards
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid_for_icon">
+                            <i class="fa fa-clock-o "></i>
+                            <ul>
+                                <li>
+                                    exp
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid_for_icon">
+                            <i class="fa fa-hospital-o"></i>
+                            <ul>
+                                <li>
+                                    hospitals
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="grid_for_icon">
+                            <i class="fa fa-map-marker "></i>
+                            <ul>
+                                <li>
+                                    location
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn_darkblue"
+                        onclick="showslot('container<%= prevdoc._id %>','<%= prevdoc._id %>')">Book
+                        an appointment</button>
+                </div>
+                <figure>
+                    <img src="<%= prevdoc.image %>" />
+                </figure>
+
+                <div class="slots">
+                    <div class="dates" id="container<%= prevdoc._id %>">
+                        <i class="fas fa-angle-left"
+                            onclick="moveCarousel('right','carousel-container<%= prevdoc._id %>')"></i>
+
+                        <div class="mySlides<%= prevdoc._id %> firstload">
+                            <div class="dates-and-slots" id="carousel-container<%= prevdoc._id %>">
+
+                                <div id="slot1<%= prevdoc._id %>" class="activeslotnum"
+                                    onclick="showslots('subslots<%= prevdoc._id %>','<%= prevdoc._id %>',0)">
+
+                                </div>
+
+                                <div id="slot2<%= prevdoc._id %>" class="activeslotnum"
+                                    onclick="showslots('subslots<%= prevdoc._id %>','<%= prevdoc._id %>',1)">
+
+                                </div>
+
+                                <div id="slot3<%= prevdoc._id %>" class="activeslotnum"
+                                    onclick="showslots('subslots<%= prevdoc._id %>','<%= prevdoc._id %>',2)">
+
+                                </div>
+
+                                <div id="slot4<%= prevdoc._id %>" class="notdisplay activeslotnum"
+                                    onclick="showslots('subslots<%= prevdoc._id %>','<%= prevdoc._id %>',3)">
+
+                                </div>
+
+                                <div id="slot5<%= prevdoc._id %>" class="notdisplay activeslotnum"
+                                    onclick="showslots('subslots<%= prevdoc._id %>','<%= prevdoc._id %>',4)">
+
+                                </div>
+
+                                <div id="slot6<%= prevdoc._id %>" class="notdisplay activeslotnum"
+                                    onclick="showslots('subslots<%= prevdoc._id %>','<%= prevdoc._id %>',5)">
+
+                                </div>
+
+                                <div id="slot7<%= prevdoc._id %>" class="notdisplay activeslotnum"
+                                    onclick="showslots('subslots<%= prevdoc._id %>','<%= prevdoc._id %>',6)">
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <i class="fas fa-angle-right"
+                            onclick="moveCarousel('left','carousel-container<%= prevdoc._id %>')"></i>
+                    </div>
+                    <div class="timings-and-slots" id="subslots<%= prevdoc._id %>">
+                        <div class="morning">
+                            <h4>Morning</h4>
+                            <ul class="slot-timings" id="morning<%= prevdoc._id %>">
+
+                            </ul>
+                        </div>
+                        <div class="morning afternoon">
+                            <h4>Afternoon</h4>
+                            <ul class="slot-timings" id="afternoon<%= prevdoc._id %>">
+
+                            </ul>
+                        </div>
+                        <div class="evening afternoon morning">
+                            <h4>Evening</h4>
+                            <ul class="slot-timings" id="evening<%= prevdoc._id %>">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Need Help-->
+    <section class="nd_help">
+        <div class="nd_help1">
+            <h2>Need Help?</h2>
+            <p>Just let us know we will happy to assist you</p>
+        </div>
+        <div class="btn2 nd_help2">
+            <button type="submit" class="btn_blue">Submit your enquiry</button>
+        </div>
+    </section>
+
+    <!--Footer**********************************************************************-->
+    <footer>
+        <div class="mobileshow">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
+            </figure>
+            <ul class="about">
+                <h2>TVASTRA</h2>
+                <li>Doctors</li>
+                <li>Hospitals</li>
+                <li>Treatment</li>
+                <li>Other services</li>
+                <li>FAQs</li>
+                <h2>FOLLOW US</h2>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>Google+</li>
+                <li>Instagram</li>
+            </ul>
+
+
+            <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
+        </div>
+
+        <div class="tabshow">
+
+
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
+            </figure>
+            <ul class="about">
+                <li>Doctor</li>
+                <li>Hospital</li>
+                <li>Treatment</li>
+                <li>Other services</li>
+                <li>FAQs</li>
+            </ul>
+            <div class="social_icon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-pinterest-p"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-google-plus"></i>
+                <i class="fa fa-instagram"></i>
+            </div>
+            <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
+
+        </div>
+    </footer>
+
+
+
+    <script>
+        async function showslot(id, docid) {
+            const abc = await fetch("/getschedule/" + docid, { method: "get", });
+            const schedule= await abc.json();
+            console.log(schedule);
+            console.log("running");
+
+            var k = document.getElementById(id);
+            if (k.style.display == "grid")
+                k.style.display = "none";
+            else {
+
+
+                k.style.display = "grid";
+                var finalarray = [];
+                finalarray.push("Today", "Tomorrow");
+                var mydate = new Date();
+                var darr = new Array("sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+                var marr = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+                for (var k = 2; k <= 6; k++) {
+                    var date = mydate.getDate() + k;
+                    var day = mydate.getDay() + k;
+                    //console.log("printing day",day);
+                    var month = mydate.getMonth();
+                    var year = mydate.getFullYear();
+                    var str = darr[day] + " " + marr[month] + " " + date + " " + year;
+                    if (day >= 7) {
+                        var str = darr[day - 7] + " " + marr[month] + " " + date + " " + year;
+                    }
+                    finalarray.push(str);
+                    //console.log(finalarray);
+                }
+
+                for(var s=0;s<7;s++){
+                    var no=s+1;
+                document.getElementById('slot'+ no+ docid).innerHTML = '<h4>'+finalarray[s]+'</h4><span>' + schedule[s] + ' Slots Available</span>';
+                
+                }
+
+            }
+
+
+
+
+        }
+    </script>
+
+
+    <!--Carousel script-->
+    <script>
+        function moveCarousel(dirc, carouselId) {
+    var carouselItems = document.getElementById(carouselId).children;
+    if (dirc === "left") {
+        for (var i = 0; i < carouselItems.length; i++) {
+            if (carouselItems[i].style.display !== "none")
+                break;
+        }
+        if (i + 3 < carouselItems.length) {
+            for (var j = 0; j < carouselItems.length; j++) {
+                if (j === i + 1 || j === i + 2 || j === i + 3) {
+                    carouselItems[j].style.display = "block";
+                }
+                else
+                    carouselItems[j].style.display = "none";
+            }
+        }
+    }
+    else if (dirc === "right") {
+        for (var i = 0; i < carouselItems.length; i++) {
+            if (carouselItems[i].style.display !== "none")
+                break;
+        }
+        if (i !== 0) {
+            for (var j = 0; j < carouselItems.length; j++) {
+                if (j === i - 1 || j === i || j === i + 1) {
+                    carouselItems[j].style.display = "block";
+                }
+                else
+                    carouselItems[j].style.display = "none";
+            }
+        }
+    }
+}
+
+
+
+//for showing slots
+
+async function showslots(id,did,index){
+    if(document.getElementById(id).style.display!="block"){
+    document.getElementById(id).style.display="block";
+    var cde=await fetch("/getslots/"+did+"/"+index,{method:'get'});
+    var slots=await cde.json();
+    console.log(slots);
+    var morningslot=slots[0];
+    var afternoonslot=slots[1];
+    var eveningslot=slots[2];
+    console.log("eveningslot",eveningslot);
+    var scheduleid=slots[3];
+    if(morningslot.length==0){
+        document.getElementById('morning'+did).innerHTML="<li>No slots Available</li>";
+        document.getElementById('morning'+did).style.justifyContent="center";
+        document.getElementById('morning'+did).childNodes[0].style.border="none";
+        document.getElementById('morning'+did).childNodes[0].style.fontSize="1.5rem";
+    }
+    if(afternoonslot.length==0){
+        document.getElementById('afternoon'+did).innerHTML="<li>No slots Available</li>";
+        document.getElementById('afternoon'+did).style.justifyContent="center";
+        document.getElementById('afternoon'+did).childNodes[0].style.border="none";
+        document.getElementById('afternoon'+did).childNodes[0].style.fontSize="1.5rem";
+    }
+
+    if(eveningslot.length==0){
+        document.getElementById('evening'+did).innerHTML="<li>No slots Available</li>";
+        document.getElementById('evening'+did).style.justifyContent="center";
+        document.getElementById('evening'+did).childNodes[0].style.border="none";
+        document.getElementById('evening'+did).childNodes[0].style.fontSize="1.5rem";
+    }
+
+    if(morningslot.length>0){
+        var a='';
+        for(var k=0;k<morningslot.length;k++){
+            
+            a=a+'<form method="post" action="/bookslot/'+scheduleid+'/'+did+'/'+morningslot[k]._id+'/'+morningslot[k].time+'" onclick="this.submit()"><li style="width:5rem;">'+morningslot[k].time+'</li></form>';
+            
+        }
+        document.getElementById('morning'+did).innerHTML=a; 
+
+    }
+
+    if(afternoonslot.length>0){
+        var s='';
+        for(var k=0;k<afternoonslot.length;k++){
+            
+            s=s+'<form method="post" action="/bookslot/'+scheduleid+'/'+did+'/'+afternoonslot[k]._id+'/'+afternoonslot[k].time+'" onclick="this.submit()"><li style="width:5rem;">'+afternoonslot[k].time+'</li></form>';
+            
+        }
+        document.getElementById('afternoon'+did).innerHTML=s; 
+
+    }
+
+    if(eveningslot.length>0){
+        var b='';
+        for(var k=0;k<eveningslot.length;k++){
+            
+            b=b+'<form method="post" action="/bookslot/'+scheduleid+'/'+did+'/'+eveningslot[k]._id+'/'+eveningslot[k].time+'" onclick="this.submit()"><li style="width:5rem;">'+eveningslot[k].time+'</li></form>';
+            
+        }
+        document.getElementById('evening'+did).innerHTML=b; 
+
+    }
+
+    }
+    else
+    document.getElementById(id).style.display="none";
+
+}
+    </script>
+    
+
+</body>
+</html>

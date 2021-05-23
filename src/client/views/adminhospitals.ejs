@@ -161,38 +161,29 @@
                 </div>
 
                 <div class="allcards">
-                    <% for(var i=0;i<3;i++){%>
+                    <% for(var i=0;i<hospitaldet.length;i++){%>
                         <div class="cardsuser">
                             <i class="fas fa-id-card hambarger darkblue"></i>
                             <figure class="card-figure">
-                                <img src="../asset/default.jpg" />
+                                <img src="<%= hospitaldet[i].image %>" />
                             </figure>
                             <div class="detailsuser">
-                                <h4>Admin</h4>
+                                <h4><%= JSON.parse(hospitaldet[i].name)[0].value %></h4>
                                 <div class="icons-and-details">
-                                    <i class="fa fa-phone"></i>
-                                    <label>81199546333</label>
+                                    <i class="fas fa-stethoscope"></i>
+                                    <label><%= JSON.parse(hospitaldet[i].speciality)[0].value %></label>
                                 </div>
 
                                 <div class="icons-and-details">
-                                    <i class="fas fa-envelope"></i>
-                                    <label>saikat@gmail.com</label>
-                                </div>
-
-                                <div class="icons-and-details">
-                                    <i class="fas fa-venus-mars"></i>
-                                    <label>saikat@gmail.com</label>
-                                </div>
-
-                                <div class="icons-and-details">
-                                    <i class="fas fa-calendar-week"></i>
-                                    <label>saikat@gmail.com</label>
+                                    <i class="fas fa-bed"></i>
+                                    <label><%= hospitaldet[i].beds %></label>
                                 </div>
 
                                 <div class="icons-and-details">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <label>saikat@gmail.com</label>
+                                    <label><%= hospitaldet[i].location %></label>
                                 </div>
+
                             </div>
                         </div>
                         <%}%>

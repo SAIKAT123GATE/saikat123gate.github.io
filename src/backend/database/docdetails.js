@@ -48,6 +48,26 @@ const userSchema=new mongoose.Schema(
         },
         city:{
             type:String
+        },
+        gender:{
+            type:String,
+            required:true
+        },
+        dateofbirth:{
+            type:String,
+            required:true
+        },
+        mobileno:{
+            type:Number,
+            required:true
+        },
+        state:{
+            type:String,
+            required:true
+        },
+        country:{
+            type:String,
+            required:true
         }
     
     })

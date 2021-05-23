@@ -17,6 +17,17 @@ const loginauth = async (req, res) => {
   const { email, password } = req.body;
   try {
     var exist = await User.findOne({ email: email });
+    if(exist.email=="admin@gmail.com" && exist.password=="admin@123"){
+      req.session.user = { email, password };
+      req.session.name = exist.name;
+        req.session.email = exist.email;
+        req.session.mobileno = exist.mobileno;
+        req.session.gender = exist.gender;
+        req.session.dateofbirth = exist.dateofbirth;
+        req.session.isAdmin=true;
+
+        return res.redirect("/adminpageget");
+    }
     if (exist) {
       var checkpass = await User.findOne({ email: email, password: password });
       var findall= await docdetails.find();
@@ -40,6 +51,8 @@ const loginauth = async (req, res) => {
         req.session.city=checkpass.city;
         req.session.findall=findall;
         req.session.id=checkpass._id;
+        req.session.image=checkpass.image;
+        req.session.isAdmin=false;
         
          
           var doctor = await docdetails.findOne({ email:email });

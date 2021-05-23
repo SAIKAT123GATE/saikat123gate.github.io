@@ -1,0 +1,358 @@
+<!--Settings Form-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Report</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet@0.3.0/css/clocklet.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link href="../css/docdetails.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.css" />
+    <link href="../css/login.css" rel="stylesheet" type="text/css">
+    <link href="../css/profile.css" type="text/css" rel="stylesheet">
+
+    <link href="../css/settings.css" type="text/css" rel="stylesheet">
+    <link href="../css/medicalreport.css" type="text/css" rel="stylesheet">
+    <link href="../css/showrecords.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clocklet@0.3.0"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel = "icon" href = 
+"https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
+        type = "image/x-icon">
+
+
+</head>
+
+<body>
+    <%-include('header.ejs')%>
+        <% if(!isadmin){%>
+        <div class="toaster" id="toaster">
+            <div>
+
+                <a href="/profile">
+                    <figure id="toaster-img">
+
+                        <img id="headerpic" src="../<%=image%>">
+
+                    </figure>
+                </a>
+
+                <h5>
+                    <%=username%>
+                </h5>
+            </div>
+            <ul>
+                <a href="/myappointments">
+                    <li>My Appointments</li>
+                </a>
+                <a href="/medicalreport">
+                    <li>Medical Records</li>
+                </a>
+                <a href="/settings">
+                    <li>Settings</li>
+                </a>
+                <a href="#">
+                    <li>My payments</li>
+                </a>
+                <a href="/logout">
+                    <li>Logout</li>
+                </a>
+            </ul>
+        </div>
+        <%}
+        else{%>
+            <div class="toaster" id="toaster">
+                <div>
+        
+                    <a href="#">
+                        <figure id="toaster-img">
+        
+                            <img id="headerpic"
+                                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+        
+                        </figure>
+                    </a>
+        
+                    <h5>
+                        ADMIN
+                    </h5>
+                </div>
+                <ul>
+                    <a href="/adminpageget">
+                        <li>Dashboard</li>
+                    </a>
+                    <a href="/adminusers">
+                        <li>Users</li>
+                    </a>
+                    <a href="'admindoctors">
+                        <li>Doctors</li>
+                    </a>
+                    <a href="/adminhospitals">
+                        <li>Hospitals</li>
+                    </a>
+                    <a href="/logout">
+                        <li>Logout</li>
+                    </a>
+                </ul>
+            </div>
+        <%}%>
+
+        <section>
+            <div class="main-section">
+                <% if(!isadmin){%>
+                <div class="mobile-tab">
+                    <div class="grid-for-dashboard">
+                        <i class='fas fa-angle-double-right'></i>
+                        <h3>Click To View Dashboard</h3>
+                    </div>
+                </div>
+                <div class="desktop">
+                    <div class="grid-for-dashboard">
+                        <i class='fas fa-angle-double-right'></i>
+                        <h3>Dashboard</h3>
+                    </div>
+                    <div class="dashboard">
+                        <a href="/profile">
+                            <div class="  inactive-btn" id="profile-btn">
+                                <i class='fa fa-address-book'></i>
+                                <h3>Profile</h3>
+                            </div>
+                        </a>
+
+                        <a href="/appointment">
+                            <div class=" inactive-btn" id="appointments-btn">
+                                <i class='fa fa-address-book'></i>
+                                <h3>Appointments</h3>
+                            </div>
+                        </a>
+
+                        <a href="/medicalreport">
+                            <div class=" active-btn" id="reports-btn">
+                                <i class='fa fa-address-book'></i>
+                                <h3>Medical Reports</h3>
+                            </div>
+                        </a>
+                        <% if(isDoctor){%>
+                        <a href="/addschedule">
+                            <div class=" inactive-btn" id="schedule-btn">
+
+                                <i class='fa fa-address-book'></i>
+                                <h3>Add Schedule</h3>
+
+                            </div>
+                        </a>
+                        <%}%>
+
+                        <a href="/settings">
+                            <div class="inactive-btn" id="settings-btn">
+
+                                <i class='fa fa-address-book'></i>
+                                <h3>Settings</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <%}
+                else{%>
+                    <div class="mobile-tab">
+                        <div class="grid-for-dashboard">
+                            <i class='fas fa-angle-double-right'></i>
+                            <h3>Click To View Dashboard</h3>
+                        </div>
+                    </div>
+                    <div class="desktop">
+                        <div class="grid-for-dashboard">
+                            <i class='fas fa-angle-double-right'></i>
+                            <h3>Dashboard</h3>
+                        </div>
+                        <div class="dashboard">
+                            <a href="/admin">
+                                <div class="  active-btn" id="profile-btn">
+                                    <i class='fa fa-address-book'></i>
+                                    <h3>ADMIN</h3>
+                                </div>
+                            </a>
+        
+                            <a href="/adminusers">
+                                <div class=" inactive-btn" id="appointments-btn">
+                                    <i class='fa fa-address-book'></i>
+                                    <h3>Users</h3>
+                                </div>
+                            </a>
+        
+                            <a href="/admindoctors">
+                                <div class=" inactive-btn" id="reports-btn">
+                                    <i class='fa fa-address-book'></i>
+                                    <h3>Doctors</h3>
+                                </div>
+                            </a>
+        
+                            <a href="/adminhospitals">
+                                <div class="inactive-btn" id="settings-btn">
+        
+                                    <i class='fa fa-address-book'></i>
+                                    <h3>Hospitals</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                <%}%>
+
+                <!--Form div-->
+                <div class="settings">
+                    <div class="text-button">
+                        <h2>Records</h2>
+                        <button type="submit" class="btn_blue" onclick="openwrapper('popup2')">Add Images</button>
+
+                    </div>
+                   <div class="images">
+                       <% for(var i=0;i<images.length;i++){%>
+                        <div class="formshow">
+                        <figure class="records-pic">
+                            <img src="../<%= images[i] %>"/>
+                        </figure>
+                        <form method="POST" action="/<%=id %>/<%=i%>/deletemedicalrecords"  onclick="this.submit()">
+                        <i class="fa fa-close delete"></i>
+                           
+                    </form>
+                    </div>
+                    <%}%>
+                    
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!--Pop up wrapper-->
+            <div class="popup" id="popup2">
+                <div class="create-schedule" id="create-schedule">
+                    <form action="/<%=id %>/addmedicalreport" method="POST" id="imageUploadForm" enctype="multipart/form-data">
+                        <div class="image-and-label">
+                            <div class="addphoto">
+                                <i class="fa fa-plus"></i>
+                                <label for="files" class="inputLabel picInputLabel">Add Photo</label>
+                            </div>
+                            <div class="image">
+
+                                <input type="file" id="files" name="files" multiple required />
+
+                            </div>
+                        </div>
+
+                        
+
+                        
+
+                        <div class="action-buttons">
+                            <div class="button-container">
+                                <button class="btn_blue" id="changetype" type="submit">Done</button>
+                            </div>
+                            <div class="button-container">
+                                <button class="btn_darkblue" onclick="closepop('popup2')" type="button">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!--Need Help-->
+        <section class="nd_help">
+            <div class="nd_help1">
+                <h2>Need Help?</h2>
+                <p>Just let us know we will happy to assist you</p>
+            </div>
+            <div class="btn2 nd_help2">
+                <button type="submit" class="btn_blue">Submit your enquiry</button>
+            </div>
+        </section>
+
+        <%-include('footer.ejs')%>
+</body>
+
+<script>
+
+    $(document).ready(function () {
+        if (window.File && window.FileList && window.FileReader) {
+            
+            $("#files").on("change", function (e) {
+                var files = e.target.files,
+                    filesLength = files.length;
+                    if(filesLength<=2){
+                for (var i = 0; i < filesLength; i++) {
+                    var f = files[i]
+                    var fileReader = new FileReader();
+                    fileReader.onload = (function (e) {
+                        var file = e.target;
+                        $("<span class=\"pip\">" +
+                            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+                            "<br/><span class=\"remove\">Remove image</span>" +
+                            "</span>").insertAfter("#files");
+                        $(".remove").click(function () {
+                            $(this).parent(".pip").remove();
+                        });
+
+                        // Old code here
+                        /*$("<img></img>", {
+                          class: "imageThumb",
+                          src: e.target.result,
+                          title: file.name + " | Click to remove"
+                        }).insertAfter("#files").click(function(){$(this).remove();});*/
+
+                    });
+                    fileReader.readAsDataURL(f);
+                }
+            }
+            });
+        
+        } else {
+            alert("Your browser doesn't support to File API")
+        }
+    });
+
+</script>
+
+
+<script>
+    var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+var yyyy = today.getFullYear();
+if(dd<10){
+  dd='0'+dd
+} 
+if(mm<10){
+  mm='0'+mm
+} 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById('date').setAttribute("max", today);
+</script>
+
+
+<script>
+    $("#files").on("change", function() {
+    if ($("#files")[0].files.length > 2) {
+        alert("You can select only 2 images");
+        $("#changetype").prop("type", "button");
+
+    }
+    else{
+        $("#changetype").prop("type", "submit");
+    }
+});
+</script>
+
+</html>

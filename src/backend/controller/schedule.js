@@ -43,7 +43,8 @@ const getschedule= async (req,res)=>{
         isDoctor:req.session.isDoctor,
         image:req.session.image,
         countshed:countshed,
-        exists:exists
+        exists:exists,
+        isadmin:req.session.isAdmin
 
         
 

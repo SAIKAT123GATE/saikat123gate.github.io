@@ -14,6 +14,7 @@
     <link rel = "icon" href = 
 "https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
         type = "image/x-icon">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
 </head>
 
@@ -90,7 +91,9 @@
                     <div class="password-with-eye">
                     <input class="password-field" placeholder="Enter Your Password" type="password" name="password" id="password"
                         required>
-                        <i class="fa fa-eye" aria-hidden="true" id="togglePassword"></i>
+                        
+                        <i class="fa fa-eye-slash" aria-hidden="true" id="togglePassword"></i>
+                        
                         </div>
                     <div class="otpsec">
                         <a href="/otpnumber">Login With OTP</a>
@@ -112,17 +115,28 @@
         </footer>
     </div>
 
+
     <script>
-        const togglePassword = document.querySelector('#togglePassword');
-        const password = document.querySelector('#password');
-        togglePassword.addEventListener('click', function (e) {
-    // toggle the type attribute
-    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);
-    // toggle the eye slash icon
-    this.classList.toggle('fa-eye-slash');
-});
-    </script>
+
+    $(document).ready(function() {
+
+        $("#togglePassword").click(function() {
+      
+          var className = $("#togglePassword").attr('class');
+          className = className.indexOf('slash') !== -1 ? 'fa fa-eye' : 'fa fa-eye-slash'
+      
+          $("#togglePassword").attr('class', className);
+          var input = $("#password");
+      
+          if (input.attr("type") == "text") {
+            input.attr("type", "password");
+          } else {
+            input.attr("type", "text");
+          }
+        });
+      
+      });
+      </script>
 </body>
 
 </html>

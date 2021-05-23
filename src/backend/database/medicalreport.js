@@ -15,7 +15,7 @@ const reportschema=new mongoose.Schema({
         type:String
     },
     image:{
-        type:String
+        type:Array
     },
     report:{
         type:String,

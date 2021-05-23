@@ -772,9 +772,6 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 1rem;
   border: 1px solid #cccccc;
 }
@@ -823,7 +820,7 @@ a {
 }
 
 .but-div {
-  display: block;
+  display: none;
   position: absolute;
   top: 3rem;
   left: 1.5rem;
@@ -844,5 +841,11 @@ a {
   background: #021433;
   color: #ffffff;
   border-radius: 100%;
+}
+
+.maxwidth {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*# sourceMappingURL=adminusers.css.map */

@@ -13,9 +13,13 @@ const indexget = (req, res) => {
     msg: req.flash("success"),
     username: req.session.name,
     image: req.session.image,
+    isadmin:req.session.isAdmin
   });
 };
 const doctorpageget = async (req, res) => {
+  req.session.prevslotid=false;
+  req.session.prevscheduleid=false;
+  req.session.prevslotid=false;
 
   let { page, items_per_page } = req.query;
   if (!page) {
@@ -52,6 +56,7 @@ const doctorpageget = async (req, res) => {
     nextpage: page + 1,
     previouspage: page - 1,
     lastpage: Math.ceil(count / items_per_page),
+    isadmin:req.session.isAdmin
     
     
   });
@@ -64,6 +69,7 @@ const hospitalpageget = (req, res) => {
     msg: req.flash("success"),
     username: req.session.name,
     image: req.session.image,
+    isadmin:req.session.isAdmin
   });
 };
 
@@ -74,6 +80,7 @@ const treatmentpageget = (req, res) => {
     msg: req.flash("success"),
     username: req.session.name,
     image: req.session.image,
+    isadmin:req.session.isAdmin
   });
 };
 const aboutpageget = (req, res) => {
@@ -86,6 +93,7 @@ const aboutpageget = (req, res) => {
       msg: req.flash("success"),
       username: req.session.name,
       image: req.session.image,
+      isadmin:req.session.isAdmin
     }
   );
 };
@@ -103,6 +111,7 @@ const tvastraplus = (req, res) => {
     msg: req.flash("success"),
     username: req.session.name,
     image: req.session.image,
+    isadmin:req.session.isAdmin
   });
 };
 
@@ -135,6 +144,7 @@ const profilepageget = (req, res) => {
     fees: req.session.fees,
     isDoctor: req.session.isDoctor,
     image: req.session.image,
+    isadmin:req.session.isAdmin
   });
 };
 
@@ -163,6 +173,7 @@ const schedule = (req, res) => {
     hospital: schedules.hospital,
     fromtime: schedules.fromtime,
     totime: schedules.totime,
+    isadmin:req.session.isAdmin
   });
 };
 
@@ -183,7 +194,8 @@ const booking = (req, res) => {
     docname:req.session.docnameforbook,
     qualification:req.session.qualification,
     hospital:req.session.hospital,
-    scheduleid:req.session.scheduleid
+    scheduleid:req.session.scheduleid,
+    isadmin:req.session.isAdmin
   });
 };
 
@@ -208,6 +220,7 @@ const settingspageget = async (req, res) => {
     isDoctor: req.session.isDoctor,
     image: req.session.image,
     msg2: req.flash("success"),
+    isadmin:req.session.isAdmin
   });
 };
 
@@ -273,7 +286,8 @@ const medicalreportget = async (req, res) => {
     isDoctor: req.session.isDoctor,
     image: req.session.image,
     countrecord:countrecord,
-    record:record
+    record:record,
+    isadmin:req.session.isAdmin
   });
 };
 
@@ -284,7 +298,12 @@ const medicalreportpost = async (req, res) => {
   const name = req.session.name;
   const report=req.body.report;
   const title=req.body.title;
-  
+  const images=req.files;
+  //console.log("printing files name in add mediacl record",images);
+  var picarray = [];
+  for (var i = 0; i < images.length; i++) {
+    picarray.push(images[i].filename);
+  }
   
   
     const reports = new medicalreport({
@@ -293,6 +312,7 @@ const medicalreportpost = async (req, res) => {
       date: dateofreport,
       report: report,
       title: title,
+      image:picarray
     });
     const reportdata = await reports.save();
     if (reportdata) {
@@ -334,10 +354,60 @@ const docprofile=async(req,res)=>{
     
     
     isDoctor: req.session.isDoctor,
-    image: req.session.image
+    image: req.session.image,
+    isadmin:req.session.isAdmin
   });
 }
 
+
+//show Records
+const showrecords=async (req,res)=>{
+  var id=req.params.id;
+  //console.log(id);
+  const userrecords=await medicalreport.findOne({_id:id});
+  var images=userrecords.image;
+  //console.log(images);
+  return res.render("showrecords",{
+    username: req.session.name,
+    mobileno: req.session.mobileno,
+    email: req.session.email,
+    gender: req.session.gender,
+    dateofbirth: req.session.dateofbirth,
+    city: req.session.city,
+    state: req.session.state,
+    country: req.session.country,
+    images:images,
+    id:id,
+    
+    
+    isDoctor: req.session.isDoctor,
+    image: req.session.image,
+    isadmin:req.session.isAdmin
+  })
+}
+
+const addmedicalimage=async(req,res)=>{
+  var id=req.params.id;
+  var reportfind=await medicalreport.findOne({_id:id});
+  const images=req.files;
+  //console.log("images in add image in report",req.files);
+  for(i=0;i<images.length;i++){
+    reportfind.image.push(images[0].filename);
+  }
+  await reportfind.save();
+  return res.redirect("/"+id+"/showrecords");
+}
+
+
+const deletemedicalimage=async(req,res)=>{
+  var id=req.params.id;
+  var index=req.params.index;
+  var reportfind=await medicalreport.findOne({_id:id});
+  reportfind.image.splice(index,1);
+  await reportfind.save();
+  return res.redirect("/"+id+"/showrecords");
+
+}
 module.exports = {
   indexget: indexget,
   doctorpageget: doctorpageget,
@@ -356,5 +426,8 @@ module.exports = {
   medicalreportget: medicalreportget,
   medicalreportpost:medicalreportpost,
   deletemedicalrecords:deletemedicalrecords,
-  docprofile:docprofile
+  docprofile:docprofile,
+  showrecords:showrecords,
+  addmedicalimage:addmedicalimage,
+  deletemedicalimage:deletemedicalimage
 };

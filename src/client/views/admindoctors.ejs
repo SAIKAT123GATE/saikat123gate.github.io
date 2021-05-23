@@ -161,42 +161,42 @@
                 </div>
 
                 <div class="allcards">
-                    <% for(var i=0;i<3;i++){%>
+                    <% for(var i=0;i<doctors.length;i++){%>
                         <div class="cardsuser">
-                            <i class="fa fa-navicon hambarger"></i>
-                            <div class="but-div" id="">
-                                <h4><a href="#">edit profile</a></h4>
-                                <h4><a href="#">Appointments</a></h4>
-                                <h4><a href="#">medical record</a></h4>
+                            <i class="fa fa-navicon hambarger" onclick="togg('<%= doctors[i].id %>')"></i>
+                            <div class="but-div" id="<%= doctors[i].id %>">
+                                <h4><a href="/<%= doctors[i].email %>">edit profile</a></h4>
+                                <h4><a href="/appointment/<%= doctors[i].id %>">All Booked Appointments</a></h4>
+                                
                             </div>
                             <figure class="card-figure">
-                                <img src="../asset/default.jpg" />
+                                <img src="<%= doctors[i].image %>" />
                             </figure>
                             <div class="detailsuser">
-                                <h4>Admin</h4>
+                                <h4><%= doctors[i].name %></h4>
                                 <div class="icons-and-details">
                                     <i class="fa fa-phone"></i>
-                                    <label>81199546333</label>
+                                    <label><%= doctors[i].mobileno %></label>
                                 </div>
 
                                 <div class="icons-and-details">
                                     <i class="fas fa-envelope"></i>
-                                    <label>saikat@gmail.com</label>
+                                    <label><%= doctors[i].email %></label>
                                 </div>
 
                                 <div class="icons-and-details">
                                     <i class="fas fa-venus-mars"></i>
-                                    <label>saikat@gmail.com</label>
+                                    <label><%= doctors[i].gender %></label>
                                 </div>
 
                                 <div class="icons-and-details">
                                     <i class="fas fa-calendar-week"></i>
-                                    <label>saikat@gmail.com</label>
+                                    <label><%= doctors[i].dateofbirth %></label>
                                 </div>
 
                                 <div class="icons-and-details">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <label>saikat@gmail.com</label>
+                                    <label><%= doctors[i].city %>,<%= doctors[i].state %></label>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +231,15 @@
 
     <%-include('footer.ejs')%>
 
-
+    <script>
+        function togg(id){
+            var x=document.getElementById(id);
+            if(x.style.display!="block")
+            x.style.display="block";
+            else
+            x.style.display="none";
+        }
+    </script>
 </body>
 
 </html>

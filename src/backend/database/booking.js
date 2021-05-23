@@ -37,6 +37,12 @@ const bookingSchema=new mongoose.Schema(
         },
         mobileno:{
             type:Number
+        },
+        userid:{
+            type:String
+        },
+        checkdate:{
+            type:String
         }
     
     })

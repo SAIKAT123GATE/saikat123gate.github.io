@@ -58,7 +58,7 @@
                 <a href="/myappointments">
                     <li>My Appointments</li>
                 </a>
-                <a href="/medicalrecords">
+                <a href="/medicalreport">
                     <li>Medical Records</li>
                 </a>
                 <a href="/settings">
@@ -133,38 +133,89 @@
                     <div class="headings">
                         <h3>Upcoming Appointments</h3>
                     </div>
-                    <% if(bookingdetails.length==0){%>
+                    <% if(upcomingdetails.length==0){%>
                         <h4>No Appointment</h4>
-                    <%}%>
-                    <% for(var i=0;i<bookingdetails.length;i++){%>
-                    <div class="grid">
-                        <div class="date">
-                            <h4><%= bookingdetails[i].date.split(",")[1] %></h4>
-                        </div>
-                        <div class="detailsof">
-                            <% if(!isDoctor){%>
-                            <h4><%= bookingdetails[i].docname %></h4>
-                            <%}
-                            else{%>
-                                <h4><%= bookingdetails[i].username %></h4>
-                            <%}%>
-                            <h6><%= bookingdetails[i].day %>  <%= bookingdetails[i].slottime %></h6>
-                            <h6><%= bookingdetails[i].hospital %></h6>
-                            <h6 class="status">Confirmed</h6>
-                        </div>
-                        <% if(!isDoctor){%>
-                        <div class="actionbuttons">
-                            <form method="POST" action="/deleteappointment/<%= bookingdetails[i].scheduleid %>/<%= bookingdetails[i].slotid %>">
-                            <button type="submit" class="btn_blue">Cancle Appointment</button>
-                            </form>
-
-                            <form method="POST" action="/rescheduleappointment/<%= bookingdetails[i].scheduleid %>/<%= bookingdetails[i].slotid %>">
-                            <button type="submit" class="btn_darkblue">Reshedule Appointment</button>
-                            </form>
-                        </div>
                         <%}%>
-                    </div>
-                    <%}%>
+                            <% for(var i=0;i<upcomingdetails.length;i++){%>
+                                <div class="grid">
+                                    <div class="date">
+                                        <h4>
+                                            <%= upcomingdetails[i].date.split(",")[1] %>
+                                        </h4>
+                                    </div>
+                                    <div class="detailsof">
+                                        <% if(!isDoctor){%>
+                                            <h4>
+                                                <%= upcomingdetails[i].docname %>
+                                            </h4>
+                                            <%} else{%>
+                                                <h4>
+                                                    <%= upcomingdetails[i].username %>
+                                                </h4>
+                                                <%}%>
+                                                    <h6>
+                                                        <%= upcomingdetails[i].day %>
+                                                            <%= upcomingdetails[i].slottime %>
+                                                    </h6>
+                                                    <h6>
+                                                        <%= upcomingdetails[i].hospital %>
+                                                    </h6>
+                                                    <h6 class="status">Confirmed</h6>
+                                    </div>
+                                    <% if(!isDoctor){%>
+                                        <div class="actionbuttons">
+                                            <form method="POST"
+                                                action="/deleteappointment/<%= upcomingdetails[i].scheduleid %>/<%= bookingdetails[i].slotid %>">
+                                                <button type="submit" class="btn_blue">Cancle Appointment</button>
+                                            </form>
+
+                                            <form method="POST"
+                                                action="/rescheduleappointment/<%= upcomingdetails[i].scheduleid %>/<%= bookingdetails[i].slotid %>/<%= bookingdetails[i].docid %>">
+                                                <button type="submit" class="btn_darkblue">Reshedule
+                                                    Appointment</button>
+                                            </form>
+                                        </div>
+                                        <%}%>
+                                </div>
+                            <%}%>
+
+                            <div class="headings">
+                                <h3>Completed Appointments</h3>
+                            </div>
+
+                            <% if(completeddetails.length==0){%>
+                                <h4>No Appointment</h4>
+                                <%}%>
+
+                            <% for(var i=0;i<completeddetails.length;i++){%>
+                                <div class="grid">
+                                    <div class="date">
+                                        <h4>
+                                            <%= completeddetails[i].date.split(",")[1] %>
+                                        </h4>
+                                    </div>
+                                    <div class="detailsof">
+                                        <% if(!isDoctor){%>
+                                            <h4>
+                                                <%= completeddetails[i].docname %>
+                                            </h4>
+                                            <%} else{%>
+                                                <h4>
+                                                    <%= completeddetails[i].username %>
+                                                </h4>
+                                                <%}%>
+                                                    <h6>
+                                                        <%= completeddetails[i].day %>
+                                                            <%= completeddetails[i].slottime %>
+                                                    </h6>
+                                                    <h6>
+                                                        <%= completeddetails[i].hospital %>
+                                                    </h6>
+                                                    <h6 class="status">Completed</h6>
+                                    </div>
+                                    
+                                </div>
+                            <%}%>
                 </div>
 
 

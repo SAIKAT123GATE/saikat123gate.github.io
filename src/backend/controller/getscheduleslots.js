@@ -198,7 +198,11 @@ const onslotclick=async(req,res)=>{
   
   var marr = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
   var strday=day+","+marr[today.getMonth()]+" "+today.getDate()+" "+today.getFullYear();
+
+  var savedayforcheck=today.getMonth() +" "+today.getDate()+" "+today.getFullYear();
+  console.log("saveforcheck booking status",savedayforcheck);
   req.session.bookingdate=strday;
+  req.session.savedayforcheck=savedayforcheck;
   
 
   //Work will start from here
@@ -229,7 +233,9 @@ const appointment=async (req,res)=>{
     docname:req.session.docnameforbook,
     qualification:req.session.qualification,
     hospital:req.session.hospital,
-    scheduleid:req.session.scheduleid
+    scheduleid:req.session.scheduleid,
+    isadmin:req.session.isAdmin
+
   });
 }
 
@@ -241,6 +247,7 @@ const saveappointment=async(req,res)=>{
   var scheduleid=req.params.scheduleid;
   var slotid=req.session.slotid;
   var doctorid=req.session.doctorid;
+  var loggedinuser= await User.findOne({ email: req.session.email });
   var status="Confirmed";
   const appointment= new bookings({
     docname:req.session.docnameforbook,
@@ -255,8 +262,9 @@ const saveappointment=async(req,res)=>{
     username:req.session.name,
     day:req.session.dayofbook,
     slottime:req.session.slotbookingtime,
-    mobileno:req.session.mobileno
-
+    mobileno:req.session.mobileno,
+    userid:loggedinuser.id,
+    checkdate:req.session.savedayforcheck
 
   })
   var booking= await appointment.save();
@@ -289,10 +297,29 @@ catch(err){
 
 }
 
+const reschedulepageget=async(req,res)=>{
+  console.log(req.session.prevdocid);
+  var prevdoc=await docdetails.findOne({_id:req.session.prevdocid});
+  return res.render("reschedule",{
+    username: req.session.name,
+    mobileno: req.session.mobileno,
+    email: req.session.email,
+    gender: req.session.gender,
+    dateofbirth: req.session.dateofbirth,
+    isDoctor: req.session.isDoctor,
+    image: req.session.image,
+    prevdoc:prevdoc,
+    isadmin:req.session.isAdmin
+    
+    
+  });
+}
+
 module.exports={
     getslots:getslots,
     getsubslots:getsubslots,
     onslotclick:onslotclick,
     appointment:appointment,
-    saveappointment:saveappointment
+    saveappointment:saveappointment,
+    reschedule:reschedulepageget
 }

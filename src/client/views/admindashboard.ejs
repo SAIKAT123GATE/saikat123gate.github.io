@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Settings</title>
+    <title>Dashboard</title>
     <link href="../css/reset.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet@0.3.0/css/clocklet.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -52,8 +52,8 @@
             <nav class="head2">
 
 
-                <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
-                        alt="logo" /></a>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                        alt="logo" />
 
 
 
@@ -136,14 +136,14 @@
                         </div>
                     </a>
 
-                    <a href="/doctors">
+                    <a href="/admindoctors">
                         <div class=" inactive-btn" id="reports-btn">
                             <i class='fa fa-address-book'></i>
                             <h3>Doctors</h3>
                         </div>
                     </a>
 
-                    <a href="/hospitals">
+                    <a href="/adminhospitals">
                         <div class="inactive-btn" id="settings-btn">
 
                             <i class='fa fa-address-book'></i>
@@ -163,28 +163,28 @@
                             <i class="fas fa-user-alt"></i>
                             <div>
                                 <h6>Users</h6>
+                                <span><%= users.length %></span>
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <i class="fas fa-syringe"></i>
+                            <div>
+                                <h6>Doctors</h6>
+                                <span><%= doctors.length %></span>
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <i class="fas fa-user-md"></i>
+                            <div>
+                                <h6>Hospitals</h6>
                                 <span>5</span>
                             </div>
                         </div>
                         <div class="cards">
-                            <i class="fas fa-user-alt"></i>
+                            <i class="fas fa-briefcase-medical"></i>
                             <div>
-                                <h6>Users</h6>
-                                <span>5</span>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <i class="fas fa-user-alt"></i>
-                            <div>
-                                <h6>Users</h6>
-                                <span>5</span>
-                            </div>
-                        </div>
-                        <div class="cards">
-                            <i class="fas fa-user-alt"></i>
-                            <div>
-                                <h6>Users</h6>
-                                <span>5</span>
+                                <h6>Appointments</h6>
+                                <span><%= appointment.length %></span>
                             </div>
                         </div>
                     </div>
@@ -221,35 +221,32 @@
                                 <th>Email</th>
                                 <th>Action</th>
                             </tr>
+                            <% for(var k=0;k<users.length;k++){%>
+                                <% if(users[k].email!="admin@gmail.com"){%>
                             <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>8119954633</td>
-                                <td>ss@gmail.com</td>
+                                <td><%= users[k].name %></td>
+                                <td><%= users[k].mobileno %></td>
+                                <td><%= users[k].email %></td>
                                 
                                 <td>
-                                    <a href="#">Appointment Details</a></td>
+                                    <a href="/appointment/<%= users[k].id %>">Appointment Details</a></td>
                                 
                             </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>8119954633</td>
-                                <td>ss@gmail.com</td>
-                                <td><a href="#">Appointment Details</a></td>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>8119954633</td>
-                                <td>ss@gmail.com</td>
-                                <td><a href="#">Appointment Details</a></td>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>8119954633</td>
-                                <td>ss@gmail.com</td>
-                                <td><a href="#">Appointment Details</a></td>
-                            </tr>
+                            <%}%>
+                            <%}%>
+                            
                         </table>
+
                     </div>
+                    
+                        <div id="pagination">
+                            <% for(i=1;i<=lastpage;i++){%>
+                                <a href="/adminpageget?page=<%= i%>">
+                                    <%= i %>
+                                </a>
+                                <%} %>
+                        </div>
+                    
 
                 </div>
             </div>
@@ -262,6 +259,8 @@
 
         </div>
     </section>
+
+    
 
     <!--Need Help-->
     <section class="nd_help">
