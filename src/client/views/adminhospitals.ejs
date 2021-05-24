@@ -163,7 +163,9 @@
                 <div class="allcards">
                     <% for(var i=0;i<hospitaldet.length;i++){%>
                         <div class="cardsuser">
+                            <a href="/<%= hospitaldet[i].id%>/edithospital">
                             <i class="fas fa-id-card hambarger darkblue"></i>
+                            </a>
                             <figure class="card-figure">
                                 <img src="<%= hospitaldet[i].image %>" />
                             </figure>

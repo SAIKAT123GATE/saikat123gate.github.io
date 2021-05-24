@@ -30,7 +30,7 @@ const docdetailsregister = async (req, res) => {
     fees,
   } = req.body;
   
- 
+  
   const email = req.session.email;
   try {
     const user = new docdetails({

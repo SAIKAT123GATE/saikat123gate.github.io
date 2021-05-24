@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet@0.3.0/css/clocklet.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+   
     <link href="../css/docdetails.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.css" />
+   
     <link href="../css/profile.css" type="text/css" rel="stylesheet">
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -111,7 +114,7 @@
             </div>
             <div class="dashboard">
                 <a href="/admin">
-                    <div class="  active-btn" id="profile-btn">
+                    <div class="  inactive-btn" id="profile-btn">
                         <i class='fa fa-address-book'></i>
                         <h3>ADMIN</h3>
                     </div>
@@ -132,7 +135,7 @@
                 </a>
 
                 <a href="/adminhospitals">
-                    <div class="inactive-btn" id="settings-btn">
+                    <div class="active-btn" id="settings-btn">
 
                         <i class='fa fa-address-book'></i>
                         <h3>Hospitals</h3>
@@ -142,19 +145,19 @@
         </div>
         <div class="form-div">
 
-            <form class="medical-record-form" action="/<%= email %>/editprofile" enctype="multipart/form-data" method="POST"
+            <form class="medical-record-form" action="/<%= hospitalfind.id %>/savehospital" enctype="multipart/form-data" method="POST"
                 id="profile">
                 <div class="medical-record">
-                    <h2>My Profile</h2>
-                    <button type="submit" class="btn_blue">Save Changes</button>
+                    <h2>Edit Hospital Details</h2>
+                    <button type="submit" class="btn_blue">S U B M I T</button>
                 </div>
 
                 <div class="wrap">
                     <div class=profile-photo-name>
-                        <h4>Profile Photo</h4>
+                        <h4>Hospital Photo</h4>
                         <div class="photo-and-text">
                             <figure>
-                                <img id="output" src="../<%=image%>">
+                                <img id="output" src="../<%= hospitalfind.image %>">
                             </figure>
                             <div class="text">
                                 <p>Pic a photo from your system</p>
@@ -166,127 +169,57 @@
                         </div>
                     </div>
                     <div class="label_input">
-                        <label for="name">Name</label>
-                        <input name="name" id="name" value="<%=username%>" required>
+                        <div class="label_input">
+
+                            <label for="hospitals"> Hospital Name</label>
+                            <input name='hospitalname' id="hospitals" class='some_class_name' value=<%=hospitalname%> required>
+                        </div>
                     </div>
                 </div>
+                <div class="label_input textarea-div">
 
-                <div class="details">
-                    <div class="label_input">
-                        <label for="mobileno">Phone Number</label>
-                        <input name="mobileno" id="mobileno" value="<%=mobileno%>" readonly required>
-                    </div>
+                    <label for="description">Hospital Description</label>
+                    <textarea id="description" name="description" rows="2"><%= hospitalfind.description %>
+                        </textarea>
 
-                    <div class="label_input">
-                        <label for="email">Email</label>
-                        <input name="email" id="email" value="<%=email%>" required>
-                    </div>
-
-                    <div class="label_input">
-                        <label for="gender">Gender</label>
-                        <input name="gender" id="gender" value="<%=gender%>" required>
-                    </div>
-
+                </div>
+                <div class="doc-details">
+                    
                     <div class="label_input">
 
-                        <label for="dob">Date of Birth</label>
-                        <input name="dateofbirth" id="dob" value="<%=dateofbirth%>" required class="maxdateset">
+                        <label for="specialization">Specialization</label>
+                        <input name='specialization' id="specialization" class='some_class_name'
+                            placeholder='write some tags' value="<%= hospitalfind.speciality %>">
                     </div>
-
-
                     <div class="label_input">
-                        <label for="timezone">Time Zone</label>
-                        <input name="timezone" id="timezone" value="">
+                        <label for="treatment">Treatment</label>
+                        <input name='achievements' class='some_class_name' placeholder='write some tags'
+                            value="<%= hospitalfind.treatments %>" required>
                     </div>
+                    <div class="label_input">
+
+                        <label for="fees">Beds</label>
+                        <input type="number" id="fees" name="fees" value="<%= hospitalfind.beds %>">
+                    </div>
+                   
+                    
+
+
+
+
+
+
+
+
                 </div>
 
 
-                <div class="addr-details">
-                    <div class="label_input">
-                        <label for="house-number">House Number/Street</label>
-                        <input name="house-number" id="house-number" value="">
-                    </div>
-
-                    <div class="label_input">
-                        <label for="colony">Colony/Locality</label>
-                        <input name="colony" id="colony" value="">
-                    </div>
-
-                    <div class="label_input">
-                        <label for="city">City</label>
-                        <input name="city" id="city" value="<%=city%>" required >
-                    </div>
-
-                    <div class="label_input">
-                        <label for="state">State</label>
-                        <input name="state" id="state" value="<%=state%>" required>
-                    </div>
-
-                    <div class="label_input">
-                        <label for="country">Country</label>
-                        <input name="country" id="country" value="<%=country%>" required>
-                    </div>
-                </div>
-
-                <% if(isDoctor){%>
-                    <div class="doc-details">
-                        <div class="label_input">
-
-                            <label for="hospitals">Your Hospital</label>
-                            <input name='hospitals' id="hospitals" class='some_class_name' value=<%=hospitals%> required>
-                        </div>
-                        <div class="label_input">
-                            <label for="achievements">Achievements</label>
-                            <input name='achievements' class='some_class_name' placeholder='write some tags'
-                                value=<%=achievements%> required>
-                        </div>
-
-                        <div class="label_input">
-                            <label for="exp">Experience</label>
-                            <input type="number" id="exp" name="exp" value=<%=exp%> required>
-                        </div>
-
-                        <div class="label_input">
-                            <label for="qualification">Qualification</label>
-                            <input name='qualification' id="qualification" class='some_class_name'
-                                placeholder='write some tags' value=<%=qualification%> required>
-                        </div>
-
-                        <div class="label_input">
-                            <label for="awards">Awards</label>
-                            <input name='awards' id="awards" class='some_class_name' placeholder='write some tags'
-                                value=<%=awards%>>
-                        </div>
-
-                        <div class="label_input">
-
-                            <label for="specialization">Specialization</label>
-                            <input name='specialization' id="specialization" class='some_class_name'
-                                placeholder='write some tags' value=<%=specialization%>>
-                        </div>
-
-                        <div class="label_input">
-
-                            <label for="fees">Your average Fees</label>
-                            <input type="number" id="fees" name="fees" value=<%=fees%>>
-                        </div>
+                
 
 
+                
 
-
-
-
-
-
-                    </div>
-                    <div class="label_input textarea-div">
-
-                        <label for="description">Describe Yourself</label>
-                        <textarea id="description" name="description" rows="2"><%=description%>
-                            </textarea>
-
-                    </div>
-                    <%}%>
+                
             </form>
 
 
@@ -298,25 +231,7 @@
 
 
 
-        <script>
-
-
-            var input = document.querySelector('input[name=hospitals]');
-
-            var input2 = document.querySelector('input[name=achievements]');
-            var input3 = document.querySelector('input[name=qualification]');
-            var input4 = document.querySelector('input[name=awards]');
-            var input5 = document.querySelector('input[name=specialization]');
-
-
-            // initialize Tagify on the above input node reference
-            new Tagify(input)
-            new Tagify(input2)
-            new Tagify(input3)
-            new Tagify(input4)
-            new Tagify(input5)
-
-        </script>
+        
         </section>
         <!--Need Help-->
     <section class="nd_help">
@@ -330,6 +245,26 @@
     </section>
 
     <%-include('footer.ejs')%>
+    <script>
+
+            var input = document.querySelector('input[name=hospitalname]');
+
+            var input2 = document.querySelector('input[name=achievements]');
+            var input3 = document.querySelector('input[name=qualification]');
+            var input4 = document.querySelector('input[name=awards]');
+            var input5 = document.querySelector('input[name=specialization]');
+
+
+            // initialize Tagify on the above input node reference
+            new Tagify(input)
+            new Tagify(input2)
+            new Tagify(input3)
+            new Tagify(input4)
+            new Tagify(input5)
+        
+
+
+    </script>
 
 </body>
 

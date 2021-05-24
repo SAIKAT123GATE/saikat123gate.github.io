@@ -78,11 +78,16 @@ router.route("/admindoctors").get(sessionauth.adminauth,admincontroller.admindoc
 router.route("/adminhospitals").get(sessionauth.adminauth,admincontroller.adminhospitals);
 router.route("/reschedule").get(sessionauth.redirectlogin,getscheduleslots.reschedule);
 router.route("/appointment/:id").get(sessionauth.adminauth,admincontroller.adminappointment);
-router.route("/:email").get(sessionauth.adminauth,admincontroller.editpageget);
-router.route("/:email").post(upload.single('image'),admincontroller.editprofile);
+router.route("/:email/editprofile").get(sessionauth.adminauth,admincontroller.editpageget);
+router.route("/:email/editprofile").post(upload.single('image'),admincontroller.editprofile);
 router.route("/:id/showrecords").get(sessionauth.redirectlogin,middle.showrecords);
 router.route("/:id/addmedicalreport").post(upload.array('files',2),middle.addmedicalimage);
 router.route("/:id/:index/deletemedicalrecords").post(middle.deletemedicalimage);
 router.route("/medicalrecord/:email").get(sessionauth.adminauth,admincontroller.medicalrecordget);
+router.route("/:id/:email/admindeletemedicalrecords").post(admincontroller.admindeletemedicalreport);
+router.route("/:id/edithospital").get(sessionauth.adminauth,admincontroller.editadminhospital);
+router.route("/:id/savehospital").post(upload.single('image'),admincontroller.saveedithospital);
+router.route("/sort").post(middle.sortby);
+router.route("/addfilter").post(middle.filterfunction);
 module.exports=router;
 

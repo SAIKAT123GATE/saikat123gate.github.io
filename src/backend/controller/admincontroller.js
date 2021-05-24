@@ -7,6 +7,8 @@ const medicalreport = require("../database/medicalreport");
 const hospitals = require("../database/hospital");
 const bookings = require("../database/booking");
 const multer = require("multer");
+const { json } = require("express");
+const { findOne } = require("../database/schema");
 
 const admindashboard = async (req, res) => {
   const users = await User.find({ isDoctor: false });
@@ -304,6 +306,68 @@ const medicalrecordget=async(req,res)=>{
 
 }
 
+//admin whole delete medical report
+
+const admindeletemedicalreport=async(req,res)=>{
+  const id=req.params.id;
+  const email=req.params.email;
+    try{
+    var deletedata= await medicalreport.findOneAndDelete({_id:id});
+    if(deletedata){
+        console.log("deleted successfully");
+        res.redirect("/medicalrecord/"+email);
+    }
+    }
+    catch(err){
+        console.log("can not delete",err);
+        res.redirect("/medicalrecord/"+email);
+    }
+}
+
+const editadminhospital=async(req,res)=>{
+  var id=req.params.id;
+  //console.log("printing hospital id",id);
+  var hospitalfind=await hospitals.findOne({_id:id});
+  //console.log("printing hospitalfind",hospitalfind);
+  var hospitalname=JSON.parse(hospitalfind.name)[0].value;
+  
+  return res.render("edithospitaldetails",{
+    hospitalfind:hospitalfind,
+    hospitalname:hospitalname
+  });
+}
+
+
+//Save Hospital
+const saveedithospital=async(req,res)=>{
+  var id=req.params.id;
+  var hospitalfind=await hospitals.findOne({_id:id});
+  const {
+    description,
+    hospitalname,
+    achievements,
+    qualification,
+    specialization,
+    fees,
+  } = req.body;
+
+  
+  
+  
+  var updated=await hospitals.findByIdAndUpdate({_id:id},{
+    name:hospitalname,
+    description:description,
+    treatment:achievements,
+    beds:fees,
+    specialization:specialization,
+    image:req.file?req.file.filename:hospitalfind.image
+  });
+  if(updated){
+    return res.redirect("/adminhospitals");
+  }
+
+}
+
 module.exports = {
   admindashboard: admindashboard,
   adminusers: adminusers,
@@ -312,5 +376,8 @@ module.exports = {
   adminappointment: adminappointment,
   editprofile: editprofile,
   editpageget:editpageget,
-  medicalrecordget:medicalrecordget
+  medicalrecordget:medicalrecordget,
+  admindeletemedicalreport:admindeletemedicalreport,
+  editadminhospital:editadminhospital,
+  saveedithospital:saveedithospital
 };

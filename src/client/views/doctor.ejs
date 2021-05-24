@@ -14,7 +14,7 @@
         href="https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp"
         type="image/x-icon">
 
-        
+
 </head>
 
 <!--Body section-->
@@ -111,12 +111,17 @@
     <section class="bg_white">
         <div class="home_and_sort_flex">
             <h3>Home/Doctor List</h3>
-            <select id="cars">
-                <option value="volvo">Sort By</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
-            </select>
+            <form action="/sort" method="POST">
+                <select name="sort" id="cars" onchange="this.form.submit()">
+                    <option value="" disabled selected>Sort By</option>
+                    <option value="name-asc">Name(Assc.)</option>
+                    <option value="name-desc">Name(Desc.)</option>
+                    <option value="fees-asc">Average Fee(Assc.)</option>
+                    <option value="fees-desc">Average Fee(Desc.)</option>
+                    <option value="exp-asc">Experience(Assc.)</option>
+                    <option value="exp-desc">Experience(Desc.)</option>
+                </select>
+            </form>
         </div>
 
         <!--Doctor Image & Appointment-->
@@ -127,30 +132,51 @@
                 </div>
 
                 <div class="location">
+
+                    <% var l=[];
+                    var h=[];
+                    var h1=[];
+                    var t=[];
+                    var t1=[];
+                    for(var q=0;q<alldoc.length;q++){
+                        if(!l.includes(alldoc[q].state)){
+                            l.push(alldoc[q].state);
+                        }
+                    }
+
+                    for(var q=0;q<alldoc.length;q++){
+                        
+                        if(!h.includes(alldoc[q].hospitals)){
+                            h.push(alldoc[q].hospitals);
+                            var p=JSON.parse(alldoc[q].hospitals)[0].value;
+                            h1.push(p);
+                        }
+                    }
+                    
+                    for(var q=0;q<alldoc.length;q++){
+                        
+                        if(!t.includes(alldoc[q].specialization)){
+                            t.push(alldoc[q].specialization);
+                            var p=JSON.parse(alldoc[q].specialization)[0].value;
+                            t1.push(p);
+                        }
+                    }
+                    %>
+
+                    <form class="filterform" method="POST" action="/addfilter" >
                     <div class="flex_for_icon">
                         <h5>Location</h5>
                         <i class="fa fa-search"></i>
 
                     </div>
                     <div class="checkbox">
-                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                        <label for="vehicle1"> DLF Cyber City</label><br>
+                        <% for (var i=0;i<l.length;i++){%>
+                        <input type="checkbox" id="<%= l[i] %>" name="state" value="<%= l[i] %>" onchange="this.form.submit()"
+                        <% if(filter.includes(l[i])){%>checked <%}else{%>unchecked<%}%>
+                        >
+                        <label for="<%= l[i] %>"> <%= l[i] %></label><br>
 
-                        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                        <label for="vehicle2"> Dwaraka</label><br>
-
-                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Bike">
-                        <label for="vehicle3"> Lajpat Nagar</label><br>
-
-                        <input type="checkbox" id="vehicle4" name="vehicle4" value="Bike">
-                        <label for="vehicle4"> Palam Vihar</label><br>
-
-                        <input type="checkbox" id="vehicle5" name="vehicle5" value="Bike">
-                        <label for="vehicle5"> Panjabi Baag</label><br>
-
-                        <input type="checkbox" id="vehicle6" name="vehicle6" value="Bike">
-                        <label for="vehicle6"> Pusa Road</label><br>
-
+                        <%}%>
                         <h6>+ Show more</h6>
                     </div>
 
@@ -163,26 +189,22 @@
                     </div>
 
                     <div class="checkbox">
-                        <input type="checkbox" id="vehicle7" name="vehicle7" value="Bike">
-                        <label for="vehicle7"> Multi Organ Transplant</label><br>
+                        
+                        <% for (var i=0;i<t.length;i++){%>
+                            <input type="checkbox" id="<%= t[i] %>" name="treatments" value="<%= t[i] %>" onchange="this.form.submit()"
+                            <% if(filter.includes(t[i])){%>checked <%}else{%>unchecked<%}%>
+                            >
+                            <label for="<%= t[i] %>"> <%= t1[i] %></label><br>
+    
+                            <%}%>
 
-                        <input type="checkbox" id="vehicle8" name="vehicle8" value="Bike">
-                        <label for="vehicle8"> Orthopedics Surgery</label><br>
-
-                        <input type="checkbox" id="vehicle9" name="vehicle9" value="Bike">
-                        <label for="vehicle9"> Infertility Treatment</label><br>
-
-                        <input type="checkbox" id="vehicle10" name="vehicle10" value="Bike">
-                        <label for="vehicle10"> Dentistry</label><br>
-
-                        <input type="checkbox" id="vehicle11" name="vehicle11" value="Bike">
-                        <label for="vehicle11"> Cardiology</label><br>
-
-                        <input type="checkbox" id="vehicle12" name="vehicle12" value="Bike">
-                        <label for="vehicle12"> Cancer</label><br>
+                        
 
                         <h6>+ Show more</h6>
                     </div>
+
+                    
+                    
 
                     <!--Hospitals-->
 
@@ -191,58 +213,21 @@
                         <i class="fa fa-search"></i>
 
                     </div>
-
                     <div class="checkbox">
-                        <input type="checkbox" id="vehicle13" name="vehicle13" value="Bike">
-                        <label for="vehicle13"> Appolo hospital</label><br>
+                        <% for (var i=0;i<h.length;i++){%>
+                            <input type="checkbox" id="<%= h[i] %>" name="hospitals" value="<%= h[i] %>" onchange="this.form.submit()"
+                            <% if(filter.includes(h[i])){%>checked <%}else{%>unchecked<%}%>
+                            >
+                            <label for="<%= h[i] %>"> <%= h1[i] %></label><br>
+    
+                            <%}%>
 
-                        <input type="checkbox" id="vehicle14" name="vehicle14" value="Bike">
-                        <label for="vehicle14"> Aiims Hospital</label><br>
-
-                        <input type="checkbox" id="vehicle15" name="vehicle15" value="Bike">
-                        <label for="vehicle15"> G.B Hospital</label><br>
-
-                        <input type="checkbox" id="vehicle16" name="vehicle16" value="Bike">
-                        <label for="vehicle16"> Manipal Hospital</label><br>
-
-                        <input type="checkbox" id="vehicle17" name="vehicle17" value="Bike">
-                        <label for="vehicle17"> AIIMS</label><br>
-
-                        <input type="checkbox" id="vehicle18" name="vehicle18" value="Bike">
-                        <label for="vehicle18"> ILS Hospital</label><br>
-
+                        
                         <h6>+ Show more</h6>
                     </div>
+                    </form>
 
-                    <!--Years of experience-->
-
-                    <div class="flex_for_icon">
-                        <h5>Years of experience</h5>
-                        <i class="fa fa-search"></i>
-
-                    </div>
-
-                    <div class="checkbox">
-                        <input type="checkbox" id="vehicle19" name="vehicle19" value="Bike">
-                        <label for="vehicle19"> 30+</label><br>
-
-                        <input type="checkbox" id="vehicle20" name="vehicle20" value="Bike">
-                        <label for="vehicle20"> 25+</label><br>
-
-                        <input type="checkbox" id="vehicle21" name="vehicle21" value="Bike">
-                        <label for="vehicle21"> 20+</label><br>
-
-                        <input type="checkbox" id="vehicle22" name="vehicle22" value="Bike">
-                        <label for="vehicle22"> 15+</label><br>
-
-                        <input type="checkbox" id="vehicle23" name="vehicle23" value="Bike">
-                        <label for="vehicle23"> 10+</label><br>
-
-                        <input type="checkbox" id="vehicle24" name="vehicle24" value="Bike">
-                        <label for="vehicle24"> 5+</label><br>
-
-                        <h6>+ Show more</h6>
-                    </div>
+                    
 
 
 
@@ -274,7 +259,7 @@
                                     <i class="fa fa-certificate"></i>
                                     <ul>
                                         <li>
-                                            <%= JSON.parse(findall[i].qualification)[0].value %>
+                                            <%= JSON.parse(findall[i].specialization)[0].value %>
                                         </li>
                                     </ul>
                                 </div>
@@ -282,7 +267,7 @@
                                     <i class="fas fa-award"></i>
                                     <ul>
                                         <li>
-                                            <%= JSON.parse(findall[i].awards)[0].value %>
+                                            <%= findall[i].fees %>
                                         </li>
                                     </ul>
                                 </div>
@@ -307,7 +292,7 @@
                                     <i class="fa fa-map-marker "></i>
                                     <ul>
                                         <li>
-                                            <%= findall[i].location %>
+                                            <%= findall[i].state %>
                                         </li>
                                     </ul>
                                 </div>
@@ -322,39 +307,46 @@
                             <img src="<%= findall[i].image %>" />
                         </figure>
 
-                        <div class="slots" >
+                        <div class="slots">
                             <div class="dates" id="container<%= findall[i]._id %>">
                                 <i class="fas fa-angle-left"
-                                onclick="moveCarousel('right','carousel-container<%= findall[i]._id %>')"></i>
+                                    onclick="moveCarousel('right','carousel-container<%= findall[i]._id %>')"></i>
 
                                 <div class="mySlides<%= findall[i]._id %> firstload">
                                     <div class="dates-and-slots" id="carousel-container<%= findall[i]._id %>">
 
-                                        <div id="slot1<%= findall[i]._id %>" class="activeslotnum" onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',0)">
+                                        <div id="slot1<%= findall[i]._id %>" class="activeslotnum"
+                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',0)">
 
                                         </div>
 
-                                        <div id="slot2<%= findall[i]._id %>" class="activeslotnum" onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',1)">
+                                        <div id="slot2<%= findall[i]._id %>" class="activeslotnum"
+                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',1)">
 
                                         </div>
 
-                                        <div id="slot3<%= findall[i]._id %>" class="activeslotnum" onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',2)">
+                                        <div id="slot3<%= findall[i]._id %>" class="activeslotnum"
+                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',2)">
 
                                         </div>
 
-                                        <div id="slot4<%= findall[i]._id %>" class="notdisplay activeslotnum" onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',3)">
+                                        <div id="slot4<%= findall[i]._id %>" class="notdisplay activeslotnum"
+                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',3)">
 
                                         </div>
 
-                                        <div id="slot5<%= findall[i]._id %>" class="notdisplay activeslotnum" onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',4)">
+                                        <div id="slot5<%= findall[i]._id %>" class="notdisplay activeslotnum"
+                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',4)">
 
                                         </div>
 
-                                        <div id="slot6<%= findall[i]._id %>" class="notdisplay activeslotnum" onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',5)">
+                                        <div id="slot6<%= findall[i]._id %>" class="notdisplay activeslotnum"
+                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',5)">
 
                                         </div>
 
-                                        <div id="slot7<%= findall[i]._id %>" class="notdisplay activeslotnum" onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',6)">
+                                        <div id="slot7<%= findall[i]._id %>" class="notdisplay activeslotnum"
+                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',6)">
 
                                         </div>
 
@@ -370,19 +362,19 @@
                                 <div class="morning">
                                     <h4>Morning</h4>
                                     <ul class="slot-timings" id="morning<%= findall[i]._id %>">
-                                        
+
                                     </ul>
                                 </div>
-                                <div class="morning afternoon" >
+                                <div class="morning afternoon">
                                     <h4>Afternoon</h4>
-                                    <ul class="slot-timings"  id="afternoon<%= findall[i]._id %>">
-                                        
+                                    <ul class="slot-timings" id="afternoon<%= findall[i]._id %>">
+
                                     </ul>
                                 </div>
-                                <div class="evening afternoon morning" >
+                                <div class="evening afternoon morning">
                                     <h4>Evening</h4>
-                                    <ul class="slot-timings"  id="evening<%= findall[i]._id %>">
-                                        
+                                    <ul class="slot-timings" id="evening<%= findall[i]._id %>">
+
                                     </ul>
                                 </div>
                             </div>
@@ -481,11 +473,11 @@
         </div>
     </footer>
 
-    
+
     <script>
         async function showslot(id, docid) {
             const abc = await fetch("/getschedule/" + docid, { method: "get", });
-            const schedule= await abc.json();
+            const schedule = await abc.json();
             console.log(schedule);
             console.log("running");
 
@@ -515,10 +507,10 @@
                     //console.log(finalarray);
                 }
 
-                for(var s=0;s<7;s++){
-                    var no=s+1;
-                document.getElementById('slot'+ no+ docid).innerHTML = '<h4>'+finalarray[s]+'</h4><span>' + schedule[s] + ' Slots Available</span>';
-                
+                for (var s = 0; s < 7; s++) {
+                    var no = s + 1;
+                    document.getElementById('slot' + no + docid).innerHTML = '<h4>' + finalarray[s] + '</h4><span>' + schedule[s] + ' Slots Available</span>';
+
                 }
 
             }
@@ -533,114 +525,114 @@
     <!--Carousel script-->
     <script>
         function moveCarousel(dirc, carouselId) {
-    var carouselItems = document.getElementById(carouselId).children;
-    if (dirc === "left") {
-        for (var i = 0; i < carouselItems.length; i++) {
-            if (carouselItems[i].style.display !== "none")
-                break;
-        }
-        if (i + 3 < carouselItems.length) {
-            for (var j = 0; j < carouselItems.length; j++) {
-                if (j === i + 1 || j === i + 2 || j === i + 3) {
-                    carouselItems[j].style.display = "block";
+            var carouselItems = document.getElementById(carouselId).children;
+            if (dirc === "left") {
+                for (var i = 0; i < carouselItems.length; i++) {
+                    if (carouselItems[i].style.display !== "none")
+                        break;
                 }
-                else
-                    carouselItems[j].style.display = "none";
+                if (i + 3 < carouselItems.length) {
+                    for (var j = 0; j < carouselItems.length; j++) {
+                        if (j === i + 1 || j === i + 2 || j === i + 3) {
+                            carouselItems[j].style.display = "block";
+                        }
+                        else
+                            carouselItems[j].style.display = "none";
+                    }
+                }
+            }
+            else if (dirc === "right") {
+                for (var i = 0; i < carouselItems.length; i++) {
+                    if (carouselItems[i].style.display !== "none")
+                        break;
+                }
+                if (i !== 0) {
+                    for (var j = 0; j < carouselItems.length; j++) {
+                        if (j === i - 1 || j === i || j === i + 1) {
+                            carouselItems[j].style.display = "block";
+                        }
+                        else
+                            carouselItems[j].style.display = "none";
+                    }
+                }
             }
         }
-    }
-    else if (dirc === "right") {
-        for (var i = 0; i < carouselItems.length; i++) {
-            if (carouselItems[i].style.display !== "none")
-                break;
-        }
-        if (i !== 0) {
-            for (var j = 0; j < carouselItems.length; j++) {
-                if (j === i - 1 || j === i || j === i + 1) {
-                    carouselItems[j].style.display = "block";
+
+
+
+        //for showing slots
+
+        async function showslots(id, did, index) {
+            if (document.getElementById(id).style.display != "block") {
+                document.getElementById(id).style.display = "block";
+                var cde = await fetch("/getslots/" + did + "/" + index, { method: 'get' });
+                var slots = await cde.json();
+                console.log(slots);
+                var morningslot = slots[0];
+                var afternoonslot = slots[1];
+                var eveningslot = slots[2];
+                console.log("eveningslot", eveningslot);
+                var scheduleid = slots[3];
+                if (morningslot.length == 0) {
+                    document.getElementById('morning' + did).innerHTML = "<li>No slots Available</li>";
+                    document.getElementById('morning' + did).style.justifyContent = "center";
+                    document.getElementById('morning' + did).childNodes[0].style.border = "none";
+                    document.getElementById('morning' + did).childNodes[0].style.fontSize = "1.5rem";
                 }
-                else
-                    carouselItems[j].style.display = "none";
+                if (afternoonslot.length == 0) {
+                    document.getElementById('afternoon' + did).innerHTML = "<li>No slots Available</li>";
+                    document.getElementById('afternoon' + did).style.justifyContent = "center";
+                    document.getElementById('afternoon' + did).childNodes[0].style.border = "none";
+                    document.getElementById('afternoon' + did).childNodes[0].style.fontSize = "1.5rem";
+                }
+
+                if (eveningslot.length == 0) {
+                    document.getElementById('evening' + did).innerHTML = "<li>No slots Available</li>";
+                    document.getElementById('evening' + did).style.justifyContent = "center";
+                    document.getElementById('evening' + did).childNodes[0].style.border = "none";
+                    document.getElementById('evening' + did).childNodes[0].style.fontSize = "1.5rem";
+                }
+
+                if (morningslot.length > 0) {
+                    var a = '';
+                    for (var k = 0; k < morningslot.length; k++) {
+
+                        a = a + '<form method="post" action="/bookslot/' + scheduleid + '/' + did + '/' + morningslot[k]._id + '/' + morningslot[k].time + '" onclick="this.submit()"><li style="width:5rem;">' + morningslot[k].time + '</li></form>';
+
+                    }
+                    document.getElementById('morning' + did).innerHTML = a;
+
+                }
+
+                if (afternoonslot.length > 0) {
+                    var s = '';
+                    for (var k = 0; k < afternoonslot.length; k++) {
+
+                        s = s + '<form method="post" action="/bookslot/' + scheduleid + '/' + did + '/' + afternoonslot[k]._id + '/' + afternoonslot[k].time + '" onclick="this.submit()"><li style="width:5rem;">' + afternoonslot[k].time + '</li></form>';
+
+                    }
+                    document.getElementById('afternoon' + did).innerHTML = s;
+
+                }
+
+                if (eveningslot.length > 0) {
+                    var b = '';
+                    for (var k = 0; k < eveningslot.length; k++) {
+
+                        b = b + '<form method="post" action="/bookslot/' + scheduleid + '/' + did + '/' + eveningslot[k]._id + '/' + eveningslot[k].time + '" onclick="this.submit()"><li style="width:5rem;">' + eveningslot[k].time + '</li></form>';
+
+                    }
+                    document.getElementById('evening' + did).innerHTML = b;
+
+                }
+
             }
+            else
+                document.getElementById(id).style.display = "none";
+
         }
-    }
-}
-
-
-
-//for showing slots
-
-async function showslots(id,did,index){
-    if(document.getElementById(id).style.display!="block"){
-    document.getElementById(id).style.display="block";
-    var cde=await fetch("/getslots/"+did+"/"+index,{method:'get'});
-    var slots=await cde.json();
-    console.log(slots);
-    var morningslot=slots[0];
-    var afternoonslot=slots[1];
-    var eveningslot=slots[2];
-    console.log("eveningslot",eveningslot);
-    var scheduleid=slots[3];
-    if(morningslot.length==0){
-        document.getElementById('morning'+did).innerHTML="<li>No slots Available</li>";
-        document.getElementById('morning'+did).style.justifyContent="center";
-        document.getElementById('morning'+did).childNodes[0].style.border="none";
-        document.getElementById('morning'+did).childNodes[0].style.fontSize="1.5rem";
-    }
-    if(afternoonslot.length==0){
-        document.getElementById('afternoon'+did).innerHTML="<li>No slots Available</li>";
-        document.getElementById('afternoon'+did).style.justifyContent="center";
-        document.getElementById('afternoon'+did).childNodes[0].style.border="none";
-        document.getElementById('afternoon'+did).childNodes[0].style.fontSize="1.5rem";
-    }
-
-    if(eveningslot.length==0){
-        document.getElementById('evening'+did).innerHTML="<li>No slots Available</li>";
-        document.getElementById('evening'+did).style.justifyContent="center";
-        document.getElementById('evening'+did).childNodes[0].style.border="none";
-        document.getElementById('evening'+did).childNodes[0].style.fontSize="1.5rem";
-    }
-
-    if(morningslot.length>0){
-        var a='';
-        for(var k=0;k<morningslot.length;k++){
-            
-            a=a+'<form method="post" action="/bookslot/'+scheduleid+'/'+did+'/'+morningslot[k]._id+'/'+morningslot[k].time+'" onclick="this.submit()"><li style="width:5rem;">'+morningslot[k].time+'</li></form>';
-            
-        }
-        document.getElementById('morning'+did).innerHTML=a; 
-
-    }
-
-    if(afternoonslot.length>0){
-        var s='';
-        for(var k=0;k<afternoonslot.length;k++){
-            
-            s=s+'<form method="post" action="/bookslot/'+scheduleid+'/'+did+'/'+afternoonslot[k]._id+'/'+afternoonslot[k].time+'" onclick="this.submit()"><li style="width:5rem;">'+afternoonslot[k].time+'</li></form>';
-            
-        }
-        document.getElementById('afternoon'+did).innerHTML=s; 
-
-    }
-
-    if(eveningslot.length>0){
-        var b='';
-        for(var k=0;k<eveningslot.length;k++){
-            
-            b=b+'<form method="post" action="/bookslot/'+scheduleid+'/'+did+'/'+eveningslot[k]._id+'/'+eveningslot[k].time+'" onclick="this.submit()"><li style="width:5rem;">'+eveningslot[k].time+'</li></form>';
-            
-        }
-        document.getElementById('evening'+did).innerHTML=b; 
-
-    }
-
-    }
-    else
-    document.getElementById(id).style.display="none";
-
-}
     </script>
-    
+
 </body>
 
 </html>

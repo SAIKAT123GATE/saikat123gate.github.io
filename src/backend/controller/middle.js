@@ -31,9 +31,15 @@ const doctorpageget = async (req, res) => {
 
   const skip = (page - 1) * items_per_page;
   const count = await docdetails.find().countDocuments();
+  const alldoc=await docdetails.find();
   //console.log("counting total docs");
   //console.log(count);
-  var findall = await docdetails.find().limit(items_per_page).skip(skip);
+  var findall = await docdetails.find().sort(req.session.sortBy).limit(items_per_page).skip(skip);
+  if(findall){
+    if(req.session.query){
+      findall = await docdetails.find(req.session.query).sort(req.session.sortBy).limit(items_per_page).skip(skip);
+    }
+  }
   req.session.findall = findall;
 
   //For getting day
@@ -56,7 +62,9 @@ const doctorpageget = async (req, res) => {
     nextpage: page + 1,
     previouspage: page - 1,
     lastpage: Math.ceil(count / items_per_page),
-    isadmin:req.session.isAdmin
+    isadmin:req.session.isAdmin,
+    alldoc:alldoc,
+    filter:req.session.filter?req.session.filter:"undefined"
     
     
   });
@@ -408,6 +416,135 @@ const deletemedicalimage=async(req,res)=>{
   return res.redirect("/"+id+"/showrecords");
 
 }
+
+
+//sort by
+const sortby=async(req,res)=>{
+  var sort=req.body.sort.split("-");
+  console.log("checking sort",sort);
+  if(sort[0]=="name"){
+    if(sort[1]=="asc"){
+      var query={"name":1};
+    }
+    else if (sort[1] == "desc") {
+      var query = { "name": -1 };
+  }
+  }
+  if(sort[0]=="fees"){
+    if(sort[1]=="asc"){
+      var query={"fees":1};
+    }
+    else if (sort[1] == "desc") {
+      var query = { "name": -1 };
+  }
+  }
+
+
+  if(sort[0]=="exp"){
+    if(sort[1]=="asc"){
+      var query={"exp":1};
+    }
+    else if (sort[1] == "desc") {
+      var query = { "exp": -1 };
+  }
+  }
+  req.session.sortBy = query;
+    
+  return res.redirect("/doctor");
+  
+}
+
+
+//Add filter
+const filterfunction=async(req,res)=>{
+  const location=req.body.state;
+  const treatments=req.body.treatments;
+  const hospitals=req.body.hospitals;
+  const state=req.body.states;
+  const hospitalname=req.body.hospitalname;
+  console.log("printing treatments",typeof(treatments));
+  
+    var filter = [];
+    var locationlist = [];
+    var treatmentlist = [];
+    var hospitallist = [];
+    if(state){
+      filter.push(state);
+          locationlist.push(state);
+    }
+    if(hospitalname){
+      filter.push(hospitalname);
+          hospitallist.push(hospitalname);
+    }
+    if (location) {
+      if (typeof (location) == "string") {
+          filter.push(location);
+          locationlist.push(location);
+
+      } else {
+          for (var i = 0; i < location.length; i++) {
+              filter.push(location[i]);
+              locationlist.push(location[i]);
+          }
+      }
+  }
+
+  if(treatments){
+    if (typeof(treatments)=="string") {
+      filter.push(treatments);
+      treatmentlist.push(treatments);
+
+  }
+  else{
+    
+    for (var i = 0; i < treatments.length; i++) {
+      filter.push(treatments[i]);
+      treatmentlist.push(treatments[i]);
+  }
+}
+  }
+
+  if(hospitals){
+    if (typeof(hospitals)=="string") {
+      filter.push(hospitals);
+      hospitallist.push(hospitals);
+
+  }
+  else{
+    
+    for (var i = 0; i <hospitals.length ; i++) {
+      filter.push(hospitals[i]);
+      hospitallist.push(hospitals[i]);
+  }
+}
+  }
+  var query = {
+    
+    "state": { $all: locationlist },
+    "specialization":{$all: treatmentlist},
+    "hospitals":{$all: hospitallist}
+  }
+  
+if (treatmentlist.length == 0) {
+    delete query["specialization"];
+}
+if (locationlist.length == 0) {
+    delete query["state"];
+}
+if (hospitallist.length == 0) {
+  delete query["hospitals"];
+}
+  req.session.query = query;
+  console.log("printing query",query);
+    console.log("printing filter",filter);
+
+
+
+    req.session.filter = filter;
+    res.redirect("/doctor");
+
+}
+
 module.exports = {
   indexget: indexget,
   doctorpageget: doctorpageget,
@@ -429,5 +566,7 @@ module.exports = {
   docprofile:docprofile,
   showrecords:showrecords,
   addmedicalimage:addmedicalimage,
-  deletemedicalimage:deletemedicalimage
+  deletemedicalimage:deletemedicalimage,
+  sortby:sortby,
+  filterfunction:filterfunction
 };

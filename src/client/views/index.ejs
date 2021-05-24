@@ -9,6 +9,7 @@
     <link href="../css/reset.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.css" />
     <link href="../css/index.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -22,6 +23,7 @@
         <link rel = "icon" href = 
 "https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
         type = "image/x-icon">
+        <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.min.js"></script>
         
 
 </head>
@@ -157,14 +159,14 @@
                 <p>Join the thousands of others who have exercised their rights
                     to quality healthcare at a price you can afford</p>
 
-                <form action="./index.html">
+                <form action="/addfilter" method="POST">
                     <div class="input1">
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        <input class="input_field" placeholder="Ahemdabad">
+                        <input class="input_field" placeholder="Ahemdabad" name="states">
                         <i class='fa fa-crosshairs' id="cross"></i>
                     </div>
                     <div class="input2">
-                        <input class="input_field" placeholder="Search for Doctors, hospitals and treatments">
+                        <input class="input_field" id="tagify" name="hospitalname"placeholder="Search for Doctors with hospital name" >
                     </div>
                     <div class="btn">
                         <button type="submit" class="btn_darkblue">Search</button>
@@ -860,6 +862,22 @@
                 </div>
                 <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
             </footer>
+
+
+
+            <script>
+    
+    
+                var input = document.querySelector('input[name=hospitalname]');
+            
+                
+                
+            
+            // initialize Tagify on the above input node reference
+            new Tagify(input)
+            
+            
+            </script>
 
 
             

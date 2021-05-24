@@ -3,10 +3,12 @@ const mongoose=require("mongoose");
 const hospitalSchema=new mongoose.Schema(
     {
         name:{
-            type:String
+            type:String,
+            required:true
         },
         description:{
             type:String,
+            required:true
             
         },
         speciality:{
@@ -14,16 +16,20 @@ const hospitalSchema=new mongoose.Schema(
             required:true
         },
         image:{
-            type:String
+            type:String,
+            required:true
         },
         location:{
-            type:String
+            type:String,
+            required:true
         },
         beds:{
-            type:Number
+            type:Number,
+            required:true
         },
         treatments:{
-            type:String
+            type:String,
+            required:true
         }
     
     })

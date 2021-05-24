@@ -13,6 +13,21 @@
     box-sizing: border-box;
 }
 
+tags.tagify{
+    background: white;
+    padding: 1.06rem;
+}
+#tagify{
+    padding: 1.1rem;
+}
+.tagify__tag{
+    margin: 0;
+}
+
+.tagify__input{
+    margin: 0;
+}
+
 #indexmsg{
     display: none;
   }

@@ -17,7 +17,7 @@
       font-family: nexa-light;
     }
     select {
-      width: 30%;
+      
       
       margin-bottom: 0rem;
       background-color: $light_gray;
@@ -469,9 +469,7 @@ footer {
 @media only screen and(min-width:1024px) {
  
 
-  .bg_white .home_and_sort_flex select {
-    width: 10%;
-  }
+  
   .bg_white{
     .home_and_sort_flex{
       h3{

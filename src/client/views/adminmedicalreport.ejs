@@ -117,7 +117,7 @@
                 </div>
                 <div class="dashboard">
                     <a href="/admin">
-                        <div class="  active-btn" id="profile-btn">
+                        <div class="  inactive-btn" id="profile-btn">
                             <i class='fa fa-address-book'></i>
                             <h3>ADMIN</h3>
                         </div>
@@ -155,7 +155,7 @@
 
                 </div>
                 <% for(var i=0;i<record.length;i++){%>
-                    <form method="POST" action="/admindeletemedicalrecords/<%= record[i]._id %>">
+                    <form method="POST" action="/<%= record[i]._id %>/<%= record[i].email %>/admindeletemedicalrecords">
 
                         <div class="report-details">
                             <div>
