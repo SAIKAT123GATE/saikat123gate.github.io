@@ -14,6 +14,7 @@
   height: 100vh;
   background: white;
   width: 70%;
+  z-index: 2;
 }
 
 .toastermob > ul > a > li {
@@ -81,6 +82,17 @@ header {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.head1 .image-for-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.head1 .image-for-mobile figure {
+  width: 4rem;
+  margin-right: 0.5rem;
 }
 
 .nd_help {
@@ -901,33 +913,22 @@ a {
 }
 
 .password-with-eye {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 2px solid #636668;
-}
-
-.password-with-eye .password-field {
-  border: none;
-  margin-bottom: 0;
+  position: relative;
 }
 
 .password-with-eye #togglePassword {
   color: #167ddd;
+  position: absolute;
+  font-size: 1.4rem;
+  right: 0.7rem;
 }
 
-.password-with-eye:focus {
-  border: 2px solid #167ddd;
+@media only screen and (min-width: 1024px) {
+  .password-with-eye #togglePassword {
+    top: 0.45rem;
+    right: 0.8rem;
+    font-size: 2erm;
+  }
 }
 
 .otpsec {
@@ -975,6 +976,11 @@ footer p {
 }
 
 @media only screen and (min-width: 1024px) {
+  .head2 ul {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
   @-webkit-keyframes fade-out {
     0%, 100% {
       opacity: 0;
@@ -1057,6 +1063,9 @@ footer p {
   }
   footer p {
     margin-top: 0rem;
+  }
+  #password {
+    margin: 0;
   }
 }
 /*# sourceMappingURL=login.css.map */

@@ -14,6 +14,7 @@
   height: 100vh;
   background: white;
   width: 70%;
+  z-index: 2;
 }
 
 .toastermob > ul > a > li {
@@ -81,6 +82,17 @@ header {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.head1 .image-for-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.head1 .image-for-mobile figure {
+  width: 4rem;
+  margin-right: 0.5rem;
 }
 
 .nd_help {
@@ -464,6 +476,9 @@ a {
 }
 
 @media only screen and (min-width: 1024px) {
+  .toastermob {
+    display: none;
+  }
   /*toaster*/
   .toaster {
     position: absolute;
@@ -804,5 +819,9 @@ a {
   #loginmsg #tick {
     background-color: green;
   }
+}
+
+.noappmt {
+  color: #167ddd;
 }
 /*# sourceMappingURL=settings.css.map */

@@ -150,6 +150,7 @@ app.use("/",mainroute);
 app.get("*",(req,res)=>{
   res.render("error");
 })
-app.listen(4000,()=>{
+var port=process.env.port || 4000;
+app.listen(port,()=>{
     console.log("server is listening");
 });

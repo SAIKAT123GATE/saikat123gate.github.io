@@ -25,6 +25,7 @@ $black:#000000;
   height: 100vh;
   background: white;
   width: 70%;
+  z-index: 2;
 }
 .toastermob>ul>a>li{
   color: black;
@@ -34,6 +35,7 @@ $black:#000000;
   padding-left: 2rem;
   border-bottom: 1px solid black;
 }
+
 
 
 .rotate {
@@ -86,6 +88,16 @@ header {
     i {
       justify-self: end;
       align-self: center;
+    }
+  }
+
+  .head1{
+    .image-for-mobile{
+      display: flex;
+      figure{
+        width:4rem;
+        margin-right: 0.5rem;
+      }
     }
   }
   
@@ -449,6 +461,9 @@ a{
 }
 @media only screen and (min-width:1024px)
 {
+  .toastermob{
+    display: none;
+  }
   /*toaster*/
   .toaster{
         

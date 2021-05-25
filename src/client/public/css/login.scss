@@ -114,22 +114,21 @@
     
 }
 .password-with-eye{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border:2px solid $gray;
-    .password-field{
-        border: none;
-        margin-bottom: 0;
-    }
+    position: relative;
+    
     #togglePassword{
         color: $blue;
+        position: absolute;
+        font-size: 1.4rem;
+        right:0.7rem;
+        @media only screen and (min-width:1024px){
+        top:0.45rem;
+        right:0.8rem;
+        font-size: 2erm;
+        }
     }
 
-    &:focus{
-        border:2px solid $blue;
-    }
+   
 }
 .otpsec{
     display: flex;
@@ -181,6 +180,9 @@ footer{
 
 @media only screen and (min-width:1024px)
 {
+    .head2 ul{
+        justify-content: left;
+    }
 
     @keyframes fade-out {
         0%,100% {
@@ -269,6 +271,10 @@ footer{
     p{
         margin-top: 0rem;
     }
+}
+
+#password{
+    margin:0;
 }
 
 }

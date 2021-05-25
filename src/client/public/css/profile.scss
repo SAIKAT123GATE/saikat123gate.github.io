@@ -73,6 +73,29 @@ margin-top: 0.5rem;
     
 }
 
+
+.dashboardmob{
+    display: none;
+    position: absolute;
+    background: white;
+    top: 4.2rem;
+    height: 100vh;
+    left: 0;
+    width: 50%;
+    ul{
+        margin:1rem;
+    }
+    li{
+        color: $blue;
+        font-weight: bold;
+    }
+    i{
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+    }
+}
+
 .medical-record{
     display: grid;
     grid-template-columns: auto auto;

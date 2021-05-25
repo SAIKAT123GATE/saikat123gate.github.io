@@ -26,8 +26,37 @@
             <figure>
                 <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
             </figure>
-            <i class="fa fa-bars"></i>
+            <div class="image-for-mobile">
+                <figure id="toaster-img">
+                        
+                    <img id="headerpic"
+                        src="<%=image%>"
+                        >
+                    
+                    </figure>
+            <i class="fa fa-bars" onclick="tgl('toastermob')"></i>
+            </div>
         </nav>
+
+        <div class="toastermob" id="toastermob">
+            <ul>
+                <a href="/myappointments">
+                    <li>My Appointments</li>
+                </a>
+                <a href="/medicalreport">
+                    <li>Medical Records</li>
+                </a>
+                <a href="/settings">
+                    <li>Settings</li>
+                </a>
+                <a href="#">
+                    <li>My payments</li>
+                </a>
+                <a href="/logout">
+                    <li>Logout</li>
+                </a>
+            </ul>
+        </div>
 
         <!--Desktop-->
         <div class="head2-container">
@@ -170,6 +199,9 @@
 
                     </div>
                     <div class="checkbox">
+                        <% if(l.length==0){%>
+                            <label>No filter Available</label>
+                        <%}%>
                         <% for (var i=0;i<l.length;i++){%>
                         <input type="checkbox" id="<%= l[i] %>" name="state" value="<%= l[i] %>" onchange="this.form.submit()"
                         <% if(filter.includes(l[i])){%>checked <%}else{%>unchecked<%}%>
@@ -189,7 +221,9 @@
                     </div>
 
                     <div class="checkbox">
-                        
+                        <% if(t.length==0){%>
+                            <label>No filter Available</label>
+                        <%}%>
                         <% for (var i=0;i<t.length;i++){%>
                             <input type="checkbox" id="<%= t[i] %>" name="treatments" value="<%= t[i] %>" onchange="this.form.submit()"
                             <% if(filter.includes(t[i])){%>checked <%}else{%>unchecked<%}%>
@@ -214,6 +248,9 @@
 
                     </div>
                     <div class="checkbox">
+                        <% if(h.length==0){%>
+                            <label>No filter Available</label>
+                        <%}%>
                         <% for (var i=0;i<h.length;i++){%>
                             <input type="checkbox" id="<%= h[i] %>" name="hospitals" value="<%= h[i] %>" onchange="this.form.submit()"
                             <% if(filter.includes(h[i])){%>checked <%}else{%>unchecked<%}%>
@@ -243,6 +280,9 @@
 
 
             <div id="docinfo">
+                <% if(findall.length==0){%>
+                    <h5 class="noinfo">No Info Available</h5>
+                <%}%>
                 <% for(var i=0;i< findall.length;i++){%>
 
 
@@ -420,7 +460,9 @@
             <p>Just let us know we will happy to assist you</p>
         </div>
         <div class="btn2 nd_help2">
+            <a href="/getquote">
             <button type="submit" class="btn_blue">Submit your enquiry</button>
+            </a>
         </div>
     </section>
 

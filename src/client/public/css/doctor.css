@@ -14,6 +14,7 @@
   height: 100vh;
   background: white;
   width: 70%;
+  z-index: 2;
 }
 
 .toastermob > ul > a > li {
@@ -81,6 +82,17 @@ header {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.head1 .image-for-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.head1 .image-for-mobile figure {
+  width: 4rem;
+  margin-right: 0.5rem;
 }
 
 .nd_help {
@@ -779,6 +791,9 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .bg_white .home_and_sort_flex h3 {
@@ -786,11 +801,21 @@ a {
   font-family: nexa-light;
 }
 
+.bg_white .home_and_sort_flex form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .bg_white .home_and_sort_flex select {
   margin-bottom: 0rem;
   background-color: #cccccc;
   color: #021433;
   font-weight: bold;
+  width: 60%;
 }
 
 .bg_white .bordergray {
@@ -868,6 +893,12 @@ a {
 
 .bg_white .last {
   margin-bottom: 0rem;
+}
+
+#docinfo h5 {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .dates {
@@ -1259,6 +1290,15 @@ footer p span {
 }
 
 @media only screen and (min-width: 1024px) {
+  #docinfo {
+    position: relative;
+  }
+  #docinfo h5 {
+    position: absolute;
+    top: 10rem;
+    left: 15rem;
+    font-size: 3rem;
+  }
   .bg_white .home_and_sort_flex h3 {
     color: #636668;
     font-size: 1.5rem;

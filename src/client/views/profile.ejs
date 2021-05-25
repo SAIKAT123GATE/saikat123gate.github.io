@@ -35,7 +35,16 @@
             <figure>
                 <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
             </figure>
+            <div class="image-for-mobile">
+                <figure id="toaster-img">
+                        
+                    <img id="headerpic"
+                        src="<%=image%>"
+                        >
+                    
+                    </figure>
             <i class="fa fa-bars" onclick="tgl('toastermob')"></i>
+            </div>
 
 
         </nav>
@@ -135,8 +144,32 @@
     <section class="main-section">
         <div class="mobile-tab">
             <div class="grid-for-dashboard">
-                <i class='fas fa-angle-double-right'></i>
+                <i class='fas fa-angle-double-right' onclick="tgl('dashboardmob')"></i>
                 <h3>Click To View Dashboard</h3>
+            </div>
+            <div class="dashboardmob" id="dashboardmob">
+                <i class="fa fa-close" onclick="tgl('dashboardmob')"></i>
+                <ul>
+                    <a href="/profile">
+                        <li> Profile</li>
+                    </a>
+
+                    <a href="/myappointments">
+                        <li> Appointments</li>
+                    </a>
+                    <a href="/medicalreport">
+                        <li>Medical Reports</li>
+                    </a>
+                    <% if(isDoctor){%>
+                        <a href="/addschedule">
+                            <li>Add Schedule</li></a>
+                        <%}%>
+                    <a href="/settings">
+                        <li>Settings</li>
+                    </a>
+                    
+                    
+                </ul>
             </div>
         </div>
         <div class="desktop">
@@ -218,7 +251,7 @@
                 <div class="details">
                     <div class="label_input">
                         <label for="mobileno">Phone Number</label>
-                        <input name="mobileno" id="mobileno" value="<%=mobileno%>" readonly required>
+                        <input name="mobileno" id="mobileno" value="<%=mobileno%>"  required>
                     </div>
 
                     <div class="label_input">

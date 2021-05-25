@@ -368,6 +368,23 @@ const saveedithospital=async(req,res)=>{
 
 }
 
+
+
+//Get  a quote form
+const getquote=async(req,res)=>{
+  return res.render("queryform");
+}
+
+//Get about hospital
+
+const abouthospital=async(req,res)=>{
+  return res.render("about-hospital",{
+    username: req.session.name,
+    image: req.session.image,
+    isadmin:req.session.isAdmin
+  });
+}
+
 module.exports = {
   admindashboard: admindashboard,
   adminusers: adminusers,
@@ -379,5 +396,7 @@ module.exports = {
   medicalrecordget:medicalrecordget,
   admindeletemedicalreport:admindeletemedicalreport,
   editadminhospital:editadminhospital,
-  saveedithospital:saveedithospital
+  saveedithospital:saveedithospital,
+  getquote:getquote,
+  abouthospital:abouthospital
 };

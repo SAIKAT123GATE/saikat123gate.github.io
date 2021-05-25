@@ -123,3 +123,12 @@
           border-radius: 0;
       }
   }
+
+  .text-button{
+      h2{
+          font-size: 1.3rem;
+      @media only screen and (min-width:1024px){
+          font-size: 2.3rem;
+      }
+    }
+  }

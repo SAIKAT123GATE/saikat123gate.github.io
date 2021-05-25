@@ -48,7 +48,7 @@ router.route("/otpenter").get(middle.otpenterpageget);
 
 router.route("/docdetails").get(docdetailsc.docdetailsget);
 router.route("/docdetails").post(upload.single('image'),docdetailsc.docdetailsregister);
-router.route("/tvastraplus").get(middle.tvastraplus);
+router.route("/tvastraplus").get(sessionauth.redirectlogin,middle.tvastraplus);
 router.route("/logout").get(middle.logout);
 router.route("/profile").get(sessionauth.redirectlogin,middle.profilepageget);
 router.route("/updateprofile").post(upload.single('image'),docdetailsc.updateprofile);
@@ -89,5 +89,7 @@ router.route("/:id/edithospital").get(sessionauth.adminauth,admincontroller.edit
 router.route("/:id/savehospital").post(upload.single('image'),admincontroller.saveedithospital);
 router.route("/sort").post(middle.sortby);
 router.route("/addfilter").post(middle.filterfunction);
+router.route("/getquote").get(admincontroller.getquote);
+router.route("/abouthospital").get(admincontroller.abouthospital);
 module.exports=router;
 

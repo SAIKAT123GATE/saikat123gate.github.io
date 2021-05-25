@@ -77,8 +77,32 @@
             <div class="main-section">
                 <div class="mobile-tab">
                     <div class="grid-for-dashboard">
-                        <i class='fas fa-angle-double-right'></i>
+                        <i class='fas fa-angle-double-right' onclick="tgl('dashboardmob')"></i>
                         <h3>Click To View Dashboard</h3>
+                    </div>
+                    <div class="dashboardmob" id="dashboardmob">
+                        <i class="fa fa-close" onclick="tgl('dashboardmob')"></i>
+                        <ul>
+                            <a href="/profile">
+                                <li> Profile</li>
+                            </a>
+        
+                            <a href="/myappointments">
+                                <li> Appointments</li>
+                            </a>
+                            <a href="/medicalreport">
+                                <li>Medical Reports</li>
+                            </a>
+                            <% if(isDoctor){%>
+                                <a href="/addschedule">
+                                    <li>Add Schedule</li></a>
+                                <%}%>
+                            <a href="/settings">
+                                <li>Settings</li>
+                            </a>
+                            
+                            
+                        </ul>
                     </div>
                 </div>
                 <div class="desktop">
@@ -134,7 +158,7 @@
                         <h3>Upcoming Appointments</h3>
                     </div>
                     <% if(upcomingdetails.length==0){%>
-                        <h4>No Appointment</h4>
+                        <h4 class="noappmt">No Appointment</h4>
                         <%}%>
                             <% for(var i=0;i<upcomingdetails.length;i++){%>
                                 <div class="grid">
@@ -184,7 +208,7 @@
                             </div>
 
                             <% if(completeddetails.length==0){%>
-                                <h4>No Appointment</h4>
+                                <h4 class="noappmt">No Appointment</h4>
                                 <%}%>
 
                             <% for(var i=0;i<completeddetails.length;i++){%>
