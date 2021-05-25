@@ -883,7 +883,7 @@ input[type="file"] {
 @media only screen and (min-width: 1024px) {
   .create-schedule {
     width: 40rem;
-    max-height: 40rem;
+    max-height: 50rem;
   }
 }
 
@@ -933,6 +933,16 @@ input[type="file"] {
 @media only screen and (min-width: 1024px) {
   .text-button h2 {
     font-size: 2.3rem;
+  }
+}
+
+.text-button .btn_blue {
+  font-size: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .text-button .btn_blue {
+    font-size: 1.3rem;
   }
 }
 /*# sourceMappingURL=medicalreport.css.map */
