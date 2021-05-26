@@ -1,0 +1,281 @@
+<!--Settings Form-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet@0.3.0/css/clocklet.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link href="../css/docdetails.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.css" />
+    <link href="../css/login.css" rel="stylesheet" type="text/css">
+    <link href="../css/profile.css" type="text/css" rel="stylesheet">
+
+    <link href="../css/settings.css" type="text/css" rel="stylesheet">
+    <link href="../css/admindashboard.css" type="text/css" rel=stylesheet>
+    <link href="../css/myappointment.css" type="text/css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clocklet@0.3.0"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.min.js"></script>
+    <link rel="icon"
+        href="https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp"
+        type="image/x-icon">
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <!--Mobile and tablet-->
+        <nav class="head1">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+            </figure>
+            <i class="fa fa-bars"></i>
+        </nav>
+
+        <!--Desktop-->
+        <div class="head2-container">
+            <nav class="head2">
+
+
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                        alt="logo" />
+
+
+
+                <div>
+                    <a href="/tvastraplus"> <button class="btn_blue">TVASTRA PLUS</button> </a>
+                    <a href="/queryform"> <button class="btn_darkblue">Get a Quote</button></a>
+                    <div id="user">
+                        <button class="btn_white" onclick="tgl('toaster')">
+                            ADMIN
+                        </button>
+                        <i class="fa fa-angle-down"></i>
+
+                    </div>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="toaster" id="toaster">
+        <div>
+
+            <a href="#">
+                <figure id="toaster-img">
+
+                    <img id="headerpic"
+                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+
+                </figure>
+            </a>
+
+            <h5>
+                ADMIN
+            </h5>
+        </div>
+        <ul>
+            <a href="/adminpageget">
+                <li>Dashboard</li>
+            </a>
+            <a href="/adminusers">
+                <li>Users</li>
+            </a>
+            <a href="'admindoctors">
+                <li>Doctors</li>
+            </a>
+            <a href="/adminhospitals">
+                <li>Hospitals</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+
+    <section>
+        <div class="main-section">
+            <div class="mobile-tab">
+                <div class="grid-for-dashboard">
+                    <i class='fas fa-angle-double-right'></i>
+                    <h3>Click To View Dashboard</h3>
+                </div>
+            </div>
+            <div class="desktop">
+                <div class="grid-for-dashboard">
+                    <i class='fas fa-angle-double-right'></i>
+                    <h3>Dashboard</h3>
+                </div>
+                <div class="dashboard">
+                    <a href="/admin">
+                        <div class="  active-btn" id="profile-btn">
+                            <i class='fa fa-address-book'></i>
+                            <h3>ADMIN</h3>
+                        </div>
+                    </a>
+
+                    <a href="/adminusers">
+                        <div class=" inactive-btn" id="appointments-btn">
+                            <i class='fa fa-address-book'></i>
+                            <h3>Users</h3>
+                        </div>
+                    </a>
+
+                    <a href="/admindoctors">
+                        <div class=" inactive-btn" id="reports-btn">
+                            <i class='fa fa-address-book'></i>
+                            <h3>Doctors</h3>
+                        </div>
+                    </a>
+
+                    <a href="/adminhospitals">
+                        <div class="inactive-btn" id="settings-btn">
+
+                            <i class='fa fa-address-book'></i>
+                            <h3>Hospitals</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="settings">
+                <div class="margin-bottom">
+                    <div class="headingsadmin">
+                        <h3>Tvastra Stats</h3>
+                    </div>
+                    <div class="allcards">
+                        <div class="cards">
+                            <i class="fas fa-user-alt"></i>
+                            <div>
+                                <h6>Users</h6>
+                                <span><%= users.length %></span>
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <i class="fas fa-syringe"></i>
+                            <div>
+                                <h6>Doctors</h6>
+                                <span><%= doctors.length %></span>
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <i class="fas fa-user-md"></i>
+                            <div>
+                                <h6>Hospitals</h6>
+                                <span>5</span>
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <i class="fas fa-briefcase-medical"></i>
+                            <div>
+                                <h6>Appointments</h6>
+                                <span><%= appointment.length %></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin-bottom">
+                    <div class="headingsadmin">
+                        <h3>Hospital Survey</h3>
+                    </div>
+                    <figure class="graph">
+                        <img src="../asset/pieforadmin.jpeg" />
+                    </figure>
+                </div>
+
+                <div class="margin-bottom">
+                    <div class="headingsadmin">
+                        <h3>Patient Age</h3>
+                    </div>
+                    <figure class="graph">
+                        <img src="../asset/graphforadmin.jpeg" />
+                    </figure>
+                </div>
+
+                <div class="heading-and-table">
+                    <div class="headingsadmin">
+                        <h3>Patients Enrolled</h3>
+                    </div>
+
+                    <div class="table">
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone NUmber</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                            <% for(var k=0;k<users.length;k++){%>
+                                <% if(users[k].email!="admin@gmail.com"){%>
+                            <tr>
+                                <td><%= users[k].name %></td>
+                                <td><%= users[k].mobileno %></td>
+                                <td><%= users[k].email %></td>
+                                
+                                <td>
+                                    <a href="/appointment/<%= users[k].id %>">Appointment Details</a></td>
+                                
+                            </tr>
+                            <%}%>
+                            <%}%>
+                            
+                        </table>
+
+                    </div>
+                    
+                        <div id="pagination">
+                            <% for(i=1;i<=lastpage;i++){%>
+                                <a href="/adminpageget?page=<%= i%>">
+                                    <%= i %>
+                                </a>
+                                <%} %>
+                        </div>
+                    
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </section>
+
+    
+
+    <!--Need Help-->
+    <section class="nd_help">
+        <div class="nd_help1">
+            <h2>Need Help?</h2>
+            <p>Just let us know we will happy to assist you</p>
+        </div>
+        <div class="btn2 nd_help2">
+            <button type="submit" class="btn_blue">Submit your enquiry</button>
+        </div>
+    </section>
+
+    <%-include('footer.ejs')%>
+
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<header>
+    <!--Mobile and tablet-->
+    <nav class="head1">
+        <figure>
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+        </figure>
+        <div class="image-for-mobile">
+            <figure id="toaster-img">
+                    
+                <img id="headerpic"
+                    src="<%=image%>"
+                    >
+                
+                </figure>
+        <i class="fa fa-bars" onclick="tgl('toastermob')"></i>
+        </div>
+    </nav>
+    <div class="toastermob" id="toastermob">
+        <ul>
+            <a href="/myappointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/medicalreport">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="#">
+                <li>My payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+
+    <!--Desktop-->
+    <div class="head2-container">
+        <nav class="head2">
+
+
+            <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                    alt="logo" /></a>
+
+
+            <ul>
+                <a href="/doctor">
+                    <li>Doctor</li>
+                </a>
+                <a href="/hospital">
+                    <li>Hospital</li>
+                </a>
+                <a href="/treatment">
+                    <li>Treatment</li>
+                </a>
+
+                <a href="/aboutUs">
+                    <li>About</li>
+                </a>
+            </ul>
+            <div>
+                <a href="/tvastraplus"> <button class="btn_blue">TVASTRA PLUS</button> </a>
+                <a href="/queryform"> <button class="btn_darkblue">Get a Quote</button></a>
+                <div id="user">
+                    <button class="btn_white" onclick="tgl('toaster')">
+                        <%=username%>
+                    </button>
+                    <i class="fa fa-angle-down"></i>
+
+                </div>
+
+        </nav>
+    </div>
+</header>

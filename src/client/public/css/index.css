@@ -1,0 +1,1098 @@
+
+@font-face
+{
+    font-family: nexa-bold;
+    src:url(../fonts/Nexa-Bold.otf)format("opentype");
+}
+@font-face
+{
+    font-family: nexa-light;
+    src:url(../fonts/Nexa-Light.otf)format("opentype");
+}
+*{
+    box-sizing: border-box;
+}
+
+tags.tagify{
+    background: white;
+    padding: 1.06rem;
+}
+#tagify{
+    padding: 1.1rem;
+}
+.tagify__tag{
+    margin: 0;
+}
+
+.tagify__input{
+    margin: 0;
+}
+
+#indexmsg{
+    display: none;
+  }
+
+.toaster{
+    display: none;
+}
+/*find affordable healthcare*/
+.find_affordable_healthcare{
+    background-color: #94bedd;
+    
+}
+.find_affordable_healthcare h1{
+    text-align: center;
+    margin-top: 0;
+}
+.find_affordable_healthcare p{
+    
+    text-align: center;
+}
+/*form and input field*/
+ form i{
+   font-size: 1.2rem !important;
+   padding-left:0.5rem
+}
+
+#cross{
+    padding-left: auto;
+    padding-right: 0.5rem;
+}
+form .input1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 0.5rem;
+}
+form .input1 .input_field{
+    margin-bottom: 0rem;
+    
+}
+ form .input1 input::placeholder{
+   padding-left: 0.0rem;
+   margin-left: 0rem;
+}
+.input_field{
+    border:none;
+    padding-top:1rem;
+    padding-bottom: 1.0rem;
+}
+/*button*/
+
+
+.find_affordable_healthcare .btn_darkblue{
+    border-radius: 0rem;
+    margin: auto;
+    margin-top: 0.4rem;
+    display: block;
+    font-size: 1.0rem;
+    text-align: center;
+}
+/*how it works*/
+.how_it_works .hide{
+    display: none;
+}
+.how_it_works{
+    text-align: center;
+    
+}
+.how_it_works .fir_span{
+    color: #8fcaf1;
+    margin-right: 0.7rem;
+    margin-left: 1.0rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.how_it_works li{
+    border: 1px solid #313a49;
+    padding: 1.0rem 1rem;
+    border-radius: 0.5rem;
+    text-align: left;
+    margin:1rem 0rem 0rem 0rem;
+    width: 100%;
+    background-color: white;
+    font-family: nexa-bold;
+    
+    
+}
+.how_it_works .steps li span{
+    margin-right: 1.0rem;
+}
+.how_it_works figure{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1.2rem;
+    height:auto;
+}
+.how_it_works figure h6{
+    margin-top: 1.2rem;
+    margin-bottom:0rem ;
+}
+.how_it_works figure p{
+    margin-bottom: 0.0rem;
+}
+.how_it_works .steps .activeli{
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color:#021433;
+    border-color:#021433;
+}
+.how_it_works .steps .activeli  span{
+    color: #0381d4;
+}
+.how_it_works .l_gray {
+    color: #cccccc;
+    font-size: 1.5rem;
+    
+}
+#step1{
+    margin-top: 0;
+}
+
+/*world class doctor*/
+
+.wrld_cls_doc{
+    background-color: #021433;
+    text-align: center;
+    
+}
+.wrld_cls_doc h2{
+    margin-top: 0;
+}
+.wrld_cls_doc .card .contain::before{
+    content: "";
+    background: #0381d4;
+    width:1.2rem;
+    height:0.15rem;
+    display: inline-block;
+    position: relative;
+    
+    right:1.5rem;
+    top:2.3rem;
+}
+.radiobtn{
+    display: none;
+}
+
+.wrld_cls_doc h2{
+    color: #fff;  
+}
+.wrld_cls_doc p{
+    color: #fff;
+}
+.card{
+    border-bottom: 5px solid #8fcaf1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.card figure{
+    margin: 0;
+    height:25rem;
+}
+#card4{
+    margin-bottom: 0rem;
+}
+.contain{
+    background-color: white;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    border-style: none;
+}
+.contain h4{
+    color: #0381d4;
+    
+}
+
+.contain li{
+    color: #021433;
+    line-height: 1.4rem;
+    font-size: 1.1rem;
+    
+}
+.contain h5{
+    font-weight: nexa-light;
+}
+
+/*feat_med_tret*/
+.inactive{
+    display: none;
+}
+
+.feat_med_tret{
+    text-align: center;
+}
+.feat_med_tret ul li{
+    margin-bottom: 0;
+}
+.feat_med_tret h2{
+    margin-top: 0;
+}
+ .fig1,.fig2,.fig3,.fig4,.fig5,.fig6{
+    height: 23rem;
+    width:100%;
+    background-image:linear-gradient(to top,rgb(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%),  url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg);
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    margin:0rem 0rem 0.5rem 0rem;
+    border-style: none;
+    position: relative;
+}
+
+.fig2{
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%),  url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg);
+}
+.fig3{
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg);
+}
+.fig4{
+    background-image:linear-gradient(to top,rgb(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
+     url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg); 
+}
+.fig5{
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
+     url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg); 
+}
+.fig6{
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
+     url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg);  
+}
+
+/* Inside inactive1*/
+#row1 .fig2{
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
+     url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg);
+}
+#row1 .fig6{
+    background-image:linear-gradient(to top,rgba(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
+     url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg); 
+}
+#row1 .fig1{
+    background-image:linear-gradient(to top,rgb(3, 0, 12) 3%,rgba(255, 255, 255, 0) 95%), 
+     url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg); 
+
+}
+
+.fig1 ul , .fig2 ul, .fig3 ul,.fig4 ul,.fig5 ul, .fig6 ul{
+    text-align: left;
+    top:auto;
+    bottom: 0.0;
+    position: absolute;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.span{
+    font-family: nexa-bold;
+    padding:0rem 0rem;
+    position: relative;
+    margin-bottom: 0.8rem;
+    font-size:1.2rem;
+}
+.span2{
+    margin-left: 0rem;
+    font-size: 1.1rem;
+
+}
+
+.exc_ser{
+    background-color: #efefef;
+    text-align: center;
+}
+.fig6{
+    margin-bottom: 0rem;
+}
+
+/*exclusive services*/
+.row3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "right1 right2"
+    "right3 right4"
+    "right5 right6";
+    grid-gap: 0.5rem;
+}
+.row3 div{
+    font-size: 20vw;
+    padding:1rem 1rem;
+}
+.right1{
+    grid-area: right1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    
+}
+.row3 img{
+    height: auto;
+    width: auto;
+}
+.right2{
+    grid-area: right2;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+}
+.right3{
+    grid-area: right3;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+}
+.right4{
+    grid-area: right4;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+}
+.right5{
+    grid-area: right5;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+}
+.right6{
+    grid-area: right6;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+}
+
+
+
+
+
+/*need help*/
+.nd_help{
+    background-color: #94bedd;
+    text-align: center;
+}
+.nd_help h2{
+    color:white
+}
+ .nd_help2 .btn_blue{
+    margin-bottom: 0rem;
+    margin-top:0;
+}
+
+
+/*tablet view*/
+@media only screen and (min-width:768px) and (max-width:1024px)
+{
+    header{
+        padding: 1.2rem 2.2rem;    
+    }
+    .head2{
+        display:none;
+    }
+    /*form and input field*/
+    form{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+    form .input1{
+        margin-bottom: 0;
+    }
+    input{
+        margin-bottom: 0rem;
+    }
+    .input2{
+        width: 100%;
+        height: 20%;
+    }
+    .input_field{
+        border:none;
+        padding-top:0.9rem;
+        padding-bottom: 0.9rem;
+    }
+    #cross{
+        display: inline-block;
+        left:10rem;
+        right: auto;
+    }
+    form i{
+        padding:1.0rem 0.6rem;
+    }
+    .input1{
+        width:50vw;
+        border-right:1px solid #0381d4;
+    }
+    /*button*/
+    .find_affordable_healthcare .btn_darkblue{
+        
+        margin: auto;
+        display: block;
+        
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    /*how it works*/
+    
+    .how_it_works .steps .activeli{
+        align-self: center;
+        font-size: 1.5rem;
+    }
+    .how_it_works .l_gray{
+        align-self: center;
+    }
+    .how_it_works li{
+        padding-top: 1.3rem;
+        padding-bottom: 1.3rem;
+        
+    }
+    .how_it_works h6{
+        font-size: 1.3rem;
+    }
+    .how_it_works p{
+        margin-bottom: 1.1rem;
+        font-size: 1.3rem;
+    }
+    .how_it_works figure p{
+        margin-top: 1.0rem;
+    }
+
+    /*world class expert doctor*/
+    
+    
+    .row{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "card1 card2"
+        " card3 card4"; 
+        grid-gap:0.8rem;
+        margin:0rem 0rem; 
+    }
+    .card{
+        margin-bottom: 0rem;
+    }
+    .card img{
+        height: 40vh;
+    }
+    .wrld_cls_doc .card .contain::before{
+        top:2.3rem
+    }
+    #card1{
+        grid-area: card1;
+    }
+    #card2{
+        grid-area: card2;
+    }
+    #card3{
+        grid-area: card3;
+    }
+    #card4{
+        grid-area: card4;
+    }
+    .tab1{
+        width:200%;
+    }
+    .contain p{
+        line-height: 1.6rem !important;
+        margin-bottom: 0.8rem;
+    }
+    
+    /* Featured medical treatment*/
+    .row_modified{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "fig1 fig2"
+        "fig3 fig4"
+        "fig5 fig6"
+        ;
+        
+    }
+    .fig1{
+        grid-area: fig1;
+        margin-bottom: 0rem;
+        
+        
+    }
+    .fig2{
+        grid-area: fig2;
+        margin-bottom: 0rem;
+       
+    }
+    .fig3{
+        grid-area: fig3;
+        margin-bottom: 0rem;
+        
+        
+    }
+    .fig4{
+        grid-area: fig4;
+        margin-bottom: 0rem;
+        
+    }
+    .fig5{
+        grid-area: fig5;
+        margin-bottom: 0rem;
+        
+    }
+    .fig6{
+        grid-area: fig6;
+        margin-bottom: 0rem;
+        
+    }
+    .span2{
+        font-size: 1.2rem;
+    
+    }
+    .row_modified .span{
+        font-size: 1.2rem;
+    }
+    /*exclusive services*/
+    .row3{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "right1 right2 right3"
+        "right4 right5 right6";
+        grid-gap: 1rem;
+        
+    }
+    .row3 h5{
+        font-size: 1rem;
+    }
+    /*How it works*/
+    .how_it_works .steps button h4 span{
+        margin-right: 1.0rem;
+    }
+    .how_it_works .steps{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "step1 figure"
+        "step2 figure"
+        "step3 figure"
+        "step4 figure"
+        "step5 figure"
+        "step6 figure"
+        "step7 figure";
+        grid-column-gap: 0.3rem;
+        
+        
+    }
+    .steps #step1{
+        grid-area: step1;
+    }
+    .steps #step2{
+        grid-area: step2;
+    }
+    .steps #step3{
+        grid-area: step3;
+    }
+    .steps #step4{
+        grid-area: step4;
+    }
+    .steps #step5{
+        grid-area: step5;
+    }
+    .steps #step6{
+        grid-area: step6;
+    }
+    .steps #step7{
+        grid-area: step7;
+    }
+    .steps figure{
+        grid-area:figure;
+        
+    }
+    .steps figure img{
+        height: auto;
+    }
+    .how_it_works .steps button h4{
+        margin-bottom: 0rem;
+        font-size: 1.5rem;
+    }
+    .how_it_works button{
+        padding:0rem 1rem;
+        background-color: white;
+    }
+    /*Execlusive services*/
+
+    .exc_ser p{
+        margin-bottom: 1.1rem;
+    }
+
+    /*Need help*/
+    .nd_help1 p{
+        margin-bottom: 1.1rem;
+    }
+    
+}
+
+/*desktop view*/
+
+@media only screen and (min-width:1024px)
+{
+    @keyframes fade-out {
+        0%,100% {
+          opacity: 0;
+          
+        }
+        
+        50% {
+          opacity: 1;
+          
+        }
+      }
+
+      
+
+     
+      
+      .fade-out {
+        animation-name: fade-out;
+      }
+
+      
+      
+      .animated {
+        animation-duration: 10s;
+        
+        animation-fill-mode: both;
+        
+         
+      }
+    #indexmsg{
+        display: flex;
+        padding: 1rem;
+        top:6rem;
+        right:1rem;
+        position: absolute;
+        background-color: white;
+        align-items: center;
+        border-left: 0.3rem solid green;
+        width:20rem;
+        
+    }
+        
+        #tick{
+            background-color: green;
+            padding: 0.5rem;
+            margin-right: 1rem;
+            border-radius: 100%;
+        }
+      #indexmsg  ul{
+            text-align: left;
+        }
+       #indexmsg ul li{
+                color:black;
+                font-size: 1.2rem;
+                font-weight: 700;
+                line-height: inherit;
+                margin-bottom: 0;
+       }
+       #indexmsg ul li span{
+                    color: green;
+                }
+            
+        
+    
+    /*toaster*/
+    .toaster{
+        
+        position: absolute;
+        height:auto;
+        width:15rem;
+        background-color: white;
+        top:6rem;
+        right:2rem;
+        padding: 1rem 0rem;
+        
+    }
+    .toaster>div{
+        display: flex;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid lightgrey;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+    }
+    .toaster>div>h5{
+        margin: 0;
+        align-self: center;
+        font-size: 1.5rem;
+    }
+    .toaster>div>a>figure{
+        width:4rem;
+        
+        height: auto;
+        margin:0;
+        margin-right: 1rem;
+    }
+    .toaster>ul{
+        padding-top:1rem ;
+    }
+    .toaster>ul>a>li{
+        color: black;
+        font-family: nexa-bold;
+        font-size: 1.2rem;
+        padding-left: 1rem;
+        border-left:3px solid white;
+        margin-bottom: 0;
+        line-height: 4rem;
+        
+    }
+    
+    .toaster>ul>a>li:hover{
+        color: rgb(22, 125, 221);
+        background: #cccccc;
+        border-left:3px solid rgb(22, 125, 221);
+    }
+
+
+    /* Find affordable healthcare*/
+    .find_affordable_healthcare{
+        background-image: url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top right;
+        
+         
+    }
+    .find_affordable_healthcare .btn_darkblue{
+        
+        margin-top:0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    form{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 60vw;
+        margin-bottom: 6rem;
+        
+    }
+    .input1{
+        padding: 0rem;
+        border-right:.5px solid #8fcaf1;
+        
+    }
+    .input2{
+        width: 100%;
+        height: 20%;
+    }
+    .input_field{
+        border:none;
+        
+        margin-bottom: 0rem;
+    }
+    #cross{
+        display: inline-block;
+        left:10rem;
+        right: auto;
+    }
+    form i{
+        padding:1.0rem 0.6rem;
+    }
+    .input1{
+        width:55%
+    }
+    .find_affordable_healthcare  h1 
+    {
+        text-align: left;
+        margin-top: 6rem;
+        margin-left: 0rem;
+        
+    }
+    .find_affordable_healthcare  p{
+        text-align: left;
+        width: 50vw;
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+    }
+    
+
+    /*how it works*/
+    .how_it_works p{
+        text-align: left;
+        margin-top: 0.5rem;
+        margin-bottom: 2.2rem;
+    }
+    .how_it_works .steps{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "step1 figure"
+        "step2 figure"
+        "step3 figure"
+        "step4 figure"
+        "step5 figure"
+        "step6 figure"
+        "step7 figure";
+        grid-column-gap: 5rem;
+        
+        
+    }
+    .how_it_works .steps .activeli{
+        border-color: #0381d4;
+    }
+    .steps #step1{
+        grid-area: step1;
+        
+
+    }
+    .steps #step2{
+        grid-area: step2;
+    }
+    .steps #step3{
+        grid-area: step3;
+    }
+    .steps #step4{
+        grid-area: step4;
+    }
+    .steps #step5{
+        grid-area: step5;
+    }
+    .steps #step6{
+        grid-area: step6;
+    }
+    .steps #step7{
+        grid-area: step7;
+    }
+    .steps figure{
+        grid-area:figure;
+        
+    }
+    .steps figure img{
+        height: auto;
+    }
+    
+    .how_it_works li {
+        padding:2rem 1rem;
+        font-size: 2rem;
+        border: 1px solid #0099ff;
+        cursor: pointer;
+    }
+    .how_it_works .l_gray{
+        border-color:#cccccc ;
+    }
+    .how_it_works figure{
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+    .how_it_works figure p{
+        text-align: center;
+    }
+   
+    
+    
+
+    /* world class expert doctor*/
+    
+    
+    .radiobtn{
+        display: flex;
+        margin-left: 2rem;
+        margin-top: 2rem;
+        
+    }
+    input[
+        type=radio
+    ]
+    {
+        width: auto;
+        margin-left:0.7rem;
+        cursor: pointer;
+    }
+    .row{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "card1 card2 card3 card4"; 
+        grid-column-gap:0.5rem;
+        margin:0rem 0rem ; 
+        
+        
+        
+    }
+    #active1,#active2,#active3,#active4{
+        animation: 1s ease;
+    }
+    
+    .row .card{
+        margin-bottom: 0rem;  
+        cursor: pointer; 
+    }
+    .row .card figure{
+        height: 18rem;
+    }
+    #three{
+        font-size: 10rem;
+        color: red;
+        position: relative;
+        right:6rem;
+        padding-top: 2rem;
+    }
+    #card1{
+        grid-area: card1;
+        
+    }
+    #card2{
+        grid-area: card2;
+        
+    }
+    #card3{
+        grid-area: card3;
+    }
+    #card4{
+        grid-area: card4;
+    }
+    .wrld_cls_doc h2{
+        text-align: left;
+    }
+    .wrld_cls_doc p{
+        text-align: left;
+    }
+    .contain li{
+        margin-left: 0rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        
+    }
+    .wrld_cls_doc .card .contain::before{
+        content: "";
+        background: #0381d4;
+        width:1.2rem;
+        height:0.1rem;
+        display: inline-block;
+        position: relative;
+        
+        right:1.5rem;
+        top:2rem;
+        margin-top: 0.5rem;
+    }
+    /*featured medical treatment*/
+    
+    
+
+    .row_modified{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 20rem 6rem 2rem;
+        grid-template-areas: 
+        "fig1 fig2 fig3"
+        "fig4 fig2 fig3"
+        "fig4 fig2 fig6"
+        "fig4 fig5 fig6"
+        "fig4 fig5 fig6"
+        "fig4 fig5 fig6" ;
+        grid-gap: 0.5rem 0.5rem;
+        
+    }
+    .fig1,.fig2,.fig3,.fig4,.fig5,.fig6{
+        margin-bottom: 0rem;
+        cursor: pointer;
+    }
+    .fig1{
+        grid-area: fig1;
+        height:auto;
+        
+    }
+    .fig2{
+        grid-area: fig2;
+        height:auto;
+       
+    }
+    .fig3{
+        grid-area: fig3;
+        height:auto;
+        
+        
+    }
+    .fig4{
+        grid-area: fig4;
+        height:auto;
+        
+    }
+    .fig5{
+        grid-area: fig5;
+        height: auto;
+        
+    }
+    .fig6{
+        grid-area: fig6;
+        height: auto;
+        
+    }
+    .feat_med_tret h2{
+        text-align: left;
+    }
+    .feat_med_tret p{
+        text-align: left;
+    }
+    
+     
+    /*exclusive services*/
+    .row3{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "right1 right2 right3 right4 right5 right6";
+        margin-bottom: 2rem;
+    }
+    .row3 div{
+        border-radius: 0rem;
+    }
+    
+    .exc_ser h2,.exc_ser p{
+        
+        text-align: left;
+    }
+    .row3 {
+        border-radius: 0rem;
+        margin-bottom: 0rem;
+    }
+
+}   
+
+    
+
+
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+

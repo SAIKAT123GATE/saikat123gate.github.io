@@ -1,0 +1,286 @@
+@import "./theme1.scss";
+//Header section****************************************************************************//
+
+
+
+//Header Section Complete*************************************************
+
+//Inside Section division living healthy matters
+.background_image_with_gradient {
+    height: 50vh;
+    padding: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6)),
+      url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/aboutUs_hero.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top ;
+    .living_and_paragraph_wrapper {
+        position: relative;
+        text-align: center;
+        top:9rem;
+        h2,p{
+          color:$white;
+        }
+      }
+    
+    
+  }
+
+  //Heading and description part
+
+  .description_of_heading{
+      text-align: center;
+      h2{
+          line-height: 2rem;
+          margin-top: 0;
+          font-size: 1.7rem;
+      }
+      p{
+          margin:1rem 0;
+      }
+      figure{
+          padding: 0 3rem;
+          
+      }
+  }
+//Free Checkup
+.checkup_and_video{
+  background-color: black;
+  .videodiv{
+    @media only screen and(min-width:1024px){
+      height:25rem;
+    }
+  }
+  video{
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.free_checkup{
+    text-align: center;
+   
+    h2{
+        color: $white;
+        margin-top: 0;
+        font-size: 1.7rem;
+    }
+    p{
+        color: $white;
+        margin-bottom: 1.5rem;
+        margin-top: 1.3rem;
+    }
+    .btn_blue{
+        font-weight: 700;
+        letter-spacing: 2px;
+        
+    }
+    .list_itemsof_free_checkup{
+        ul{
+            border:1px solid $light_gray;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-top: 1.5rem;
+            .span{
+                font-family: nexa-bold;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+//Join OUr team
+
+/*need help*/
+.join_team{
+    background-color: #94bedd;
+    text-align: center;
+}
+.join_team h2{
+    color:white
+}
+ .join_team2 .btn_blue{
+    margin-bottom: 0rem;
+    font-weight: 700;
+}
+
+//Footer
+
+
+
+  //Tablet Version
+
+  @media only screen and(min-width:768px) and (max-width: 1024px) {
+      //Header Section
+    header {
+      padding: 1.5rem 1.5rem;
+      i {
+        margin-right: 0;
+      }
+    }
+
+    //Inside Section division living healthy matters
+.background_image_with_gradient {
+    .living_and_paragraph_wrapper{
+        top:12rem;
+    }
+}
+
+//Heading and description part
+
+.flex-align{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    img{
+      height: auto;
+    }  
+    figure{
+      padding: 0;
+    }
+    .sign{
+      width: 15rem;
+    }
+    .right_part{
+      min-width: 18rem;
+    }  
+    
+}
+
+//Free Checkup
+
+.free_checkup{
+    .text_and_button{
+    text-align: left;
+    }
+    .list_itemsof_free_checkup{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1rem;
+        ul{
+            margin:0;
+        }
+        
+    }
+    .btn_blue{
+        margin-bottom: 3.5rem;
+        margin-top: 2rem;
+    }
+}
+
+
+
+}
+
+//Desktop View
+@media only screen and(min-width:1024px){
+  
+ 
+    //Inside Section division living healthy matters
+.background_image_with_gradient {
+  .living_and_paragraph_wrapper{
+      top:8rem;
+      h2{
+        text-align: center;
+      }
+  }
+}
+
+//Heading and description part
+
+
+
+.flex-align{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    img{
+      height: auto;
+    }  
+    figure{
+      padding: 0;
+    }
+    .sign{
+      width: 15rem;
+    }
+    .right_part{
+      min-width: 18rem;
+      width: 18rem;
+      margin: 0 auto;
+    }
+    .left_section_of_grid{
+      max-width: 37rem;
+
+    }  
+    
+}
+
+//Free checkup
+.checkup_and_video{
+  padding:0;
+  position: relative;
+  video{
+    display: block;
+  }
+}
+.free_checkup{
+  position:absolute;
+  top:3rem;
+  padding-left:4rem;
+  padding-right: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .text_and_button{
+    text-align: left;
+    h2{
+      margin-left: 0;
+    }
+    }
+    .list_itemsof_free_checkup{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1rem;
+        
+        ul{
+            margin:0;
+        }
+        
+    }
+    .btn_blue{
+        margin-bottom: 2rem;
+    }
+
+}
+
+//Join our team
+ /*need help*/
+ .join_team{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.join_team p{
+  text-align: left;
+  margin:0;
+  margin-top: 0.5rem;
+}
+.join_team2{
+  text-align: right;
+  
+  margin-top: auto;
+  margin-bottom: auto;
+  .btn_blue{
+    margin:0;
+  }
+}
+.join_team1{
+  
+  h2{
+    margin: 0;
+  }
+}
+
+
+
+
+}

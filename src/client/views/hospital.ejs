@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hospital</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="../css/hospital.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/app.js"></script>
+    <link rel = "icon" href = 
+"https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
+        type = "image/x-icon">
+</head>
+
+<body>
+    <header>
+        <!--Mobile and tablet-->
+        <nav class="head1">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+            </figure>
+            <i class="fa fa-bars"></i>
+        </nav>
+
+        <!--Desktop-->
+        <div class="head2-container">
+            <nav class="head2">
+
+
+                <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                        alt="logo" /></a>
+
+
+                <ul>
+                    <a href="/doctor">
+                        <li>Doctor</li>
+                    </a>
+                    <a href="/hospital">
+                        <li>Hospital</li>
+                    </a>
+                    <a href="/treatment">
+                        <li>Treatment</li>
+                    </a>
+
+                    <a href="/aboutUs">
+                        <li>About</li>
+                    </a>
+                </ul>
+                <div>
+                    <a href="/tvastraplus"> <button class="btn_blue">TVASTRA PLUS</button> </a>
+                    <a href="/queryform"> <button class="btn_darkblue">Get a Quote</button></a>
+                    <div id="user">
+                        <button class="btn_white" onclick="tgl('toaster')">
+                            <%=username%>
+                        </button>
+                        <i class="fa fa-angle-down"></i>
+
+                    </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <div class="toaster" id="toaster">
+        <div>
+            
+            <a href="/profile">
+            <figure id="toaster-img">
+                
+                <img id="headerpic"
+                    src="<%=image%>">
+                
+                </figure>
+                </a>
+                
+            <h5>
+                <%=username%>
+            </h5>
+        </div>
+        <ul>
+            <a href="/myappointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/medicalreport">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="#">
+                <li>My payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+
+    <!--For desktop  picture with linear gradient-->
+    <section class="hide">
+        <h2>Hospitals in <span>Delhi</span></h2>
+
+    </section>
+
+    <!--Home and sort by in flex display-->
+    <section>
+        <div class="home_and_sortby_flex">
+            <h3>Home/Hospital List</h3>
+            <select id="cars">
+                <option value="volvo">Sort By</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+            </select>
+        </div>
+
+        <div class="checkbox_and_card_grid">
+            <div class="filter">
+                <div class="bg_gray">
+                    <h4>Filter By</h4>
+                </div>
+
+                <div class="location">
+                    <div class="flex_for_icon">
+                        <h5>Location</h5>
+                        <i class="fa fa-search"></i>
+
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> DLF Cyber City</label><br>
+
+                        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                        <label for="vehicle2"> Dwaraka</label><br>
+
+                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Bike">
+                        <label for="vehicle3"> Lajpat Nagar</label><br>
+
+                        <input type="checkbox" id="vehicle4" name="vehicle4" value="Bike">
+                        <label for="vehicle4"> Palam Vihar</label><br>
+
+                        <input type="checkbox" id="vehicle5" name="vehicle5" value="Bike">
+                        <label for="vehicle5"> Panjabi  Baag</label><br>
+
+                        <input type="checkbox" id="vehicle6" name="vehicle6" value="Bike">
+                        <label for="vehicle6"> Pusa Road</label><br>
+
+                        <h6>+ Show more</h6>
+                    </div>
+
+
+                    <!--Department-->
+                    <div class="flex_for_icon">
+                        <h5>Department</h5>
+                        <i class="fa fa-search"></i>
+
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> Department One</label><br>
+
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> Department Two</label><br>
+
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> Department Three</label><br>
+
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> Department Four</label><br>
+
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> Department Five</label><br>
+
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> Department Six</label><br>
+
+                        <h6>+ Show more</h6>
+                    </div>
+
+                    <!--Treatment-->
+
+                    <div class="flex_for_icon">
+                        <h5>Treatment</h5>
+                        <i class="fa fa-search"></i>
+
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="vehicle7" name="vehicle7" value="Bike">
+                        <label for="vehicle7"> Multi Organ Transplant</label><br>
+
+                        <input type="checkbox" id="vehicle8" name="vehicle8" value="Bike">
+                        <label for="vehicle8"> Orthopedics Surgery</label><br>
+
+                        <input type="checkbox" id="vehicle9" name="vehicle9" value="Bike">
+                        <label for="vehicle9"> Infertility Treatment</label><br>
+
+                        <input type="checkbox" id="vehicle10" name="vehicle10" value="Bike">
+                        <label for="vehicle10"> Dentistry</label><br>
+
+                        <input type="checkbox" id="vehicle11" name="vehicle11" value="Bike">
+                        <label for="vehicle11"> Cardiology</label><br>
+
+                        <input type="checkbox" id="vehicle12" name="vehicle12" value="Bike">
+                        <label for="vehicle12"> Cancer</label><br>
+
+                        <h6>+ Show more</h6>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <!--Card Section-->
+            <div id="hospital_section">
+                <div class="card grid-for-hospitalinfo-and-image">
+                    <div class="hospital_name_info">
+                        <a href="/abouthospital">
+                        <h3>Appolo Hospital</h3>
+                        </a>
+                        <div class="grid_for_tab_and_desktop">
+                            <div class="grid_for_icon">
+                                <i class="fa fa-map-marker"></i>
+                                <ul>
+                                    <li>Delhi Mathura Road,Sarathi Bihar,Delhi 799001</li>
+                                </ul>
+                            </div>
+                            <div class="grid_for_icon">
+                                <i class="fa fa-bed"></i>
+                                <ul>
+                                    <li>100 beds</li>
+                                </ul>
+                            </div>
+                            <div class="grid_for_icon">
+                                <i class="fa fa-stethoscope"></i>
+                                <ul>
+                                    <li>Famous Treatments</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <ul class="multi-organ-transplant-section">
+                            <li>Multi Organ Transplanta</li>
+                            <li>Orthopedic Surgery</li>
+                            <li>Infertility Treatment</li>
+                            <li>Dentistry</li>
+                            <li>Cardiology</li>
+                            <li>Cancer</li>
+                            <li>40+ more</li>
+                        </ul>
+
+
+
+
+                        <button type="submit" class="btn_darkblue">Call Now</button>
+                    </div>
+                    <figure>
+                        <img src="../asset/appolo.jpeg" />
+                    </figure>
+                </div>
+
+                <!--Second Card-->
+
+                <div class="card grid-for-hospitalinfo-and-image">
+                    <div class="hospital_name_info">
+                        <h3>Fortis Hospital</h3>
+                        <div class="grid_for_tab_and_desktop">
+                            <div class="grid_for_icon">
+                                <i class="fa fa-map-marker"></i>
+                                <ul>
+                                    <li>Delhi Mathura Road,Sarathi Bihar,Delhi 799001</li>
+                                </ul>
+                            </div>
+                            <div class="grid_for_icon">
+                                <i class="fa fa-bed"></i>
+                                <ul>
+                                    <li>100 beds</li>
+                                </ul>
+                            </div>
+                            <div class="grid_for_icon">
+                                <i class="fa fa-stethoscope"></i>
+                                <ul>
+                                    <li>Famous Treatments</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <ul class="multi-organ-transplant-section">
+                            <li>Multi Organ Transplanta</li>
+                            <li>Orthopedic Surgery</li>
+                            <li>Infertility Treatment</li>
+                            <li>Dentistry</li>
+                            <li>Cardiology</li>
+                            <li>Cancer</li>
+                            <li>40+ more</li>
+                        </ul>
+
+
+
+
+                        <button type="submit" class="btn_darkblue">Call Now</button>
+                    </div>
+                    <figure>
+                        <img src="../asset/appolo.jpeg" />
+                    </figure>
+                </div>
+                <!--3rd Hospital -->
+
+                <div class="card grid-for-hospitalinfo-and-image">
+                    <div class="hospital_name_info">
+                        <h3>Rockland Hospital</h3>
+                        <div class="grid_for_tab_and_desktop">
+                            <div class="grid_for_icon">
+                                <i class="fa fa-map-marker"></i>
+                                <ul>
+                                    <li>Delhi Mathura Road,Sarathi Bihar,Delhi 799001</li>
+                                </ul>
+                            </div>
+                            <div class="grid_for_icon">
+                                <i class="fa fa-bed"></i>
+                                <ul>
+                                    <li>100 beds</li>
+                                </ul>
+                            </div>
+                            <div class="grid_for_icon">
+                                <i class="fa fa-stethoscope"></i>
+                                <ul>
+                                    <li>Famous Treatments</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <ul class="multi-organ-transplant-section">
+                            <li>Multi Organ Transplanta</li>
+                            <li>Orthopedic Surgery</li>
+                            <li>Infertility Treatment</li>
+                            <li>Dentistry</li>
+                            <li>Cardiology</li>
+                            <li>Cancer</li>
+                            <li>40+ more</li>
+                        </ul>
+
+
+
+
+                        <button type="submit" class="btn_darkblue">Call Now</button>
+                    </div>
+                    <figure>
+                        <img src="https://images.pexels.com/photos/1692693/pexels-photo-1692693.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                    </figure>
+                </div>
+
+                <!--4th Hospital-->
+
+                <div class="card grid-for-hospitalinfo-and-image">
+                    <div class="hospital_name_info">
+                        <h3>Super Speciality Hospital</h3>
+                        <div class="grid_for_tab_and_desktop">
+                            <div class="grid_for_icon">
+                                <i class="fa fa-map-marker"></i>
+                                <ul>
+                                    <li>Delhi Mathura Road,Sarathi Bihar,Delhi 799001</li>
+                                </ul>
+                            </div>
+                            <div class="grid_for_icon">
+                                <i class="fa fa-bed"></i>
+                                <ul>
+                                    <li>100 beds</li>
+                                </ul>
+                            </div>
+                            <div class="grid_for_icon">
+                                <i class="fa fa-stethoscope"></i>
+                                <ul>
+                                    <li>Famous Treatments</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <ul class="multi-organ-transplant-section">
+                            <li>Multi Organ Transplanta</li>
+                            <li>Orthopedic Surgery</li>
+                            <li>Infertility Treatment</li>
+                            <li>Dentistry</li>
+                            <li>Cardiology</li>
+                            <li>Cancer</li>
+                            <li>40+ more</li>
+                        </ul>
+
+
+
+
+                        <button type="submit" class="btn_darkblue">Call Now</button>
+                    </div>
+                    <figure>
+                        <img src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Need Help-->
+    <section class="nd_help">
+        <div class="nd_help1">
+            <h2>Need Help?</h2>
+            <p>Just let us know we will happy to assist you</p>
+        </div>
+        <div class="btn2 nd_help2">
+            <a href="/getquote">
+            <button type="submit" class="btn_blue">Submit your enquiry</button>
+            </a>
+        </div>
+    </section>
+
+    <!--Footer**********************************************************************-->
+    <footer>
+        <div class="mobileshow">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
+            </figure>
+            <ul class="about">
+                <h2>TVASTRA</h2>
+                <a href="/doctor"><li>Doctors</li></a>
+                <a href="/doctor"> <li>Hospitals</li></a>
+                <li>Treatment</li>
+                <li>Other services</li>
+                <li>FAQs</li>
+                <h2>FOLLOW US</h2>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>Google+</li>
+                <li>Instagram</li>
+            </ul>
+
+
+            <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
+        </div>
+
+        <div class="tabshow">
+
+
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
+            </figure>
+            <ul class="about">
+                <li>Doctor</li>
+                <li>Hospital</li>
+                <li>Treatment</li>
+                <li>Other services</li>
+                <li>FAQs</li>
+            </ul>
+            <div class="social_icon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-pinterest-p"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-google-plus"></i>
+                <i class="fa fa-instagram"></i>
+            </div>
+            <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

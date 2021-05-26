@@ -1,0 +1,274 @@
+<!--Schedule Form-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Schedule</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet@0.3.0/css/clocklet.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link href="../css/docdetails.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.css" />
+    <link href="../css/profile.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clocklet@0.3.0"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@3.1.0/dist/tagify.min.js"></script>
+    <link rel = "icon" href = 
+"https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
+        type = "image/x-icon">
+
+
+</head>
+
+<body>
+    <%-include('header.ejs')%>
+
+        <div class="toaster" id="toaster">
+            <div>
+
+                <a href="/profile">
+                    <figure id="toaster-img">
+
+                        <img id="headerpic" src="<%=image%>">
+
+                    </figure>
+                </a>
+
+                <h5>
+                    <%=username%>
+                </h5>
+            </div>
+            <ul>
+                <a href="/myappointments">
+                    <li>My Appointments</li>
+                </a>
+                <a href="/medicalreport">
+                    <li>Medical Records</li>
+                </a>
+                <a href="/settings">
+                    <li>Settings</li>
+                </a>
+                <a href="#">
+                    <li>My payments</li>
+                </a>
+                <a href="/logout">
+                    <li>Logout</li>
+                </a>
+            </ul>
+        </div>
+
+        <section class="main-section">
+            <div class="mobile-tab">
+                <div class="grid-for-dashboard">
+                    <i class='fas fa-angle-double-right' onclick="tgl('dashboardmob')"></i>
+                    <h3>Click To View Dashboard</h3>
+                </div>
+                <div class="dashboardmob" id="dashboardmob">
+                    <i class="fa fa-close" onclick="tgl('dashboardmob')" ></i>
+                    <ul>
+                        <a href="/profile">
+                            <li> Profile</li>
+                        </a>
+    
+                        <a href="/myappointments">
+                            <li> Appointments</li>
+                        </a>
+                        <a href="/medicalreport">
+                            <li>Medical Reports</li>
+                        </a>
+                        <% if(isDoctor){%>
+                            <a href="/addschedule">
+                                <li>Add Schedule</li></a>
+                            <%}%>
+                        <a href="/settings">
+                            <li>Settings</li>
+                        </a>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="desktop">
+                <div class="grid-for-dashboard">
+                    <i class='fas fa-angle-double-right'></i>
+                    <h3>Dashboard</h3>
+                </div>
+                <div class="dashboard">
+                    <a href="/profile">
+                        <div class="  inactive-btn" id="profile-btn">
+                            <i class='fa fa-address-book'></i>
+                            <h3>Profile</h3>
+                        </div>
+                    </a>
+
+                    <a href="/appointment">
+                        <div class=" inactive-btn" id="appointments-btn">
+                            <i class='fa fa-address-book'></i>
+                            <h3>Appointments</h3>
+                        </div>
+                    </a>
+
+                    <a href="/medicalreport">
+                        <div class=" inactive-btn" id="reports-btn">
+                            <i class='fa fa-address-book'></i>
+                            <h3>Medical Reports</h3>
+                        </div>
+                    </a>
+
+                    <a href="/addschedule">
+                        <div class=" active-btn" id="schedule-btn">
+
+                            <i class='fa fa-address-book'></i>
+                            <h3>Add Schedule</h3>
+
+                        </div>
+                    </a>
+
+                    <a href="/settings">
+                        <div class="inactive-btn" id="settings-btn">
+
+                            <i class='fa fa-address-book'></i>
+                            <h3>Settings</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="schedule" id="schedule">
+                <div class="text-button">
+                    <h2>Schedules</h2>
+                    <span class="btn_blue" onclick="openwrapper('popup')">Add Schedule</span>
+                </div>
+
+                <% for(var j=0;j<countshed;j++){%>
+                    <div class="card">
+                        <div class="row-for-desktop">
+                            <div class="heading">
+                                <h3>
+                                    <%= exists[j].days %>
+                                </h3>
+                            </div>
+                            <div class="hospital-time">
+                                <h3>
+                                    <%= exists[j].hospital %>
+                                </h3>
+                                <span>
+                                    <%= exists[j].fromtime %>- <%= exists[j].totime %>
+                                </span>
+                            </div>
+
+                            <div class="buttons">
+                                <button class="btn_blue" onclick="togg('slot<%= exists[j]._id %>')">View Slots</button>
+                                <form action="/removeslots/<%= exists[j]._id %>" method="POST">
+                                    <button type="submit" class="btn_darkblue">Remove Slots</button>
+                                </form>
+                                <form method="POST" action="/disableallschedule/<%= exists[j]._id %>" onchange="this.submit()">
+                                <input type="checkbox" name="checkbox" id="checkbox">
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <div class="timings-and-slots hide" id="slot<%= exists[j]._id %>">
+                            <% for(var k=0;k< exists[j].slots.length-1;k++){%>
+                                <div class="timings right-margin">
+
+                                    <span>
+                                        <%=exists[j].slots[k].time %> - <%=exists[j].slots[k+1].time %>
+                                    </span>
+                                    <form method="POST" action="/disableslot/<%= exists[j]._id %>/<%= exists[j].slots[k]._id %>" onchange="this.submit()">
+                                        <% if(exists[j].slots[k].isDisabled){%>
+                                            <input type="checkbox" checked >
+                                            <%}
+                                         else {%>
+                                            <input type="checkbox" >
+                                        <%}%>
+                                    </form>
+                                </div>
+
+                                <%}%>
+                        </div>
+                    </div>
+                    <%}%>
+            </div>
+
+            </div>
+
+            <!--Pop up wrapper-->
+            <div class="popup" id="popup">
+                <div class="create-schedule" id="create-schedule">
+                    <form action="/addschedule" method="POST">
+                        <div class="heading">
+                            <h3>Create Schedule</h3>
+                        </div>
+                        <div class="schedule-details">
+                            <label>Select Available Days</label>
+                            <select class="scroll" name="days" multiple>
+
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                                <option value="sunday">Sunday</option>
+
+                            </select>
+
+                            <label>Select Hospital</label>
+                            <input type="text" placeholder="Select Hospital" name="hospital" required>
+
+                            <label>From Time</label>
+                            <input data-clocklet=" alignment:center ; append-to:parent;" class="time" name="fromtime"
+                                required>
+
+                            <label>To Time</label>
+                            <input data-clocklet=" alignment:center ;placement:top; append-to:parent;" class="time"
+                                name="totime" required>
+
+                            <label>Intervals</label>
+                            <input type="number" name="interval" required>
+
+                        </div>
+
+                        <div class="action-buttons">
+                            <div class="button-container">
+                                <button class="btn_blue" type="submit">Done</button>
+                            </div>
+                            <div class="button-container">
+                                <button class="btn_darkblue"
+                                    onclick="closepop('popup'),window.location.href('/addschedule')">Cancel</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+            </div>
+            </div>
+
+        </section>
+
+        <!--Need Help-->
+        <section class="nd_help">
+            <div class="nd_help1">
+                <h2>Need Help?</h2>
+                <p>Just let us know we will happy to assist you</p>
+            </div>
+            <div class="btn2 nd_help2">
+                <button type="submit" class="btn_blue">Submit your enquiry</button>
+            </div>
+        </section>
+
+        <%-include('footer.ejs')%>
+</body>
+
+</html>

@@ -1,0 +1,757 @@
+$white:#ffffff;
+$dark_gray:#525659;
+$light_gray:#cccccc;
+$light_blue:#8fcaf1;
+$dark_blue:#021433;
+$blue:rgb(22, 125, 221);
+$gray:#636668;
+$background:#94bedd;
+$background-for-faq:#e5f1f7;
+$black:#000000;
+
+
+.toaster{
+  display: none;
+}
+#indexmsg{
+  display: none;
+}
+//toaster mobile
+.toastermob{
+  display: none;
+  position: absolute;
+  left:0;
+  top:4rem;
+  height: 100vh;
+  background: white;
+  width: 70%;
+  z-index: 2;
+}
+.toastermob>ul>a>li{
+  color: black;
+  font-family: nexa-bold;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  padding-left: 2rem;
+  border-bottom: 1px solid black;
+}
+
+
+
+.rotate {
+  -moz-transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+}
+.rotate.down {
+  -moz-transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+
+
+
+@font-face
+{
+    font-family: nexa-bold;
+    src:url(../fonts/Nexa-Bold.otf)format("opentype");
+}
+@font-face
+{
+    font-family: nexa-light;
+    src:url(../fonts/Nexa-Light.otf)format("opentype");
+}
+
+/*global tags*/
+*{
+    box-sizing: border-box;
+}
+//Header part and navigation for  all
+/*header*/
+header {
+    padding: 0.8rem 0.8rem;
+  }
+  .head1 {
+    display: flex;
+    flex-direction: row;
+  }
+  .head2 {
+    display: none;
+  }
+  .head1 {
+    figure {
+      width: 9rem;
+      margin: 0.2rem 0rem;
+    }
+  }
+  .head1 {
+    i {
+      justify-self: end;
+      align-self: center;
+    }
+  }
+
+  .head1{
+    .image-for-mobile{
+      display: flex;
+      figure{
+        width:4rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  
+  //Header Section Complete*************************************************
+  
+//Need help section
+
+.nd_help {
+    background-color: #94bedd;
+    text-align: center;
+    h2 {
+      color: white;
+      
+    }
+  }
+  
+  .nd_help2 .btn_blue {
+    margin-bottom: 0rem;
+    margin-top:0;
+  }
+
+  //Need help section complete
+
+
+//Footer-section for mobile
+//Footer
+
+/*footer*/
+footer{
+  padding:1.5rem 0.8rem;
+  background-color: #021433;
+  text-align: center;
+  
+}
+footer .about li{
+  margin-bottom: 0rem;
+}
+footer figure{
+  padding:0rem 5.0rem 2rem 5.0rem;
+  
+}
+footer h4{
+  color:#ffffff;
+  font-family: nexa-light;
+  margin:0rem 0rem;
+  padding-bottom: 1.3rem;
+  letter-spacing: 0.2rem;   
+}
+footer {
+  .social_icon{
+    margin-top:1.5rem;
+  }
+}
+footer .social_icon i{
+  color: #ffffff;
+  padding:0rem 1.2rem 0rem 1.2rem;
+  size:0.5rem;
+}
+footer p{
+  color:#ffffff;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+footer p span{
+  font-size: 1.2rem;
+}
+//Footer Section Complete
+
+
+//Select tag
+select{
+  align-self: center;
+  -ms-grid-column-align: right;
+  justify-self: right;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 0.7rem;
+  background: url(https://cdn1.iconfinder.com/data/icons/flat-and-simple-part-1/128/arrow_down-512.png) no-repeat, #d3d3d3;
+  background-size: 20%;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  font-family: nexa-light;
+  font-size: 0.9rem;
+  color: $black;
+  border: 0;
+}
+
+
+section
+{
+    padding: 1.5rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+
+}
+button{
+    font-family: nexa-light;
+    padding: 0.8rem 1.3rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.btn_darkblue{
+    background-color: $dark_blue;
+    color: $white;
+    border-color: $dark_blue;
+}
+.btn_blue{
+    background-color: $blue;
+    color: $white;
+    border-color: $blue;
+    border-style: none;
+    padding:0.8rem 1.3rem ;
+    font-size: 1.3rem;
+    margin:.5rem 0rem;
+    cursor: pointer;
+}
+.btn_white{
+    background-color: $white;
+    color:$dark_blue;
+    border-color: $dark_blue;
+    
+    
+}
+img
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    font-family: nexa-bold;
+    color: $dark_blue;
+}
+p{
+    font-family: nexa-light;
+    color: $dark_blue;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+    line-break: auto;
+}
+h1,h2{
+    font-size: 2.0rem;
+    margin-bottom: 0.625rem;
+    
+
+}
+h3{
+    margin-bottom: 0.625rem;
+    font-size: 1.4rem;
+}
+h4{
+    font-size: 1.4rem;
+    margin-bottom: 0.625rem;
+    
+}
+h5{
+   margin-bottom: 0.3125rem;
+   font-size: 1.1rem; 
+}
+h6{
+    font-size: 1.35rem;
+    margin: 0.3125rem 0rem;
+}
+textarea{
+    font-family: nexa-light;
+    padding: 0.8rem 0.75rem;
+    font-size: 1rem;
+    color: $gray;
+    margin-bottom: 0.625rem;
+
+}
+input::placeholder{
+    
+    font-size: 1rem;
+    font-family: nexa-light;
+    color: black;
+    
+    
+}
+input{
+    font-family: nexa-light;
+    color:$black;
+    padding: 1rem 1rem; 
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    
+}
+option{
+    font-family: nexa-light;
+    color: $gray;
+    font-size: 1rem;
+}
+li {
+    font-size: 1.0rem;
+    font-family: nexa-light;
+    color: $white;
+    margin-bottom: .5rem;
+    line-height: 2rem;
+    
+}
+
+input:focus,select:focus{
+    outline:none;
+}
+
+figcaption{
+    font-family: nexa-bold;
+    color: $dark_blue;
+    padding: 1rem 0rem;
+    margin:0;
+    
+    
+}
+figure{
+    height: auto;
+    cursor: pointer;
+}
+nav
+    {
+    background-color: $white;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+    }
+a{
+    text-decoration: none;
+}
+
+
+    
+@media only screen and (min-width:768px) and (max-width:1024px)
+{
+  //Header part
+  header {
+    padding: 1.2rem 2.2rem;
+    i {
+      margin-right: 0;
+    }
+  }
+
+  //Header part complete
+    section{
+        padding: 1.8rem 2.2rem;
+    }
+    
+    h1,h2
+    {
+        font-size: 2.4rem;
+        line-height: 2.6rem;
+    }
+    h3{
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+    h4{
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+    }
+    h5{
+        font-size: 1.6rem;
+        line-height: 2.0rem;
+    }
+    h6{
+        font-size: 1.9rem;
+        line-height: 1.8rem;
+        margin:0.3125rem 0rem;
+    }
+   
+    input{
+        font-family: nexa-light;
+        
+        padding: 1rem 1rem; 
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    p{
+        font-family: nexa-light;
+        color: $dark_blue;
+        font-size: 1.5rem;
+        margin-bottom: 0.625rem;
+        line-height: 1.4;
+    }
+    li{
+        font-size: 1.0rem;
+    
+
+}
+
+//Footer part
+
+ /*footer*/ //Footer Section    ++++++++++++++++++++++++++++++++++++++++++
+ footer{
+  padding:1.8rem 2.2rem;
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 
+  "about figure"
+  "rights social_icon";
+  background-color: #ffffff;
+  figure{
+    grid-area: figure;
+    width:22vw;
+    padding:0rem 0rem;
+    display: block;
+    margin:auto 0rem 1.2rem auto;
+    
+    
+  }
+  .about{
+    grid-area: about;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    li{
+      color:white;
+      font-size: 1.1rem;
+      color:rgb(0, 0, 7);
+    }
+  }
+  .rights{
+    grid-area: rights;
+    color: black;
+  }
+  .social_icon{
+    grid-area:social_icon;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 0;
+    i{
+      padding:0rem 0rem 0rem 0rem;
+      font-size: 1.2rem;
+      margin-left: 1.3rem;
+      color: black;
+    }
+  }
+  p{
+    display:block;
+    margin:auto auto auto 0;
+    font-size: 1.2rem;
+  }
+}
+//Footer part complete
+   
+    
+    
+
+
+}
+@media only screen and (min-width:1024px)
+{
+  .toastermob{
+    display: none;
+  }
+  /*toaster*/
+  .toaster{
+        
+    position: absolute;
+    height:auto;
+    width:15rem;
+    background-color: white;
+    top:6rem;
+    right:2rem;
+    padding: 1rem 0rem;
+    z-index: 2;
+    
+}
+.toaster{div{
+    display: flex;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid lightgrey;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+}
+}
+.toaster>div>h5{
+    margin: 0;
+    align-self: center;
+    font-size: 1.5rem;
+}
+.toaster{
+  div{figure{
+    width:4rem;
+    
+    height: auto;
+    margin:0;
+    margin-right: 1rem;
+  }}
+}
+.toaster>ul{
+    padding-top:1rem ;
+}
+.toaster>ul>a>li{
+    color: black;
+    font-family: nexa-bold;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    border-left:3px solid white;
+    margin-bottom: 0;
+    line-height: 4rem;
+    
+}
+
+.toaster>ul>a>li:hover{
+    color: rgb(22, 125, 221);
+    background: #cccccc;
+    border-left:3px solid rgb(22, 125, 221);
+}
+
+  #user{
+    justify-content: center;
+    i{
+      align-self: center;
+    }
+  }
+    /*header*/
+    header {
+        padding: 0.5rem 4rem;
+      }
+      .head1 {
+        display: none;
+      }
+      
+      .head2 {
+        display: grid;
+        grid-template-columns: 1fr 2fr auto;
+        align-self: center;
+        justify-content: center;
+        #zero-width{
+          width:0;
+        }
+        img {
+          width: 10rem;
+          height: 100%;
+          margin-top: 0rem;
+          padding: 1rem 0rem;
+        }
+        ul {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          li {
+            color: $dark_blue;
+            margin-left: 2rem;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 0rem;
+          }
+        }
+        div {
+          display: flex;
+          justify-content: flex-end;
+          
+          button {
+            font-size: 1rem;
+          }
+        }
+        .btn_darkblue {
+          margin-top: 0rem;
+          border-radius: 0.5rem;
+          padding: 0.8rem 1.3rem;
+          margin: 0rem 0rem !important;
+        }
+        .btn_blue {
+          
+          border:1px solid $blue;
+          color: white;
+          margin-right: 0.5rem;
+          margin:0;
+          margin-right: 0.5rem;
+          padding: 0.8rem 1.3rem;
+          &:hover{
+            background-color: $white;
+            color: $blue;
+            border:1px solid $blue;
+          }
+        }
+        .btn_white{
+          padding: 0;
+          border: none;
+          margin-left: 0.8rem;
+          margin-right: 0.5rem;
+          font-size: 1.5rem;
+          &:hover{
+            color: $blue;
+          }
+        }
+      }
+      //Header section complete
+
+
+      //Need help
+
+  /*need help*/
+  .nd_help {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    h2 {
+      margin:0;
+      margin-bottom:0.3rem;
+      
+    }
+  }
+  .nd_help  {
+      p{
+    text-align: left;
+    margin: 0;
+      }
+  }
+  .nd_help2 {
+    text-align: right;
+  }
+  .nd_help1 {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  //Need help section complete
+    section{
+        padding: 1.8rem 4.0rem;
+        
+    }
+    h1,h2
+    {
+        font-size: 2.5rem;
+        line-height: 2.8rem;
+        
+        text-align: left;
+    }
+    h3{
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+    }
+    h4{
+        font-size: 1.2rem;
+        
+    }
+    h5{
+        font-size: 1.1rem;
+        line-height: 2.2rem;
+    }
+    h6{
+        font-size: 1.4rem;
+        line-height: 2.0rem;
+        margin-top: 1.5rem;
+    }
+    
+    
+    
+    p{
+        font-family: nexa-light;
+        color: $dark_blue;
+        font-size: 1.0rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        
+    }
+    
+    input{
+        font-family: nexa-light;
+        
+        padding: 1rem 1.0rem; 
+        width: 100%;
+        
+    }
+    i{
+        font-size: 1.3rem ;
+    }
+    .btn_blue{
+      padding: 0.8rem 1.3rem;
+    }
+
+    //Footer part
+
+        //Footer Section
+
+ /*footer*/
+ footer{
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+  "about figure"
+  "rights social_icon";
+  background-color: white;
+  padding:2rem 4rem;
+  border-bottom: 3px solid #0099ff;
+
+}
+footer figure{
+  grid-area: figure;
+  width:11rem;
+  padding:1rem 0rem;
+  display: block;
+  margin-left: auto;
+  margin-right: 0rem;
+  
+}
+footer figure image{
+  width:100%;
+}
+footer .about{
+  grid-area: about;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+footer .about li{
+  color:$dark_blue;
+  margin-right: 0.9rem;
+  font-size: 1.2rem;
+}
+footer .rights{
+  grid-area: rights;
+  color: $dark_blue;
+  display:block;
+  margin:auto auto auto 0;
+  font-size: 1.2rem;
+}
+footer .social_icon{
+  grid-area:social_icon;
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 0rem;
+}
+footer .social_icon i{
+  padding:0rem 0rem 0rem 0.8rem;
+  font-size: 1.3rem;
+  color: $dark_blue;
+  margin-left: 0.5rem;
+  
+}
+//footer part complete
+
+
+
+
+
+}
+

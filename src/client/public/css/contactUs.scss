@@ -1,0 +1,174 @@
+@import "./theme1.scss";
+//Header section****************************************************************************//
+
+
+
+//Inside Section division Contact Us
+section {
+  padding: 0;
+}
+.contactus {
+  position: relative;
+  text-align: center;
+  figure{
+      height: 15rem;
+  }
+  .contactus_and_li_wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h2{
+      color:$white;
+    }
+  }
+}
+
+//Map section
+.map{
+  padding: 1.5rem 1rem;
+  iframe{
+    width:100%;
+    height:20rem;
+  }
+}
+//Inside Address Book
+.addressbook{
+  padding: 0rem 2rem;
+.grid_for_icon {
+  display: grid;
+  grid-template-columns: 1.2rem 1fr;
+  grid-column-gap: 1.5rem;
+  align-items: center;
+
+  margin-bottom: 1rem;
+
+  i {
+    color: $blue;
+    font-size: 2rem;
+  }
+
+  li {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    text-align: left;
+    line-height: 1.5rem;
+    color:$dark_blue;
+    line-height: 2rem;
+    
+  }
+  .span{
+    font-family: nexa-bold;
+  }
+}
+}
+
+//QueryForm
+.queryform{
+  background-color: $light_blue;
+  padding: 2rem 1rem;
+  text-align: right;
+  .btn_blue{
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+
+@media only screen and(min-width:768px) and (max-width: 1024px){
+  //Map section
+.map{
+  padding: 1.5rem 2rem;
+}
+.addressbook{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 1.5rem; 
+  .grid_for_icon{
+    .span{
+      font-size: 1.2rem;
+    }
+    li{
+      font-size: 1rem;
+    }
+  }
+}
+
+.input_in_grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
+}
+
+.queryform{
+  .btn_blue{
+    margin-bottom: 0;
+  }
+}
+
+
+  
+
+}
+
+//Desktop Version++++++++++++++++++++++++++
+
+@media only screen and(min-width:1024px){
+  
+ 
+ //Contact Us and image section
+
+ .contactus{
+   text-align: left;
+   
+   .contactus_and_li_wrapper{
+     top:50%;
+     left:13%;
+     h2{
+       margin-left: 0;
+     }
+     
+   }
+ }
+
+  //Map section
+.map{
+  padding: 1.5rem 4rem;
+}
+
+
+
+
+//Grid for addressbook and form
+.grid_for_addressbook_and_form{
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  padding:1rem 4rem 3rem 4rem;
+  border-bottom: 1px solid $light_gray;
+  .addressbook{
+    padding: 0;
+  }
+  .queryform{
+    
+    .input_in_grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 1rem;
+    }
+    .btn_blue{
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
+
+
+
+}
+
+

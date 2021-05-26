@@ -1,0 +1,73 @@
+@import "./theme1.scss";
+.cards{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-column-gap: 1rem;
+    padding: 1rem;
+    width:100%;
+    margin-right: 1.5rem;
+    h6{
+        margin: 0;
+        font-size: 1.4rem;
+        line-height:1rem;
+        margin-top: 10px;
+    }
+    i{
+        color: $blue;
+        font-size: 2rem;
+    }
+}
+.allcards{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.graph{
+    margin:0;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  
+
+  .headingsadmin{
+      h3{
+          font-size: 1.5rem;
+          margin: 0;
+      }
+  }
+  .margin-bottom{
+      margin-bottom: 1.5rem;
+  }
+  a{
+    color: $blue;
+  }
+
+  #pagination{
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      a{
+          font-size: 1.2rem;
+          border:1px solid $blue;
+          padding:1px 8px;
+      }
+      
+  }

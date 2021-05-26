@@ -1,0 +1,266 @@
+:root{
+    --white:#ffffff;
+    --dark_gray:#525659;
+    --light_gray:#cccccc;
+    --light_blue:#8fcaf1;
+    --dark_blue:#021433;
+    --blue:rgb(22, 125, 221);
+    --gray:#636668;
+
+}
+@font-face
+{
+    font-family: nexa-bold;
+    src:url(../fonts/Nexa-Bold.otf)format("opentype");
+}
+@font-face
+{
+    font-family: nexa-light;
+    src:url(../fonts/Nexa-Light.otf)format("opentype");
+}
+
+/*global tags*/
+*{
+    box-sizing: border-box;
+}
+
+section
+{
+    padding: 1.5rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+
+}
+button{
+    font-family: nexa-light;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+}
+.btn_darkblue{
+    background-color: var(--dark_blue);
+    color: var(--white);
+    border-color: var(--dark_blue);
+}
+.btn_blue{
+    background-color: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+    border-style: none;
+    padding:1rem;
+    font-size: 1.3rem;
+    margin:.5rem 0rem;
+}
+.btn_white{
+    background-color: var(--white);
+    color:var(--blue);
+    border-color: var(--blue);
+    
+}
+img
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    font-family: nexa-bold;
+    color: var(--dark_blue);
+}
+p{
+    font-family: nexa-light;
+    color: var(--dark_blue);
+    font-size: 1.1rem;
+    margin:1.1rem 0rem;
+    line-height: 1.4;
+    line-break: auto;
+}
+h1{
+    font-size: 2.0rem;
+
+}
+h2{
+    font-size: 2.0rem;
+}
+h3{
+    margin-bottom: 0.625rem;
+    font-size: 1.4rem;
+}
+h4{
+    font-size: 1.4rem;
+    margin-bottom: 0.625rem;
+    
+}
+h5{
+   margin-bottom: 0rem;
+   font-size: 1.1rem;
+   color: var(--gray); 
+}
+h6{
+    font-size: 1.35rem;
+    margin: 0.3125rem 0rem;
+}
+textarea{
+    font-family: nexa-light;
+    padding: 0.8rem 0.75rem;
+    font-size: 1rem;
+    color: var(--gray);
+    margin-bottom: 0.625rem;
+
+}
+input::placeholder{
+    font-size: 0.9rem;
+    font-family: nexa-light;
+    color: var(--gray)
+}
+input,select{
+    font-family: nexa-light;
+    color:var(--gray);
+    padding: 0.8rem 0.6rem; 
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+option{
+    font-family: nexa-light;
+    color: var(--gray);
+    font-size: 1rem;
+}
+li {
+    font-size: 1.0rem;
+    font-family: nexa-light;
+    color: var(--white);
+    margin-bottom: .5rem;
+}
+
+input:focus,select:focus{
+    outline:none;
+}
+figure{
+    
+    height:auto;
+}
+figcaption{
+    font-family: nexa-bold;
+    color: var(--dark_blue);
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    
+}
+
+nav
+    {
+    background-color: var(--white);
+    justify-content: space-between;
+    align-items: center;
+    
+    
+    }
+    
+@media only screen and (min-width:768px) and (max-width:1024px)
+{
+    section{
+        padding: 2.2rem 2.0rem;
+    }
+    
+    h1,h2
+    {
+        font-size: 2.4rem;
+        line-height: 2.6rem;
+    }
+    h3{
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+    h4{
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+    }
+    h5{
+        font-size: 1.6rem;
+        line-height: 2.0rem;
+    }
+    h6{
+        font-size: 1.9rem;
+        line-height: 1.8rem;
+        margin:0.3125rem 0rem;
+    }
+   
+    input,select{
+        font-family: nexa-light;
+        color:var(--gray);
+        padding: 1.0rem 0.85rem; 
+        width: 100%;
+        
+    }
+    p{
+        font-family: nexa-light;
+        color: var(--dark_blue);
+        font-size: 1.5rem;
+        margin-bottom: 0.625rem;
+        line-height: 1.4;
+    }
+    li{
+        font-size: 1.0rem;
+    }
+   
+    
+    
+
+
+}
+@media only screen and (min-width:1024px)
+{
+    section{
+        padding: 3rem 4rem;
+        
+    }
+    h1,h2
+    {
+        font-size: 2.5rem;
+        line-height: 2.8rem;
+        text-align: left;
+    }
+    h3{
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+    }
+    h4{
+        font-size: 1.2rem;
+        
+    }
+    h5{
+        font-size: 1.1rem;
+        line-height: 2.2rem;
+    }
+    h6{
+        font-size: 1.3rem;
+        line-height: 2.0rem;
+        margin-top: 1.5rem;
+    }
+    
+    
+    
+    p{
+        font-family: nexa-light;
+        color: var(--dark_blue);
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        
+    }
+    
+    input,select{
+        font-family: nexa-light;
+        color:var(--gray);
+        padding: 1.2rem 1.0rem; 
+        width: 100%;
+    }
+    i{
+        font-size: 1.3rem !important;
+    }
+
+
+}
+

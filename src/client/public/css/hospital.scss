@@ -1,0 +1,504 @@
+@import "./theme1.scss";
+
+
+//Hiding the linear gradient part
+.hide {
+  display: none;
+}
+//checkbox display none for tablet
+.filter{
+  display: none;
+}
+
+//Home and sort by in flex display
+.home_and_sortby_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  select {
+    width: 30%;
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0rem;
+    background-color: $light_gray;
+    color: $dark_blue;
+    font-weight: bold;
+  }
+  h3 {
+    margin-bottom: 0;
+  }
+}
+//Card section
+
+.card {
+  margin-top: 1.5rem;
+  border: 1px solid $light_gray;
+
+  text-align: center;
+  .hospital_name_info {
+    padding: 1rem 0;
+  }
+  li {
+    color: $dark_blue;
+  }
+  figure {
+    height: 14rem;
+    margin-top: 0;
+  }
+  h3 {
+    margin-bottom: 1rem;
+    text-align: left;
+    color: $blue;
+    &::before {
+      content: "";
+      background-color: $blue;
+      width: 1.8rem;
+      height: 0.2rem;
+      display: inline-block;
+      position: relative;
+      margin-bottom: 0.3rem;
+      margin-right: 0.2rem;
+    }
+  }
+  .grid_for_tab_and_desktop {
+    margin-left: 1rem;
+  }
+  .grid_for_icon {
+    display: grid;
+    grid-template-columns: 1.2rem 1fr;
+    grid-column-gap: 1rem;
+    align-items: center;
+
+    margin-bottom: 1rem;
+
+    i {
+      color: $blue;
+      font-size: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: left;
+      line-height: 1.5rem;
+    }
+  }
+  .btn_darkblue {
+    border-radius: 0;
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+  .multi-organ-transplant-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1.8rem;
+    li {
+      border: 1px solid $dark_blue;
+      padding: 0.2rem 1rem;
+      margin-right: 0.4rem;
+      border-radius: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}
+
+  //footer section
+  //Footer Section
+  .tabshow {
+    display: none;
+  }
+  footer {
+    padding: 1.5rem 0.8rem;
+    background-color: #021433;
+    text-align: center;
+    figure {
+      padding: 0rem 5rem 0rem 5rem;
+    }
+    .about {
+      li {
+        
+        font-weight: bold;
+      }
+      h2 {
+        font-size: 1.4rem;
+        letter-spacing: 0.2rem;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+        color: $white;
+      }
+    }
+  
+    p {
+      color: #ffffff;
+      margin-top: 1rem;
+      margin-bottom: 0rem;
+    }
+    p span {
+      font-size: 1.2rem;
+    }
+  }
+
+
+
+@media only screen and(min-width:768px) and (max-width: 1024px) {
+  
+
+
+
+  //Home and Sort By flex display
+  .home_and_sortby_flex {
+    select {
+      width: 15%;
+    }
+    h3{
+      font-size: 1.7rem;
+    }
+  }
+  //Grid for hospital info and image
+  .grid-for-hospitalinfo-and-image {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    figure {
+      height: 32rem;
+    }
+  }
+
+  //Inside card information in grid view for tab and desktop
+  .card {
+    h3{
+      font-size: 1.7rem;
+    }
+    .hospital_name_info {
+      text-align: left;
+      button {
+        
+        margin-left: 1.9rem;
+      }
+    }
+    .grid_for_tab_and_desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-left: 1.8rem;
+      grid-column-gap: 0.5rem;
+      grid-row-gap: 0.5rem;
+      margin-left: 0;
+    }
+  }
+
+
+  //footer section
+
+  .mobileshow {
+    display: none;
+  }
+ 
+
+  .tabshow {
+    padding: 1.8rem 2.2rem;
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "about figure"
+      "rights social_icon";
+  }
+
+  //footer
+
+  footer {
+    background-color: $white;
+    border-bottom: 3px solid $light_blue;
+  }
+  footer figure {
+    grid-area: figure;
+    width: 22vw;
+    padding: 0rem 0rem;
+    display: block;
+    margin: auto 0rem 1.2rem auto;
+  }
+  footer figure image {
+    width: 100%;
+  }
+  footer .about {
+    grid-area: about;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .about li {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: $dark_blue;
+    font-weight: normal;
+  }
+  footer .rights {
+    grid-area: rights;
+    color: $dark_blue;
+  }
+  footer .social_icon {
+    grid-area: social_icon;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .social_icon i {
+    padding: 0rem 0rem 0rem 0rem;
+    font-size: 1.2rem;
+    margin-left: auto;
+    color: $dark_blue;
+  }
+  footer p {
+    display: block;
+    margin: auto auto auto 0;
+    font-size: 1.2rem;
+  }
+
+  
+}
+
+
+//Desktop View
+@media only screen and(min-width:1024px){
+   
+
+  section{
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  //Hospitals in Delhi gradient section
+
+  .hide {
+    display: block;
+    height: 20rem;
+    padding: 0;
+    background-image: linear-gradient(rgba(170, 198, 222, 0.8)),
+      url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    h2 {
+      position: absolute;
+      top: 14rem;
+      margin-left: 4rem;
+      font-family: nexa-light;
+      span{
+        border-bottom: 1px solid $dark_blue;
+        font-family: nexa-bold;
+      }
+    }
+  }
+
+
+   //home and sortby select tag alignment and width manipulation
+   .home_and_sortby_flex{
+     select{
+       width: 10%;
+     }
+     h3{
+       font-family: nexa-light;
+       font-size: 1.5rem;
+       color: $gray;
+     }
+   }
+
+
+  //checkbox and card divided into grid
+
+  .checkbox_and_card_grid {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr;
+    grid-column-gap: 1rem;
+    .filter {
+      display: block;
+      margin-top: 1.4rem;
+    
+      .bg_gray{
+        background-color: $light_gray;
+      h4 {
+        margin:0;
+        margin-left: 1rem;
+        padding: 0.8rem 0rem;
+      }
+    }
+    }
+  }
+  //Location and searchbox alignment
+  .location {
+    
+    .flex_for_icon {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 0.7rem;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      i{
+        color: $blue;
+      }
+      
+      i::after {
+        content: "";
+        background: $light_gray;
+        width: 1.2rem;
+        height: 0.15rem;
+        display: inline-block;
+        position: relative;
+        margin-left: 1rem;
+        bottom: 0.5rem;
+      }
+      h5{
+        margin-bottom:0 ;
+      }
+    }
+  }
+  //Checkbox and level alignment
+  .checkbox {
+    border-bottom: 1px solid $light_gray;
+    margin-left: 0.7rem;
+    input {
+      width: auto;
+      margin:0;
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
+    h6{
+      font-size: 1rem;
+      margin-top: 0.4rem;
+      color: $blue;
+    }
+    label{
+      line-height: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+   //Grid for hospital info and image
+   .grid-for-hospitalinfo-and-image {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    figure {
+      height: 28rem;
+    }
+  }
+
+
+  //Inside card information in grid view for tab and desktop
+  .card {
+    .hospital_name_info {
+      text-align: left;
+      padding-bottom: 1.5rem;
+      button {
+        
+        margin-left: 2rem;
+        
+      }
+      
+    }
+    .grid_for_tab_and_desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-left: 1.8rem;
+      grid-column-gap: 1.5rem;
+      grid-row-gap: 0.5rem;
+      margin-left: 0;
+    }
+    .multi-organ-transplant-section{
+      margin-left: 3.5rem;
+    }
+    
+  }
+
+  //Grid for hospital info and image
+  .grid-for-hospitalinfo-and-image {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    figure {
+      height: 27rem;
+    }
+    
+  }
+  .card{
+    h3{
+      font-size: 1.7rem;
+    }
+  }
+
+
+  
+
+//footer
+footer {
+  padding: 0;
+  color: #ffffff;
+  display: block;
+}
+
+.mobileshow {
+  display: none;
+}
+
+
+.tabshow {
+  display:grid;
+grid-template-columns: 3fr 1fr;
+grid-template-rows: auto auto;
+grid-template-areas: 
+"about figure"
+"rights social_icon";
+background-color: white;
+padding:2rem 4rem;
+border-bottom: 3px solid #0099ff;
+
+}
+.tabshow figure {
+  grid-area: figure;
+width:11rem;
+padding:1rem 0rem;
+display: block;
+margin-left: auto;
+margin-right: 0rem;
+}
+.tabshow figure image {
+  width: 100%;
+}
+.tabshow .about {
+  grid-area: about;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tabshow .about li {
+  color:rgb(0, 0, 7);
+margin-right: 0.9rem;
+font-size: 1.2rem;
+}
+.tabshow .rights {
+  grid-area: rights;
+color: black;
+display:block;
+margin:auto auto auto 0;
+font-size: 1.2rem;
+}
+.tabshow .social_icon {
+  grid-area:social_icon;
+margin-top: 0;
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-left: auto;
+margin-right: 0rem;
+}
+.tabshow .social_icon i {
+  padding:0rem 0rem 0rem 0.8rem;
+font-size: 1.3rem;
+color: $dark_blue;
+margin-left: 0.5rem;
+}
+
+  
+  
+}

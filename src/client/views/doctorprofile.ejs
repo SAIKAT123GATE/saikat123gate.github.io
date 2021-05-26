@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Doctor Profile</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../css/doctor-profile.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../script/app.js"></script>
+    <link rel = "icon" href = 
+"https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
+        type = "image/x-icon">
+
+</head>
+
+<body>
+    <header>
+        <!--Mobile and tablet-->
+        <nav class="head1">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+            </figure>
+            <i class="fa fa-bars"></i>
+        </nav>
+
+        <!--Desktop-->
+        <div class="head2-container">
+            <nav class="head2">
+
+
+                <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                        alt="logo" /></a>
+
+
+                <ul>
+                    <a href="/doctor">
+                        <li>Doctor</li>
+                    </a>
+                    <a href="/hospital">
+                        <li>Hospital</li>
+                    </a>
+                    <a href="/treatment">
+                        <li>Treatment</li>
+                    </a>
+
+                    <a href="/aboutUs">
+                        <li>About</li>
+                    </a>
+                </ul>
+                <div>
+                    <a href="/tvastraplus"> <button class="btn_blue">TVASTRA PLUS</button> </a>
+                    <a href="/queryform"> <button class="btn_darkblue">Get a Quote</button></a>
+                    <div id="user">
+                        <button class="btn_white" onclick="tgl('toaster')">
+                            <%=username%>
+                        </button>
+                        <i class="fa fa-angle-down"></i>
+
+                    </div>
+
+            </nav>
+        </div>
+    </header>
+    <div class="toaster" id="toaster">
+        <div>
+            
+            <a href="/profile">
+            <figure id="toaster-img">
+                
+                <img id="headerpic"
+                    src="<%=image%>">
+                
+                </figure>
+                </a>
+                
+            <h5>
+                <%=username%>
+            </h5>
+        </div>
+        <ul>
+            <a href="/myappointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/medicalreport">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="#">
+                <li>My payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+    <!--About John Nishon-->
+    <section class="about_doctor_section">
+        <div class="about">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/contactUs.png" />
+            </figure>
+            <div class="about_and_li_wrapper">
+                <h2>About John Nisssion</h2>
+                <ul>
+                    <li>Home / Doctor Profile</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!--Card Section-->
+
+    <section class="card-section">
+        <div class="card">
+            <div class="right-part">
+                <div class="fig-and-btn">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg" />
+                    </figure>
+                    <button class="btn_darkblue">Book an Appointment</button>
+                </div>
+            </div>
+            <div class="left-part">
+                <div class="name-and-description">
+                    <h2>John Samson</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi distinctio odit esse, minima
+                        eveniet reprehenderit maxime sint alias perferendis ab pariatur et nostrum! Tempore quae nobis
+                        quo deserunt nemo reiciendis?</p>
+                </div>
+                <!-- Division of list Items-->
+                <div class="list-items">
+                    <!--1st list-->
+                    <div class="list-items-and-paragraph">
+                        <div class="icons-and-list" onclick="showFaq('active1')">
+                            <i class="fa fa-trophy"></i>
+                            <ul>
+                                <li>Specialization</li>
+                            </ul>
+                            <i class="fa fa-angle-down round-border" id="iconactive1"
+                                ></i>
+                        </div>
+                        <div class="inactive"id="active1">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, omnis ea laborum
+                                modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque cum
+                                numquam, mollitia facere at similique quaerat!</p>
+                        </div>
+                    </div>
+                    <!--2nd list-->
+                    <div class="list-items-and-paragraph">
+                        <div class="icons-and-list" onclick="showFaq('inactive1')">
+                            <i class="fa fa-stethoscope"></i>
+                            <ul>
+                                <li>List of Treatments</li>
+                            </ul>
+                            <i class="fa fa-angle-down round-border" id="iconinactive1"
+                            ></i>
+                        </div>
+                        <div class="inactive" id="inactive1">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, omnis ea
+                                laborum modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi.
+                                Cumque
+                                cum numquam, mollitia facere at similique quaerat!</p>
+                        </div>
+                    </div>
+                    <!--3rd list-->
+                    <div class="list-items-and-paragraph">
+                        <div class="icons-and-list" onclick="showFaq('inactive2')">
+                            <i class="fa fa-hospital-o"></i>
+                            <ul>
+                                <li>Work Experience</li>
+                            </ul>
+                            <i class="fa fa-angle-down round-border" id="iconinactive2"
+                                ></i>
+                        </div>
+
+                        <p class="inactive" id="inactive2">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Nihil, omnis ea
+                            laborum modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque
+                            cum numquam, mollitia facere at similique quaerat!</p>
+
+                    </div>
+                    <!--4th list-->
+                    <div class="list-items-and-paragraph">
+                        <div class="icons-and-list" onclick="showFaq('inactive4')">
+                            <i class="fa fa-star"></i>
+                            <ul>
+                                <li>Qualification</li>
+                            </ul>
+                            <i class="fa fa-angle-down round-border" id="iconinactive4"
+                                ></i>
+                        </div>
+                        <p class="inactive" id="inactive4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Nihil, omnis ea
+                            laborum modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque
+                            cum numquam, mollitia facere at similique quaerat!</p>
+                    </div>
+                    <!--5th list-->
+                    <div class="list-items-and-paragraph">
+                        <div class="icons-and-list" onclick="showFaq('inactive5')">
+                            <i class="fa fa-trophy"></i>
+                            <ul>
+                                <li>Awards</li>
+                            </ul>
+                            <i class="fa fa-angle-down round-border" id="iconinactive5"></i>
+                        </div>
+                        <p class="inactive" id="inactive5">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Nihil, omnis ea
+                            laborum modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque
+                            cum numquam, mollitia facere at similique quaerat!</p>
+                    </div>
+                    <!--6th List-->
+                    <div class="list-items-and-paragraph">
+                        <div class="icons-and-list" onclick="showFaq('inactive6')">
+                            <i class="fa fa-map-marker"></i>
+                            <ul>
+                                <li>Location</li>
+                            </ul>
+                            <i class="fa fa-angle-down round-border" id="iconinactive6"
+                                ></i>
+                        </div>
+                        <p class="inactive" id="inactive6">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Nihil, omnis ea
+                            laborum modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque
+                            cum numquam, mollitia facere at similique quaerat!</p>
+                    </div>
+                    <!--7th List-->
+                    <div class="list-items-and-paragraph">
+                        <div class="icons-and-list" onclick="showFaq('inactive7')">
+                            <i class="fa fa-rupee"></i>
+                            <ul>
+                                <li>Avg Fees</li>
+                            </ul>
+                            <i class="fa fa-angle-down round-border" id="iconinactive7" ></i>
+                        </div>
+                        <p class="inactive" id="inactive7">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Nihil, omnis ea
+                            laborum modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque
+                            cum numquam, mollitia facere at similique quaerat!</p>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Need Help-->
+    <section class="nd_help">
+        <div class="nd_help1">
+            <h2>Need Help?</h2>
+            <p>Just let us know we will happy to assist you</p>
+        </div>
+        <div class="btn2 nd_help2">
+            <button type="submit" class="btn_blue">Submit your enquiry</button>
+        </div>
+    </section>
+
+    <!--Footer-->
+
+    <footer>
+        <figure>
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
+        </figure>
+        <ul class="about">
+            <li>Doctor</li>
+            <li>Hospital</li>
+            <li>Treatment</li>
+            <li>Other services</li>
+            <li>FAQs</li>
+        </ul>
+        <div class="social_icon">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-pinterest-p"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-google-plus"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
+    </footer>
+</body>
+
+</html>

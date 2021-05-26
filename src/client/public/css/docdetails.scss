@@ -1,0 +1,93 @@
+@import "../css/theme1.scss";
+
+form{
+    text-align: left;
+    .label_input{
+        input{
+            padding-top:0.8rem ;
+            padding-bottom: 0.8rem;
+            margin-bottom: 0;
+            
+        }
+    }
+    
+}
+.firstsec{
+    .signup{
+        h2{
+            margin-bottom: 0;
+        }
+        form{
+            input{
+                padding: 0.5rem;
+                
+            }
+        }
+    }
+}
+label{
+    color: $blue;
+}
+textarea{
+    width: 100%;
+    outline: none;
+    margin-top:0.5rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+
+    .tagify {
+        width: 100%;
+    max-width: 700px;
+    padding:0.3rem;
+    text-transform: capitalize;
+    margin-top: 0.5rem;
+        --tags-border-color: #DDD;
+        --tag-bg: #8fcaf1;
+        --tag-hover: #D3E2E2;
+        --tag-text-color: #021433;
+        --tag-text-color--edit:#021433;
+        --tag-pad: 0.3em 0.5em;
+        --tag-inset-shadow-size: 1.1em;
+        --tag-invalid-color: #D39494;
+        --tag-invalid-bg: rgba(211, 148, 148, 0.5);
+        --tag-remove-bg: rgba(211, 148, 148, 0.3);
+        --tag-remove-btn-bg: none;
+        --tag-remove-btn-bg--hover: #c77777;
+        --tag--min-width: 1ch;
+        --tag--max-width: auto;
+        --loader-size: .8em;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        border: 1px solid #ddd;
+        border: 1px solid var(--tags-border-color);
+        padding: 0;
+        line-height: 1.1;
+        cursor: text;
+        position: relative;
+        transition: .1s;
+    }
+
+  footer{
+    display: block;
+        padding: 0;
+    background-color: $background;
+    p{
+        font-weight:bold ;
+        padding-bottom: 1rem;
+        color: $dark_blue;
+        margin-top: 0;
+    }
+    
+}
+
+.label_input{
+    margin-top: 1rem;
+}
+
+
+#filename, #fees{
+    margin-bottom: 0;
+}

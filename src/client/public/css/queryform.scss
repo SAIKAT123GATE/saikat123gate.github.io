@@ -1,0 +1,171 @@
+@import "./theme1.scss";
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+
+    
+}
+
+/*section*/
+.firstsec{
+    background-color: $background;
+    text-align: center;
+    flex-grow: 1;
+    .signup{
+        background-color: $white;
+        text-align: center;
+        
+
+        h2{
+            margin:1.5rem 0rem;
+            font-size: 1.8rem;
+            color: $blue;
+        }
+        hr{
+            margin-bottom: 1.0rem;
+        }
+        form{
+            margin:0rem 0.8rem;
+            margin-top: 1.5rem;
+            margin-bottom:1.5rem;
+            i{
+                    position: absolute;
+                    padding: 0.75rem 0.6rem;
+                    display: inline-block;
+                    left:auto;
+                    right:2rem;
+                    bottom: auto;
+                    margin-top: 0.15rem;
+                    font-size: 2rem;
+                    color: $light_gray;
+                    
+            }
+            .gridrow{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 0.3rem;
+            }
+            input{
+                
+                margin-bottom: 0.4rem;
+                margin-top: .4rem;
+                border:1px solid $light_gray;
+                
+
+                
+            }
+            textarea{
+                width:100%;
+                outline: none;
+                border:1px solid $light_gray;
+            }
+
+            //Signup button
+            
+            .btn{
+                margin-top: 0.2rem;
+                margin-bottom: 2rem;
+                
+                .btn_darkblue{
+                    width: 100%;
+                    border-radius: 0rem;
+                    
+                    font-weight: 600;
+                    letter-spacing: .3rem;
+                }
+                i{
+                    color: $white;
+                    font-size:1.2rem;
+                    margin-top: 0.15rem;
+                }
+            }
+            
+        }
+        p{
+            font-size: 1rem;
+            font-weight: 600;
+            
+            span{
+                color: $blue;
+            }
+            margin:0rem 0rem 1rem 0rem;
+        }
+    }
+    
+}
+
+footer{
+    display: block;
+        
+    background-color: $background;
+    p{
+        font-weight:bold ;
+        margin-bottom: 2rem;
+    }
+    
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px)
+{
+   
+    /*section*/ 
+    .firstsec{
+        padding-top:9rem;
+        padding-left: 8.5rem;
+        padding-right: 8.5rem;
+        .signup{
+            padding:0rem 0rem;
+            form{
+                i{
+                    right:10rem;
+                }
+            }
+            .btn{
+                i{
+                    margin-top: 0.2rem;
+                }
+            }
+        }
+        p{
+            margin: 15rem 3rem 2rem 3rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+    }
+    
+
+}
+
+@media only screen and (min-width:1024px)
+{
+   
+    /*section*/
+    .firstsec{
+        padding-top:2rem;
+        padding-left: 20rem;
+        padding-right: 20rem;
+        .signup{
+            h2{
+            text-align: center;  
+            }
+            form{
+                i{
+                    right: 22rem;
+                    margin-top:0.8rem;
+                }
+                
+            }
+            
+        }
+    }
+}
+
+
+

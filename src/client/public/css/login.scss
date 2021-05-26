@@ -1,0 +1,280 @@
+@import "./theme1.scss";
+*{
+    box-sizing: border-box;
+}
+.main-body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  
+
+    
+}
+
+
+/*section*/
+.firstsec{
+    background-color: $background;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    
+    .login{
+        background-color: $white;
+        text-align: center;
+        width:100%;
+        
+        .h2{
+            padding: 1rem 0rem;
+            border-bottom:1px solid gray;
+        h2{
+            margin:0rem 0rem;
+            font-size: 1.8rem;
+            color: $blue;
+        }
+    }
+        form{
+            margin:0rem 0.8rem;
+            margin-top: 1.5rem;
+            margin-bottom:1.5rem;
+
+            i{
+                    
+                    padding: 0.75rem 0.6rem;
+                    left:auto;
+                    
+                    bottom: auto;
+                    margin-top: 0.5rem;
+                    font-size: 2rem;
+                    color: $light_gray;
+                    @media only screen and (min-width:1024px){
+                        margin-top: 0;
+                    }
+                    
+            }
+            .row{
+                display: flex;
+                flex-direction: row;
+                border:1px solid $gray;
+                
+                
+                
+            }
+            .input_field{
+                
+                margin-bottom: 0.4rem;
+                margin-top: .4rem;
+                border:2px solid $gray;
+                color: $black;
+                &:focus{
+                    border: 2px solid $blue;
+                }
+                
+
+                
+            }
+            input[type="text"]::placeholder{
+                padding-left: 0.0rem;
+            }
+
+            .btn_darkblue{
+                display: block;
+                padding: 1.5rem;
+                width:100%;
+                margin:auto;
+                position: relative;
+                border-radius: 0rem;
+                
+
+                i{
+                    margin-top: 0rem;
+                    right:0;
+                    transform: translateY(-16px);
+                    position: absolute;
+                    font-size: 1.3rem;
+                }
+                
+            }
+            
+            
+        }
+        p{
+            span{
+                color: $blue;
+                font-weight: 600;
+            }
+        }
+        
+    }
+    
+    
+}
+.password-with-eye{
+    position: relative;
+    
+    #togglePassword{
+        color: $blue;
+        position: absolute;
+        font-size: 1.4rem;
+        right:0.7rem;
+        @media only screen and (min-width:1024px){
+        top:0.45rem;
+        right:0.8rem;
+        font-size: 2erm;
+        }
+    }
+
+   
+}
+.otpsec{
+    display: flex;
+    justify-content: space-between;
+    margin:1rem 0;
+    a{
+        color: $blue;
+        font-size: 1.2rem;
+        font-family: nexa-bold;
+    }
+}
+
+footer{
+    display: block;
+    padding: 0;
+    p{
+        font-weight:bold ;
+        padding-bottom: 1rem;
+        margin-top: 0rem;
+        color: $dark_blue;
+    }
+    background-color: $background;
+    
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px)
+{
+   
+    /*section*/ 
+    .firstsec{
+        
+        flex-grow: 1;
+        
+        .login{
+            padding:0rem 0rem;
+            form{
+                i{
+                    right:10rem;
+                }
+            }
+        }
+       
+    }
+
+    
+    
+
+}
+
+@media only screen and (min-width:1024px)
+{
+    .head2 ul{
+        justify-content: left;
+    }
+
+    @keyframes fade-out {
+        0%,100% {
+          opacity: 0;
+          
+        }
+        
+        50% {
+          opacity: 1;
+          
+        }
+      }
+
+      
+
+     
+      
+      .fade-out {
+        animation-name: fade-out;
+      }
+
+      
+      
+      .animated {
+        animation-duration: 15s;
+        
+        animation-fill-mode: both;
+        
+         
+      }
+    #loginmsg{
+        display: flex;
+        padding: 1rem;
+        top:8rem;
+        right:1rem;
+        position: absolute;
+        background-color: white;
+        align-items: center;
+        border-left: 0.3rem solid red;
+        
+        #tick{
+            background-color: red;
+            padding: 0.5rem;
+            margin-right: 1rem;
+            border-radius: 100%;
+        }
+        ul{
+            text-align: left;
+            li{
+                color:$dark_blue;
+                font-size: 1.2rem;
+                font-weight: 700;
+                line-height: inherit;
+                span{
+                    color: red;
+                }
+            }
+        }
+    
+    }
+   
+    /*section*/
+    .firstsec{
+        padding:0rem 0.8rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        .login{
+            max-width: 500px;
+            height:auto;
+            h2{
+                text-align: center;
+            }
+            form{
+                i{
+                    position: relative;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        
+        
+        
+}
+footer{
+    p{
+        margin-top: 0rem;
+    }
+}
+
+#password{
+    margin:0;
+}
+
+}

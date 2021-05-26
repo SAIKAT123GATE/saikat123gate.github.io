@@ -1,0 +1,73 @@
+@import "./theme1.scss";
+.cardsuser{
+    max-width: 20rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    padding: 1rem;
+    border:1px solid $light-gray;
+    figure{
+        margin:0;
+    }
+}
+
+.icons-and-details{
+    display: grid;
+    grid-template-columns: 1.5rem auto;
+    grid-column-gap: 1rem;
+    align-items: center;
+    label{
+        font-size: 1.2rem;
+    }
+    i{
+        color: $blue;
+    }
+}
+.detailsuser{
+    h4{
+        margin: 0;
+        margin-left: 0.7rem;
+        font-size: 1.5rem;
+    }
+}
+
+.allcards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+}
+.hambarger{
+    position: absolute;
+    left:1rem;
+    cursor: pointer;
+}
+
+.but-div{
+    display: none;
+    position: absolute;
+    top:3rem;
+    left:1.5rem;
+    background: $white;
+    padding: 1rem;
+    border:1px solid $blue;
+    border-radius: 0.5rem;
+    h4{
+        margin:0;
+        font-size: 1rem;
+        color: $blue;
+    }
+}
+
+.darkblue{
+    padding: 0.6rem;
+    background: $dark_blue;
+    color: $white;
+    border-radius: 100%;
+}
+
+.maxwidth{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

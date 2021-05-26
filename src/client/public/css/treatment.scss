@@ -1,0 +1,276 @@
+@import "./theme1.scss";
+//Hero section
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .1} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .1} 
+    to {opacity: 1}
+  }
+.hero-section{
+    background-image: linear-gradient(to right,#0a7abb,transparent), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist_hero_image.jpg
+    );
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5rem 1rem;
+    text-align: center;
+    h2{
+        margin-bottom: 0;
+        color: $white;
+    }
+    .about_and_li_wrapper{
+        @media only screen and (min-width:1024px){
+            text-align: left;
+            margin-left: 3rem;
+        }
+
+    }
+}
+
+//Inside main tag
+.vaccination{
+    @media only screen and (min-width:1024px){
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-column-gap: 1rem;
+    }
+}
+.about{
+    h2{
+        text-align: center;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        @media only screen and(min-width:768px) and (max-width:1024px){
+            text-align: left;
+        }
+        @media only screen and (min-width:1024px){
+            text-align: left;
+            margin-top: 0;
+            font-size: 1.9rem;
+        }
+    }
+}
+.fig-and-details{
+    @media only screen and(min-width:768px){
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 1rem;
+    }
+}
+.details{
+    h3{
+        margin:1rem 0;
+        letter-spacing: 1px;
+        font-size: 1.5rem;
+        @media only screen and(min-width:768px) and (max-width:1024px){
+            margin-top: 0;
+            line-height: 1.7rem;
+            font-size: 1.6rem;
+        }
+    }
+    p{
+        word-spacing: 2px;
+        @media only screen and(min-width:768px) and (max-width:1024px){
+            font-size: 1.1rem;
+        }
+    }
+    li{
+        color: $dark_blue;
+        line-height: 1.5rem;
+        &::before{
+            content: "\2022";
+    color: $blue;
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+    
+        }
+        @media only screen and(min-width:768px) and (max-width:1024px){
+            font-size: 1.1rem;
+        }
+    }
+
+}
+
+//card collection
+.card-collection{
+    text-align: center;
+    margin-top: 1.5rem;
+    @media only screen and(min-width:768px){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1rem;
+        align-items: center;  
+    }
+    @media only screen and(min-width:1024px){
+        margin-top: 2.5rem;
+    }
+    .card{
+        
+        i{
+            padding: 1rem;
+            background-color: $light_blue;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        h4{
+            font-size: 1.2rem;
+        }
+        p{
+            margin-bottom: 2rem;
+            @media only screen and(min-width:768px) and (max-width:1024px){
+                font-size: 1rem;
+                margin-top: 0;
+            }
+        }
+    }
+}
+//card collection2
+.card-collection2{
+    @media only screen and(min-width:768px) and (max-width:1024px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1rem;
+        align-items: start;
+    }
+    
+    .card{
+        @media only screen and (min-width:1024px){
+            margin-top: 10px;
+            margin-bottom: 1rem;
+        }
+        border:1px solid $gray;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        margin-top:1rem;
+        h5{
+            margin-bottom: 1rem;
+            &::before{
+                content: "";
+                width:1.2rem;
+                height: 2px;
+                background: $blue;
+                position: absolute;
+                left: 13px;
+                transform: translateY(7px);
+                @media only screen and(min-width:768px) and (max-width:1024px){
+                    transform: translate(-26px,14px);
+                    left:auto;
+                }
+                @media only screen and (min-width:1024px){
+                    transform: translate(-25px,14px);
+                    left:auto;
+                }
+
+            }
+        }
+        li{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $light_gray;
+            margin-bottom: 0.5rem;
+        }
+        span{
+            color: $dark_blue;
+        }
+        .span2{
+            color: $gray;
+        }
+    }
+}
+
+//More Services
+.more-services{
+    background-color: $light_blue;
+    text-align: center;
+}
+.carousal-button{
+    @media only screen and(min-width:768px){
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    h3{
+        color: $white;
+        font-size: 1.8rem;
+    }
+    i{
+        background: $white;
+        padding: 0.5rem 0.73rem;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+.card-group{
+    @media only screen and(min-width:768px){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 0.5rem;
+        
+    }
+    .card{
+        @media only screen and(min-width:768px){
+            margin: 0;
+        }
+        border-radius: 0.5rem;
+        overflow: hidden;
+        margin:1rem;
+        figure{
+            background-color: $white;
+            
+            figcaption{
+                margin:0;
+                text-align: left;
+                @media only screen and(min-width:768px) and (max-width:1024px){
+                    height: 5rem;
+                }
+                h3{
+                    margin-bottom: 0;
+                    margin-left: 1.5rem;
+                    @media only screen and(min-width:768px) and (max-width:1024px){
+                        font-size: 1.5rem;
+                        line-height: 1.6rem;
+                    }
+                    @media only screen and (min-width:1024px){
+                        font-size: 1.4rem;
+                    }
+                    
+                    &::before{
+                        content: "";
+                        width:1.2rem;
+                        height: 2px;
+                        background: $blue;
+                        position: absolute;
+                        left: 30px;
+                        transform: translateY(8px);
+                        @media only screen and(min-width:768px) and (max-width:1024px){
+                            left:auto;
+                            transform: translate(-23px,15px);
+                        }
+                        @media only screen and (min-width:1024px){
+                            left:auto;
+                            transform: translate(-25px,18px);
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+.inactive{
+    display: none;
+}
+

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Signup</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../css/signup.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel = "icon" href = 
+"https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
+        type = "image/x-icon">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <!--Mobile and tablet-->
+        <nav class="head1">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+            </figure>
+            <i class="fa fa-bars"></i>
+        </nav>
+
+        <!--Desktop-->
+        <nav class="head2">
+
+
+        <a href="/index" id="zero-width">    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" /> </a>
+
+
+            <ul>
+                <a href="/doctor">
+                    <li>Doctor</li>
+                </a>
+                <a href="/hospital">
+                    <li>Hospital</li>
+                </a>
+                <a href="/treatment">
+                    <li>Treatment</li>
+                </a>
+
+                <a href="/aboutUs">
+                    <li>About</li>
+                </a>
+            </ul>
+            <div>
+
+                <button class="btn_darkblue">Get a Quote</button>
+            </div>
+
+        </nav>
+    </header>
+    <!--Section-->
+    <section class="firstsec">
+        <div class="signup">
+            <h2>Sign Up</h2>
+            <hr>
+            <form action="/signup" method="POST">
+
+                <input class="input_field" placeholder="Enter Name" type="text" name="name" required autofocus pattern="[A-Z][a-z]*" title="Fist letter must be capital">
+
+
+                <input class="input_field" placeholder="Enter Email" type="email" name="email" required>
+                
+                <div class="password-with-eye">
+                    
+                    <input class="input_field" placeholder="Enter Password" type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,15}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 and at most 15 characters" required>
+                        
+                        <i class="fa fa-eye-slash" aria-hidden="true" id="togglePassword"></i>
+                        
+                        </div>
+                <select name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="transgender">Transgender</option>
+                    
+                  </select>
+                <input class="input_field" placeholder="dd/mm/yyyy" type="date" name="dateofbirth" required id="dob">
+                <input class="input_field" placeholder="Enter Phone Number" type="tel" name="mobileno" required pattern="[789][0-9]{9}">
+                <div class="gridrow">
+                    <input class="input_field" placeholder="Enter City" type="text" name="city" required>
+                    <input class="input_field" placeholder="Enter State" type="text" name="state" required>
+                </div>
+                <select name="country" required>
+                    <option value="male">India</option>
+                    <option value="female">Australia</option>
+                    
+                  </select>
+                <div class="isDoctor">
+                <input type="checkbox" id="isDoctor" name="isDoctor">
+                <label for="isDoctor">Is Doctor</label>
+                </div>
+                <div class="btn">
+                    <button type="submit" class="btn_darkblue">SIGN UP</button>
+                    <i class='fa fa-arrow-right'></i>
+                </div>
+
+            </form>
+            <p>Already registered?<a href="/"><span> Login</span></a></p>
+        </div>
+        
+    </section>
+    <footer>
+        <p>All Rights Reserved. &#169 tvastra <span>2020</span></p>
+    </footer>
+
+
+
+
+    <!--Script-->
+    <script>
+        var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+    var yyyy = today.getFullYear();
+    if(dd<10){
+      dd='0'+dd
+    } 
+    if(mm<10){
+      mm='0'+mm
+    } 
+    
+    today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById('dob').setAttribute("max", today);
+    </script>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#togglePassword").click(function() {
+            console.log("kkkk");
+      
+          var className = $("#togglePassword").attr('class');
+          className = className.indexOf('slash') !== -1 ? 'fa fa-eye' : 'fa fa-eye-slash'
+      
+          $("#togglePassword").attr('class', className);
+          var input = $("#password");
+      
+          if (input.attr("type") == "text") {
+            input.attr("type", "password");
+          } else {
+            input.attr("type", "text");
+          }
+        });
+      
+      });
+      </script>
+    
+</body>
+
+</html>

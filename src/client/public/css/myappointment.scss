@@ -1,0 +1,75 @@
+@import "./theme1.scss";
+
+.detailsof{
+    h4{
+        margin: 0;
+        font-size: 1.8rem;
+        color: $blue;
+    }
+    h6{
+        margin: 0;
+        font-size: 1.2rem;
+    }
+}
+.grid{
+    @media only screen and (min-width:1024px){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        grid-column-gap: 1.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $blue;
+    }
+}
+
+.date{
+    @media only screen and (min-width:1024px){
+        max-width: 9rem;
+        h4{
+            margin: 0;
+            padding: 1.3rem 0.1rem;
+            text-align: center;
+            background-color: #eeebeb;
+        }
+    }
+}
+
+.actionbuttons{
+    .btn_blue{
+        @media only screen and (min-width:1024px){
+            font-size: 1.1rem;
+            width:100%;
+            border-radius: 0;
+        }
+    }
+
+    .btn_darkblue{
+        @media only screen and (min-width:1024px){
+            font-size: 1.1rem;
+            width:100%;
+            border-radius: 0;
+        }
+    }
+}
+.status{
+    @media only screen and (min-width:1024px){
+        padding: 0.1rem;
+        background: #eeebeb;
+        max-width:fit-content;
+        text-align: center;
+    }
+}
+
+.headings{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $blue;
+    h3{
+        margin: 0;
+        font-size: 1.7rem;
+        @media only screen and (min-width:1024px){
+            font-size: 2.2rem;
+        }
+    }
+    
+}

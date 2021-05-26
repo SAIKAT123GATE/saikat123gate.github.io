@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tvastra Plus</title>
+    
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link href="../css/tvastraplus.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel = "icon" href = 
+"https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
+        type = "image/x-icon">
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <!--Mobile and tablet-->
+        <nav class="head1">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+            </figure>
+            <div class="image-for-mobile">
+                <figure id="toaster-img">
+                        
+                    <img id="headerpic"
+                        src="<%=image%>"
+                        >
+                    
+                    </figure>
+            <i class="fa fa-bars" onclick="tgl('toastermob')"></i>
+            </div>
+        </nav>
+        <div class="toastermob" id="toastermob">
+            <ul>
+                <a href="/myappointments">
+                    <li>My Appointments</li>
+                </a>
+                <a href="/medicalreport">
+                    <li>Medical Records</li>
+                </a>
+                <a href="/settings">
+                    <li>Settings</li>
+                </a>
+                <a href="#">
+                    <li>My payments</li>
+                </a>
+                <a href="/logout">
+                    <li>Logout</li>
+                </a>
+            </ul>
+        </div>
+
+        <!--Desktop-->
+        <div class="head2-container">
+            <nav class="head2">
+
+
+                <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                        alt="logo" /></a>
+
+
+                <ul>
+                    <a href="/doctor">
+                        <li>Doctor</li>
+                    </a>
+                    <a href="/hospital">
+                        <li>Hospital</li>
+                    </a>
+                    <a href="/treatment">
+                        <li>Treatment</li>
+                    </a>
+
+                    <a href="/aboutUs">
+                        <li>About</li>
+                    </a>
+                </ul>
+                <div>
+                    <a href="/tvastraplus"> <button class="btn_blue">TVASTRA PLUS</button> </a>
+                    <a href="/queryform"> <button class="btn_darkblue">Get a Quote</button></a>
+                    <div id="user">
+                        <button class="btn_white" onclick="tgl('toaster')">
+                            <%=username%>
+                        </button>
+                        <i class="fa fa-angle-down"></i>
+
+                    </div>
+
+            </nav>
+        </div>
+    </header>
+    <div class="toaster" id="toaster">
+        <div>
+            
+            <a href="/profile">
+            <figure id="toaster-img">
+                
+                <img id="headerpic"
+                    src="<%=image%>">
+                
+                </figure>
+                </a>
+                
+            <h5>
+                <%=username%>
+            </h5>
+        </div>
+        <ul>
+            <a href="/myappointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/medicalreport">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="#">
+                <li>My payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+    <section class="hero-section">
+        <div class="container">
+            <div>
+            <span id="span">PLUS</span>
+            <h2>Healthcare plans for you and your family</h2>
+            <p>Become a Tvastra Plus Member and save 60% off on your yearly health expenses</p>
+            </div>
+        </div>
+    </section>
+    <main>
+        <section class="plan-container">
+            <div class="plan">
+                <div class="info">
+                    <h2>Select a Tvastra Plus Healthcare Plan</h2>
+                    <p>All Plus plans are for 4 adults and 2 children</p>
+                </div>
+                <!--collection of Cards-->
+                <div class="card-collection">
+                    <div class="basic-card plan-card">
+                        <h3>Basic Plan</h3>
+                        <div class="details">
+                            <ul>
+                            <li>Unlimited Consultation with any Speciality</li>
+                            <li>20 % Off on prescription medicines</li>
+                            <li>20 % off on tests & checkups</li>
+                            </ul>
+                        </div>
+                        <div class="pricing">
+                            <h6>₹3,999<span>/year</span></h6>
+                            <a href="#">View Plan Details</a>
+                            <btn class="btn_blue">Buy Plan</btn>
+                        </div>
+                    </div>
+                    <!--Popular Card-->
+                    <div class="advance-card plan-card">
+                        <h3>Advance Plan</h3>
+                        <div class="details">
+                            <ul>
+                            <li>Unlimited Consultation with any Speciality</li>
+                            <li>20 % Off on prescription medicines</li>
+                            <li>20 % off on tests & checkups</li>
+                            </ul>
+                        </div>
+                        <div class="pricing">
+                            <h6>₹3,999<span>/year</span></h6>
+                            <a href="#">View Plan Details</a>
+                            <btn class="btn_blue">Buy Plan</btn>
+                        </div>
+                    </div>
+
+                    <!--Comprehensive card-->
+
+                    <div class="compre-card plan-card">
+                        <h3>Comprehensive  Plan</h3>
+                        <div class="details">
+                            <ul>
+                            <li>Unlimited Consultation with any Speciality</li>
+                            <li>20 % Off on prescription medicines</li>
+                            <li>20 % off on tests & checkups</li>
+                            </ul>
+                        </div>
+                        <div class="pricing">
+                            <h6>₹3,999<span>/year</span></h6>
+                            <a href="#">View Plan Details</a>
+                            <btn class="btn_blue">Buy Plan</btn>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Rating Section-->
+        <section class="rating-class">
+            <div class="rating-container">
+                <div class="details">
+                    <h2>Trusted By 2 Crore+ users every month</h2>
+                    <p>Tvastra is the leading healthcare technology company in india. We began in 2009 and today we help 2 crore customer every month</p>
+                </div>
+                <div class="rating-and-bar">
+                    <div class="rating">
+                        <h6>4.5</h6>
+                        <div class="star">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-alt"></i>
+                        </div>
+                        <span>1000+ Reviews</span>
+                    </div>
+                    
+                    <div id="bar">
+                        <ul>
+                            <li>
+                                <span>5</span>
+                                <div class="rating-bar">
+                                    <div class="bar5"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>4</span>
+                                <div class="rating-bar">
+                                    <div class="bar4"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>3</span>
+                                <div class="rating-bar">
+                                    <div class="bar3"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>2</span>
+                                <div class="rating-bar">
+                                    <div class="bar2"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>1</span>
+                                <div class="rating-bar">
+                                    <div class="bar1"></div>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+
+                <div class="extra-info">
+                    <div class="info">
+                        <i class="fa fa-users"></i>
+                        <h4>2 Crore+</h4>
+                        <span>Monthly Customers</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="fa fa-user-md"></i>
+                        <h4>10,000+</h4>
+                        <span>Monthly Customers</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="fa fa-pills"></i>
+                        <h4>10 Lakh+</h4>
+                        <span>Monthly Customers</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="fa fa-calendar-check"></i>
+                        <h4>5 Crore+</h4>
+                        <span>Monthly Customers</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="benefit">
+            Benefits Of Plus memberships
+        </div>
+        <section >
+            <div class="zero-fees">
+            <div class="details">
+                <h2>Zero fees for in-clinic Consultation</h2>
+                <ul>
+                    <li>
+                        Consult with 30000+ specialist doctors at top clinics &amp; hospitals in the PLUS network at Rs. 0 consultation fees*
+                    </li>
+                    <li>
+                        Upto 10 in-clinic consultations can be used by any family member over 12 month period.
+                    </li>
+                </ul>
+            </div>
+            <!--top-hospital-->
+            <div class="top-hospital">
+                <h4>Top Hospital Onboarded</h4>
+                <div class="grid-sec">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/sakra.svg" alt="sakra">
+                    </figure>
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/psri.svg" alt="psri">
+                    </figure>
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/artemis.svg" alt="artemis">
+                    </figure>
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/people-tree.svg" alt="people tree">
+                    </figure>
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/birla.svg" alt="ck birla">
+                    </figure>
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/pratiksha.svg" alt="pratiksha">
+                    </figure>
+                </div>
+                <span> + More Hospitals</span>
+            </div>
+            </div>
+        </section>
+
+        <!--Benefits section-->
+        <section class="benefits">
+            <div class="container" id="container1">
+                <div class="details">
+                    <h2>Unlimited online consultations with doctors</h2>
+                    <ul>
+                        <li>
+                            Get all your health queries answered from any specialist online, any time of the day
+                        </li>
+                        <li>
+                            Connect under 2 minutes on text, call or video - available 24 hrs, 7 days of the week
+                        </li>
+                        <li>
+                            All online consultations are confidential. Only patient and doctor can the access the chats
+                        </li>
+                    </ul>
+                </div>
+                <figure>
+                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/order.jpg" alt="doctor on phone">
+                </figure>
+            </div>
+
+            <div class="container" id="container2">
+                <div class="details">
+                    <h2>Flat 20% Off on prescription medicine, lab tests &amp; checkups</h2>
+                    <ul>
+                        <li>
+                            Get all your health queries answered from any specialist online, any time of the day
+                        </li>
+                        <li>
+                            Connect under 2 minutes on text, call or video - available 24 hrs, 7 days of the week
+                        </li>
+                        <li>
+                            All online consultations are confidential. Only patient and doctor can the access the chats
+                        </li>
+                    </ul>
+                </div>
+                <figure>
+                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/order.jpg" alt="doctor on phone">
+                </figure>
+            </div>
+
+            <div class="container" id="container3">
+                <div class="details">
+                    <h2>2 Free health checkups</h2>
+                    <ul>
+                        <li>
+                            Get all your health queries answered from any specialist online, any time of the day
+                        </li>
+                        <li>
+                            Connect under 2 minutes on text, call or video - available 24 hrs, 7 days of the week
+                        </li>
+                        <li>
+                            All online consultations are confidential. Only patient and doctor can the access the chats
+                        </li>
+                    </ul>
+                </div>
+                <figure>
+                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/checkup.jpg" alt="doctor on phone">
+                </figure>
+            </div>
+        </section>
+
+        <!--Tests-->
+        <section class="test">
+            <div class="max-width-section">
+            <span>60 Tests Included</span>
+            <div class="grid w3-animate-right" id="carousel1">
+                <div class="card">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Vitamin+test.svg" alt="vitamin">
+                        
+                    </figure>
+                    <h6>Vitamin profile</h6>
+                        <span>2 Test</span>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Iron+def.svg" alt="iron deficiency">
+                        
+                    </figure>
+                    <h6>Vitamin profile</h6>
+                        <span>2 Test</span>
+                </div>
+
+                <div class="card">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Thyroid.svg" alt="thyroid">
+                        
+                    </figure>
+                    <h6>Vitamin profile</h6>
+                        <span>2 Test</span>
+                </div>
+
+                <div class="card">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Liver.svg" alt="liver">
+                        
+                    </figure>
+                    <h6>Vitamin profile</h6>
+                        <span>2 Test</span>
+                </div>
+            </div>
+
+            <div class="grid inactive w3-animate-right" id="carousel2">
+                <div class="card">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Vitamin+test.svg" alt="vitamin">
+                        
+                    </figure>
+                    <h6>Vitamin profile</h6>
+                        <span>2 Test</span>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Iron+def.svg" alt="iron deficiency">
+                        
+                    </figure>
+                    <h6>Vitamin profile</h6>
+                        <span>2 Test</span>
+                </div>
+
+                <div class="card">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Thyroid.svg" alt="thyroid">
+                        
+                    </figure>
+                    <h6>Vitamin profile</h6>
+                        <span>2 Test</span>
+                </div>
+
+                <div class="card">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Liver.svg" alt="liver">
+                        
+                    </figure>
+                    <h6>Vitamin profile</h6>
+                        <span>2 Test</span>
+                </div>
+            </div>
+            <div class="radiobtn">
+                <input type="radio" name="option" id="option1" checked onclick="activecar('carousel1')">
+                <input type="radio" name="option" id="option2" onclick="activecar('carousel2')">
+                
+            </div>
+            </div>
+        </section>
+
+        <!-- Testimonials section-->
+        <section class="testimonial">
+            <div class="max-width-section">
+            <div class="container">
+            <h2>Why We Love Tvastra<span>PLUS</span></h2>
+            </div>
+
+            <div class="testimonial-card-group">
+                <div class="card">
+                <q>"Wonderful experience with Tvastra Plus it helped me in saving a lot of amount as it provides free consultations with best doctors"</q>
+                <figure>
+                    <img src="../asset/pexels-roman-odintsov-6897666.jpg"/>
+                    <figcaption>
+                        <h6>Rishabh Tiwari</h6>
+                        <span>Advanced Plan User</span>
+                    </figcaption>
+                </figure>
+                </div>
+
+                <div class="card">
+                    <q>"Wonderful experience with Tvastra Plus it helped me in saving a lot of amount as it provides free consultations with best doctors"</q>
+                    <figure>
+                        <img src="../asset/pexels-roman-odintsov-6897666.jpg"/>
+                        <figcaption>
+                            <h6>Rishabh Tiwari</h6>
+                            <span>Advanced Plan User</span>
+                        </figcaption>
+                    </figure>
+                    </div>
+
+                    <div class="card">
+                        <q>"Wonderful experience with Tvastra Plus it helped me in saving a lot of amount as it provides free consultations with best doctors"</q>
+                        <figure>
+                            <img src="../asset/pexels-roman-odintsov-6897666.jpg"/>
+                            <figcaption>
+                                <h6>Rishabh Tiwari</h6>
+                                <span>Advanced Plan User</span>
+                            </figcaption>
+                        </figure>
+                        </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="accordian">
+            <div class="container">
+                <h3>Frequently Asked Questions</h3>
+                <!--First-->
+                <div class="list-items-and-paragraph">
+                    <div class="icons-and-list" onclick="showFaq('active1')">
+    
+                        <ul>
+                            <li>How does free in-clinic consultation with doctors and hospitals</li>
+                        </ul>
+                        <i class="fas fa-angle-down" id="iconactive1"></i>
+                    </div>
+                    <div id="active1">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, omnis ea laborum
+                            modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque cum
+                            numquam, mollitia facere at similique quaerat!</p>
+                    </div>
+                </div>
+                <!--Second-->
+                <div class="list-items-and-paragraph">
+                    <div class="icons-and-list" onclick="showFaq('active2')">
+    
+                        <ul>
+                            <li>Are there are any type of doctors not included in Tvastra Plus in-clinic consultation network?</li>
+                        </ul>
+                        <i class="fas fa-angle-down" id="iconactive2"></i>
+                    </div>
+                    <div id="active2" class="inactive">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, omnis ea laborum
+                            modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque cum
+                            numquam, mollitia facere at similique quaerat!</p>
+                    </div>
+                </div>
+                <!--Third-->
+                <div class="list-items-and-paragraph">
+                    <div class="icons-and-list" onclick="showFaq('active3')">
+    
+                        <ul>
+                            <li>How do the unlimited online consultation work?</li>
+                        </ul>
+                        <i class="fas fa-angle-down" id="iconactive3"></i>
+                    </div>
+                    <div id="active3" class="inactive">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, omnis ea laborum
+                            modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque cum
+                            numquam, mollitia facere at similique quaerat!</p>
+                    </div>
+                </div>
+                <!--forth-->
+                <div class="list-items-and-paragraph">
+                    <div class="icons-and-list" onclick="showFaq('active4')">
+    
+                        <ul>
+                            <li>How does flat 20% off on medicines work?</li>
+                        </ul>
+                        <i class="fa fa-angle-down" id="iconactive4"></i>
+                    </div>
+                    <div id="active4" class="inactive">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, omnis ea laborum
+                            modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque cum
+                            numquam, mollitia facere at similique quaerat!</p>
+                    </div>
+                </div>
+                <!--Fifth-->
+                <div class="list-items-and-paragraph">
+                    <div class="icons-and-list" onclick="showFaq('active5')">
+    
+                        <ul>
+                            <li>How does 20% off on lab tests work?</li>
+                        </ul>
+                        <i class="fa fa-angle-down" id="iconactive5"></i>
+                    </div>
+                    <div id="active5" class="inactive">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, omnis ea laborum
+                            modi nulla explicabo, debitis, perspiciatis quod esse sapiente minima animi. Cumque cum
+                            numquam, mollitia facere at similique quaerat!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!--footer-->
+    <footer>
+        <div class="max-width-section">
+        <figure>
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
+        </figure>
+        <ul class="about">
+            <li>Doctor</li>
+            <li>Hospital</li>
+            <li>Treatment</li>
+            <li>Other services</li>
+            <li>FAQs</li>
+        </ul>
+        <div class="social_icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-google-plus"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+        <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
+        </div>
+    </footer>
+        
+
+</body>
+</html>

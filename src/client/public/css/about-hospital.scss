@@ -1,0 +1,249 @@
+@import "./theme1.scss";
+//Header section****************************************************************************//
+
+
+//Header Section Complete*************************************************
+//Inside Section division About Hospital
+.about_hospital_section{
+    background-color: $light_blue;
+    text-align: center;
+    
+}
+.about_and_li_wrapper {
+    
+    padding: 4rem 0;
+    left: 2rem;
+
+    h2 {
+      color: $white;
+    }
+  }
+
+  //Card Section & card Division
+.card {
+    border: 1px solid $light_gray;
+    text-align: center;
+  }
+  .fig-and-btn {
+    padding: 1rem;
+    
+    .btn_darkblue {
+      border-radius: 0;
+      width:100%;
+      margin-top: 0.5rem;
+    }
+  }
+  
+  .name-and-description {
+    margin-top: 1rem;
+    border-bottom: 2px dotted $light_gray;
+  
+    h2 {
+      text-align: left;
+      color: $blue;
+      &::before {
+        content: "";
+        background-color: #167ddd;
+        width: 2.5rem;
+        height: 0.2rem;
+        display: inline-block;
+        position: relative;
+        margin-bottom: 0.3rem;
+        margin-right: 0.2rem;
+      }
+    }
+    p {
+      padding: 1rem 1rem 0rem 1rem;
+      margin: 0;
+      text-align: left;
+    }
+    .icon-and-li{
+      
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: left;
+        ul{
+            display: grid;
+            grid-template-columns: 1rem auto;
+            grid-column-gap: 1.5rem;
+            align-items: center;
+            li{
+                color: $dark_blue;
+                margin-bottom: 0;
+            }
+            i{
+                color: $blue;
+                font-size: 1.5rem;
+            }
+        }
+    }
+  }
+  
+  //List Items section
+  .list-items {
+    padding: 0 1rem 1rem;
+    text-align: left;
+    .icons-and-list {
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 2.5rem 5fr auto;
+      color: $blue;
+      align-items: center;
+      border-bottom: 2px dotted $light_gray;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+      i {
+        font-size: 1.5rem;
+      }
+      li {
+        color: $blue;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 4px;
+        @media only screen and (min-width:1024px) {
+          font-size: 1.2rem;
+        }
+      }
+      .round-border {
+        background-color: $light_blue;
+        border-radius: 100%;
+        padding: 0.1rem 0.3rem;
+      }
+    }
+    p {
+      margin-top: 0;
+      background-color: $background-for-faq;
+      margin-bottom: 0;
+      padding: 0.8rem;
+    }
+    .inactive {
+      display: none;
+    }
+  }
+
+
+
+
+  
+
+
+
+  //Tablet version
+@media only screen and(min-width:768px) and (max-width: 1024px) {
+   
+    
+    .card {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-areas: "left right";
+      .left-part {
+        grid-area: left;
+      }
+      .right-part {
+        grid-area: right;
+      }
+      .name-and-description {
+          .icon-and-li{
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-column-gap: 1.5rem;
+          }
+        p {
+          text-align: left;
+        }
+      }
+    }
+
+
+    //figure and button
+
+    .fig-and-btn{
+      padding-top: 1.5rem;
+      figure{
+        height: 20rem;
+      }
+    }
+  
+    
+  }
+
+
+
+  //Desktop View
+@media only screen and(min-width:1024px){
+    
+  section{
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  //About John nishon
+      .about_hospital_section{
+        background-image: url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/contactUs.png");
+        background-repeat: no-repeat;
+        background-position: top right;
+      }
+      .about_and_li_wrapper {
+        h2{
+            margin-left: 0;
+        }
+        text-align: left;
+        li{
+          margin-left: 0rem;
+        }
+      }
+    
+  
+    //Card Section
+  
+    .card {
+      display: grid;
+      grid-template-columns: 2.5fr 1fr;
+      grid-template-areas: "left right";
+      .left-part {
+        grid-area: left;
+      }
+      .right-part {
+        grid-area: right;
+        
+      }
+      .name-and-description {
+        .icon-and-li{
+            padding-left: 2.8rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1.5rem;
+        }
+          h2{
+              margin-left: 0rem;
+              font-size: 1.8rem;
+          }
+        p {
+          text-align: left;
+        }
+      }
+    }
+  
+  
+    .name-and-description{
+      p{
+        padding-left: 2.8rem;
+      }
+    }
+  
+    .list-items{
+      padding-left: 2.8rem;
+    }
+  
+    
+  
+  
+    
+  
+  
+   
+  }
+  
+  
+  
+  

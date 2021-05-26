@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hospital</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+
+    <link href="../css/booking.css" rel="stylesheet" type="text/css">
+    <link href="../css/appointment.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/app.js"></script>
+    <link rel = "icon" href = 
+"https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
+        type = "image/x-icon">
+</head>
+<body>
+    <%- include('header.ejs')%>
+
+    <div class="toaster" id="toaster">
+        <div>
+
+            <a href="/profile">
+                <figure id="toaster-img">
+
+                    <img id="headerpic" src="<%=image%>">
+
+                </figure>
+            </a>
+
+            <h5>
+                <%=username%>
+            </h5>
+        </div>
+        <ul>
+            <a href="/myappointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/medicalreport">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="#">
+                <li>My payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+        <section class="main-section">
+            <div class="desktop">
+                <div class="profile">
+                    <div class="heading">
+                        <h3> In Clinic Appointment</h3>
+                    </div>
+                    <div class="date">
+                        <div>
+                            <i class="far fa-calendar-plus"></i>
+                            <span><%= bookingdate %></span>
+                        </div>
+
+                        <div>
+                            <i class="far fa-clock"></i>
+                            <span><%= slottime %></span>
+                        </div>
+                    </div>
+                    <div class="fig-and-details">
+                        <figure>
+                            <img src="<%= doctorimg %>" />
+                        </figure>
+
+                        <div class="details">
+                            <h3><span>Name : </span> <%= docname %></h3>
+                            <h3><span>Hospital : </span> <%= hospital %></h3>
+                            <h3><span>Treatments : </span> asc</h3>
+                            <h3><span>Qualification : </span> <%= hospital %></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!--patient details-->
+
+                <div class="patient-details">
+                    <div class="heading heading-tick">
+                        <i id="tick" class="fa fa-check"></i>
+                        <h4>Appointment Confirmed</h4>
+                    </div>
+                    <form>
+                        <label>Patients Full Name</label>
+                        <input type="text" value="<%= username %>" readonly>
+
+                        <label>Mobile No</label>
+                        <input type="number" value="<%= mobileno %>" readonly>
+
+                        <div class="buttons">
+                        <button type="submit" class="btn_blue">Cancle Appointment</button>
+                        <button type="submit" class="btn_darkblue">Reshedule</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!--Need Help-->
+        <section class="nd_help">
+            <div class="nd_help1">
+                <h2>Need Help?</h2>
+                <p>Just let us know we will happy to assist you</p>
+            </div>
+            <div class="btn2 nd_help2">
+                <button type="submit" class="btn_blue">Submit your enquiry</button>
+            </div>
+        </section>
+
+        <%-include('footer.ejs')%>
+</body>
+
+</html>

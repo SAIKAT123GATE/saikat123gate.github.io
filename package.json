@@ -1,0 +1,32 @@
+{
+  "name": "css",
+  "version": "1.0.0",
+  "description": "## This is the wiki file to read about the tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@workspace.konfinity.com:html-css-demo/tvastra.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@yaireo/tagify": "^4.1.1",
+    "connect-flash": "^0.1.1",
+    "cookies": "^0.8.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "flash": "^1.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.6",
+    "multer": "^1.4.2",
+    "nexmo": "^2.7.0-beta-1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.7"
+  }
+}

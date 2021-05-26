@@ -1,0 +1,127 @@
+@import "./theme1.scss";
+//Header section****************************************************************************//
+
+
+//Inside Section division About faq
+.about_faq_section {
+  padding: 0;
+}
+.about {
+  position: relative;
+  text-align: center;
+  figure {
+    height: 15rem;
+  }
+  .about_and_li_wrapper {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+
+    h2 {
+      color: $white;
+    }
+  }
+}
+
+//List Items section
+.list-items {
+  text-align: left;
+  .icons-and-list {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    color: $blue;
+    align-items: center;
+
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    li {
+      color: $blue;
+      margin-bottom: 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 4px;
+      letter-spacing: 1px;
+      margin-top: 0;
+    }
+    .round-border {
+      background-color: $light_blue;
+      border-radius: 100%;
+      padding: 0.1rem 0.3rem;
+    }
+  }
+  p {
+    margin-top: 0;
+    background-color: $background-for-faq;
+    margin-bottom: 0;
+    padding: 0.8rem;
+  }
+  .inactive {
+    display: none;
+  }
+}
+
+
+
+
+
+@media only screen and(min-width:768px) and (max-width: 1024px) {
+  
+  .about {
+    .about_and_li_wrapper {
+      left: 42%;
+    }
+  }
+
+  
+}
+
+//Desktop View
+@media only screen and(min-width:1024px) {
+ 
+
+  //About John nishon
+  .about {
+    .about_and_li_wrapper {
+      left: 0;
+      text-align: left;
+      margin-left: 4.2rem;
+      h2{
+        margin-left: 0;
+      }
+    }
+  }
+section{
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+  //Need help section
+
+  //Need help
+
+  /*need help*/
+  .nd_help {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    h2 {
+      margin-left: 0;
+    }
+    p {
+      text-align: left;
+    }
+  }
+
+  .nd_help2 {
+    text-align: right;
+
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .nd_help1 {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  
+}

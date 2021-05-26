@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet">
+    <link href="../css/theme1.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="../css/contactUs.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" href = 
+"https://images.creativemarket.com/0.1.0/ps/2282307/910/607/m1/fpnw/wm0/11-01-.png?1487173609&s=c29fbda5784aaedecbaecaeb6d49039f&fmt=webp" 
+        type = "image/x-icon">
+</head>
+
+<body>
+
+
+    <header>
+        <!--Mobile and tablet-->
+        <nav class="head1">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+            </figure>
+            <i class="fa fa-bars"></i>
+        </nav>
+
+        <!--Desktop-->
+        <div class="head2-container">
+            <nav class="head2">
+
+
+                <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                        alt="logo" /></a>
+
+
+                <ul>
+                    <a href="/doctor">
+                        <li>Doctor</li>
+                    </a>
+                    <a href="/hospital">
+                        <li>Hospital</li>
+                    </a>
+                    <a href="/treatment">
+                        <li>Treatment</li>
+                    </a>
+
+                    <a href="/aboutUs">
+                        <li>About</li>
+                    </a>
+                </ul>
+                <div>
+                    <a href="/tvastraplus"> <button class="btn_blue">TVASTRA PLUS</button> </a>
+                    <a href="/queryform"> <button class="btn_darkblue">Get a Quote</button></a>
+                    <div id="user">
+                        <button class="btn_white" onclick="tgl('toaster')">
+                            <%=username%>
+                        </button>
+                        <i class="fa fa-angle-down"></i>
+
+                    </div>
+
+            </nav>
+        </div>
+    </header>
+    <div class="toaster" id="toaster">
+        <div>
+            
+            <a href="/profile">
+            <figure id="toaster-img">
+                
+                <img id="headerpic"
+                    src="<%=image%>">
+                
+                </figure>
+                </a>
+                
+            <h5>
+                <%=username%>
+            </h5>
+        </div>
+        <ul>
+            <a href="/myappointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/medicalreport">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="#">
+                <li>My payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+
+    <section>
+        <div class="contactus">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/contactUs.png" />
+            </figure>
+            <div class="contactus_and_li_wrapper">
+                <h2>Contact Us</h2>
+                <ul>
+                    <li>Home/Contact Us</li>
+                </ul>
+            </div>
+        </div>
+        <!--Google Map Portion-->
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224368.3937164256!2d77.25804266418767!3d28.516983403492222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sNoida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1617538078835!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <!--Address Division-->
+        <div class="grid_for_addressbook_and_form">
+            <div class="addressbook">
+                <div class="grid_for_icon">
+                    <i class="fa fa-home"></i>
+                    <ul>
+                        <li class="span">Noida, India</li>
+                        <li>Sector 45</li>
+                    </ul>
+                </div>
+
+                <div class="grid_for_icon">
+                    <i class="fa fa-phone"></i>
+                    <ul>
+                        <li class="span">00 (440) 9865 562</li>
+                        <li>Mon to Fri 9am to 6pm</li>
+                    </ul>
+                </div>
+
+                <div class="grid_for_icon">
+                    <i class="fa fa-home"></i>
+                    <ul>
+                        <li class="span">support@tvastra.com</li>
+                        <li>send us your query anytime!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="queryform">
+                <div class="input_in_grid">
+                    <div class="input_leftsection">
+                        <input class="input_field" placeholder="Enter Mobile Number" type="text">
+                        <input class="input_field" placeholder="Enter Email Address" type="text">
+                        <input class="input_field" placeholder="Enter Subject" type="text">
+                    </div>
+                    <input class="input_field" placeholder="Enter Message" type="text">
+                </div>
+                <button type="submit" class="btn_blue">Send Message</button>
+                
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <figure>
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
+        </figure>
+        <ul class="about">
+            <li>Doctor</li>
+            <li>Hospital</li>
+            <li>Treatment</li>
+            <li>Other services</li>
+            <li>FAQs</li>
+        </ul>
+        <div class="social_icon">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-pinterest-p"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-google-plus"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
+    </footer>
+
+</body>
+
+</html>

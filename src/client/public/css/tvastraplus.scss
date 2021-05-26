@@ -1,0 +1,828 @@
+@import "./theme1.scss";
+//Hero section
+figure{
+    margin: 0;
+}
+.hero-section{
+    background-image:linear-gradient(rgba(0,0,0,0) 70%,rgba(0,0,0,0.5)),url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/tvastraPlus_heroSection.webp);
+    
+    padding:6rem 1rem 13rem;
+    background-position: left;
+    @media only screen and(min-width:768px) and (max-width:1024px){
+       padding-left: 2.2rem;
+       padding-right: 2.2rem;
+       background-size: cover;
+    }
+    @media only screen and (min-width:1024px){
+        background-size: cover;
+    }
+
+    
+    
+    .container{
+        text-align: center;
+        @media only screen and(min-width:768px){
+            text-align: left;
+        }
+        @media only screen and (min-width:1024px){
+            padding:0.5rem;
+            max-width: 1200px;
+            margin:auto;
+            transform: translateX(-190px);
+        }
+        
+        span{
+            padding:0.5rem 0.8rem;
+            border-radius: 0.5rem;
+            color: $white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: $blue;
+            
+            
+        }
+        h2{
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            @media only screen and(min-width:768px) and (max-width:1024px){
+                font-size: 2rem;
+            }
+            @media only screen and(min-width:1024px){
+                font-size: 2.3rem;
+            }
+        }
+        p{
+            font-size: 1.2rem;
+        }
+    }
+    
+}
+
+//inside Main Section
+.plan-container{
+    position: absolute;
+    top:26rem;
+    @media only screen and(min-width:1024px){
+        width:100%;
+    }
+    
+.plan{
+    background-color: $white;
+    padding:1rem;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 1200px;
+    @media only screen and (min-width:1024px){
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+    
+}
+.plan{
+.info{
+    margin-top: 1rem;
+    padding-bottom: 2.2rem;
+    border-bottom: 1px solid $light_gray;
+    p{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    h2{
+        margin-bottom: 0.8rem;
+        @media only screen and(min-width:768px) and (max-width:1024px){
+            font-size: 1.8rem;
+        }
+        @media only screen and(min-width:1024px){
+            font-size: 2.3rem;
+            text-align: center;
+        }
+        
+    }
+    
+}
+.card-collection{
+    @media only screen and(min-width:768px){
+       display: flex; 
+       justify-content: space-around;
+    }
+}
+}
+//  basic card
+.plan-card{
+    @media only screen and(min-width:1024px){
+        max-width:33%;
+    }
+    
+    h3{
+        padding:1rem;
+        margin:0;
+        font-size: 1.6rem;
+        @media only screen and(min-width:768px) and (max-width:1024px){
+            font-size: 1.2rem;
+        }
+
+    }
+    .details{
+        margin:0 2rem;
+        border-top: 1px solid $light_gray;
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+        li{
+            color: $dark_blue;
+            line-height: 1.7rem;
+            margin-bottom: 0.8rem;
+        }
+    }
+}
+.pricing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a{
+        color: $blue;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+    h6{
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+    span{
+        font-family: nexa-light;
+        font-size: 1rem;
+    }
+    .btn_blue{
+        border-radius: 0.5rem;
+    }
+}
+//advance card
+.advance-card{
+    margin-top: 1rem;
+    background: linear-gradient($light_blue,transparent);
+    position: relative;
+    &::before{
+        content: "Popular";
+        padding: 0.3rem 0.8rem;
+    background: green;
+    color: $white;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -0.6rem;
+    transform: translateX(-2.2rem);
+    }
+    
+        @media only screen and(min-width:768px){
+           margin-top: 0; 
+        }
+    
+    
+}
+//Comprehensive plan
+
+.compre-card{
+    margin-top: 1rem;
+    @media only screen and(min-width:768px){
+        margin-top: 0;
+    }
+}
+
+//Rating Section
+.rating-class{
+    text-align: center;
+    background: linear-gradient($light_blue,rgba(0,0,0,0) 45%);
+    padding-top: 92rem;
+    @media only screen and(min-width:768px) and (max-width:1024px){
+        padding-top: 45rem;
+    }
+    @media only screen and(min-width:1024px){
+        padding-top: 37rem;
+    }
+}
+.rating-container{
+    .details{
+        h2{
+            margin-bottom: 1.4rem;
+            @media only screen and(min-width:768px) and (max-width:1024px){
+                font-size: 1.9rem;
+            }
+            @media only screen and(min-width:1024px){
+                text-align: center;
+                font-size: 1.9rem;
+                margin-bottom: 0;
+            }
+        }
+        p{
+            margin-top: 0;
+            margin-bottom: 1.4rem;
+            font-size: 1.2rem;
+            @media only screen and(min-width:1024px){
+                text-align: center;
+                margin-left: 6rem;
+                margin-right: 6rem;
+            }
+        }
+    }
+    
+}
+.rating-and-bar{
+    @media only screen and(min-width:768px){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.rating{
+    color: $blue;
+    h6{
+        font-size: 2.4rem;
+        color: $blue;
+        margin-bottom: 0.4rem;
+        margin-top:0;
+    }
+    .star{
+        margin-bottom: 0.8rem;
+    }
+    span{
+        font-size: 1.1rem;
+    }
+}
+//Bar container
+#bar{
+    margin-top: 1.3rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    span{
+        color: $blue;
+        font-family: nexa-bold;
+        font-size: 1.3rem;
+    }
+    li{
+        
+        display: grid;
+        grid-template-columns: 5px auto;
+        grid-column-gap: 1.5rem;
+        justify-content: start;
+        align-items: center;
+        .rating-bar{
+            background-color: $light_gray;
+            width:12rem;
+            height: 1rem;
+            border-radius: 1rem;
+            div{
+                background: $blue;
+                height: 100%;
+                border-radius: 1rem;
+            }
+
+        }
+    }
+    
+}
+.bar5{
+    width:70%;
+}
+.bar4{
+    width: 50%;
+}
+.bar3{
+    width:40%;
+}
+.bar2{
+    width:30%;
+}
+.bar1{
+    width: 15%;
+}
+
+//Extra info Division
+
+.extra-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1.2rem;
+    @media only screen and(min-width:768px){
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-top: 2rem;
+    }
+    @media only screen and (min-width:1024px){
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1000px;
+        width:1000px;
+    }
+    .info{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-row-gap: 0.4rem;
+        color: $blue;
+        h4{
+            margin-bottom: 0;
+            align-self: center;
+            color: $blue;
+            font-size: 1.2rem;
+        }
+        i{
+            font-size: 2.3rem;
+        }
+        
+    }
+}
+
+//Benefit division
+.benefit{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    &::after{
+        content: "";
+    position: absolute;
+    /* top: 2rem; */
+    transform: translate(-15.5rem, 2rem);
+    width: 17rem;
+    height: 0.2rem;
+    background-color: #167ddd;
+    border-radius:0.5rem ;
+    @media only screen and(min-width:1024px){
+        transform: translate(-16.6rem, 2rem);
+    }
+    }
+
+}
+
+//Inside zero fees
+.zero-fees{
+    @media only screen and(min-width:768px) and (max-width:1024px)
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 3rem;
+    }
+    @media only screen and (min-width:1024px){
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-column-gap: 3rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .details{
+        text-align: center;
+        h2{
+            margin-top:1rem;
+            margin-bottom: 1.8rem;
+            font-size: 1.5rem;
+        }
+        ul{
+            
+            li{
+                color: $dark_blue;
+                text-align: left;
+                display: flex;
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+                &::before{
+                    content: "\f058";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: $light_blue;
+                font-size: 1.3rem;
+                margin-right: 0.9rem;
+                }
+            }
+        }
+    }
+
+    .top-hospital{
+        text-align: center;
+        padding-top: 1rem;
+        background: $white;
+        
+       .grid-sec{
+           
+           figure{
+               padding:1.5rem;
+               height: 6rem;
+               background: $white;
+           }
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           background: $light_blue;
+           grid-gap: 1px;
+           align-items: center;
+       }
+       h4{
+           margin-bottom: 1rem;
+       }
+
+    }
+    span{
+        margin-top: 1rem;
+        display: block;
+        color: $gray;
+    }
+
+}
+
+//benefits section
+.benefits{
+    padding-top: 0;
+    .container{
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        @media only screen and(min-width:768px){
+            display: flex;
+
+        }
+        @media only screen and(min-width:1024px){
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .details{
+            text-align: center;
+            h2{
+                font-size: 1.5rem;
+                margin-bottom: 1.3rem;
+            }
+            ul{
+            
+                li{
+                    color: $dark_blue;
+                    text-align: left;
+                    display: flex;
+                    font-size: 1.1rem;
+                    margin-bottom: 1.0rem;
+                    
+                    line-height: 1.5rem;
+                    &::before{
+                        content: "\f058";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    color: $light_blue;
+                    font-size: 1.3rem;
+                    margin-right: 0.9rem;
+                    }
+                }
+        
+    }
+}
+    }
+    figure{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    
+    }
+}
+
+#container1{
+    @media only screen and(min-width:768px)
+    {
+    flex-direction: row-reverse;
+    }
+    @media only screen and(min-width:1024px){
+        justify-content: space-between;
+    }
+    .details{
+        @media only screen and(min-width:768px) and (max-width:1024px){
+            padding-left: 2rem;
+            text-align: left;
+        }
+        @media only screen and (min-width:1024px){
+            padding-left: 6rem;
+        }
+    }
+}
+#container3{
+    @media only screen and(min-width:768px)
+    {
+    flex-direction: row-reverse;
+    }
+    @media only screen and(min-width:1024px){
+        justify-content: space-between;
+    }
+    .details{
+        @media only screen and(min-width:768px) and (max-width:1024px){
+            padding-left: 2rem;
+            text-align: left;
+        }
+        @media only screen and (min-width:1024px){
+            padding-left: 6rem;
+        }
+    }
+}
+
+#container2{
+    @media only screen and(min-width:1024px){
+        justify-content: space-between;
+    }
+    .details{
+        @media only screen and(min-width:768px) and (max-width:1024px){
+            padding-right: 2rem;
+            text-align: left;
+        }
+        @media only screen and (min-width:1024px){
+            padding-right: 6rem;
+        }
+    }
+}
+
+//Test Section
+.max-width-section{
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.test{
+    
+    text-align: center;
+    @media only screen and(min-width:768px){
+        text-align: left;
+    }
+    span{
+        font-family: nexa-bold;
+        color: $light_gray;
+    }
+    #carousel2{
+        display: none;
+    }
+    .grid{
+        margin-top:1rem;
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        @media only screen and(min-width:1024px){
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .card{
+            height:13rem;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 0.5rem;
+            figure{
+                img{
+                    width:4rem;
+                    height: auto;
+                }
+            }
+            span{
+                font-size: 1.3rem;
+                color: $light_gray;
+            }
+        }
+    }
+}
+.radiobtn{
+    display: flex;
+    justify-content: center;
+    input{
+        width: auto;
+        margin-left: 6px;
+        margin-right: 6px;
+        cursor: pointer;
+    }
+}
+
+//Testimonials
+.testimonial{
+    .container{
+        h2{
+            font-size: 1.4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            @media only screen and(min-width:768px){
+                justify-content: start;
+            }
+            span{
+                background-color: $blue;
+                color: white;
+                padding: 0.5rem 0.8rem 0.1rem;
+                border-radius: 0.5rem;
+                margin-left: 0.7rem;
+                font-size: 1.4rem;
+                @media only screen and(min-width:768px) and(max-width:1024px){
+                    padding:0.1rem 0.6rem;
+                }
+                @media only screen and (min-width:1024px){
+                    font-size: 1.0rem;
+                    padding:0rem 0.6rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
+}
+
+.testimonial-card-group{
+    @media only screen and(min-width:768px) and (max-width:1024px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1rem;
+    }
+    @media only screen and (min-width:1024px){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1rem;
+    }
+    
+    .card{
+        display: flex;
+        min-height: 12rem;
+        flex-direction: column;
+        padding: 0.7rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        justify-content: space-around;
+        figure{
+            display: flex;
+            align-items: center;
+            img{
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                margin-right: 1rem;
+            }
+
+        }
+        
+        q{
+            font-weight: bold;
+        }
+        figcaption{
+            span{
+                color: $blue;
+                background: $light_blue;
+                font-size: 0.7rem;
+                padding:0.5rem 0.8rem;
+                border-radius: 0.5rem;
+            }
+            h6{
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+                margin-top: 0;
+                @media only screen and (min-width:768px){
+                    margin-bottom: 3px;
+                }
+            }
+        }
+    
+    }
+}
+
+//Accordian
+
+#accordian{
+    .container{
+        max-width: 1200px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        h3{
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            @media only screen and(min-width:768px){
+                text-align: left;
+            }
+        }
+        .list-items-and-paragraph{
+            padding: 0.7rem;
+            @media only screen and(min-width:768px){
+                padding-left: 0;
+            }
+            p{
+                background: $background-for-faq;
+                padding: 1rem;
+                font-size: 1rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.icons-and-list {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    color: $blue;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+
+    
+
+    li {
+      color: $blue;
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 4px;
+      letter-spacing: 1px;
+      margin-top: 0;
+      line-height: 1.4rem;
+    }
+    i {
+      background-color: $light_blue;
+      border-radius: 100%;
+      padding: 0.1rem 0.3rem;
+    }
+
+
+}
+
+
+.inactive{
+    display: none;
+}
+
+
+@media only screen and (min-width:1024px){
+    .head2{
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    footer{
+        display: block;
+        
+        border: none;
+        border-bottom: 3px solid #0099ff;
+    }
+    /*footer*/
+ footer .max-width-section{
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "about figure"
+    "rights social_icon";
+    background-color: white;
+    
+    
+  
+  }
+  footer .max-width-section figure{
+    grid-area: figure;
+    width:11rem;
+    padding:1rem 0rem;
+    display: block;
+    margin-left: auto;
+    margin-right: 0rem;
+    
+  }
+  footer .max-width-section figure image{
+    width:100%;
+  }
+  footer .max-width-section .about{
+    grid-area: about;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  footer .max-width-section .about li{
+    color:$dark_blue;
+    margin-right: 0.9rem;
+    font-size: 1.2rem;
+  }
+  footer .max-width-section .rights{
+    grid-area: rights;
+    color: $dark_blue;
+    display:block;
+    margin:auto auto auto 0;
+    font-size: 1.2rem;
+  }
+  footer .max-width-section .social_icon{
+    grid-area:social_icon;
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0rem;
+  }
+  footer .max-width-section .social_icon i{
+    padding:0rem 0rem 0rem 0.8rem;
+    font-size: 1.3rem;
+    color: $dark_blue;
+    margin-left: 0.5rem;
+    
+  }
+}
