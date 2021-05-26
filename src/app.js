@@ -38,16 +38,10 @@ app.set("view engine","ejs");
 app.set("views",finalPath);
 
 app.use(session({
-    secret:process.env.SECRET_KEY,
-    resave:false,
-    saveUninitialized:false,
-    cookie:{
-        path:'/',
-        httpOnly:true,
-        maxAge: null,
-        secure:false,
-
-    }
+  cookie: { path: "/", maxAge: 1000 * 60 * 60 * 24 },
+  secret: "KonfinitySecretKey",
+  saveUninitialized: false,
+  resave: false
 }));
 
 
