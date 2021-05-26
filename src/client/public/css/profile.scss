@@ -81,11 +81,11 @@ margin-top: 0.5rem;
     top: 0;
     height: 100vh;
     left: 0;
-    width: 60%;
+    width: 70%;
     z-index: 1;
     ul{
         margin: 1rem;
-    margin-top: 5rem;
+    margin-top: 0.8rem;
     }
     li{
         color: $blue;
@@ -96,13 +96,22 @@ margin-top: 0.5rem;
     border-bottom: 1px solid gray;
     }
     i{
-        position: absolute;
-        right: 1rem;
-        top: 4rem;
+        
         color: $blue;
         font-size: 1.4rem;
     }
+    .figandi{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        figure{
+            margin:0;
+            width:9rem;
+        }
+    }
 }
+
 
 .medical-record{
     display: grid;

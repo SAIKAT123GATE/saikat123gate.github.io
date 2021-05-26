@@ -18,7 +18,7 @@
 }
 
 .toastermob > ul {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .toastermob > ul > a > li {
@@ -28,6 +28,15 @@
   line-height: 4rem;
   padding-left: 2rem;
   border-bottom: 1px solid black;
+}
+
+.toastermob > figure {
+  width: 9rem;
+  margin: 0;
+  margin-left: 1.5rem;
+  margin-top: 1.2rem;
+  height: auto;
+  cursor: pointer;
 }
 
 .rotate {
@@ -122,6 +131,10 @@ footer {
 
 footer .about li {
   margin-bottom: 0rem;
+}
+
+footer .about li a {
+  color: #ffffff;
 }
 
 footer figure {
@@ -745,6 +758,9 @@ a {
     margin-right: 0.9rem;
     font-size: 1.2rem;
   }
+  footer .about li a {
+    color: #000000;
+  }
   footer .rights {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
@@ -883,13 +899,13 @@ a {
   top: 0;
   height: 100vh;
   left: 0;
-  width: 60%;
+  width: 70%;
   z-index: 1;
 }
 
 .dashboardmob ul {
   margin: 1rem;
-  margin-top: 5rem;
+  margin-top: 0.8rem;
 }
 
 .dashboardmob li {
@@ -902,11 +918,26 @@ a {
 }
 
 .dashboardmob i {
-  position: absolute;
-  right: 1rem;
-  top: 4rem;
   color: #167ddd;
   font-size: 1.4rem;
+}
+
+.dashboardmob .figandi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+}
+
+.dashboardmob .figandi figure {
+  margin: 0;
+  width: 9rem;
 }
 
 .medical-record {

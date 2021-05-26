@@ -18,7 +18,7 @@
 }
 
 .toastermob > ul {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .toastermob > ul > a > li {
@@ -28,6 +28,15 @@
   line-height: 4rem;
   padding-left: 2rem;
   border-bottom: 1px solid black;
+}
+
+.toastermob > figure {
+  width: 9rem;
+  margin: 0;
+  margin-left: 1.5rem;
+  margin-top: 1.2rem;
+  height: auto;
+  cursor: pointer;
 }
 
 .rotate {
@@ -1109,6 +1118,10 @@ footer .about h2 {
   color: #ffffff;
 }
 
+footer .about a {
+  color: white;
+}
+
 footer p {
   color: #ffffff;
   margin-top: 1rem;
@@ -1561,6 +1574,9 @@ footer p span {
     color: #000007;
     margin-right: 0.9rem;
     font-size: 1.2rem;
+  }
+  .tabshow .about li a {
+    color: #000007;
   }
   .tabshow .rights {
     -ms-grid-row: 2;

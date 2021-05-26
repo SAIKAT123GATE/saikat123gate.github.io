@@ -545,6 +545,15 @@ if (hospitallist.length == 0) {
 
 }
 
+const faqs = (req, res) => {
+  return res.render("faqs", {
+    msg: req.flash("success"),
+    username: req.session.name,
+    image: req.session.image,
+    isadmin:req.session.isAdmin
+  });
+};
+
 module.exports = {
   indexget: indexget,
   doctorpageget: doctorpageget,
@@ -568,5 +577,6 @@ module.exports = {
   addmedicalimage:addmedicalimage,
   deletemedicalimage:deletemedicalimage,
   sortby:sortby,
-  filterfunction:filterfunction
+  filterfunction:filterfunction,
+  faqs:faqs
 };

@@ -220,17 +220,17 @@ const editprofile = async (req, res) => {
     if (updated && updated2) {
       
       console.log("updation successfull");
-      return res.redirect("/"+email);
+      return res.redirect("/"+email+"/editprofile");
     } else {
       console.log("updation failed");
-      return res.redirect("/"+email);
+      return res.redirect("/"+email+"/editprofile");
     }
   } else {
     if (updated) {
       
-      return res.redirect("/"+email);
+      return res.redirect("/"+email+"/editprofile");
     } else {
-      return res.redirect("/"+email);
+      return res.redirect("/"+email+"/editprofile");
     }
   }
 };

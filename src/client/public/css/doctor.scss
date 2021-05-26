@@ -271,6 +271,9 @@ footer {
       margin-top: 1.5rem;
       color: $white;
     }
+    a{
+      color: white;
+    }
   }
 
   p {
@@ -740,6 +743,9 @@ footer {
     color:rgb(0, 0, 7);
   margin-right: 0.9rem;
   font-size: 1.2rem;
+  }
+  .tabshow .about li a{
+    color:rgb(0, 0, 7);
   }
   .tabshow .rights {
     grid-area: rights;

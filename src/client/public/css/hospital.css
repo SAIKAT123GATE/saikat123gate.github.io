@@ -8,13 +8,17 @@
 
 .toastermob {
   display: none;
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 4rem;
+  top: 0rem;
   height: 100vh;
   background: white;
   width: 70%;
   z-index: 2;
+}
+
+.toastermob > ul {
+  margin-top: 2rem;
 }
 
 .toastermob > ul > a > li {
@@ -24,6 +28,15 @@
   line-height: 4rem;
   padding-left: 2rem;
   border-bottom: 1px solid black;
+}
+
+.toastermob > figure {
+  width: 9rem;
+  margin: 0;
+  margin-left: 1.5rem;
+  margin-top: 1.2rem;
+  height: auto;
+  cursor: pointer;
 }
 
 .rotate {
@@ -601,7 +614,6 @@ a {
   }
   .head2 .btn_darkblue {
     margin-top: 0rem;
-    border-radius: 0.5rem;
     padding: 0.8rem 1.3rem;
     margin: 0rem 0rem !important;
   }
@@ -1253,6 +1265,9 @@ footer p span {
     color: #000007;
     margin-right: 0.9rem;
     font-size: 1.2rem;
+  }
+  .tabshow .about li a {
+    color: #000007;
   }
   .tabshow .rights {
     -ms-grid-row: 2;

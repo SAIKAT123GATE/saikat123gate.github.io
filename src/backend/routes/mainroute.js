@@ -92,5 +92,6 @@ router.route("/sort").post(middle.sortby);
 router.route("/addfilter").post(middle.filterfunction);
 router.route("/getquote").get(admincontroller.getquote);
 router.route("/abouthospital").get(admincontroller.abouthospital);
+router.route("/faqs").get(sessionauth.redirectlogin,middle.faqs);
 module.exports=router;
 
