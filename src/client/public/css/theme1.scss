@@ -19,13 +19,16 @@ $black:#000000;
 //toaster mobile
 .toastermob{
   display: none;
-  position: absolute;
+  position: fixed;
   left:0;
-  top:4rem;
+  top:0rem;
   height: 100vh;
   background: white;
   width: 70%;
   z-index: 2;
+}
+.toastermob>ul{
+  margin-top: 4rem;
 }
 .toastermob>ul>a>li{
   color: black;
@@ -199,7 +202,7 @@ button{
     font-family: nexa-light;
     padding: 0.8rem 1.3rem;
     font-size: 1.2rem;
-    border-radius: 0.5rem;
+    border-radius: 0rem;
     cursor: pointer;
 }
 .btn_darkblue{
@@ -570,7 +573,7 @@ a{
         }
         .btn_darkblue {
           margin-top: 0rem;
-          border-radius: 0.5rem;
+          
           padding: 0.8rem 1.3rem;
           margin: 0rem 0rem !important;
         }

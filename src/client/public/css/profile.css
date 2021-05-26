@@ -8,13 +8,17 @@
 
 .toastermob {
   display: none;
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 4rem;
+  top: 0rem;
   height: 100vh;
   background: white;
   width: 70%;
   z-index: 2;
+}
+
+.toastermob > ul {
+  margin-top: 4rem;
 }
 
 .toastermob > ul > a > li {
@@ -188,7 +192,7 @@ button {
   font-family: nexa-light;
   padding: 0.8rem 1.3rem;
   font-size: 1.2rem;
-  border-radius: 0.5rem;
+  border-radius: 0rem;
   cursor: pointer;
 }
 
@@ -601,7 +605,6 @@ a {
   }
   .head2 .btn_darkblue {
     margin-top: 0rem;
-    border-radius: 0.5rem;
     padding: 0.8rem 1.3rem;
     margin: 0rem 0rem !important;
   }
@@ -875,28 +878,35 @@ a {
 
 .dashboardmob {
   display: none;
-  position: absolute;
+  position: fixed;
   background: white;
-  top: 4.2rem;
+  top: 0;
   height: 100vh;
   left: 0;
-  width: 50%;
+  width: 60%;
   z-index: 1;
 }
 
 .dashboardmob ul {
   margin: 1rem;
+  margin-top: 5rem;
 }
 
 .dashboardmob li {
   color: #167ddd;
   font-weight: bold;
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid gray;
 }
 
 .dashboardmob i {
   position: absolute;
   right: 1rem;
-  top: 0.5rem;
+  top: 4rem;
+  color: #167ddd;
+  font-size: 1.4rem;
 }
 
 .medical-record {
@@ -926,10 +936,24 @@ a {
 
 .medical-record h2 {
   margin: 0;
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .medical-record h2 {
+    font-size: 2.5rem;
+  }
 }
 
 .medical-record .btn_blue {
   margin: 0;
+  font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .medical-record .btn_blue {
+    font-size: 1.3rem;
+  }
 }
 
 .profile-photo-name h4 {
