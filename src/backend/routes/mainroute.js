@@ -19,7 +19,7 @@ const admincontroller=require("../controller/admincontroller");
 
 const fileStorageEngine=multer.diskStorage({
     destination:(req,res,cb)=>{
-        cb(null,'../../images');
+        cb(null,path.join(__dirname,'../../images'));
     },
     
     filename: function (req, file, cb) {
