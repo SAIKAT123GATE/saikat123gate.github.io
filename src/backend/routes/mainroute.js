@@ -14,12 +14,12 @@ const getscheduleslots = require("../controller/getscheduleslots");
 const schedules = require("../database/appointment");
 const myappointment=require("../controller/myappointment");
 const admincontroller=require("../controller/admincontroller");
-const image=require("../../images");
+
 
 
 const fileStorageEngine=multer.diskStorage({
     destination:(req,res,cb)=>{
-        cb(null,image);
+        cb(null,'../../images');
     },
     
     filename: function (req, file, cb) {
