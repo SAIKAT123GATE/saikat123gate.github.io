@@ -44,7 +44,9 @@ const getschedule= async (req,res)=>{
         image:req.session.image,
         countshed:countshed,
         exists:exists,
-        isadmin:req.session.isAdmin
+        isadmin:req.session.isAdmin,
+
+
 
         
 
@@ -115,6 +117,7 @@ const addschedule = async (req, res) => {
         interval: interval,
         createdby: createdby,
         date: date,
+        isDisabledschedule:false,
         slots: slotsarr,
       });
       const slots = await sched.save();
@@ -187,15 +190,18 @@ const disableallslot=async(req,res)=>{
   const findsch=await schedules.findOne({_id:scheduleid1});
   //console.log(findsch);
   if(findsch){
-    for(var k=0;k<findsch.slots.length-1;k++){
+    
       //console.log("printing slots id from data base",findsch.slots[k]._id);
       
         
-        
-        findsch.slots[k].isDisabled=true;
+        if(!(findsch.isDisabledschedule))
+        findsch.isDisabledschedule=true;
+        else{
+          findsch.isDisabledschedule=false;
+        }
        await findsch.save();
       
-    }
+    
   }
   else{
     console.log("error occur in disabling");

@@ -8,13 +8,17 @@
 
 .toastermob {
   display: none;
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 4rem;
+  top: 0rem;
   height: 100vh;
   background: white;
   width: 70%;
-  z-index: 2;
+  z-index: 3;
+}
+
+.toastermob > ul {
+  margin-top: 2rem;
 }
 
 .toastermob > ul > a > li {
@@ -24,6 +28,15 @@
   line-height: 4rem;
   padding-left: 2rem;
   border-bottom: 1px solid black;
+}
+
+.toastermob > figure {
+  width: 9rem;
+  margin: 0;
+  margin-left: 1.5rem;
+  margin-top: 1.2rem;
+  height: auto;
+  cursor: pointer;
 }
 
 .rotate {
@@ -120,6 +133,10 @@ footer .about li {
   margin-bottom: 0rem;
 }
 
+footer .about li a {
+  color: #ffffff;
+}
+
 footer figure {
   padding: 0rem 5.0rem 2rem 5.0rem;
 }
@@ -188,7 +205,7 @@ button {
   font-family: nexa-light;
   padding: 0.8rem 1.3rem;
   font-size: 1.2rem;
-  border-radius: 0.5rem;
+  border-radius: 0rem;
   cursor: pointer;
 }
 
@@ -601,7 +618,6 @@ a {
   }
   .head2 .btn_darkblue {
     margin-top: 0rem;
-    border-radius: 0.5rem;
     padding: 0.8rem 1.3rem;
     margin: 0rem 0rem !important;
   }
@@ -742,6 +758,9 @@ a {
     margin-right: 0.9rem;
     font-size: 1.2rem;
   }
+  footer .about li a {
+    color: #000000;
+  }
   footer .rights {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
@@ -790,7 +809,14 @@ a {
   grid-column-gap: 1rem;
   padding: 1rem;
   width: 100%;
-  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .cards {
+    margin-right: 1.5rem;
+    margin-bottom: 0;
+  }
 }
 
 .cards h6 {
@@ -812,6 +838,15 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 1024px) {
+  .allcards {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 
 .graph {
@@ -861,5 +896,24 @@ a {
   font-size: 1.2rem;
   border: 1px solid #167ddd;
   padding: 1px 8px;
+  margin-left: 1rem;
+  background-color: #167ddd;
+  color: white;
+}
+
+#pagination a:hover {
+  background-color: white;
+  color: #167ddd;
+}
+
+.table {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+@media only screen and (min-width: 1024px) {
+  .table {
+    overflow-x: scroll;
+  }
 }
 /*# sourceMappingURL=admindashboard.css.map */

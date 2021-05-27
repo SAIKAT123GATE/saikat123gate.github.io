@@ -14,7 +14,7 @@
   height: 100vh;
   background: white;
   width: 70%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .toastermob > ul {

@@ -23,7 +23,7 @@ const myappointment=async (req,res)=>{
         var month=parseInt(date.getMonth());
         var day=parseInt(date.getDate());
         var year=parseInt(date.getFullYear());
-        if(day>parseInt(checkdate[1]) && month>=parseInt(checkdate[0]) && year>=parseInt(checkdate[2])){
+        if((day>parseInt(checkdate[1]) && month>=parseInt(checkdate[0]) && year>=parseInt(checkdate[2]))||(day<=parseInt(checkdate[1]) && month>parseInt(checkdate[0]) && year>=parseInt(checkdate[2]))){
             completeddetails.push(bookingdetails[k]);
             var scheduleid=bookingdetails[k].scheduleid;
             var slotid=bookingdetails[k].slotid;

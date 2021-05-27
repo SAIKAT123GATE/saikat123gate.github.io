@@ -38,8 +38,31 @@
             <figure>
                 <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
             </figure>
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars" onclick="tgl('toastermob')"></i>
         </nav>
+        <div class="toastermob" id="toastermob">
+            <figure>
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+            </figure>
+            <ul>
+                <a href="/admin">
+                    <li>Dashboard</li>
+                </a>
+                <a href="/adminusers">
+                    <li>Users</li>
+                </a>
+                <a href="/adminhospitals">
+                    <li>Hospitals</li>
+                </a>
+                <a href="/admindoctors">
+                    <li>Doctors</li>
+                </a>
+               
+                <a href="/logout">
+                    <li>Logout</li>
+                </a>
+            </ul>
+        </div>
 
         <!--Desktop-->
         <div class="head2-container">
@@ -103,8 +126,35 @@
     <section class="main-section">
         <div class="mobile-tab">
             <div class="grid-for-dashboard">
-                <i class='fas fa-angle-double-right'></i>
+                <i class='fas fa-angle-double-right' onclick="tgl('dashboardmob')"></i>
                 <h3>Click To View Dashboard</h3>
+            </div>
+            <div class="dashboardmob" id="dashboardmob">
+                <div class="figandi">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                            alt="logo" />
+                    </figure>
+                    <i class="fa fa-close" onclick="tgl('dashboardmob')"></i>
+                </div>
+                <ul>
+                    <a href="/admin">
+                        <li> Admin</li>
+                    </a>
+
+                    <a href="/adminusers">
+                        <li> User</li>
+                    </a>
+                    <a href="/admindoctors">
+                        <li>Doctor</li>
+                    </a>
+
+                    <a href="/adminhospitals">
+                        <li>Hospital</li>
+                    </a>
+
+
+                </ul>
             </div>
         </div>
         <div class="desktop">
@@ -148,7 +198,7 @@
             <form class="medical-record-form" action="/<%= hospitalfind.id %>/savehospital" enctype="multipart/form-data" method="POST"
                 id="profile">
                 <div class="medical-record">
-                    <h2>Edit Hospital Details</h2>
+                    <h2 class="edithospital">Edit Hospital Details</h2>
                     <button type="submit" class="btn_blue">S U B M I T</button>
                 </div>
 

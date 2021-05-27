@@ -796,114 +796,44 @@ a {
   }
 }
 
-.about_faq_section {
-  padding: 0;
-}
-
-.about {
-  position: relative;
-  text-align: center;
-}
-
-.about figure {
-  height: 15rem;
-}
-
-.about .about_and_li_wrapper {
-  position: absolute;
-  top: 35%;
-  left: 35%;
-}
-
-.about .about_and_li_wrapper h2 {
-  color: #ffffff;
-}
-
-.list-items {
-  text-align: left;
-}
-
-.list-items .icons-and-list {
-  cursor: pointer;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
-  color: #167ddd;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-}
-
-.list-items .icons-and-list li {
-  color: #167ddd;
-  margin-bottom: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 4px;
-  letter-spacing: 1px;
-  margin-top: 0;
-}
-
-.list-items .icons-and-list .round-border {
-  background-color: #8fcaf1;
-  border-radius: 100%;
-  padding: 0.1rem 0.3rem;
-}
-
-.list-items p {
-  margin-top: 0;
-  background-color: #e5f1f7;
-  margin-bottom: 0;
-  padding: 0.8rem;
-}
-
-.list-items .inactive {
-  display: none;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .about .about_and_li_wrapper {
-    left: 42%;
-  }
+.text-button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media only screen and (min-width: 1024px) {
-  .about .about_and_li_wrapper {
-    left: 0;
-    text-align: left;
-    margin-left: 4.2rem;
-  }
-  .about .about_and_li_wrapper h2 {
-    margin-left: 0;
-  }
-  section {
-    padding-right: 4rem;
-    padding-left: 4rem;
-  }
-  /*need help*/
-  .nd_help {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 2fr 1fr;
-        grid-template-columns: 2fr 1fr;
-  }
-  .nd_help h2 {
-    margin-left: 0;
-  }
-  .nd_help p {
-    text-align: left;
-  }
-  .nd_help2 {
-    text-align: right;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .nd_help1 {
-    margin-top: auto;
-    margin-bottom: auto;
+  .text-button {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
-/*# sourceMappingURL=faqs.css.map */
+
+.text-button h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .text-button h2 {
+    font-size: 2.3rem;
+  }
+}
+
+.settings form {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .settings form {
+    text-align: left;
+  }
+}
+
+.settings .report-details {
+  border: 1px solid #167ddd;
+  padding: 6px 15px;
+}
+/*# sourceMappingURL=adminmedicalreport.css.map */

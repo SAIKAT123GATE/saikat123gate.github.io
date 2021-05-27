@@ -8,13 +8,17 @@
 
 .toastermob {
   display: none;
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 4rem;
+  top: 0rem;
   height: 100vh;
   background: white;
   width: 70%;
-  z-index: 2;
+  z-index: 3;
+}
+
+.toastermob > ul {
+  margin-top: 2rem;
 }
 
 .toastermob > ul > a > li {
@@ -24,6 +28,15 @@
   line-height: 4rem;
   padding-left: 2rem;
   border-bottom: 1px solid black;
+}
+
+.toastermob > figure {
+  width: 9rem;
+  margin: 0;
+  margin-left: 1.5rem;
+  margin-top: 1.2rem;
+  height: auto;
+  cursor: pointer;
 }
 
 .rotate {
@@ -118,6 +131,10 @@ footer {
 
 footer .about li {
   margin-bottom: 0rem;
+}
+
+footer .about li a {
+  color: #ffffff;
 }
 
 footer figure {
@@ -601,7 +618,6 @@ a {
   }
   .head2 .btn_darkblue {
     margin-top: 0rem;
-    border-radius: 0.5rem;
     padding: 0.8rem 1.3rem;
     margin: 0rem 0rem !important;
   }
@@ -742,6 +758,9 @@ a {
     margin-right: 0.9rem;
     font-size: 1.2rem;
   }
+  footer .about li a {
+    color: #000000;
+  }
   footer .rights {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
@@ -793,6 +812,7 @@ a {
 
 .cardsuser figure {
   margin: 0;
+  height: 7rem;
 }
 
 .icons-and-details {
@@ -823,9 +843,15 @@ a {
 .allcards {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .allcards {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
 }
 
 .hambarger {
@@ -862,5 +888,9 @@ a {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.detailsuser {
+  margin-top: 1.5rem;
 }
 /*# sourceMappingURL=adminusers.css.map */

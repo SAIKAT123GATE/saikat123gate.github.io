@@ -14,7 +14,7 @@
   height: 100vh;
   background: white;
   width: 70%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .toastermob > ul {
@@ -131,6 +131,10 @@ footer {
 
 footer .about li {
   margin-bottom: 0rem;
+}
+
+footer .about li a {
+  color: #ffffff;
 }
 
 footer figure {
@@ -753,6 +757,9 @@ a {
     color: #021433;
     margin-right: 0.9rem;
     font-size: 1.2rem;
+  }
+  footer .about li a {
+    color: #000000;
   }
   footer .rights {
     -ms-grid-row: 2;

@@ -14,7 +14,7 @@
   height: 100vh;
   background: white;
   width: 70%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .toastermob > ul {
@@ -821,6 +821,7 @@ a {
       flex-wrap: wrap;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  border-bottom: 1px solid #167ddd;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -900,6 +901,7 @@ a {
 
 .headings {
   padding-bottom: 1rem;
+  padding-top: 1rem;
   border-bottom: 1px solid #167ddd;
   text-align: center;
 }
@@ -933,6 +935,17 @@ a {
 @media only screen and (min-width: 1024px) {
   .settings {
     margin: 0rem;
+  }
+}
+
+.center {
+  text-align: center;
+  color: #167ddd;
+}
+
+@media only screen and (min-width: 1024px) {
+  .center {
+    text-align: left;
   }
 }
 /*# sourceMappingURL=myappointment.css.map */

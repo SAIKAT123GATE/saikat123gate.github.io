@@ -19,6 +19,9 @@ const schedule=new mongoose.Schema({
     email:{
         type:String
     },
+    isDisabledschedule:{
+        type:Boolean
+    },
 
     days:{
         type:String

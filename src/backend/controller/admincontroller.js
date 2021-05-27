@@ -27,11 +27,11 @@ const admindashboard = async (req, res) => {
   }
 
   const skip = (page - 1) * items_per_page;
-  const count = await User.find().countDocuments();
+  const count = await User.find({ isDoctor: false }).countDocuments();
 
   //console.log("counting total docs");
   //console.log(count);
-  var findall = await User.find().limit(items_per_page).skip(skip);
+  var findall = await User.find({ isDoctor: false }).limit(items_per_page).skip(skip);
   return res.render("admindashboard", {
     users: users,
     doctors: doctors,

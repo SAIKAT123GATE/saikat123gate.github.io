@@ -31,11 +31,12 @@ const getslots = async(req,res)=>{
     if(findsch){
       
       //console.log("printing schedule",findsch);
+      
       for(var p=0;p<7;p++){
         for(var a=0;a<findsch.length;a++){
         if(comparearray[p]==findsch[a].days){
           for(var s=0;s<findsch[a].slots.length-1;s++){
-            if((!findsch[a].slots[s].isDisabled)&&(!findsch[a].slots[s].isBooked))
+            if((!findsch[a].slots[s].isDisabled)&&(!findsch[a].slots[s].isBooked)&&(!findsch[a].isDisabledschedule))
             slotsnum[p]+=1;
           }
         }
@@ -97,7 +98,7 @@ const getsubslots=async (req,res)=>{
 
 var findsch1=await schedules.findOne({createdby:id1,days:nameday});
 if(findsch1){
-  
+  if(!findsch1.isDisabledschedule){
   var b=findsch1._id;
   var slotsarray=findsch1.slots;
   //console.log("printing slotsarray",slotsarray);
@@ -115,6 +116,7 @@ if(findsch1){
       evening.push(slotsarray[s]);
     }
   }
+}
 }
 //console.log("printing evening",afternoon);
 //console.log("printing evening",evening);
@@ -209,6 +211,7 @@ const onslotclick=async(req,res)=>{
 
   if(req.session.isDoctor){
     console.log("doc can't book appointment as a doc");
+    req.flash("fail", "Doctor can't book appointment");
     return res.redirect("/doctor");
   }
   else{

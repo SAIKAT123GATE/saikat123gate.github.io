@@ -7,7 +7,12 @@
     grid-column-gap: 1rem;
     padding: 1rem;
     width:100%;
-    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    @media only screen and (min-width:1024px){
+        margin-right: 1.5rem;
+        margin-bottom: 0;
+    }
+    
     h6{
         margin: 0;
         font-size: 1.4rem;
@@ -22,6 +27,10 @@
 .allcards{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @media only screen and (min-width:1024px){
+        flex-wrap: nowrap;
+    }
     
 }
 
@@ -68,6 +77,22 @@ table {
           font-size: 1.2rem;
           border:1px solid $blue;
           padding:1px 8px;
+          margin-left: 1rem;
+          background-color: $blue;
+          color: white;
+          &:hover{
+            background-color: white;
+            color: $blue;
+          }
       }
       
+  }
+
+
+  .table{
+      width:100%;
+      overflow-x: scroll;
+      @media only screen and (min-width:1024px){
+        overflow-x: scroll;
+      }
   }

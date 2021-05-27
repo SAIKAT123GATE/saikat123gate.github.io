@@ -82,7 +82,7 @@ margin-top: 0.5rem;
     height: 100vh;
     left: 0;
     width: 70%;
-    z-index: 1;
+    z-index: 2;
     ul{
         margin: 1rem;
     margin-top: 0.8rem;
@@ -514,3 +514,13 @@ form{
 }
 
 //for add schedule page
+
+
+.medical-record{
+.edithospital{
+    font-size: 1.3rem;
+    @media only screen and (min-width:1024px){
+        font-size: 2.5rem;
+    }
+}
+}

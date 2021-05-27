@@ -14,7 +14,7 @@
   height: 100vh;
   background: white;
   width: 70%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .toastermob > ul {
@@ -900,7 +900,7 @@ a {
   height: 100vh;
   left: 0;
   width: 70%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .dashboardmob ul {
@@ -1486,5 +1486,15 @@ form .label_input input {
 
 .time {
   z-index: 3;
+}
+
+.medical-record .edithospital {
+  font-size: 1.3rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .medical-record .edithospital {
+    font-size: 2.5rem;
+  }
 }
 /*# sourceMappingURL=profile.css.map */

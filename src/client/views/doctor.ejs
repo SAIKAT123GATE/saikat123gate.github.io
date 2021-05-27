@@ -101,6 +101,19 @@
             </nav>
         </div>
     </header>
+
+    <% if (msg.length>0) {%>
+        <div id="loginmsg" class="fade-out animated ">
+        <i id="tick"class="fa fa-close"></i>
+        <ul>
+            <li><%= msg%></li>
+            
+        </ul>
+        
+        
+        </div>
+    
+        <%}%>
     <div class="toaster" id="toaster">
         <div>
 
@@ -548,6 +561,80 @@
                     //console.log("printing day",day);
                     var month = mydate.getMonth();
                     var year = mydate.getFullYear();
+                    switch(month){
+  case 0://jan
+    if(date>31){
+    date=date-31;
+    month=month+1;
+    }
+    break;
+  case 1://feb
+  if(date>28){
+    date=date-28;
+    month=month+1;
+  }
+    break;
+  case 2://mar
+  if(date>31){
+    date=date-31;
+    month=month+1;
+  }
+    break;
+  case 3://apr
+  if(date>30){
+    date=date-30;
+    month=month+1;
+  }
+    break;
+  case 4://may
+  if(date>31){
+    date=date-31;
+    month=month+1;
+  }
+    break;
+  case 5://june
+    if(date>30){
+    date=date-30;
+    month=month+1;
+    }
+    break;
+  case 6://july
+    if(date>31){
+    date=date-31;
+    month=month+1;
+    }
+    break;
+  case 7://aug
+    if(date>31){
+    date=date-31;
+    month=month+1;
+    }
+    break;
+case 8://sep
+    if(date>30){
+    date=date-30;
+    month=month+1;
+    }
+    break;
+case 9://oct
+    if(date>31){
+    date=date-31;
+    month=month+1;
+    }
+    break;
+    case 10://nov
+    if(date>30){
+    date=date-30;
+    month=month+1;
+    }
+    break;
+    case 11://oct
+    if(date>31){
+    date=date-31;
+    month=month+1;
+    }
+}
+    
                     var str = darr[day] + " " + marr[month] + " " + date + " " + year;
                     if (day >= 7) {
                         var str = darr[day - 7] + " " + marr[month] + " " + date + " " + year;

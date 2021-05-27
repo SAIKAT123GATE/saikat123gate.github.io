@@ -64,7 +64,8 @@ const doctorpageget = async (req, res) => {
     lastpage: Math.ceil(count / items_per_page),
     isadmin:req.session.isAdmin,
     alldoc:alldoc,
-    filter:req.session.filter?req.session.filter:"undefined"
+    filter:req.session.filter?req.session.filter:"undefined",
+    msg: req.flash("fail")
     
     
   });

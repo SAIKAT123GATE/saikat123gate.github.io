@@ -73,7 +73,12 @@
                     <h3>Click To View Dashboard</h3>
                 </div>
                 <div class="dashboardmob" id="dashboardmob">
-                    <i class="fa fa-close" onclick="tgl('dashboardmob')" ></i>
+                    <div class="figandi">
+                        <figure>
+                            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+                        </figure>
+                        <i class="fa fa-close" onclick="tgl('dashboardmob')"></i>
+                        </div>
                     <ul>
                         <a href="/profile">
                             <li> Profile</li>
@@ -172,7 +177,8 @@
                                     <button type="submit" class="btn_darkblue">Remove Slots</button>
                                 </form>
                                 <form method="POST" action="/disableallschedule/<%= exists[j]._id %>" onchange="this.submit()">
-                                <input type="checkbox" name="checkbox" id="checkbox">
+                                    
+                                <input type="checkbox" name="checkbox" id="checkbox" <% if(exists[j].isDisabledschedule){%> checked <%}%>>
                                 </form>
 
                             </div>
@@ -187,10 +193,10 @@
                                     </span>
                                     <form method="POST" action="/disableslot/<%= exists[j]._id %>/<%= exists[j].slots[k]._id %>" onchange="this.submit()">
                                         <% if(exists[j].slots[k].isDisabled){%>
-                                            <input type="checkbox" checked >
+                                            <input type="checkbox" checked <% if(exists[j].isDisabledschedule){%> disabled <%}%>>
                                             <%}
                                          else {%>
-                                            <input type="checkbox" >
+                                            <input type="checkbox" <% if(exists[j].isDisabledschedule){%> disabled <%}%>>
                                         <%}%>
                                     </form>
                                 </div>
@@ -229,20 +235,20 @@
 
                             <label>From Time</label>
                             <input data-clocklet=" alignment:center ; append-to:parent;" class="time" name="fromtime"
-                                required>
+                                required id="timefrom">
 
                             <label>To Time</label>
                             <input data-clocklet=" alignment:center ;placement:top; append-to:parent;" class="time"
-                                name="totime" required>
+                                name="totime" required id="timeto">
 
                             <label>Intervals</label>
-                            <input type="number" name="interval" required>
+                            <input type="number" name="interval" required placeholder="Enter the interval in minutes">
 
                         </div>
 
                         <div class="action-buttons">
                             <div class="button-container">
-                                <button class="btn_blue" type="submit">Done</button>
+                                <button class="btn_blue" id="createslotbutton" type="submit" onclick="checktime()">Done</button>
                             </div>
                             <div class="button-container">
                                 <button class="btn_darkblue"
@@ -264,11 +270,33 @@
                 <p>Just let us know we will happy to assist you</p>
             </div>
             <div class="btn2 nd_help2">
+                <a href="/getquote">
                 <button type="submit" class="btn_blue">Submit your enquiry</button>
+                </a>
             </div>
         </section>
 
         <%-include('footer.ejs')%>
+
+
+        <script>
+            function checktime(){
+                var starttime=document.getElementById('timefrom').value.split(":")[0];
+                starttime=parseInt(starttime);
+                var totime=document.getElementById('timeto').value.split(":")[0]
+                totime=parseInt(totime);
+                console.log(starttime,totime);
+                if (starttime > totime) 
+                    {
+                        alert('End time always greater then start time.');
+                        document.getElementById('createslotbutton').type="button";
+                    }
+                else{
+                    document.getElementById('createslotbutton').type="submit";
+                }
+            }
+
+        </script>
 </body>
 
 </html>
