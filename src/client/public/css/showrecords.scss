@@ -1,6 +1,11 @@
 @import "./theme1.scss";
 .images{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    @media only screen and (min-width:1024px){
     display: flex;
+    }
 }
 .records-pic{
     width:10rem;

@@ -397,11 +397,12 @@ const showrecords=async (req,res)=>{
 
 const addmedicalimage=async(req,res)=>{
   var id=req.params.id;
+  console.log("printing id from add image",id);
   var reportfind=await medicalreport.findOne({_id:id});
   const images=req.files;
-  //console.log("images in add image in report",req.files);
+  console.log("images in add image in report",images);
   for(i=0;i<images.length;i++){
-    reportfind.image.push(images[0].filename);
+    reportfind.image.push(images[i].filename);
   }
   await reportfind.save();
   return res.redirect("/"+id+"/showrecords");
