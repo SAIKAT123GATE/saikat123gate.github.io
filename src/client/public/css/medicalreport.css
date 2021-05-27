@@ -964,4 +964,20 @@ input[type="file"] {
     font-size: 1.3rem;
   }
 }
+
+.settings form {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .settings form {
+    text-align: left;
+  }
+}
+
+.settings .report-details {
+  border: 1px solid #167ddd;
+  padding: 6px 15px;
+}
 /*# sourceMappingURL=medicalreport.css.map */

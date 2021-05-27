@@ -139,3 +139,19 @@
     }
 
   }
+
+
+  .settings{
+    form{
+        text-align: center;
+        padding-top: 1rem;
+        
+        @media only screen and (min-width:1024px){
+            text-align: left;
+        }
+    }
+    .report-details{
+        border:1px solid $blue;
+        padding:6px 15px;
+    }
+}
