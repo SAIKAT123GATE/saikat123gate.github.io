@@ -142,7 +142,9 @@ const otpManager = new OtpManager(otpRepository, {
 app.use("/",mainroute);
 
 app.get("*",(req,res)=>{
-  res.render("error");
+  res.render("error",{
+    isadmin:req.session.isAdmin
+  });
 })
 var port=process.env.PORT || 4000;
 app.listen(port,()=>{
