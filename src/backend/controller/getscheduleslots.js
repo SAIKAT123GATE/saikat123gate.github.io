@@ -140,24 +140,16 @@ const onslotclick=async(req,res)=>{
   var doc= await docdetails.findOne({_id:doctorid});
   req.session.docnameforbook=doc.name;
   /* this section is for qualification */
-  var qualification=doc.qualification;
-  var quali=JSON.parse(qualification);
-  var str='';
-  for(var p=0;p<quali.length;p++){
-    str=str+quali[p].value+" ";
-  }
-  req.session.qualification=str;
+  var quali=doc.qualification;
+  
+  
+  req.session.qualification=quali;
   //**************************************************** */
 
   //this section is for hospital
-  var hospital=doc.hospitals;
-  var hospi=JSON.parse(hospital);
-  var str='';
-  for(var p=0;p<hospi.length;p++){
-    str=str+hospi[p].value+" ";
-  }
-  req.session.hospital=str;
-
+  var hospi=doc.hospitals;
+  
+  
   //***************************************************************** */
 
   /* getting the image*/
@@ -165,6 +157,7 @@ const onslotclick=async(req,res)=>{
 
   /*finding date */
   var findschedule= await schedules.findOne({_id:scheduleid});
+  req.session.hospital=findschedule.hospital;
   var day=findschedule.days;
   req.session.dayofbook=day;
   switch(day){
@@ -237,6 +230,8 @@ const appointment=async (req,res)=>{
     qualification:req.session.qualification,
     hospital:req.session.hospital,
     scheduleid:req.session.scheduleid,
+    slotid:req.session.slotid,
+    docid:req.session.docid,
     isadmin:req.session.isAdmin
 
   });

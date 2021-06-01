@@ -243,6 +243,71 @@ footer{
         }
     
     }
+
+
+
+
+    @keyframes fade-out {
+        0%,100% {
+          opacity: 0;
+          
+        }
+        
+        50% {
+          opacity: 1;
+          
+        }
+      }
+
+      
+
+     
+      
+      .fade-out {
+        animation-name: fade-out;
+      }
+
+      
+      
+      .animated {
+        animation-duration: 10s;
+        
+        animation-fill-mode: both;
+        
+         
+      }
+    #indexmsg2{
+        display: flex;
+        padding: 1rem;
+        top:6rem;
+        right:1rem;
+        position: absolute;
+        background-color: white;
+        align-items: center;
+        border-left: 0.3rem solid green;
+        width:20rem;
+        
+    }
+        
+        #tick{
+            background-color: green;
+            padding: 0.5rem;
+            margin-right: 1rem;
+            border-radius: 100%;
+        }
+      #indexmsg2  ul{
+            text-align: left;
+        }
+       #indexmsg2 ul li{
+                color:black;
+                font-size: 1.2rem;
+                font-weight: 700;
+                line-height: inherit;
+                margin-bottom: 0;
+       }
+       #indexmsg2 ul li span{
+                    color: green;
+                }
    
     /*section*/
     .firstsec{

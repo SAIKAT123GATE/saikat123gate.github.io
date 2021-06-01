@@ -888,7 +888,11 @@
                 
             
             // initialize Tagify on the above input node reference
-            new Tagify(input)
+        var tagify=    new Tagify(input,{
+                maxTags: 3,
+                originalInputValueFormat: valuesArr => valuesArr.map(item => item.value).join(',')
+
+            });
             
             
             </script>

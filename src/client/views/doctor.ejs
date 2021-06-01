@@ -25,18 +25,16 @@
         <nav class="head1">
             <figure>
                 <a href="/index">
-                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
-                    </a>
+                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+                </a>
             </figure>
             <div class="image-for-mobile">
                 <figure id="toaster-img">
-                        
-                    <img id="headerpic"
-                        src="<%=image%>"
-                        >
-                    
-                    </figure>
-            <i class="fa fa-bars" onclick="tgl('toastermob')"></i>
+
+                    <img id="headerpic" src="<%=image%>">
+
+                </figure>
+                <i class="fa fa-bars" onclick="tgl('toastermob')"></i>
             </div>
         </nav>
 
@@ -104,349 +102,356 @@
 
     <% if (msg.length>0) {%>
         <div id="loginmsg" class="fade-out animated ">
-        <i id="tick"class="fa fa-close"></i>
-        <ul>
-            <li><%= msg%></li>
-            
-        </ul>
-        
-        
+            <i id="tick" class="fa fa-close"></i>
+            <ul>
+                <li>
+                    <%= msg%>
+                </li>
+
+            </ul>
+
+
         </div>
-    
+
         <%}%>
-    <div class="toaster" id="toaster">
-        <div>
+            <div class="toaster" id="toaster">
+                <div>
 
-            <a href="/profile">
-                <figure id="toaster-img">
+                    <a href="/profile">
+                        <figure id="toaster-img">
 
-                    <img id="headerpic" src="<%=image%>">
+                            <img id="headerpic" src="<%=image%>">
 
-                </figure>
-            </a>
+                        </figure>
+                    </a>
 
-            <h5>
-                <%=username%>
-            </h5>
-        </div>
-        <ul>
-            <a href="/myappointments">
-                <li>My Appointments</li>
-            </a>
-            <a href="/medicalreport">
-                <li>Medical Records</li>
-            </a>
-            <a href="/settings">
-                <li>Settings</li>
-            </a>
-            <a href="#">
-                <li>My payments</li>
-            </a>
-            <a href="/logout">
-                <li>Logout</li>
-            </a>
-        </ul>
-    </div>
-
-    <!--For desktop and tablet picture with linear gradient-->
-    <section class="hide">
-        <h2>Cardiac Surgeon in <span>Delhi</span></h2>
-
-    </section>
-
-    <!--First Section-->
-    <section class="bg_white">
-        <div class="home_and_sort_flex">
-            <h3>Home/Doctor List</h3>
-            <form action="/sort" method="POST">
-                <select name="sort" id="cars" onchange="this.form.submit()">
-                    <option value="" disabled selected>Sort By</option>
-                    <option value="name-asc">Name(Assc.)</option>
-                    <option value="name-desc">Name(Desc.)</option>
-                    <option value="fees-asc">Average Fee(Assc.)</option>
-                    <option value="fees-desc">Average Fee(Desc.)</option>
-                    <option value="exp-asc">Experience(Assc.)</option>
-                    <option value="exp-desc">Experience(Desc.)</option>
-                </select>
-            </form>
-        </div>
-
-        <!--Doctor Image & Appointment-->
-        <div class="filter_and_card_grid1">
-            <div class="filter">
-                <div class="bg_gray">
-                    <h4>Filter By</h4>
+                    <h5>
+                        <%=username%>
+                    </h5>
                 </div>
-
-                <div class="location">
-
-                    <% var l=[];
-                    var h=[];
-                    var h1=[];
-                    var t=[];
-                    var t1=[];
-                    for(var q=0;q<alldoc.length;q++){
-                        if(!l.includes(alldoc[q].state)){
-                            l.push(alldoc[q].state);
-                        }
-                    }
-
-                    for(var q=0;q<alldoc.length;q++){
-                        
-                        if(!h.includes(alldoc[q].hospitals)){
-                            h.push(alldoc[q].hospitals);
-                            var p=JSON.parse(alldoc[q].hospitals)[0].value;
-                            h1.push(p);
-                        }
-                    }
-                    
-                    for(var q=0;q<alldoc.length;q++){
-                        
-                        if(!t.includes(alldoc[q].specialization)){
-                            t.push(alldoc[q].specialization);
-                            var p=JSON.parse(alldoc[q].specialization)[0].value;
-                            t1.push(p);
-                        }
-                    }
-                    %>
-
-                    <form class="filterform" method="POST" action="/addfilter" >
-                    <div class="flex_for_icon">
-                        <h5>Location</h5>
-                        <i class="fa fa-search"></i>
-
-                    </div>
-                    <div class="checkbox">
-                        <% if(l.length==0){%>
-                            <label>No filter Available</label>
-                        <%}%>
-                        <% for (var i=0;i<l.length;i++){%>
-                        <input type="checkbox" id="<%= l[i] %>" name="state" value="<%= l[i] %>" onchange="this.form.submit()"
-                        <% if(filter.includes(l[i])){%>checked <%}else{%>unchecked<%}%>
-                        >
-                        <label for="<%= l[i] %>"> <%= l[i] %></label><br>
-
-                        <%}%>
-                        <h6>+ Show more</h6>
-                    </div>
-
-
-                    <!--Treatment-->
-                    <div class="flex_for_icon">
-                        <h5>Treatment</h5>
-                        <i class="fa fa-search"></i>
-
-                    </div>
-
-                    <div class="checkbox">
-                        <% if(t.length==0){%>
-                            <label>No filter Available</label>
-                        <%}%>
-                        <% for (var i=0;i<t.length;i++){%>
-                            <input type="checkbox" id="<%= t[i] %>" name="treatments" value="<%= t[i] %>" onchange="this.form.submit()"
-                            <% if(filter.includes(t[i])){%>checked <%}else{%>unchecked<%}%>
-                            >
-                            <label for="<%= t[i] %>"> <%= t1[i] %></label><br>
-    
-                            <%}%>
-
-                        
-
-                        <h6>+ Show more</h6>
-                    </div>
-
-                    
-                    
-
-                    <!--Hospitals-->
-
-                    <div class="flex_for_icon">
-                        <h5>Hospitals</h5>
-                        <i class="fa fa-search"></i>
-
-                    </div>
-                    <div class="checkbox">
-                        <% if(h.length==0){%>
-                            <label>No filter Available</label>
-                        <%}%>
-                        <% for (var i=0;i<h.length;i++){%>
-                            <input type="checkbox" id="<%= h[i] %>" name="hospitals" value="<%= h[i] %>" onchange="this.form.submit()"
-                            <% if(filter.includes(h[i])){%>checked <%}else{%>unchecked<%}%>
-                            >
-                            <label for="<%= h[i] %>"> <%= h1[i] %></label><br>
-    
-                            <%}%>
-
-                        
-                        <h6>+ Show more</h6>
-                    </div>
-                    </form>
-
-                    
-
-
-
-
-
-
-
-
-
-
-                </div>
+                <ul>
+                    <a href="/myappointments">
+                        <li>My Appointments</li>
+                    </a>
+                    <a href="/medicalreport">
+                        <li>Medical Records</li>
+                    </a>
+                    <a href="/settings">
+                        <li>Settings</li>
+                    </a>
+                    <a href="#">
+                        <li>My payments</li>
+                    </a>
+                    <a href="/logout">
+                        <li>Logout</li>
+                    </a>
+                </ul>
             </div>
 
+            <!--For desktop and tablet picture with linear gradient-->
+            <section class="hide">
+                <h2>Cardiac Surgeon in <span>Delhi</span></h2>
 
-            <div id="docinfo">
-                <% if(findall.length==0){%>
-                    <h5 class="noinfo">No Info Available</h5>
-                <%}%>
-                <% for(var i=0;i< findall.length;i++){%>
+            </section>
 
+            <!--First Section-->
+            <section class="bg_white">
+                <div class="home_and_sort_flex">
+                    <h3>Home/Doctor List</h3>
+                    <form action="/sort" method="POST">
+                        <select name="sort" id="cars" onchange="this.form.submit()">
+                            <option value="" disabled selected>Sort By</option>
+                            <option value="name-asc">Name(Assc.)</option>
+                            <option value="name-desc">Name(Desc.)</option>
+                            <option value="fees-asc">Average Fee(Assc.)</option>
+                            <option value="fees-desc">Average Fee(Desc.)</option>
+                            <option value="exp-asc">Experience(Assc.)</option>
+                            <option value="exp-desc">Experience(Desc.)</option>
+                        </select>
+                    </form>
+                </div>
 
-
-                    <div class="bordergray grid2">
-                        <div class="docname">
-                            <a href="/docprofile">
-                                <h3>
-                                    <%= findall[i].name %>
-                                </h3>
-                            </a>
-                            <div class="grid_for_tab_and_desktop">
-                                <div class="grid_for_icon">
-                                    <i class="fa fa-certificate"></i>
-                                    <ul>
-                                        <li>
-                                            <%= JSON.parse(findall[i].specialization)[0].value %>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="grid_for_icon">
-                                    <i class="fas fa-award"></i>
-                                    <ul>
-                                        <li>
-                                            <%= findall[i].fees %>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="grid_for_icon">
-                                    <i class="fa fa-clock-o "></i>
-                                    <ul>
-                                        <li>
-                                            <%= findall[i].exp %>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="grid_for_icon">
-                                    <i class="fa fa-hospital-o"></i>
-                                    <ul>
-                                        <li>
-                                            <%= JSON.parse(findall[i].hospitals)[0].value %>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="grid_for_icon">
-                                    <i class="fa fa-map-marker "></i>
-                                    <ul>
-                                        <li>
-                                            <%= findall[i].state %>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-
-                            <button type="submit" class="btn_darkblue"
-                                onclick="showslot('container<%= findall[i]._id %>','<%= findall[i]._id %>')">Book
-                                an appointment</button>
+                <!--Doctor Image & Appointment-->
+                <div class="filter_and_card_grid1">
+                    <div class="filter">
+                        <div class="bg_gray">
+                            <h4>Filter By</h4>
                         </div>
-                        <figure>
-                            <img src="<%= findall[i].image %>" />
-                        </figure>
 
-                        <div class="slots">
-                            <div class="dates" id="container<%= findall[i]._id %>">
-                                <i class="fas fa-angle-left"
-                                    onclick="moveCarousel('right','carousel-container<%= findall[i]._id %>')"></i>
+                        <div class="location">
 
-                                <div class="mySlides<%= findall[i]._id %> firstload">
-                                    <div class="dates-and-slots" id="carousel-container<%= findall[i]._id %>">
+                            <% var l=[]; var h=[]; var t=[]; if(alldoc.length!=0){ for(var q=0;q<alldoc.length;q++){
+                                if(!l.includes(alldoc[q].state)){ l.push(alldoc[q].state); } } for(var
+                                q=0;q<alldoc.length;q++){ var k=alldoc[q].hospitals.split(","); for(var
+                                p=0;p<k.length;p++) if(!h.includes(k[p])){ h.push(k[p]); } } for(var
+                                q=0;q<alldoc.length;q++){ var k=alldoc[q].specialization.split(","); for(var
+                                p=0;p<k.length;p++) if(!t.includes(k[p])){ t.push(k[p]); } } } %>
 
-                                        <div id="slot1<%= findall[i]._id %>" class="activeslotnum"
-                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',0)">
-
-                                        </div>
-
-                                        <div id="slot2<%= findall[i]._id %>" class="activeslotnum"
-                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',1)">
-
-                                        </div>
-
-                                        <div id="slot3<%= findall[i]._id %>" class="activeslotnum"
-                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',2)">
-
-                                        </div>
-
-                                        <div id="slot4<%= findall[i]._id %>" class="notdisplay activeslotnum"
-                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',3)">
-
-                                        </div>
-
-                                        <div id="slot5<%= findall[i]._id %>" class="notdisplay activeslotnum"
-                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',4)">
-
-                                        </div>
-
-                                        <div id="slot6<%= findall[i]._id %>" class="notdisplay activeslotnum"
-                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',5)">
-
-                                        </div>
-
-                                        <div id="slot7<%= findall[i]._id %>" class="notdisplay activeslotnum"
-                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',6)">
-
-                                        </div>
-
-
+                                <form class="filterform" method="POST" action="/addfilter">
+                                    <div class="flex_for_icon">
+                                        <h5>Location</h5>
+                                        <i class="fa fa-search"></i>
 
                                     </div>
-                                </div>
+                                    <div class="checkbox ">
+                                        <div class="showmore" id="showmore1">
+                                            <% if(l.length==0){%>
+                                                <label>No filter Available</label>
+                                                <%}%>
+                                                    <% for (var i=0;i<l.length;i++){%>
+                                                        <input type="checkbox" id="<%= l[i] %>" name="state"
+                                                            value="<%= l[i] %>" onchange="this.form.submit()" <%
+                                                            if(filter.includes(l[i])){%>checked <%}else{%>unchecked<%}%>
+                                                                >
+                                                                <label for="<%= l[i] %>">
+                                                                    <%= l[i] %>
+                                                                </label><br>
 
-                                <i class="fas fa-angle-right"
-                                    onclick="moveCarousel('left','carousel-container<%= findall[i]._id %>')"></i>
-                            </div>
-                            <div class="timings-and-slots" id="subslots<%= findall[i]._id %>">
-                                <div class="morning">
-                                    <h4>Morning</h4>
-                                    <ul class="slot-timings" id="morning<%= findall[i]._id %>">
+                                                                <%}%>
 
-                                    </ul>
-                                </div>
-                                <div class="morning afternoon">
-                                    <h4>Afternoon</h4>
-                                    <ul class="slot-timings" id="afternoon<%= findall[i]._id %>">
+                                        </div>
+                                        <div>
+                                            <h6 id="1" onclick="expand(1)" class="checkboxh6">+ Show more</h6>
+                                        </div>
+                                    </div>
 
-                                    </ul>
-                                </div>
-                                <div class="evening afternoon morning">
-                                    <h4>Evening</h4>
-                                    <ul class="slot-timings" id="evening<%= findall[i]._id %>">
 
-                                    </ul>
-                                </div>
-                            </div>
+                                    <!--Treatment-->
+                                    <div class="flex_for_icon">
+                                        <h5>Treatment</h5>
+                                        <i class="fa fa-search"></i>
+
+                                    </div>
+                                    <div class="checkbox">
+                                        <div class="showmore" id="showmore2">
+                                            <% if(t.length==0){%>
+                                                <label>No filter Available</label>
+                                                <%}%>
+                                                    <% for (var i=0;i<t.length;i++){%>
+                                                        <input type="checkbox" id="<%= t[i] %>" name="treatments"
+                                                            value="<%= t[i] %>" onchange="this.form.submit()" <%
+                                                            if(filter.includes(t[i])){%>checked <%}else{%>unchecked<%}%>
+                                                                >
+                                                                <label for="<%= t[i] %>">
+                                                                    <%= t[i] %>
+                                                                </label><br>
+
+                                                                <%}%>
+
+
+
+
+                                        </div>
+                                        <div>
+                                            <h6 id="2" onclick="expand(2)" class="checkboxh6">+ Show more</h6>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <!--Hospitals-->
+
+                                    <div class="flex_for_icon">
+                                        <h5>Hospitals</h5>
+                                        <i class="fa fa-search"></i>
+
+                                    </div>
+                                    <div class="checkbox">
+                                    <div class="showmore" id="showmore3">
+                                        <% if(h.length==0){%>
+                                            <label>No filter Available</label>
+                                            <%}%>
+                                                <% for (var i=0;i<h.length;i++){%>
+                                                    <input type="checkbox" id="<%= h[i] %>" name="hospitals"
+                                                        value="<%= h[i] %>" onchange="this.form.submit()" <%
+                                                        if(filter.includes(h[i])){%>checked <%}else{%>unchecked<%}%>
+                                                            >
+                                                            <label for="<%= h[i] %>">
+                                                                <%= h[i] %>
+                                                            </label><br>
+
+                                                            <%}%>
+
+
+                                                                
+                                    </div>
+                                    <div>
+                                        <h6 id="3" onclick="expand(3)" class="checkboxh6">+ Show more</h6>
+                                    </div>
+                                    </div>
+                                </form>
+
+
+
+
+
+
+
+
+
+
+
+
                         </div>
                     </div>
 
 
-                    <% } %>
+                    <div id="docinfo">
+                        <% if(findall.length==0){%>
+                            <h5 class="noinfo">No Info Available</h5>
+                            <%}%>
+                                <% for(var i=0;i< findall.length;i++){%>
+
+
+
+                                    <div class="bordergray grid2">
+                                        <div class="docname">
+                                            <a href="/docprofile">
+                                                <h3>
+                                                    <%= findall[i].name %>
+                                                </h3>
+                                            </a>
+                                            <div class="grid_for_tab_and_desktop">
+                                                <div class="grid_for_icon">
+                                                    <i class="fa fa-certificate"></i>
+                                                    <ul>
+                                                        <li>
+                                                            <%= findall[i].specialization %>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="grid_for_icon">
+                                                    <i class="fas fa-award"></i>
+                                                    <ul>
+                                                        <li>
+                                                            <%= findall[i].fees %>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="grid_for_icon">
+                                                    <i class="fa fa-clock-o "></i>
+                                                    <ul>
+                                                        <li>
+                                                            <%= findall[i].exp %>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="grid_for_icon">
+                                                    <i class="fa fa-hospital-o"></i>
+                                                    <ul>
+                                                        <li>
+                                                            <%= findall[i].hospitals %>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="grid_for_icon">
+                                                    <i class="fa fa-map-marker "></i>
+                                                    <ul>
+                                                        <li>
+                                                            <%= findall[i].state %>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+
+                                            <button type="submit" class="btn_darkblue"
+                                                onclick="showslot('container<%= findall[i]._id %>','<%= findall[i]._id %>')">Book
+                                                an appointment</button>
+                                        </div>
+                                        <figure>
+                                            <img src="<%= findall[i].image %>" />
+                                        </figure>
+
+                                        <div class="slots">
+                                            <div class="dates" id="container<%= findall[i]._id %>">
+                                                <i class="fas fa-angle-left"
+                                                    onclick="moveCarousel('right','carousel-container<%= findall[i]._id %>')"></i>
+
+                                                <div class="mySlides<%= findall[i]._id %> firstload">
+                                                    <div class="dates-and-slots"
+                                                        id="carousel-container<%= findall[i]._id %>">
+
+                                                        <div id="slot1<%= findall[i]._id %>" class="activeslotnum"
+                                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',0)">
+
+                                                        </div>
+
+                                                        <div id="slot2<%= findall[i]._id %>" class="activeslotnum"
+                                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',1)">
+
+                                                        </div>
+
+                                                        <div id="slot3<%= findall[i]._id %>" class="activeslotnum"
+                                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',2)">
+
+                                                        </div>
+
+                                                        <div id="slot4<%= findall[i]._id %>"
+                                                            class="notdisplay activeslotnum"
+                                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',3)">
+
+                                                        </div>
+
+                                                        <div id="slot5<%= findall[i]._id %>"
+                                                            class="notdisplay activeslotnum"
+                                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',4)">
+
+                                                        </div>
+
+                                                        <div id="slot6<%= findall[i]._id %>"
+                                                            class="notdisplay activeslotnum"
+                                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',5)">
+
+                                                        </div>
+
+                                                        <div id="slot7<%= findall[i]._id %>"
+                                                            class="notdisplay activeslotnum"
+                                                            onclick="showslots('subslots<%= findall[i]._id %>','<%= findall[i]._id %>',6)">
+
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+
+                                                <i class="fas fa-angle-right"
+                                                    onclick="moveCarousel('left','carousel-container<%= findall[i]._id %>')"></i>
+                                            </div>
+                                            <div class="timings-and-slots" id="subslots<%= findall[i]._id %>">
+                                                <div class="morning">
+                                                    <h4>Morning</h4>
+                                                    <ul class="slot-timings" id="morning<%= findall[i]._id %>">
+
+                                                    </ul>
+                                                </div>
+                                                <div class="morning afternoon">
+                                                    <h4>Afternoon</h4>
+                                                    <ul class="slot-timings" id="afternoon<%= findall[i]._id %>">
+
+                                                    </ul>
+                                                </div>
+                                                <div class="evening afternoon morning">
+                                                    <h4>Evening</h4>
+                                                    <ul class="slot-timings" id="evening<%= findall[i]._id %>">
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <% } %>
 
 
 
 
 
-                        <!--Second div-->
+                                        <!--Second div-->
 
 
 
@@ -455,322 +460,343 @@
 
 
 
-                        <!--6th Div-->
+                                        <!--6th Div-->
 
-            </div>
-        </div>
-    </section>
-
-
-    <section class="pagination">
-        <div id="pagination">
-            <% for(i=1;i<=lastpage;i++){%>
-                <a href="/doctor?page=<%= i%>">
-                    <%= i %>
-                </a>
-                <%} %>
-        </div>
-    </section>
-    <!--Need Help-->
-    <section class="nd_help">
-        <div class="nd_help1">
-            <h2>Need Help?</h2>
-            <p>Just let us know we will happy to assist you</p>
-        </div>
-        <div class="btn2 nd_help2">
-            <a href="/getquote">
-            <button type="submit" class="btn_blue">Submit your enquiry</button>
-            </a>
-        </div>
-    </section>
-
-    <!--Footer**********************************************************************-->
-    <footer>
-        <div class="mobileshow">
-            <figure>
-                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
-            </figure>
-            <ul class="about">
-                <h2>TVASTRA</h2>
-                <li><a href="/doctor">Doctors</a></li>
-                <li><a href="/hospital">Hospitals</a></li>
-                <li><a href="/treatment">Treatment</a></li>
-                <li><a href="/tvastraplus">Other services</a></li>
-                <li><a href="/faqs">FAQs</a></li>
-                <h2>FOLLOW US</h2>
-                <li>Facebook</li>
-                <li>Twitter</li>
-                <li>Google+</li>
-                <li>Instagram</li>
-            </ul>
+                    </div>
+                </div>
+            </section>
 
 
-            <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
-        </div>
-
-        <div class="tabshow">
-
-
-            <figure>
-                <a href="/index">
-                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
+            <section class="pagination">
+                <div id="pagination">
+                    <% for(i=1;i<=lastpage;i++){%>
+                        <a href="/doctor?page=<%= i%>">
+                            <%= i %>
+                        </a>
+                        <%} %>
+                </div>
+            </section>
+            <!--Need Help-->
+            <section class="nd_help">
+                <div class="nd_help1">
+                    <h2>Need Help?</h2>
+                    <p>Just let us know we will happy to assist you</p>
+                </div>
+                <div class="btn2 nd_help2">
+                    <a href="/getquote">
+                        <button type="submit" class="btn_blue">Submit your enquiry</button>
                     </a>
-            </figure>
-            <ul class="about">
-                <li><a href="/doctor">Doctor</a></li>
-                <li><a href="/hospital">Hospital</a></li>
-                <li><a href="/treatment">Treatment</a></li>
-                <li><a href="/tvastraplus">Other services</a></li>
-                <li><a href="/faqs">FAQs</a></li>
-            </ul>
-            <div class="social_icon">
-                <i class="fa fa-facebook"></i>
-                <i class="fa fa-pinterest-p"></i>
-                <i class="fa fa-twitter"></i>
-                <i class="fa fa-google-plus"></i>
-                <i class="fa fa-instagram"></i>
-            </div>
-            <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
+                </div>
+            </section>
 
-        </div>
-    </footer>
-
-
-    <script>
-        async function showslot(id, docid) {
-            const abc = await fetch("/getschedule/" + docid, { method: "get", });
-            const schedule = await abc.json();
-            console.log(schedule);
-            console.log("running");
-
-            var k = document.getElementById(id);
-            if (k.style.display == "grid")
-                k.style.display = "none";
-            else {
+            <!--Footer**********************************************************************-->
+            <footer>
+                <div class="mobileshow">
+                    <figure>
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
+                    </figure>
+                    <ul class="about">
+                        <h2>TVASTRA</h2>
+                        <li><a href="/doctor">Doctors</a></li>
+                        <li><a href="/hospital">Hospitals</a></li>
+                        <li><a href="/treatment">Treatment</a></li>
+                        <li><a href="/tvastraplus">Other services</a></li>
+                        <li><a href="/faqs">FAQs</a></li>
+                        <h2>FOLLOW US</h2>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Google+</li>
+                        <li>Instagram</li>
+                    </ul>
 
 
-                k.style.display = "grid";
-                var finalarray = [];
-                finalarray.push("Today", "Tomorrow");
-                var mydate = new Date();
-                var darr = new Array("sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
-                var marr = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
-                for (var k = 2; k <= 6; k++) {
-                    var date = mydate.getDate() + k;
-                    var day = mydate.getDay() + k;
-                    //console.log("printing day",day);
-                    var month = mydate.getMonth();
-                    var year = mydate.getFullYear();
-                    switch(month){
-  case 0://jan
-    if(date>31){
-    date=date-31;
-    month=month+1;
-    }
-    break;
-  case 1://feb
-  if(date>28){
-    date=date-28;
-    month=month+1;
-  }
-    break;
-  case 2://mar
-  if(date>31){
-    date=date-31;
-    month=month+1;
-  }
-    break;
-  case 3://apr
-  if(date>30){
-    date=date-30;
-    month=month+1;
-  }
-    break;
-  case 4://may
-  if(date>31){
-    date=date-31;
-    month=month+1;
-  }
-    break;
-  case 5://june
-    if(date>30){
-    date=date-30;
-    month=month+1;
-    }
-    break;
-  case 6://july
-    if(date>31){
-    date=date-31;
-    month=month+1;
-    }
-    break;
-  case 7://aug
-    if(date>31){
-    date=date-31;
-    month=month+1;
-    }
-    break;
-case 8://sep
-    if(date>30){
-    date=date-30;
-    month=month+1;
-    }
-    break;
-case 9://oct
-    if(date>31){
-    date=date-31;
-    month=month+1;
-    }
-    break;
-    case 10://nov
-    if(date>30){
-    date=date-30;
-    month=month+1;
-    }
-    break;
-    case 11://oct
-    if(date>31){
-    date=date-31;
-    month=month+1;
-    }
-}
-    
-                    var str = darr[day] + " " + marr[month] + " " + date + " " + year;
-                    if (day >= 7) {
-                        var str = darr[day - 7] + " " + marr[month] + " " + date + " " + year;
-                    }
-                    finalarray.push(str);
-                    //console.log(finalarray);
-                }
+                    <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
+                </div>
 
-                for (var s = 0; s < 7; s++) {
-                    var no = s + 1;
-                    document.getElementById('slot' + no + docid).innerHTML = '<h4>' + finalarray[s] + '</h4><span>' + schedule[s] + ' Slots Available</span>';
-
-                }
-
-            }
+                <div class="tabshow">
 
 
+                    <figure>
+                        <a href="/index">
+                            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" />
+                        </a>
+                    </figure>
+                    <ul class="about">
+                        <li><a href="/doctor">Doctor</a></li>
+                        <li><a href="/hospital">Hospital</a></li>
+                        <li><a href="/treatment">Treatment</a></li>
+                        <li><a href="/tvastraplus">Other services</a></li>
+                        <li><a href="/faqs">FAQs</a></li>
+                    </ul>
+                    <div class="social_icon">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-pinterest-p"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-google-plus"></i>
+                        <i class="fa fa-instagram"></i>
+                    </div>
+                    <p class="rights">All Rights Reserved. &#169 tvastra <span>2018</span></p>
+
+                </div>
+            </footer>
 
 
-        }
-    </script>
+            <script>
+                async function showslot(id, docid) {
+                    const abc = await fetch("/getschedule/" + docid, { method: "get", });
+                    const schedule = await abc.json();
+                    console.log(schedule);
+                    console.log("running");
+
+                    var k = document.getElementById(id);
+                    if (k.style.display == "grid")
+                        k.style.display = "none";
+                    else {
 
 
-    <!--Carousel script-->
-    <script>
-        function moveCarousel(dirc, carouselId) {
-            var carouselItems = document.getElementById(carouselId).children;
-            if (dirc === "left") {
-                for (var i = 0; i < carouselItems.length; i++) {
-                    if (carouselItems[i].style.display !== "none")
-                        break;
-                }
-                if (i + 3 < carouselItems.length) {
-                    for (var j = 0; j < carouselItems.length; j++) {
-                        if (j === i + 1 || j === i + 2 || j === i + 3) {
-                            carouselItems[j].style.display = "block";
+                        k.style.display = "grid";
+                        var finalarray = [];
+                        finalarray.push("Today", "Tomorrow");
+                        var mydate = new Date();
+                        var darr = new Array("sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+                        var marr = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+                        for (var k = 2; k <= 6; k++) {
+                            var date = mydate.getDate() + k;
+                            var day = mydate.getDay() + k;
+                            //console.log("printing day",day);
+                            var month = mydate.getMonth();
+                            var year = mydate.getFullYear();
+                            switch (month) {
+                                case 0://jan
+                                    if (date > 31) {
+                                        date = date - 31;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 1://feb
+                                    if (date > 28) {
+                                        date = date - 28;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 2://mar
+                                    if (date > 31) {
+                                        date = date - 31;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 3://apr
+                                    if (date > 30) {
+                                        date = date - 30;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 4://may
+                                    if (date > 31) {
+                                        date = date - 31;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 5://june
+                                    if (date > 30) {
+                                        date = date - 30;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 6://july
+                                    if (date > 31) {
+                                        date = date - 31;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 7://aug
+                                    if (date > 31) {
+                                        date = date - 31;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 8://sep
+                                    if (date > 30) {
+                                        date = date - 30;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 9://oct
+                                    if (date > 31) {
+                                        date = date - 31;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 10://nov
+                                    if (date > 30) {
+                                        date = date - 30;
+                                        month = month + 1;
+                                    }
+                                    break;
+                                case 11://oct
+                                    if (date > 31) {
+                                        date = date - 31;
+                                        month = month + 1;
+                                    }
+                            }
+
+                            var str = darr[day] + " " + marr[month] + " " + date + " " + year;
+                            if (day >= 7) {
+                                var str = darr[day - 7] + " " + marr[month] + " " + date + " " + year;
+                            }
+                            finalarray.push(str);
+                            //console.log(finalarray);
                         }
-                        else
-                            carouselItems[j].style.display = "none";
-                    }
-                }
-            }
-            else if (dirc === "right") {
-                for (var i = 0; i < carouselItems.length; i++) {
-                    if (carouselItems[i].style.display !== "none")
-                        break;
-                }
-                if (i !== 0) {
-                    for (var j = 0; j < carouselItems.length; j++) {
-                        if (j === i - 1 || j === i || j === i + 1) {
-                            carouselItems[j].style.display = "block";
+
+                        for (var s = 0; s < 7; s++) {
+                            var no = s + 1;
+                            document.getElementById('slot' + no + docid).innerHTML = '<h4>' + finalarray[s] + '</h4><span>' + schedule[s] + ' Slots Available</span>';
+
                         }
-                        else
-                            carouselItems[j].style.display = "none";
-                    }
-                }
-            }
-        }
-
-
-
-        //for showing slots
-
-        async function showslots(id, did, index) {
-            if (document.getElementById(id).style.display != "block") {
-                document.getElementById(id).style.display = "block";
-                var cde = await fetch("/getslots/" + did + "/" + index, { method: 'get' });
-                var slots = await cde.json();
-                console.log(slots);
-                var morningslot = slots[0];
-                var afternoonslot = slots[1];
-                var eveningslot = slots[2];
-                console.log("eveningslot", eveningslot);
-                var scheduleid = slots[3];
-                if (morningslot.length == 0) {
-                    document.getElementById('morning' + did).innerHTML = "<li>No slots Available</li>";
-                    document.getElementById('morning' + did).style.justifyContent = "center";
-                    document.getElementById('morning' + did).childNodes[0].style.border = "none";
-                    
-                    document.getElementById('morning' + did).childNodes[0].className = "noslot";
-                }
-                if (afternoonslot.length == 0) {
-                    document.getElementById('afternoon' + did).innerHTML = "<li>No slots Available</li>";
-                    document.getElementById('afternoon' + did).style.justifyContent = "center";
-                    document.getElementById('afternoon' + did).childNodes[0].style.border = "none";
-                    
-                    document.getElementById('afternoon' + did).childNodes[0].className = "noslot";
-                }
-
-                if (eveningslot.length == 0) {
-                    document.getElementById('evening' + did).innerHTML = "<li>No slots Available</li>";
-                    document.getElementById('evening' + did).style.justifyContent = "center";
-                    document.getElementById('evening' + did).childNodes[0].style.border = "none";
-                    
-                    document.getElementById('evening' + did).childNodes[0].className = "noslot";
-                }
-
-                if (morningslot.length > 0) {
-                    var a = '';
-                    for (var k = 0; k < morningslot.length; k++) {
-
-                        a = a + '<form method="post" action="/bookslot/' + scheduleid + '/' + did + '/' + morningslot[k]._id + '/' + morningslot[k].time + '" onclick="this.submit()"><li style="width:5rem;">' + morningslot[k].time + '</li></form>';
 
                     }
-                    document.getElementById('morning' + did).innerHTML = a;
+
+
+
 
                 }
+            </script>
 
-                if (afternoonslot.length > 0) {
-                    var s = '';
-                    for (var k = 0; k < afternoonslot.length; k++) {
 
-                        s = s + '<form method="post" action="/bookslot/' + scheduleid + '/' + did + '/' + afternoonslot[k]._id + '/' + afternoonslot[k].time + '" onclick="this.submit()"><li style="width:5rem;">' + afternoonslot[k].time + '</li></form>';
+            <!--Carousel script-->
+            <script>
+                function moveCarousel(dirc, carouselId) {
+                    var carouselItems = document.getElementById(carouselId).children;
+                    if (dirc === "left") {
+                        for (var i = 0; i < carouselItems.length; i++) {
+                            if (carouselItems[i].style.display !== "none")
+                                break;
+                        }
+                        if (i + 3 < carouselItems.length) {
+                            for (var j = 0; j < carouselItems.length; j++) {
+                                if (j === i + 1 || j === i + 2 || j === i + 3) {
+                                    carouselItems[j].style.display = "block";
+                                }
+                                else
+                                    carouselItems[j].style.display = "none";
+                            }
+                        }
+                    }
+                    else if (dirc === "right") {
+                        for (var i = 0; i < carouselItems.length; i++) {
+                            if (carouselItems[i].style.display !== "none")
+                                break;
+                        }
+                        if (i !== 0) {
+                            for (var j = 0; j < carouselItems.length; j++) {
+                                if (j === i - 1 || j === i || j === i + 1) {
+                                    carouselItems[j].style.display = "block";
+                                }
+                                else
+                                    carouselItems[j].style.display = "none";
+                            }
+                        }
+                    }
+                }
+
+
+
+                //for showing slots
+
+                async function showslots(id, did, index) {
+                    if (document.getElementById(id).style.display != "block") {
+                        document.getElementById(id).style.display = "block";
+                        var cde = await fetch("/getslots/" + did + "/" + index, { method: 'get' });
+                        var slots = await cde.json();
+                        console.log(slots);
+                        var morningslot = slots[0];
+                        var afternoonslot = slots[1];
+                        var eveningslot = slots[2];
+                        console.log("eveningslot", eveningslot);
+                        var scheduleid = slots[3];
+                        if (morningslot.length == 0) {
+                            document.getElementById('morning' + did).innerHTML = "<li>No slots Available</li>";
+                            document.getElementById('morning' + did).style.justifyContent = "center";
+                            document.getElementById('morning' + did).childNodes[0].style.border = "none";
+
+                            document.getElementById('morning' + did).childNodes[0].className = "noslot";
+                        }
+                        if (afternoonslot.length == 0) {
+                            document.getElementById('afternoon' + did).innerHTML = "<li>No slots Available</li>";
+                            document.getElementById('afternoon' + did).style.justifyContent = "center";
+                            document.getElementById('afternoon' + did).childNodes[0].style.border = "none";
+
+                            document.getElementById('afternoon' + did).childNodes[0].className = "noslot";
+                        }
+
+                        if (eveningslot.length == 0) {
+                            document.getElementById('evening' + did).innerHTML = "<li>No slots Available</li>";
+                            document.getElementById('evening' + did).style.justifyContent = "center";
+                            document.getElementById('evening' + did).childNodes[0].style.border = "none";
+
+                            document.getElementById('evening' + did).childNodes[0].className = "noslot";
+                        }
+
+                        if (morningslot.length > 0) {
+                            var a = '';
+                            for (var k = 0; k < morningslot.length; k++) {
+
+                                a = a + '<form method="post" action="/bookslot/' + scheduleid + '/' + did + '/' + morningslot[k]._id + '/' + morningslot[k].time + '" onclick="this.submit()"><li style="width:5rem;">' + morningslot[k].time + '</li></form>';
+
+                            }
+                            document.getElementById('morning' + did).innerHTML = a;
+
+                        }
+
+                        if (afternoonslot.length > 0) {
+                            var s = '';
+                            for (var k = 0; k < afternoonslot.length; k++) {
+
+                                s = s + '<form method="post" action="/bookslot/' + scheduleid + '/' + did + '/' + afternoonslot[k]._id + '/' + afternoonslot[k].time + '" onclick="this.submit()"><li style="width:5rem;">' + afternoonslot[k].time + '</li></form>';
+
+                            }
+                            document.getElementById('afternoon' + did).innerHTML = s;
+
+                        }
+
+                        if (eveningslot.length > 0) {
+                            var b = '';
+                            for (var k = 0; k < eveningslot.length; k++) {
+
+                                b = b + '<form method="post" action="/bookslot/' + scheduleid + '/' + did + '/' + eveningslot[k]._id + '/' + eveningslot[k].time + '" onclick="this.submit()"><li style="width:5rem;">' + eveningslot[k].time + '</li></form>';
+
+                            }
+                            document.getElementById('evening' + did).innerHTML = b;
+
+                        }
 
                     }
-                    document.getElementById('afternoon' + did).innerHTML = s;
+                    else
+                        document.getElementById(id).style.display = "none";
 
                 }
+            </script>
 
-                if (eveningslot.length > 0) {
-                    var b = '';
-                    for (var k = 0; k < eveningslot.length; k++) {
+            <script>
 
-                        b = b + '<form method="post" action="/bookslot/' + scheduleid + '/' + did + '/' + eveningslot[k]._id + '/' + eveningslot[k].time + '" onclick="this.submit()"><li style="width:5rem;">' + eveningslot[k].time + '</li></form>';
-
+                async function expand(id) {
+                    var d = document.getElementById("showmore" + id);
+                    var b = document.getElementById(id);
+                    if (d.style.maxHeight !== "unset") {
+                        {
+                            d.style.maxHeight = "unset";
+                            b.innerHTML = "- Show Less";
+                            b.style.color = "gray";
+                        }
                     }
-                    document.getElementById('evening' + did).innerHTML = b;
-
+                    else {
+                        d.style.maxHeight = "4rem";
+                        b.innerHTML = "+Show More";
+                        b.style.color = "#167ddd";
+                    }
                 }
 
-            }
-            else
-                document.getElementById(id).style.display = "none";
-
-        }
-    </script>
+            </script>
 
 </body>
 

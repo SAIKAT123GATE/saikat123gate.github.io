@@ -220,10 +220,10 @@
                                 <img src="<%= hospitaldet[i].image %>" />
                             </figure>
                             <div class="detailsuser">
-                                <h4><%= JSON.parse(hospitaldet[i].name)[0].value %></h4>
+                                <h4><%= hospitaldet[i].name %></h4>
                                 <div class="icons-and-details">
                                     <i class="fas fa-stethoscope"></i>
-                                    <label><%= JSON.parse(hospitaldet[i].speciality)[0].value %></label>
+                                    <label><%= hospitaldet[i].speciality %></label>
                                 </div>
 
                                 <div class="icons-and-details">
@@ -233,7 +233,7 @@
 
                                 <div class="icons-and-details">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <label><%= hospitaldet[i].location %></label>
+                                    <label><%= hospitaldet[i].description %></label>
                                 </div>
 
                             </div>

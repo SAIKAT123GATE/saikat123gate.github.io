@@ -22,6 +22,7 @@ tags.tagify{
 }
 .tagify__tag{
     margin: 0;
+    margin-right: 0.3rem;
 }
 
 .tagify__input{
@@ -114,6 +115,8 @@ form .input1 .input_field{
     width: 100%;
     background-color: white;
     font-family: nexa-bold;
+    display: flex;
+    align-items: center;
     
     
 }
@@ -888,7 +891,7 @@ form .input1 .input_field{
         
     }
     .steps figure img{
-        height: auto;
+        height: 100%;
     }
     
     .how_it_works li {
@@ -903,10 +906,13 @@ form .input1 .input_field{
     .how_it_works figure{
         margin-left: 0rem;
         margin-right: 0rem;
+        max-height: 40rem;
+        height:40rem;
     }
     .how_it_works figure p{
         text-align: center;
     }
+    
    
     
     

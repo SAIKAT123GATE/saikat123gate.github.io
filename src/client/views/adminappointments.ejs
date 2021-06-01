@@ -150,10 +150,10 @@
                     <div class="headings">
                         <h3>Upcoming Appointments</h3>
                     </div>
-                    <% if(upcomingdetails.length==0){%>
+                    <% if(upcomingdetails.length===0){%>
                         <h4 class="center">No Appointment</h4>
-                        <%}%>
-                            <% for(var i=0;i<upcomingdetails.length;i++){%>
+                        <%}else{%>
+                           <% for(var i=0;i<upcomingdetails.length;i++){%>
                                 <div class="grid">
                                     <div class="date">
                                         <h4>
@@ -184,7 +184,7 @@
                                     </div>
                                     
                                 </div>
-                                <%}%>
+                                <%}%> <%}%>
 
                                     <div class="headings">
                                         <h3>Completed Appointments</h3>
@@ -192,7 +192,7 @@
 
                                     <% if(completeddetails.length==0){%>
                                         <h4 class="center">No Appointment</h4>
-                                        <%}%>
+                                        <%}else{%>
 
                                             <% for(var i=0;i<completeddetails.length;i++){%>
                                                 <div class="grid">
@@ -205,11 +205,11 @@
                                                         
                                                         <% if(!isDoctor){%>
                                                             <h4>
-                                                                <%= upcomingdetails[i].docname %>
+                                                                <%= completeddetails[i].docname %>
                                                             </h4>
                                                             <%} else{%>
                                                                 <h4>
-                                                                    <%= upcomingdetails[i].username %>
+                                                                    <%= completeddetails[i].username %>
                                                                 </h4>
                                                                 <%}%>
                                                             
@@ -220,11 +220,11 @@
                                                                     <h6>
                                                                         <%= completeddetails[i].hospital %>
                                                                     </h6>
-                                                                    <h6 class="status">Completed</h6>
+                                                                    <h6 class="status completed">Completed</h6>
                                                     </div>
 
                                                 </div>
-                                                <%}%>
+                                                <%}%> <%}%>
                 </div>
 
 

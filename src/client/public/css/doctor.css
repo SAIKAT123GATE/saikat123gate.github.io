@@ -1509,14 +1509,25 @@ footer p span {
     position: relative;
     bottom: 0;
   }
+  .checkboxh6 {
+    margin-top: 0.4rem;
+    color: #167ddd;
+    font-size: 1.0rem;
+  }
   .checkbox {
     border-bottom: 1px solid #cccccc;
     margin-left: 1rem;
   }
-  .checkbox h6 {
-    margin-top: 0.4rem;
-    color: #167ddd;
-    font-size: 1.0rem;
+  .checkbox .showmore {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+    max-height: 4rem;
+    overflow: hidden;
   }
   .checkbox input {
     width: auto;

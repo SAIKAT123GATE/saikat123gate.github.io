@@ -7,9 +7,19 @@ const { request } = require("express");
 const docdetails = require("../database/docdetails");
 const path=require("path");
 
-const loginuser = (req, res) => {
+const loginuser = async(req, res) => {
+  if(req.session.isDoctor){
+    if(!req.session.description){
+      var removeuser=await User.findOneAndRemove({email:req.session.email});
+      if(removeuser){
+        console.log("User removed successfully");
+      }
+    }
+
+  }
   return res.render("login", {
     msg1: req.flash("fail"),
+    msg:req.flash("success")
   });
 };
 
@@ -17,6 +27,7 @@ const loginauth = async (req, res) => {
   const { email, password } = req.body;
   try {
     var exist = await User.findOne({ email: email });
+    if(exist){
     if(exist.email=="admin@gmail.com" && exist.password=="admin@123"){
       req.session.user = { email, password };
       req.session.name = exist.name;
@@ -28,6 +39,7 @@ const loginauth = async (req, res) => {
 
         return res.redirect("/adminpageget");
     }
+  }
     if (exist) {
       var checkpass = await User.findOne({ email: email, password: password });
       var findall= await docdetails.find();
@@ -101,7 +113,61 @@ const loginauth = async (req, res) => {
   }
 };
 
+
+const forgotpassword=async(req,res)=>{
+  return res.render("forgotpassword",{
+    msg1:req.flash("fail")
+  });
+}
+
+const forgotchangepassword=async(req,res)=>{
+  return res.render("forgotchangepassword");
+}
+
+
+const postforgotpassword=async(req,res)=>{
+  const email=req.body.email;
+  const exists=await User.findOne({email:email});
+  if(exists){
+    req.session.forgotemail=email;
+    return res.redirect("/forgotchangepassword");
+  }
+  else{
+  console.log(email);
+  req.flash("fail","Email Not Exists");
+  return res.redirect("/forgotpassword");
+  }
+}
+
+const postforgotchangepassword=async (req,res)=>{
+  const newpassword = req.body.newpassword;
+  const confirmpassword = req.body.confirmpassword;
+  if (newpassword != confirmpassword) {
+    req.flash("fail", "Password doesnot match");
+    return res.redirect("/forgotpassword");
+  }
+  else{
+    var user = await User.findOneAndUpdate(
+      { email: req.session.forgotemail },
+      {
+        password: newpassword,
+      }
+    );
+    if (user) {
+      console.log("password updated successfully");
+      
+      req.flash("success","Password Updated Successfully");
+      
+      
+      return res.redirect("/");
+    }
+  }
+}
 module.exports = {
   loginuser: loginuser,
   loginauth: loginauth,
+  forgotpassword:forgotpassword,
+  forgotchangepassword:forgotchangepassword,
+  postforgotpassword:postforgotpassword,
+  postforgotchangepassword:postforgotchangepassword
 };

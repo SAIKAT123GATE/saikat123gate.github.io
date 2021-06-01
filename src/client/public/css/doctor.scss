@@ -675,14 +675,23 @@ footer {
   }
 
   //checkbox
-  .checkbox {
-    border-bottom: 1px solid $light_gray;
-    margin-left: 1rem;
-    h6{
+  .checkboxh6{
+    
       margin-top: 0.4rem;
       color: $blue;
       font-size: 1.0rem;
+  
+  }
+  .checkbox {
+    border-bottom: 1px solid $light_gray;
+    margin-left: 1rem;
+    .showmore{
+      flex-direction: column;
+                align-items: unset;
+                max-height:4rem;
+                overflow: hidden;
     }
+    
     input {
       width: auto;
       margin: 0;

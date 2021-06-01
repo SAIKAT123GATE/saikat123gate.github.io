@@ -24,7 +24,9 @@
             <!--Mobile and tablet-->
             <nav class="head1">
                 <figure>
+                    
                     <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo" />
+                    
                 </figure>
                 <i class="fa fa-bars"></i>
             </nav>
@@ -52,8 +54,9 @@
                     </a>
                 </ul>
                 <div>
-
+                    <a href="/getquote">
                     <button class="btn_darkblue">Get a Quote</button>
+                    </a>
                 </div>
 
             </nav>
@@ -74,6 +77,21 @@
             </div>
         
             <%}%>
+
+            <% if (msg.length>0) {%>
+                <div id="indexmsg2" class="fade-out animated ">
+                    <i id="tick" class="fa fa-check"></i>
+                    <ul>
+                        
+                        <li>
+                            <%= msg%>
+                        </li>
+                    </ul>
+        
+        
+                </div>
+        
+                <%}%>
         
             
         
@@ -97,7 +115,7 @@
                         </div>
                     <div class="otpsec">
                         <a href="/otpnumber">Login With OTP</a>
-                        <a href="#">Forgot Password</a>
+                        <a href="/forgotpassword">Forgot Password</a>
                     </div>
                     <button type="submit" class="btn_darkblue">LOGIN
                         <i class='fa fa-arrow-right'></i>

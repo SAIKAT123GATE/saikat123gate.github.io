@@ -18,6 +18,10 @@ const userSchema=new mongoose.Schema(
             type:String,
             required:true
         },
+        hospitalsarray:{
+            type:Array,
+            required:true
+        },
         achievements:{
             type:String,
             required:true
@@ -37,6 +41,10 @@ const userSchema=new mongoose.Schema(
         },
         specialization:{
             type:String,
+            required:true
+        },
+        specializationarray:{
+            type:Array,
             required:true
         },
         fees:{

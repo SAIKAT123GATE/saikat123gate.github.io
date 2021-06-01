@@ -31,7 +31,9 @@ const admindashboard = async (req, res) => {
 
   //console.log("counting total docs");
   //console.log(count);
-  var findall = await User.find({ isDoctor: false }).limit(items_per_page).skip(skip);
+  var findall = await User.find({ isDoctor: false })
+    .limit(items_per_page)
+    .skip(skip);
   return res.render("admindashboard", {
     users: users,
     doctors: doctors,
@@ -66,6 +68,7 @@ const adminappointment = async (req, res) => {
   var id5 = req.params.id;
 
   var person = await User.findOne({ _id: id5 });
+  console.log("person from admin appointment",person);
   if (!person) {
     var doc = await docdetails.findOne({ _id: id5 });
     var person = await User.findOne({ email: doc.email });
@@ -79,16 +82,13 @@ const adminappointment = async (req, res) => {
     for (var k = 0; k < bookingdetails.length; k++) {
       var checkdate = bookingdetails[k].checkdate.split(" ");
       //console.log("checing checkdate",(checkdate));
-      var date = new Date();
-      var month = parseInt(date.getMonth());
-      var day = parseInt(date.getDate());
-      var year = parseInt(date.getFullYear());
-      if (
-        day > parseInt(checkdate[1]) &&
-        month >= parseInt(checkdate[0]) &&
-        year >= parseInt(checkdate[2])
-      ) {
+      var date=new Date();
+      var month=parseInt(date.getMonth());
+        var day=parseInt(date.getDate());
+        var year=parseInt(date.getFullYear());
+      if((day>parseInt(checkdate[1]) && month>=parseInt(checkdate[0]) && year>=parseInt(checkdate[2]))||(day<=parseInt(checkdate[1]) && month>parseInt(checkdate[0]) && year>=parseInt(checkdate[2]))) {
         completeddetails.push(bookingdetails[k]);
+        console.log("completed details",completeddetails);
         var scheduleid = bookingdetails[k].scheduleid;
         var slotid = bookingdetails[k].slotid;
         var schedule = await schedules.findOne({ _id: scheduleid });
@@ -110,11 +110,7 @@ const adminappointment = async (req, res) => {
       var month = parseInt(date.getMonth());
       var day = parseInt(date.getDate());
       var year = parseInt(date.getFullYear());
-      if (
-        day > parseInt(checkdate[1]) &&
-        month >= parseInt(checkdate[0]) &&
-        year >= parseInt(checkdate[2])
-      ) {
+      if((day>parseInt(checkdate[1]) && month>=parseInt(checkdate[0]) && year>=parseInt(checkdate[2]))||(day<=parseInt(checkdate[1]) && month>parseInt(checkdate[0]) && year>=parseInt(checkdate[2]))){
         completeddetails.push(bookingdetails[k]);
         var scheduleid = bookingdetails[k].scheduleid;
         var slotid = bookingdetails[k].slotid;
@@ -145,32 +141,81 @@ const adminappointment = async (req, res) => {
     bookingdetails: bookingdetails,
     completeddetails: completeddetails,
     upcomingdetails: upcomingdetails,
-    isadmin:req.session.isAdmin
+    isadmin: req.session.isAdmin,
   });
 };
 
 const editprofile = async (req, res) => {
-    var emails=req.params.email;
-    console.log("on post request checking email",emails);
-  const user = await User.findOne({ email:emails });
-  const {
-    name,
-    email,
-    gender,
-    dateofbirth,
-    mobileno,
-    state,
-    city,
-    country,
-    description,
-    hospitals,
-    achievements,
-    exp,
-    qualification,
-    awards,
-    specialization,
-    fees,
-  } = req.body;
+  var emails = req.params.email;
+  console.log("on post request checking email", emails);
+  const user = await User.findOne({ email: emails });
+  const { name, email, gender, dateofbirth, mobileno, state, city, country } =
+    req.body;
+
+  if (user.isDoctor) {
+    const description = req.body.description;
+    const hospitals = JSON.parse(req.body.hospitals)
+      .map(function (item) {
+        return item["value"];
+      })
+      .toString();
+
+    //consoling something
+    var s = hospitals.split(",");
+    var hospitalsarray = [];
+    console.log("printing hospitals", s);
+    for (var z = 0; z < s.length; z++) {
+      hospitalsarray.push(s[z]);
+    }
+    const achievements = JSON.parse(req.body.achievements)
+      .map(function (item) {
+        return item["value"];
+      })
+      .toString();
+    const exp = req.body.exp;
+    const qualification = JSON.parse(req.body.qualification)
+      .map(function (item) {
+        return item["value"];
+      })
+      .toString();
+    const awards = JSON.parse(req.body.awards)
+      .map(function (item) {
+        return item["value"];
+      })
+      .toString();
+    const specialization = JSON.parse(req.body.specialization)
+      .map(function (item) {
+        return item["value"];
+      })
+      .toString();
+
+    var l = specialization.split(",");
+    var specializationarray = [];
+    console.log("printing specialization", l);
+    for (var z = 0; z < l.length; z++) {
+      specializationarray.push(l[z]);
+    }
+    const fees = req.body.fees;
+  }
+
+  if (!user.isDoctor) {
+    var bookingfind = await bookings.find({ username: user.name });
+    console.log("printing booking from adminedit", bookingfind, user.name);
+
+    if (bookingfind) {
+      for (var k = 0; k < bookingfind.length; k++) {
+        bookingfind[k].username = name;
+        await bookingfind[k].save();
+      }
+    }
+  }
+  var reportfind = await medicalreport.find({ email: user.email });
+  if (reportfind) {
+    for (var k = 0; k < reportfind.length; k++) {
+      reportfind[k].name = name;
+      await reportfind[k].save();
+    }
+  }
 
   const id1 = user._id;
   var updated = await User.findByIdAndUpdate(
@@ -189,8 +234,16 @@ const editprofile = async (req, res) => {
   );
 
   if (user.isDoctor) {
-    const doc = await docdetails.findOne({ email:email });
+    const doc = await docdetails.findOne({ email: email });
     const id2 = doc._id;
+    var bookingfind = await bookings.find({ docname: doc.name });
+
+    if (bookingfind) {
+      for (var k = 0; k < bookingfind.length; k++) {
+        bookingfind[k].username = name;
+        await bookingfind[k].save();
+      }
+    }
 
     var updated2 = await docdetails.findByIdAndUpdate(
       { _id: id2 },
@@ -218,57 +271,51 @@ const editprofile = async (req, res) => {
     );
 
     if (updated && updated2) {
-      
       console.log("updation successfull");
-      return res.redirect("/"+email+"/editprofile");
+      return res.redirect("/" + email + "/editprofile");
     } else {
       console.log("updation failed");
-      return res.redirect("/"+email+"/editprofile");
+      return res.redirect("/" + email + "/editprofile");
     }
   } else {
     if (updated) {
-      
-      return res.redirect("/"+email+"/editprofile");
+      return res.redirect("/" + email + "/editprofile");
     } else {
-      return res.redirect("/"+email+"/editprofile");
+      return res.redirect("/" + email + "/editprofile");
     }
   }
 };
 
-
-
 const editpageget = async (req, res) => {
-    var email=req.params.email;
-    console.log("printing email",email);
-    
-    var userone=await User.findOne({email:email});
-    
-    
+  var email = req.params.email;
+  console.log("printing email", email);
+
+  var userone = await User.findOne({ email: email });
+
   if (userone.isDoctor) {
-    var doc = await docdetails.findOne({email:email});
-    
+    var doc = await docdetails.findOne({ email: email });
+
     return res.render("admineditprofile", {
-        username: doc.name,
-        mobileno: doc.mobileno,
-        email: doc.email,
-        gender: doc.gender,
-        dateofbirth: doc.dateofbirth,
-        city: doc.city,
-        state: doc.state,
-        country: doc.country,
-        description: doc.description,
-        hospitals: doc.hospitals,
-        achievements: doc.achievements,
-        exp: doc.exp,
-        qualification: doc.qualification,
-        awards: doc.awards,
-        specialization: doc.specialization,
-        fees: doc.fees,
-        isDoctor: userone.isDoctor,
-        image: doc.image,
-        isadmin:req.session.isAdmin
-        
-      });
+      username: doc.name,
+      mobileno: doc.mobileno,
+      email: doc.email,
+      gender: doc.gender,
+      dateofbirth: doc.dateofbirth,
+      city: doc.city,
+      state: doc.state,
+      country: doc.country,
+      description: doc.description,
+      hospitals: doc.hospitals,
+      achievements: doc.achievements,
+      exp: doc.exp,
+      qualification: doc.qualification,
+      awards: doc.awards,
+      specialization: doc.specialization,
+      fees: doc.fees,
+      isDoctor: userone.isDoctor,
+      image: doc.image,
+      isadmin: req.session.isAdmin,
+    });
   }
   return res.render("admineditprofile", {
     username: userone.name,
@@ -281,109 +328,105 @@ const editpageget = async (req, res) => {
     country: userone.country,
     isDoctor: userone.isDoctor,
     image: userone.image,
-    
   });
 };
 
-
-
 //medicalrecord get
 
-const medicalrecordget=async(req,res)=>{
-
-    var email=req.params.email;
-    var record=await medicalreport.find({email:email});
-    var countrecord=record.length;
-    //console.log("counting the record length",countrecord);
+const medicalrecordget = async (req, res) => {
+  var email = req.params.email;
+  var record = await medicalreport.find({ email: email });
+  var countrecord = record.length;
+  //console.log("counting the record length",countrecord);
   return res.render("adminmedicalreport", {
-    
-    
-    
-    countrecord:countrecord,
-    record:record,
-    isadmin:req.session.isAdmin
+    countrecord: countrecord,
+    record: record,
+    isadmin: req.session.isAdmin,
   });
-
-}
+};
 
 //admin whole delete medical report
 
-const admindeletemedicalreport=async(req,res)=>{
-  const id=req.params.id;
-  const email=req.params.email;
-    try{
-    var deletedata= await medicalreport.findOneAndDelete({_id:id});
-    if(deletedata){
-        console.log("deleted successfully");
-        res.redirect("/medicalrecord/"+email);
+const admindeletemedicalreport = async (req, res) => {
+  const id = req.params.id;
+  const email = req.params.email;
+  try {
+    var deletedata = await medicalreport.findOneAndDelete({ _id: id });
+    if (deletedata) {
+      console.log("deleted successfully");
+      res.redirect("/medicalrecord/" + email);
     }
-    }
-    catch(err){
-        console.log("can not delete",err);
-        res.redirect("/medicalrecord/"+email);
-    }
-}
+  } catch (err) {
+    console.log("can not delete", err);
+    res.redirect("/medicalrecord/" + email);
+  }
+};
 
-const editadminhospital=async(req,res)=>{
-  var id=req.params.id;
+const editadminhospital = async (req, res) => {
+  var id = req.params.id;
   //console.log("printing hospital id",id);
-  var hospitalfind=await hospitals.findOne({_id:id});
+  var hospitalfind = await hospitals.findOne({ _id: id });
   //console.log("printing hospitalfind",hospitalfind);
-  var hospitalname=JSON.parse(hospitalfind.name)[0].value;
-  
-  return res.render("edithospitaldetails",{
-    hospitalfind:hospitalfind,
-    hospitalname:hospitalname
-  });
-}
+  var hospitalname = hospitalfind.name;
 
+  return res.render("edithospitaldetails", {
+    hospitalfind: hospitalfind,
+    hospitalname: hospitalname,
+  });
+};
 
 //Save Hospital
-const saveedithospital=async(req,res)=>{
-  var id=req.params.id;
-  var hospitalfind=await hospitals.findOne({_id:id});
+const saveedithospital = async (req, res) => {
+  var id = req.params.id;
+  var hospitalfind = await hospitals.findOne({ _id: id });
   const {
     description,
     hospitalname,
-    achievements,
-    qualification,
-    specialization,
     fees,
   } = req.body;
+  const achievements = JSON.parse(req.body.achievements)
+    .map(function (item) {
+      return item["value"];
+    })
+    .toString();
+    const specialization = JSON.parse(req.body.specialization)
+    .map(function (item) {
+      return item["value"];
+    })
+    .toString();
 
-  
-  
-  
-  var updated=await hospitals.findByIdAndUpdate({_id:id},{
-    name:hospitalname,
-    description:description,
-    treatment:achievements,
-    beds:fees,
-    specialization:specialization,
-    image:req.file?req.file.filename:hospitalfind.image
-  });
-  if(updated){
-    return res.redirect("/adminhospitals");
+    console.log("printing specialization",achievements);
+
+  var updated = await hospitals.findByIdAndUpdate(
+    { _id: id },
+    {
+      name: hospitalname,
+      description: description,
+      treatments: achievements,
+      beds: fees,
+      speciality: specialization,
+      image: req.file ? req.file.filename : hospitalfind.image,
+    }
+  );
+  if (updated) {
+    return res.redirect("/"+id+"/edithospital");
   }
-
-}
-
-
+};
 
 //Get  a quote form
-const getquote=async(req,res)=>{
+const getquote = async (req, res) => {
   return res.render("queryform");
-}
+};
 
 //Get about hospital
 
-const abouthospital=async(req,res)=>{
-  return res.render("about-hospital",{
+const abouthospital = async (req, res) => {
+  return res.render("about-hospital", {
     username: req.session.name,
     image: req.session.image,
-    isadmin:req.session.isAdmin
+    isadmin: req.session.isAdmin,
   });
-}
+};
 
 module.exports = {
   admindashboard: admindashboard,
@@ -392,11 +435,11 @@ module.exports = {
   adminhospitals: adminhospitals,
   adminappointment: adminappointment,
   editprofile: editprofile,
-  editpageget:editpageget,
-  medicalrecordget:medicalrecordget,
-  admindeletemedicalreport:admindeletemedicalreport,
-  editadminhospital:editadminhospital,
-  saveedithospital:saveedithospital,
-  getquote:getquote,
-  abouthospital:abouthospital
+  editpageget: editpageget,
+  medicalrecordget: medicalrecordget,
+  admindeletemedicalreport: admindeletemedicalreport,
+  editadminhospital: editadminhospital,
+  saveedithospital: saveedithospital,
+  getquote: getquote,
+  abouthospital: abouthospital,
 };

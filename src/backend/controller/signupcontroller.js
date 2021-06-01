@@ -2,7 +2,9 @@ var express=require("express");
 const User=require("../database/schema");
 var mongoose=require("mongoose");
 const signupuser=(req,res)=>{
-   return res.render("signup");
+   return res.render("signup",{
+    msg1: req.flash("failed")
+   });
 }
 
 
@@ -16,8 +18,10 @@ const signupregister= async (req,res)=>{
     }*/
     try{
         const exists=await User.findOne({email:email});
-        if(exists){
-            console.log("email already exists");
+        const existsmob=await User.findOne({mobileno:mobileno});
+        if(exists || existsmob){
+            console.log("email or mobile already exists");
+            req.flash("failed","Email Or Mobile  already Exists");
             return res.redirect("/signup")
         }
         const user=new User({name,email,password,gender,dateofbirth,mobileno,state,city,country,isDoctor:isDoctor,
@@ -26,7 +30,10 @@ const signupregister= async (req,res)=>{
         const register= await user.save();
         if(register){
             console.log("user saved successfully");
+            if(!isDoctor){
             req.session.user={email,password};
+            }
+            req.session.password=password;
             req.session.name=name;
             req.session.isDoctor=isDoctor;
             req.session.email=email;

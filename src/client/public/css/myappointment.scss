@@ -33,6 +33,12 @@
 .date{
     max-width: 9rem;
     background-color: #eeebeb;
+    max-width: 9rem;
+    h4{
+        font-size: 1.2rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
     @media only screen and (min-width:1024px){
         max-width: 9rem;
         h4{
@@ -68,12 +74,22 @@
     }
 }
 .status{
+        padding: 0.1rem 0.5rem;
+        background: #eeebeb;
+        max-width:fit-content;
+        text-align: center;
+        
     @media only screen and (min-width:1024px){
-        padding: 0.1rem;
+        padding: 0.1rem 0.5rem;
         background: #eeebeb;
         max-width:fit-content;
         text-align: center;
     }
+}
+
+.completed{
+    background: rgb(0,100,0);
+    color: white;
 }
 
 .headings{
@@ -86,7 +102,7 @@
     }
     h3{
         margin: 0;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         @media only screen and (min-width:1024px){
             font-size: 2.2rem;
             
@@ -98,12 +114,18 @@
 
 .grid-for-dashboard{
     grid-column-gap: 0.5rem;
-    margin-left: 0.5rem;
+    margin-bottom: 1rem;
 }
 .settings{
-    margin: 1rem;
+   
     @media only screen and (min-width:1024px){
         margin: 0rem;
+    }
+}
+.main-section{
+    padding: 0.8rem;
+    @media only screen and (min-width:1024px){
+        padding: 1rem;
     }
 }
 .center{
@@ -112,4 +134,8 @@
     @media only screen and (min-width:1024px){
         text-align: left;
     }
+}
+
+.grid-for-dashboard h3 {
+    font-size: 1.5rem;
 }

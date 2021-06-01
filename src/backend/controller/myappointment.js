@@ -41,8 +41,9 @@ const myappointment=async (req,res)=>{
         //console.log("upcoming details",upcomingdetails);
         
     }
-    else{
-        var bookingdetails=await bookings.find({docid:req.session.docid});
+    if(req.session.isDoctor){
+        var bookingdetails=await bookings.find({docname:req.session.name});
+        console.log("from my bookings printing",bookingdetails);
         var upcomingdetails=[];
         var completeddetails=[];
         for(var k=0;k<bookingdetails.length;k++){
@@ -52,7 +53,7 @@ const myappointment=async (req,res)=>{
         var month=parseInt(date.getMonth());
         var day=parseInt(date.getDate());
         var year=parseInt(date.getFullYear());
-        if(day>parseInt(checkdate[1]) && month>=parseInt(checkdate[0]) && year>=parseInt(checkdate[2])){
+        if((day>parseInt(checkdate[1]) && month>=parseInt(checkdate[0]) && year>=parseInt(checkdate[2]))||(day<=parseInt(checkdate[1]) && month>parseInt(checkdate[0]) && year>=parseInt(checkdate[2]))){
             completeddetails.push(bookingdetails[k]);
             var scheduleid=bookingdetails[k].scheduleid;
             var slotid=bookingdetails[k].slotid;
@@ -66,8 +67,8 @@ const myappointment=async (req,res)=>{
         }
         }
 
-        //console.log("completed details",completeddetails);
-        //console.log("upcoming details",upcomingdetails);
+        console.log("completed details",completeddetails);
+        console.log("upcoming details",upcomingdetails);
         
     }
 

@@ -20,6 +20,7 @@ const doctorpageget = async (req, res) => {
   req.session.prevslotid=false;
   req.session.prevscheduleid=false;
   req.session.prevslotid=false;
+  //console.log("printing query",req.session.query);
 
   let { page, items_per_page } = req.query;
   if (!page) {
@@ -38,14 +39,21 @@ const doctorpageget = async (req, res) => {
   if(findall){
     if(req.session.query){
       findall = await docdetails.find(req.session.query).sort(req.session.sortBy).limit(items_per_page).skip(skip);
+      //console.log("checking query exist or not",findall);
+      if(findall.length==0){
+        req.session.query=false;
+        req.session.filter="undefined";
+      }
     }
   }
   req.session.findall = findall;
+  //console.log("checking findall exist or not",findall);
 
   //For getting day
   
 
   var finddoc=await docdetails.find();
+  console.log("Printing doctor hospital",finddoc[0].hospitals.split(","));
   
   //console.log("printing day for checking schedule",comparearray);
  
@@ -108,11 +116,21 @@ const aboutpageget = (req, res) => {
 };
 
 const otpnumberpageget = (req, res) => {
-  return res.render("otpnumber");
+  return res.render("otpnumber",{
+    msg1: req.flash("failed")
+  });
 };
 
 const otpenterpageget = (req, res) => {
-  return res.render("otpenter");
+  return res.render("otpenter",{
+    msg: req.flash("success")
+  });
+};
+
+const otpverificationpageget = (req, res) => {
+  return res.render("otpverificationpage",{
+    msg: req.flash("success")
+  });
 };
 
 const tvastraplus = (req, res) => {
@@ -153,7 +171,8 @@ const profilepageget = (req, res) => {
     fees: req.session.fees,
     isDoctor: req.session.isDoctor,
     image: req.session.image,
-    isadmin:req.session.isAdmin
+    isadmin:req.session.isAdmin,
+    msg2: req.flash("failed")
   });
 };
 
@@ -463,7 +482,9 @@ const filterfunction=async(req,res)=>{
   const treatments=req.body.treatments;
   const hospitals=req.body.hospitals;
   const state=req.body.states;
-  const hospitalname=req.body.hospitalname;
+  const hosp=req.body.hospitalname;
+  
+
   console.log("printing treatments",typeof(treatments));
   
     var filter = [];
@@ -474,10 +495,19 @@ const filterfunction=async(req,res)=>{
       filter.push(state);
           locationlist.push(state);
     }
-    if(hospitalname){
-      filter.push(hospitalname);
-          hospitallist.push(hospitalname);
+    if(hosp){
+      const hospitalname = JSON.parse(req.body.hospitalname).map(function (item) {
+        return item['value'];
+      }).toString();
+      var s=hospitalname.split(",");
+      var hospitalsarray=[];
+      console.log("printing hospitals",s);
+      for(var z=0;z<s.length;z++){
+        filter.push(s[z]);
+          hospitallist.push(s[z]);
+      }
     }
+    
     if (location) {
       if (typeof (location) == "string") {
           filter.push(location);
@@ -523,18 +553,18 @@ const filterfunction=async(req,res)=>{
   var query = {
     
     "state": { $all: locationlist },
-    "specialization":{$all: treatmentlist},
-    "hospitals":{$all: hospitallist}
+    "specializationarray":{$all: treatmentlist},
+    "hospitalsarray":{$all: hospitallist}
   }
   
 if (treatmentlist.length == 0) {
-    delete query["specialization"];
+    delete query["specializationarray"];
 }
 if (locationlist.length == 0) {
     delete query["state"];
 }
 if (hospitallist.length == 0) {
-  delete query["hospitals"];
+  delete query["hospitalsarray"];
 }
   req.session.query = query;
   console.log("printing query",query);
@@ -564,6 +594,7 @@ module.exports = {
   aboutpageget: aboutpageget,
   otpnumberpageget: otpnumberpageget,
   otpenterpageget: otpenterpageget,
+  otpverificationpageget:otpverificationpageget,
   tvastraplus: tvastraplus,
   logout: logout,
   profilepageget: profilepageget,

@@ -40,7 +40,7 @@ console.log(message);
     ],
     (err, data) => {
       if (err) {
-        console.error("hello",JSON.stringify(err.body.invalid_parameters));
+        //console.error("hello",JSON.stringify(err.body.invalid_parameters));
 
       } else {
         console.log("hello2",data);

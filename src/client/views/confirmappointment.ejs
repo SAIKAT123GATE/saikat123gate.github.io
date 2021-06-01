@@ -91,7 +91,7 @@
                         <i id="tick" class="fa fa-check"></i>
                         <h4>Appointment Confirmed</h4>
                     </div>
-                    <form>
+                    <div>
                         <label>Patients Full Name</label>
                         <input type="text" value="<%= username %>" readonly>
 
@@ -99,10 +99,17 @@
                         <input type="number" value="<%= mobileno %>" readonly>
 
                         <div class="buttons">
+                          
+                            <form method="POST" action="/deleteappointment/<%= scheduleid %>/<%= slotid %>">
                         <button type="submit" class="btn_blue">Cancle Appointment</button>
+                        </form>
+
+                        <form method="POST"  action="/rescheduleappointment/<%= scheduleid %>/<%= slotid %>/<%= docid %>">
+                        
                         <button type="submit" class="btn_darkblue">Reshedule</button>
+                        </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>

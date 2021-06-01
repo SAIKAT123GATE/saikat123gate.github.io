@@ -983,6 +983,64 @@ footer p {
 }
 
 @media only screen and (min-width: 1024px) {
+  @-webkit-keyframes fade-out {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-out {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  .fade-out {
+    -webkit-animation-name: fade-out;
+            animation-name: fade-out;
+  }
+  .animated {
+    -webkit-animation-duration: 15s;
+            animation-duration: 15s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  #loginmsg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem;
+    top: 8rem;
+    right: 1rem;
+    position: absolute;
+    background-color: white;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-left: 0.3rem solid red;
+  }
+  #loginmsg #tick {
+    background-color: red;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border-radius: 100%;
+  }
+  #loginmsg ul {
+    text-align: left;
+  }
+  #loginmsg ul li {
+    color: #021433;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: inherit;
+  }
+  #loginmsg ul li span {
+    color: red;
+  }
   /*section*/
   .firstsec {
     padding-top: 2rem;

@@ -69,7 +69,7 @@
             <nav class="head2">
 
 
-                <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
+                <a href="/adminpageget"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"
                         alt="logo" /></a>
 
 
@@ -297,20 +297,23 @@
     <%-include('footer.ejs')%>
     <script>
 
-            var input = document.querySelector('input[name=hospitalname]');
+           
 
             var input2 = document.querySelector('input[name=achievements]');
-            var input3 = document.querySelector('input[name=qualification]');
-            var input4 = document.querySelector('input[name=awards]');
+            
             var input5 = document.querySelector('input[name=specialization]');
 
 
             // initialize Tagify on the above input node reference
-            new Tagify(input)
-            new Tagify(input2)
-            new Tagify(input3)
-            new Tagify(input4)
-            new Tagify(input5)
+            
+        var tagify2= new Tagify(input2, {
+                        maxTags: 3,
+                        originalInputValueFormat: valuesArr2 => valuesArr2.map(item => item.value).join(',')
+                    })
+        var tagify5=    new Tagify(input5,{
+                maxTags: 3,
+                        originalInputValueFormat: valuesArr5 => valuesArr5.map(item => item.value).join(',')
+            })
         
 
 

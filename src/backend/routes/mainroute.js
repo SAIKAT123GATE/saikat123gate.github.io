@@ -14,6 +14,7 @@ const getscheduleslots = require("../controller/getscheduleslots");
 const schedules = require("../database/appointment");
 const myappointment=require("../controller/myappointment");
 const admincontroller=require("../controller/admincontroller");
+const logincontroller = require("../controller/logincontroller");
 
 
 
@@ -46,6 +47,7 @@ router.route("/aboutUs").get(sessionauth.redirectlogin,middle.aboutpageget);
 router.route("/otpnumber").get(middle.otpnumberpageget);
 //post request for otp number page is handling from app.js via otp service manager
 router.route("/otpenter").get(middle.otpenterpageget);
+router.route("/otpverification").get(middle.otpverificationpageget);
 
 router.route("/docdetails").get(docdetailsc.docdetailsget);
 router.route("/docdetails").post(upload.single('image'),docdetailsc.docdetailsregister);
@@ -93,5 +95,9 @@ router.route("/addfilter").post(middle.filterfunction);
 router.route("/getquote").get(admincontroller.getquote);
 router.route("/abouthospital").get(admincontroller.abouthospital);
 router.route("/faqs").get(sessionauth.redirectlogin,middle.faqs);
+router.route("/forgotpassword").get(logincontroller.forgotpassword);
+router.route("/forgotchangepassword").get(logincontroller.forgotchangepassword);
+router.route("/forgotpassword").post(logincontroller.postforgotpassword);
+router.route("/forgotchangepassword").post(logincontroller.postforgotchangepassword);
 module.exports=router;
 
