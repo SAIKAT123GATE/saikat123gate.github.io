@@ -31,6 +31,18 @@
 
 <body>
     <%-include('header.ejs')%>
+    <% if (msg1.length>0) {%>
+        <div id="loginmsg" class="fade-out animated ">
+        <i id="tick"class="fa fa-close"></i>
+        <ul>
+            
+            <li><%= msg1%></li>
+        </ul>
+        
+        
+        </div>
+    
+        <%}%>
 
         <div class="toaster" id="toaster">
             <div>
@@ -231,7 +243,13 @@
                             </select>
 
                             <label>Select Hospital</label>
-                            <input type="text" placeholder="Select Hospital" name="hospital" required>
+                            <select class="scroll" name="hospital" required>
+
+                                <% for(var i=0;i<hospitalarray.length;i++){%>
+                                <option value="<%= hospitalarray[i] %>"><%= hospitalarray[i] %></option>
+                                <%}%>
+
+                            </select>
 
                             <label>From Time</label>
                             <input data-clocklet=" alignment:center ; append-to:parent;" class="time" name="fromtime"
