@@ -299,10 +299,17 @@ app.use("/", mainroute);
 
 
 app.get("/demo",(req,res)=>{
-  fetch('https://jsonplaceholder.typicode.com/todos/1')
+  fetch('https://jsonplaceholder.typicode.com/posts')
   .then(response => response.json())
-  .then(json => console.log(json))
+  .then(json => sendresponse(res,json))
 })
+
+function sendresponse(res,json){
+  res.send({
+    "status":"ok",
+    "data":json
+  })
+}
 
 app.get("*", (req, res) => {
   res.render("error", {
